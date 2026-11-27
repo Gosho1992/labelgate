@@ -10,7 +10,9 @@
 ---
 
 ## Inspiration
-Undeclared allergens are among the most common reasons food is recalled. Australia's food regulator counted 197 undeclared-allergen recalls between 2021 and 2025. Often the cause is not a mistake on the factory floor. A supplier quietly changes an ingredient, for example a "natural flavour" that now carries a milk-derived ingredient, and the labels already approved for every product that uses it are now wrong. The people who must catch this are QA reviewers working from supplier spec sheets. Those sheets arrive as photos or scans, sometimes in another language, and are confidential.
+Every 10 seconds, a food allergy reaction sends someone in the U.S. to the emergency room ([FARE](https://www.foodallergy.org/living-food-allergy)). Undeclared allergens were the most common reason for U.S. food recalls in 2025, 38.8% of recalls ([U.S. PIRG data via Statista](https://www.statista.com/chart/amp/36281/fda-and-usda-food-recalls-in-the-united-states/)), and the average recall costs about $10 million in direct costs ([GMA/FMI study, via Food Dive](https://www.fooddive.com/news/more-than-money-what-a-recall-truly-costs/426855/)). Australia's food regulator counted 197 undeclared-allergen recalls between 2021 and 2025.
+
+Two real cases show how it happens. In May 2026, 71,603 lb of dumplings were recalled because peanut was not on the label; the company said "a formulation change led to the mislabeling" ([USDA FSIS, via Food Safety News](https://www.foodsafetynews.com/2026/05/35-tons-of-frozen-dumplings-recalled-because-of-undeclared-peanut-risk/)). In February 2025, snacks were recalled after a customer's allergic reaction; the supplier had missed allergens while translating the ingredient list ([FDA](https://www.fda.gov/safety/recalls-market-withdrawals-safety-alerts/zb-importing-issue-voluntary-recall-and-allergy-alert-undeclared-egg-wheat-and-milk-certain-ulker)). Often the cause is not a mistake on the factory floor. A supplier quietly changes an ingredient, for example a "natural flavour" that now carries a milk-derived ingredient, and the labels already approved for every product that uses it are now wrong. The people who must catch this are QA reviewers working from supplier spec sheets. Those sheets arrive as photos or scans, sometimes in another language, and are confidential.
 
 ## What it does
 - **Gate 1 — supplier change.** Gemini Nano reads the photographed supplier spec **on the device** (English, Spanish or Japanese). A named QA reviewer checks the reading against the photo and confirms it.
@@ -34,11 +36,11 @@ Undeclared allergens are among the most common reasons food is recalled. Austral
   - Both results are from very few people; they are usability signals, not proof.
 - **Offline:** with Wi-Fi off after the page loaded, the spec read ran on device, the impact check took 6 ms, and the recall notice was read on device.
 - **Reading errors found while filming the demo:** Nano wrote "MALTODEXTRIN" as `MALTOДЕКТРИН` (with Cyrillic letters) in one read and as `MACTODEXTRIN` in another. The A/B question showed the misspelled wording, and the reviewer corrected it. A new rule now flags mixed-alphabet words automatically.
-- **Experimental Android check:**
+- **Android: the on-device reading already runs on a real phone:**
   - We built a native Kotlin app that uses Firebase AI Logic `ONLY_ON_DEVICE` and ran it on real Samsung phones via Samsung Remote Test Lab.
   - On a **Galaxy S26 (Android 16)**, Gemini Nano read the same spec photos on the phone with **0 bytes sent**. The full Spanish reading took 12.2 s and matches the Chrome reading word for word.
   - Two other lab phones (a Galaxy S25 and an S26+) did not have Gemini Nano installed. Their reads stopped safely, with no cloud fallback.
-  - This is an experiment, not a finished Android app.
+  - Next: the full LabelGate workflow on Android. The on-device reading it depends on already works on the phone.
 - **Automated tests:** 151 tests (`npm test`).
 - **Expert review:** *[results from quality professionals — to be added]*
 

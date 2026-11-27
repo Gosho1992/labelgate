@@ -74,10 +74,10 @@ All numbers come from Zain's laptop: Chrome 158, Intel integrated GPU, no dedica
 | **No Gemini Nano on the device** (private document) | The read **stops**: "On-device AI is not available here — type the reading instead". **No outside requests**; no cloud fallback for private documents. | tested in a browser with Nano unavailable |
 | **Offline** (Wi-Fi off after the page was open) | Spec read on device 67 s (`on_device`, no outside requests); impact 6 ms; public recall on device 39 s | [`bench/results/OFFLINE-TEST-2026-11-27.md`](bench/results/OFFLINE-TEST-2026-11-27.md) |
 | Automated tests (rules, original-language matching, retry, audit chain, hybrid wiring, UI flow) | 151 passing | `npm test` |
-| **Experimental Android check** (native Kotlin, Firebase AI Logic `ONLY_ON_DEVICE`, real Samsung phones via Samsung Remote Test Lab) | **Galaxy S26, Android 16:** Gemini Nano (`nano-v3`) read the same spec photos **on the phone** (`ON_DEVICE`) with **0 bytes sent**. The full Spanish reading took 12.2 s and matches the Chrome reading word for word. **Galaxy S25 and S26+ lab units:** Nano unavailable (AICore missing), so the read stopped and nothing was sent to the cloud. | [`bench/android/ANDROID-NANO-CHECK-2026-11-27.md`](bench/android/ANDROID-NANO-CHECK-2026-11-27.md) |
+| **Android: on-device reading on a real phone** (native Kotlin, Firebase AI Logic `ONLY_ON_DEVICE`, real Samsung phones via Samsung Remote Test Lab) | **Galaxy S26, Android 16:** Gemini Nano (`nano-v3`) read the same spec photos **on the phone** (`ON_DEVICE`) with **0 bytes sent**. The full Spanish reading took 12.2 s and matches the Chrome reading word for word. **Galaxy S25 and S26+ lab units:** Nano unavailable (AICore missing), so the read stopped and nothing was sent to the cloud. | [`bench/android/ANDROID-NANO-CHECK-2026-11-27.md`](bench/android/ANDROID-NANO-CHECK-2026-11-27.md) |
 
-## Experimental Android check (not part of the submission)
-The submitted product is the Web/Chrome app. To see whether LabelGate's most sensitive step, reading a confidential supplier spec photo with no cloud fallback, works on Android, we built a small native app in [`android-experimental/`](android-experimental/). It uses the same Firebase AI Logic API (`InferenceMode.ONLY_ON_DEVICE`) and the same prompt. We ran it on real Samsung phones through Samsung Remote Test Lab.
+## Android: the private reading step already runs on a real phone
+The full LabelGate workflow runs in Chrome today. To prove that its most sensitive step, reading a confidential supplier spec photo with no cloud fallback, also works on Android, we built a native app in [`android-experimental/`](android-experimental/). It uses the same Firebase AI Logic API (`InferenceMode.ONLY_ON_DEVICE`) and the same prompt. We ran it on real Samsung phones through Samsung Remote Test Lab.
 
 | Phone | Gemini Nano | Private photo read | Sent to the cloud |
 |---|---|---|---|
@@ -87,7 +87,7 @@ The submitted product is the Web/Chrome app. To see whether LabelGate's most sen
 
 What this shows: the private reading step runs on Android through Firebase AI Logic. Whether it can run depends on the individual phone, not just the phone model.
 
-What it does not show: the full LabelGate workflow on Android. The impact card, artwork check, sign-off and audit log exist only in the web app.
+What's next: bringing the impact card, artwork check, sign-off and audit log to the Android app. Today they run in the web app; the on-device reading they depend on already works on the phone.
 
 ## Limitations
 - **Speed:** 30–90 s per document read on a laptop without a dedicated GPU. One read per supplier change; the impact on every label is then instant.
@@ -124,7 +124,7 @@ For local development, App Check can use a debug token (`VITE_APPCHECK_DEBUG=1`)
 - `bench/`: frozen test sets, raw model outputs and reports.
 - `demo/`: scripts that render the synthetic documents.
 - Dev harness pages: `acceptance.html`, `acceptance-b.html`, `specproof.html`, `privacy-test.html`, `bench.html`.
-- `android-experimental/`: native Android check of the on-device reading step (experimental, not submitted).
+- `android-experimental/`: native Android app: the on-device reading step, tested on a real Galaxy S26 (the full workflow is next).
 - `public/expert/`: 7-minute comprehension test for quality professionals.
 - `docs/`: earlier progress and audit notes.
 

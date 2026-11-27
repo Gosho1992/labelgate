@@ -61,3 +61,7 @@ This is the same phone as the first run; the model was already downloaded. Resul
 **What we can claim:** LabelGate's private on-device reading step runs on Android through Firebase AI Logic and gives the same reading as Chrome.
 
 **What we cannot claim:** that LabelGate is an Android app. The full workflow (impact card, artwork check, sign-off, audit log) has only been built and tested on Web/Chrome.
+
+
+## Screen recording
+`evidence/s26-rtl-screen-recording.mp4` (30 s, cropped to the Remote Test Lab panel): the Galaxy S26 session (SM-S942B, unit IN1) with the app's on-screen log — Nano status AVAILABLE, model nano-v3, reads with source On Device and 0 bytes sent by the app. This run used app version 0.4 (default output limit, so the readings are cut short); the full 12.2 s reading is in `s26-v5-spanish-full-read.jpg`.

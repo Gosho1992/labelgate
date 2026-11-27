@@ -1,6 +1,6 @@
 # Android experiment: Gemini Nano on real Samsung phones
 
-**Status: experimental. This is not part of the submitted product.** The submitted product is the Web/Chrome app in the repository root.
+**Status: the on-device reading step works on a real Galaxy S26 (see `bench/android/`).** The rest of the LabelGate workflow (impact card, artwork check, sign-off, audit log) runs in the Web/Chrome app in the repository root today and is next for Android.
 
 ## What this is
 
