@@ -42,6 +42,7 @@ A missing allergen on a label is not a typo. For a person with a food allergy it
 
 | | Fact | Source |
 |---|---|---|
+| **Law (U.S.)** | Food labels must identify the food source of all **9 major allergens** (milk, eggs, fish, crustacean shellfish, tree nuts, peanuts, wheat, soybeans, sesame). FDA treats a product with an undeclared major allergen as misbranded, subject to recalls, import refusal and seizure. | [FDA — Food Allergies](https://www.fda.gov/food/nutrition-food-labeling-and-critical-foods/food-allergies) |
 | **Danger** | Every 10 seconds in the U.S., a food allergy reaction sends someone to the emergency room. 33 million Americans live with food allergy. | [FARE](https://www.foodallergy.org/media-room/fare-announces-support-american-center-cures) |
 | **Frequency** | Undeclared allergens were the **#1 reason for U.S. food recalls in 2025: 38.8%** of 320 recalls. Milk was the most common undeclared allergen. | U.S. PIRG Education Fund, *Food for Thought 2026*, via [Statista](https://www.statista.com/chart/36281/fda-and-usda-food-recalls-in-the-united-states/) and [PIRG](https://pirg.org/edfund/media-center/report-fda-did-not-identify-product-to-recall-in-60-of-food-related-illness-outbreaks-in-2025/) |
 | **Cost** | About **$10 million** in direct costs for an average recall, before lost sales and brand damage. | GMA / FMI / GS1 US study (2010), via [Food Dive](https://www.fooddive.com/news/more-than-money-what-a-recall-truly-costs/426855/) |
@@ -91,7 +92,7 @@ Demo result with real Gemini Nano: **"Supplier added Milk → 2 labels PRINT BLO
 
 ## 4. How Firebase AI Logic is used
 
-LabelGate chooses the inference mode **by how sensitive the data is** (`firebase` JS SDK 13.4, `firebase/ai`). All of it is in [`src/ai/firebase.js`](src/ai/firebase.js).
+Firebase defines the two modes we use: `ONLY_ON_DEVICE` — "use the on-device model if it's available; otherwise, throw an exception"; `PREFER_ON_DEVICE` — "otherwise, fall back to the cloud-hosted model" ([Firebase AI Logic docs](https://firebase.google.com/docs/ai-logic/hybrid/web/configuration-options)). LabelGate chooses the mode **by how sensitive the data is** (`firebase` JS SDK 13.4, `firebase/ai`). All of it is in [`src/ai/firebase.js`](src/ai/firebase.js).
 
 | Data | Example | Mode | Model | Why |
 |---|---|---|---|---|
@@ -193,6 +194,8 @@ Hardware: Zain's laptop (Chrome 158, Intel integrated GPU, no dedicated GPU), an
 | 18 | **Reading errors seen live** while filming | — | Nano wrote `MALTOДЕКТРИН` (Cyrillic letters) and `MACTODEXTRIN`; the reviewer caught both. A new rule flags mixed-alphabet words. | [screenshot](bench/results/proof-evidence/nano-mixed-script-glitch-2026-11-27.png) |
 | 19 | **Android on real phones** | Same private reading in a native app, Samsung Remote Test Lab | Galaxy S26: full Spanish spec read **on the phone in 12.2 s**, same ingredients and statement as Chrome, 0 bytes sent by the app. S25 / S26+ without Nano: stopped safely. | [report](bench/android/ANDROID-NANO-CHECK-2026-11-27.md) |
 | 20 | **Automated tests** | Rules, original-language words, retry, audit chain, hybrid wiring, A/B questions, full UI flow | **151 passing** (`npm test`) | [`test/`](test/) |
+
+**What these tests do not show:** an error rate on real supplier documents (all cases are synthetic and few); a factory deployment or multi-user use; zero network traffic for a whole phone (test 19 counts only the app's own bytes); a signed or server-side audit record (the log is hash-linked in the browser). Each report states its own scope.
 
 What the failures changed: test 2 made Gemini Nano a reader instead of a judge; tests 4 and 5 added rule-based "Contains", facility and placeholder handling; test 15 replaced tick boxes with A/B questions; test 17 added the CHECKS CLEAR explanation; test 18 added the mixed-alphabet check. A one-page summary is in [`bench/TEST-SUMMARY-2026-11-27.md`](bench/TEST-SUMMARY-2026-11-27.md).
 
