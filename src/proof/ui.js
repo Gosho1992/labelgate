@@ -449,7 +449,7 @@ function artworkPanel() {
   const r = S.artResult, d = S.docs.label;
   let res = "";
   if (!S.docs.spec.confirmed) res = `<p class="muted">Confirm the supplier reading first: the artwork is checked against the latest supplier revision.</p>`;
-  else if (TEST && S.testDone) res = `<div class="testbanner"><b>Run recorded — thank you.</b> The result is not shown during the test. <a href="/?reviewer-test=1">Start the next run</a> (a new case each time).</div>`;
+  else if (TEST && S.testDone) res = `<div class="testbanner"><b>Run recorded — thank you.</b> The result is not shown during the test. <a href="/app/?reviewer-test=1">Start the next run</a> (a new case each time).</div>`;
   else if (!r) res = `<p class="muted">Read and confirm the artwork to run the check.</p>`;
   else {
     const cls = r.state === STATE.BLOCK ? "block" : r.state === STATE.REVIEW ? "review" : "clear";

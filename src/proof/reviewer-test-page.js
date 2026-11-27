@@ -63,5 +63,5 @@ function thanks() {
   document.getElementById("again").addEventListener("click", welcome);
 }
 
-if (new URLSearchParams(location.search).has("results")) app.innerHTML = resultsHTML(esc).replace(`href="/?reviewer-test=1"`, `href="/reviewer-test.html"`);
+if (new URLSearchParams(location.search).has("results")) app.innerHTML = resultsHTML(esc).replace(`href="/app/?reviewer-test=1"`, `href="/reviewer-test.html"`);
 else welcome();

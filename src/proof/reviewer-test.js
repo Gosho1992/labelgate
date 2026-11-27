@@ -62,5 +62,5 @@ export function resultsHTML(esc) {
   ${runs.map((r, i) => `<tr><td>${i + 1}</td><td>${new Date(r.at).toLocaleString()}</td><td>${esc(r.ui || (r.page ? "v1 ticks" : "app"))}</td><td>${esc(r.tester || "—")}</td><td>${r.variant}</td><td><b>${r.outcome}</b></td><td>${r.edited ? "yes" : "no"}</td><td>${r.seconds ?? "—"}</td><td>${esc(r.confirmed?.contains_printed ?? "none")}</td></tr>`).join("")}
   </tbody></table>
   <details><summary>Raw JSON</summary><pre style="white-space:pre-wrap">${esc(JSON.stringify(runs, null, 1))}</pre></details>
-  <p><a href="/?reviewer-test=1">Start a run</a></p>`;
+  <p><a href="/app/?reviewer-test=1">Start a run</a></p>`;
 }

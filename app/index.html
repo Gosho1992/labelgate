@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>LabelGate — check the label against the supplier's latest spec, before print</title>
+  <link rel="stylesheet" href="/src/styles.css" />
+</head>
+<body>
+  <header>
+    <div class="brand"><strong>LabelGate</strong><span>Catch a supplier change before the wrong label is printed</span></div>
+    <nav class="tabs">
+      <button class="tab active" data-view="view-review">Spec-to-Proof review</button>
+      <button class="tab" data-view="view-classic">Recall notices &amp; text specs</button>
+    </nav>
+    <div class="badges">
+      <span id="badge-nano" class="badge">On-device model: checking…</span>
+      <span id="badge-net" class="badge">Network: …</span>
+      <span id="badge-appcheck" class="badge">App Check: …</span>
+    </div>
+  </header>
+
+  <div id="view-review" class="view">
+    <section class="hero" id="pf-hero">
+      <h1>A supplier changed an ingredient. Which of your product labels are now wrong?</h1>
+      <p>LabelGate reads the supplier's document with AI <b>on this laptop</b> — nothing is uploaded — re-checks every affected label in milliseconds, and makes a person confirm before anything is printed.</p>
+      <div class="hero-row"><button class="primary big" id="pf-tour">▶ Start the 2-minute demo</button><span class="muted small">Guided, one step at a time · synthetic example data</span></div>
+    </section>
+    <div class="hybrid">
+      <div class="lane private"><b>Private</b> — supplier specs, label artwork, formulas: read by <b>Gemini Nano on this device</b> (Firebase AI Logic <code>ONLY_ON_DEVICE</code>). Checked by fixed rules in this browser. Never uploaded.</div>
+      <div class="lane public"><b>Public</b> — recall notices: <b>hybrid</b> (Firebase AI Logic <code>PREFER_ON_DEVICE</code>): Gemini Nano on this device when available, otherwise Gemini in the cloud (App Check). Then matched to your products locally.</div>
+    </div>
+    <details class="guide"><summary><b>How it works</b> — the steps in writing, and requirements</summary>
+      <ol>
+        <li><b>Gate 1:</b> click <b>Use demo document</b> (a photographed Spanish supplier spec — synthetic). Gemini Nano reads it on this device; the text appears as it is read (30–90 s on a laptop without a GPU).</li>
+        <li>Check the reading against the image, correct anything wrong, and click <b>Confirm this reading</b>. You see what changed — and that milk is now an allergen source.</li>
+        <li>Every product using this ingredient is checked instantly against its verified label record: which labels are now wrong, and why.</li>
+        <li><b>Gate 2:</b> on a blocked product, click <b>Check new artwork →</b>, use the demo artwork (the corrected label), confirm, and sign it off for print.</li>
+      </ol>
+      <p class="muted small">No on-device AI in your browser? Use <b>Type it myself (no AI)</b> to try the rule checks — this is clearly marked and is not on-device inference. Requirements for on-device AI: Chrome 148+ on desktop, 16 GB RAM or a GPU with more than 4 GB VRAM, 22 GB free disk. The public cloud half of the hybrid design is in the <a href="#" data-goto="view-classic">Recall notices</a> tab.</p>
+    </details>
+    <div id="pf-device" class="pf-device">Checking on-device AI…</div>
+    <section class="case" id="pf-case"></section>
+    <section><h2 class="sec"><span class="gate">Gate 1</span> Supplier change — read the new specification on this device</h2>
+      <div id="pf-spec"></div><div id="pf-changes"></div></section>
+    <section id="pf-impact-sec"><h2 class="sec">Impact on every product label made with this ingredient</h2><div id="pf-impact"></div></section>
+    <section id="pf-art-sec"><h2 class="sec"><span class="gate">Gate 2</span> Artwork — check new label artwork before it is printed</h2><div id="pf-art"></div></section>
+    <section><h2 class="sec">Review history <span class="muted small">(stored only in this browser)</span> <button class="link small" id="pf-reset">Reset demo</button></h2><div id="pf-history"></div></section>
+    <p class="disclaimer">Prototype decision support for QA reviewers — not a regulatory compliance certification. Ruleset: simplified US major food allergen disclosure check (9 allergens). All demo companies, products and documents are synthetic.</p>
+  </div>
+
+  <main id="view-classic" class="view" hidden>
+    <section class="col" id="col-change">
+      <h2>1 · Supplier change (text spec)</h2>
+      <label>Supplier item <select id="item-select"></select></label>
+      <div id="diff"></div>
+      <button id="btn-check" class="primary">Check impact</button>
+      <div id="ai-status" class="ai-status" role="status" aria-live="polite">On-device analysis: not started</div>
+      <p class="hint">Confidential spec text is analysed by Gemini Nano on this device (Firebase AI Logic, ONLY_ON_DEVICE). It is never sent to a cloud model.</p>
+      <h2>2 · Public recall notice</h2>
+      <select id="recall-select"></select>
+      <pre id="recall-text"></pre>
+      <button id="btn-recall">Read notice (on device, cloud fallback) → match my formulas locally</button>
+      <div id="recall-result"></div>
+    </section>
+    <section class="col wide" id="col-findings">
+      <h2>Impact on approved labels</h2>
+      <div id="summary" class="summary">Run a check to see affected labels.</div>
+      <div id="findings"></div>
+    </section>
+    <section class="col" id="col-log">
+      <h2>Router &amp; audit log</h2>
+      <p class="hint">Where each inference ran, why, how long, and bytes sent to the cloud.</p>
+      <ol id="log"></ol>
+      <p class="disclaimer">Decision support only — not certified regulatory compliance. All demo data is synthetic.</p>
+    </section>
+  </main>
+  <script type="module" src="/src/main.js"></script>
+</body>
+</html>

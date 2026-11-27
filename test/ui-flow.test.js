@@ -28,7 +28,7 @@ const until = async (f, ms = 3000) => { const t = Date.now(); while (Date.now() 
 const $ = (s) => document.querySelector(s);
 
 beforeAll(async () => {
-  const html = readFileSync(process.cwd() + "/index.html", "utf8");
+  const html = readFileSync(process.cwd() + "/app/index.html", "utf8");
   document.body.innerHTML = html.slice(html.indexOf("<body"), html.lastIndexOf("</body>")).replace(/^<body[^>]*>/, "").replace(/<script[\s\S]*?<\/script>/g, "");
   globalThis.fetch = async () => new Response(new Blob([new Uint8Array([1, 2, 3])], { type: "image/jpeg" }));
   globalThis.LanguageModel = { availability: async () => "available" };

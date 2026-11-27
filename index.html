@@ -3,78 +3,88 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>LabelGate — check the label against the supplier's latest spec, before print</title>
-  <link rel="stylesheet" href="/src/styles.css" />
+  <title>LabelGate — catch a supplier ingredient change before the wrong allergen label is printed</title>
+  <meta name="description" content="LabelGate traces a supplier ingredient change to every affected food label and blocks the wrong ones before print. Gemini Nano reads confidential supplier documents on the device with Firebase AI Logic." />
+  <link rel="stylesheet" href="/src/site.css" />
 </head>
 <body>
-  <header>
-    <div class="brand"><strong>LabelGate</strong><span>Catch a supplier change before the wrong label is printed</span></div>
-    <nav class="tabs">
-      <button class="tab active" data-view="view-review">Spec-to-Proof review</button>
-      <button class="tab" data-view="view-classic">Recall notices &amp; text specs</button>
-    </nav>
-    <div class="badges">
-      <span id="badge-nano" class="badge">On-device model: checking…</span>
-      <span id="badge-net" class="badge">Network: …</span>
-      <span id="badge-appcheck" class="badge">App Check: …</span>
-    </div>
-  </header>
+<nav class="top"><div class="wrap">
+  <a class="logo" href="/">Label<span>Gate</span></a>
+  <a class="l on" href="/">The problem</a>
+  <a class="l" href="/how/">How it works</a>
+  <a class="l" href="/how/#evidence">Tests &amp; evidence</a>
+  <a class="l" href="https://github.com/Gosho1992/labelgate">GitHub</a>
+  <a class="btn yel sm" href="/app/">Open live demo →</a>
+</div></nav>
 
-  <div id="view-review" class="view">
-    <section class="hero" id="pf-hero">
-      <h1>A supplier changed an ingredient. Which of your product labels are now wrong?</h1>
-      <p>LabelGate reads the supplier's document with AI <b>on this laptop</b> — nothing is uploaded — re-checks every affected label in milliseconds, and makes a person confirm before anything is printed.</p>
-      <div class="hero-row"><button class="primary big" id="pf-tour">▶ Start the 2-minute demo</button><span class="muted small">Guided, one step at a time · synthetic example data</span></div>
-    </section>
-    <div class="hybrid">
-      <div class="lane private"><b>Private</b> — supplier specs, label artwork, formulas: read by <b>Gemini Nano on this device</b> (Firebase AI Logic <code>ONLY_ON_DEVICE</code>). Checked by fixed rules in this browser. Never uploaded.</div>
-      <div class="lane public"><b>Public</b> — recall notices: <b>hybrid</b> (Firebase AI Logic <code>PREFER_ON_DEVICE</code>): Gemini Nano on this device when available, otherwise Gemini in the cloud (App Check). Then matched to your products locally.</div>
-    </div>
-    <details class="guide"><summary><b>How it works</b> — the steps in writing, and requirements</summary>
-      <ol>
-        <li><b>Gate 1:</b> click <b>Use demo document</b> (a photographed Spanish supplier spec — synthetic). Gemini Nano reads it on this device; the text appears as it is read (30–90 s on a laptop without a GPU).</li>
-        <li>Check the reading against the image, correct anything wrong, and click <b>Confirm this reading</b>. You see what changed — and that milk is now an allergen source.</li>
-        <li>Every product using this ingredient is checked instantly against its verified label record: which labels are now wrong, and why.</li>
-        <li><b>Gate 2:</b> on a blocked product, click <b>Check new artwork →</b>, use the demo artwork (the corrected label), confirm, and sign it off for print.</li>
-      </ol>
-      <p class="muted small">No on-device AI in your browser? Use <b>Type it myself (no AI)</b> to try the rule checks — this is clearly marked and is not on-device inference. Requirements for on-device AI: Chrome 148+ on desktop, 16 GB RAM or a GPU with more than 4 GB VRAM, 22 GB free disk. The public cloud half of the hybrid design is in the <a href="#" data-goto="view-classic">Recall notices</a> tab.</p>
-    </details>
-    <div id="pf-device" class="pf-device">Checking on-device AI…</div>
-    <section class="case" id="pf-case"></section>
-    <section><h2 class="sec"><span class="gate">Gate 1</span> Supplier change — read the new specification on this device</h2>
-      <div id="pf-spec"></div><div id="pf-changes"></div></section>
-    <section id="pf-impact-sec"><h2 class="sec">Impact on every product label made with this ingredient</h2><div id="pf-impact"></div></section>
-    <section id="pf-art-sec"><h2 class="sec"><span class="gate">Gate 2</span> Artwork — check new label artwork before it is printed</h2><div id="pf-art"></div></section>
-    <section><h2 class="sec">Review history <span class="muted small">(stored only in this browser)</span> <button class="link small" id="pf-reset">Reset demo</button></h2><div id="pf-history"></div></section>
-    <p class="disclaimer">Prototype decision support for QA reviewers — not a regulatory compliance certification. Ruleset: simplified US major food allergen disclosure check (9 allergens). All demo companies, products and documents are synthetic.</p>
+<header class="hero"><div class="wrap">
+  <span class="kicker">FOOD SAFETY · ON-DEVICE AI</span>
+  <h1>A supplier changes one ingredient.<br><em>Your approved labels are now wrong.</em></h1>
+  <p class="lead">LabelGate finds every product label affected by a supplier change and <b>blocks the wrong ones before they are printed</b>. Gemini Nano reads the confidential supplier document <b>on your device</b>, so it is never uploaded.</p>
+  <div class="ctas">
+    <a class="btn yel" href="/app/">▶ Open the live demo</a>
+    <a class="btn ghost" href="/how/">How it works</a>
+    <a class="btn ghost" href="https://youtu.be/Hk8Kiy7bpMY">Watch the 3-min video</a>
   </div>
+  <div id="browser" class="browser">Checking whether this browser can run Gemini Nano…</div>
+  <p class="note">Works best in desktop Chrome with Gemini Nano. Without it, you can still try every rule check by typing the reading yourself. All companies and documents in the demo are synthetic.</p>
+</div></header>
 
-  <main id="view-classic" class="view" hidden>
-    <section class="col" id="col-change">
-      <h2>1 · Supplier change (text spec)</h2>
-      <label>Supplier item <select id="item-select"></select></label>
-      <div id="diff"></div>
-      <button id="btn-check" class="primary">Check impact</button>
-      <div id="ai-status" class="ai-status" role="status" aria-live="polite">On-device analysis: not started</div>
-      <p class="hint">Confidential spec text is analysed by Gemini Nano on this device (Firebase AI Logic, ONLY_ON_DEVICE). It is never sent to a cloud model.</p>
-      <h2>2 · Public recall notice</h2>
-      <select id="recall-select"></select>
-      <pre id="recall-text"></pre>
-      <button id="btn-recall">Read notice (on device, cloud fallback) → match my formulas locally</button>
-      <div id="recall-result"></div>
-    </section>
-    <section class="col wide" id="col-findings">
-      <h2>Impact on approved labels</h2>
-      <div id="summary" class="summary">Run a check to see affected labels.</div>
-      <div id="findings"></div>
-    </section>
-    <section class="col" id="col-log">
-      <h2>Router &amp; audit log</h2>
-      <p class="hint">Where each inference ran, why, how long, and bytes sent to the cloud.</p>
-      <ol id="log"></ol>
-      <p class="disclaimer">Decision support only — not certified regulatory compliance. All demo data is synthetic.</p>
-    </section>
-  </main>
-  <script type="module" src="/src/main.js"></script>
+<section><div class="wrap">
+  <h2>Why it matters</h2>
+  <p class="sub">A missing allergen on a label is not a typo. For someone with a food allergy it can mean a trip to the emergency room, and for the manufacturer a recall.</p>
+  <div class="grid3">
+    <div class="card stat"><div class="big red">Every 10 s</div><p>a food allergy reaction sends someone in the U.S. to the emergency room. 33 million Americans live with food allergy.</p><div class="src">Source: <a href="https://www.foodallergy.org/media-room/fare-announces-support-american-center-cures">FARE — Food Allergy Research &amp; Education</a></div></div>
+    <div class="card stat"><div class="big">#1</div><p>reason for U.S. food recalls in 2025: undeclared allergens, <b>38.8%</b> of all recalls. Milk was the most common one.</p><div class="src">Source: U.S. PIRG Education Fund, <i>Food for Thought 2026</i>, via <a href="https://www.statista.com/chart/36281/fda-and-usda-food-recalls-in-the-united-states/">Statista</a></div></div>
+    <div class="card stat"><div class="big">$10M</div><p>average direct cost of one food recall, before lost sales and brand damage.</p><div class="src">Source: GMA / FMI / GS1 US recall cost study (2010), via <a href="https://www.fooddive.com/news/more-than-money-what-a-recall-truly-costs/426855/">Food Dive</a></div></div>
+  </div>
+</div></section>
+
+<section class="alt"><div class="wrap">
+  <h2>How it happens: the label stays the same, the ingredient doesn't</h2>
+  <p class="sub">Regulators name it as a root cause. Australia's food regulator counted <b>197 undeclared-allergen recalls in 2021–2025</b> and names two causes that match this exactly: a supplier changes an ingredient without the change being communicated, and label errors from incorrect translation or reformulation (<a href="https://www.foodstandards.gov.au/food-recalls/recallstats">FSANZ</a>). Two recent U.S. cases:</p>
+  <div class="grid2">
+    <div class="card case"><div class="when">May 2026 · USDA FSIS · Class I recall</div><h3>71,603 lb of frozen dumplings recalled</h3><p>They were made with peanut oil, but peanut was not on the label. Inspectors found it during a routine allergen check.</p><div class="q">Cause given: a formulation change led to the mislabeling.</div><div class="src">Source: <a href="https://www.foodsafetynews.com/2026/05/35-tons-of-frozen-dumplings-recalled-because-of-undeclared-peanut-risk/">Food Safety News</a>, reporting the FSIS notice (Synear Foods USA)</div></div>
+    <div class="card case"><div class="when">February 2025 · FDA</div><h3>Snacks recalled after a customer's allergic reaction</h3><p>Milk, egg and wheat were in the product but not on the label.</p><div class="q">Cause given: the supplier missed the allergens while translating the ingredient list.</div><div class="src">Source: <a href="https://www.fda.gov/safety/recalls-market-withdrawals-safety-alerts/zb-importing-issue-voluntary-recall-and-allergy-alert-undeclared-egg-wheat-and-milk-certain-ulker">FDA recall notice (ZB Importing)</a></div></div>
+  </div>
+</div></section>
+
+<section><div class="wrap">
+  <h2>Why today's tools miss this moment</h2>
+  <p class="sub">The supplier change and the printed label live in different systems.</p>
+  <div class="grid3">
+    <div class="card"><h3>Artwork proofreading tools</h3><p>Compare new artwork against the <b>approved</b> label text. If the approved text itself is out of date because a supplier changed an ingredient, a wrong label still matches and passes.</p></div>
+    <div class="card"><h3>Supplier document platforms</h3><p>Collect and extract supplier specs, usually by uploading them to a cloud platform. Specs and formulas are trade secrets, and the link to each printed label revision is a separate step.</p></div>
+    <div class="card" style="border-color:var(--navy);border-width:2px"><h3>LabelGate</h3><p>Starts from the <b>supplier change</b>, finds <b>every approved label</b> that uses it, and <b>blocks</b> the wrong ones before print. The confidential document is read <b>on the device</b>, with no cloud fallback.</p></div>
+  </div>
+  <p style="margin-top:22px"><a href="/how/#compare">See the full comparison →</a></p>
+</div></section>
+
+<section class="alt"><div class="wrap">
+  <h2>See it in 3 minutes</h2>
+  <p class="sub">The real app, a real Gemini Nano run on a laptop, and the same on-device reading on a real Android phone.</p>
+  <div class="video"><iframe src="https://www.youtube-nocookie.com/embed/Hk8Kiy7bpMY" title="LabelGate demo video" allow="accelerometer; encrypted-media; picture-in-picture" allowfullscreen loading="lazy"></iframe></div>
+</div></section>
+
+<div class="cta-band"><div class="wrap">
+  <h2>Next: how LabelGate solves it</h2>
+  <p>The two gates, who decides what, the hybrid AI design, and every test we ran.</p>
+  <a class="btn yel" href="/how/">How it works →</a>&nbsp;&nbsp;<a class="btn ghost" href="/app/">Open live demo</a>
+</div></div>
+
+<footer><div class="wrap">LabelGate · built for the Firebase #BuildHybridAI 2026 hackathon · <a href="https://github.com/Gosho1992/labelgate">Source code (Apache-2.0)</a> · Synthetic demo data · Decision support, not regulatory approval.</div></footer>
+
+<script type="module">
+const el = document.getElementById("browser");
+(async () => {
+  try {
+    const LM = self.LanguageModel;
+    if (!LM) { el.textContent = "This browser has no built-in Gemini Nano. The demo still runs: type the reading yourself, and public recall notices use the cloud."; el.className = "browser warn"; return; }
+    const a = await LM.availability();
+    const map = { available: ["✓ This browser can run Gemini Nano on this device.", "browser ok"], downloadable: ["Gemini Nano can be downloaded on this device; the demo starts the download.", "browser warn"], downloading: ["Gemini Nano is downloading on this device.", "browser warn"], unavailable: ["Gemini Nano is not available on this device. The demo still runs with a typed reading.", "browser warn"] };
+    const [t, c] = map[a] || [`Gemini Nano status: ${a}`, "browser"]; el.textContent = t; el.className = c;
+  } catch { el.textContent = "Could not check Gemini Nano in this browser. The demo will tell you."; }
+})();
+</script>
 </body>
 </html>

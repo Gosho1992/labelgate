@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>How LabelGate works — two gates, on-device AI, and every test we ran</title>
+  <link rel="stylesheet" href="/src/site.css" />
+</head>
+<body>
+<nav class="top"><div class="wrap">
+  <a class="logo" href="/">Label<span>Gate</span></a>
+  <a class="l" href="/">The problem</a>
+  <a class="l on" href="/how/">How it works</a>
+  <a class="l" href="#evidence">Tests &amp; evidence</a>
+  <a class="l" href="https://github.com/Gosho1992/labelgate">GitHub</a>
+  <a class="btn yel sm" href="/app/">Open live demo →</a>
+</div></nav>
+
+<header class="hero"><div class="wrap">
+  <span class="kicker">HOW IT WORKS</span>
+  <h1>One supplier change. <em>Every affected label checked.</em> Nothing uploaded.</h1>
+  <p class="lead">Gemini Nano reads the documents on the device. Fixed rules decide. A named QA reviewer confirms every reading and signs off every new artwork. Every decision is recorded in a log that detects later edits.</p>
+  <div class="ctas"><a class="btn yel" href="/app/">▶ Open the live demo</a><a class="btn ghost" href="#evidence">See the 20 tests</a></div>
+</div></header>
+
+<section><div class="wrap">
+  <h2>The workflow: two gates before print</h2>
+  <p class="sub">Example from the demo: a seasoning supplier sends a new Spanish spec. A "natural flavour" now carries milk. Three products use that seasoning.</p>
+  <div class="flow">
+    <div class="step"><b>Supplier change arrives</b><small>A photographed or scanned spec sheet, in English, Spanish or Japanese.</small></div>
+    <div class="step"><b>Gate 1: read on device</b><small>Gemini Nano reads the photo through Firebase AI Logic <code>ONLY_ON_DEVICE</code>. The text streams in as it is read.</small></div>
+    <div class="step"><b>A person confirms</b><small>A named QA reviewer checks the reading against the photo and corrects it if needed.</small></div>
+    <div class="step"><b>Impact in milliseconds</b><small>Fixed rules re-check every product label that uses the ingredient: <span class="pill r">PRINT BLOCKED</span> <span class="pill y">NEEDS REVIEW</span> <span class="pill">CHECKS CLEAR</span></small></div>
+    <div class="step"><b>Gate 2: new artwork</b><small>The corrected artwork is read on device, checked with neutral A/B questions, and QA signs off that exact revision.</small></div>
+  </div>
+  <p style="margin-top:18px">Demo result: <b>"Supplier added Milk → 2 labels PRINT BLOCKED · 1 clear"</b>, in 6–13 ms after the reading was confirmed.</p>
+</div></section>
+
+<section class="alt"><div class="wrap">
+  <h2>Who decides what</h2>
+  <p class="sub">AI is good at reading messy photos in other languages. It is not trusted to make a safety decision.</p>
+  <div class="who">
+    <div class="card ai"><h3>Gemini Nano reads</h3><p>It turns the supplier photo and the label artwork into text, on the device. It never decides whether a label is safe.</p></div>
+    <div class="card rules"><h3>Fixed rules decide</h3><p>A deterministic check of 9 major U.S. allergens, matched in the original language too (leche, soja, 乳, 大豆, 小麦). "May contain" never counts as a declaration.</p></div>
+    <div class="card person"><h3>A person confirms</h3><p>A named reviewer confirms every reading and signs off every artwork revision. A clear result is decision support, not regulatory approval.</p></div>
+  </div>
+</div></section>
+
+<section><div class="wrap">
+  <h2>Hybrid AI with a privacy boundary</h2>
+  <p class="sub">Firebase AI Logic chooses where the model runs. LabelGate chooses the mode by how sensitive the data is.</p>
+  <div class="lanes">
+    <div class="lane p"><h3>Private: supplier specs, label artwork, formulas</h3><p><code>InferenceMode.ONLY_ON_DEVICE</code> with image input. A privacy guard checks <code>inferenceSource</code> on every streamed chunk and on the final answer, and the app lists every outside request made during the read. Without Gemini Nano the read stops and the reviewer types the reading. <b>No cloud fallback.</b></p></div>
+    <div class="lane h"><h3>Public: recall notices</h3><p><code>InferenceMode.PREFER_ON_DEVICE</code> with a JSON response schema. Gemini Nano when available; otherwise <code>gemini-3.5-flash-lite</code> in the cloud, protected by Firebase App Check (reCAPTCHA Enterprise). The notice is then matched to your own formulas locally.</p></div>
+  </div>
+  <p style="margin-top:18px">Also: the model is warmed up when the page opens (cold start ≈ 38 s → warm ≈ 2 s), and every AI call is logged with where it ran, how long it took and the bytes sent to the cloud.</p>
+</div></section>
+
+<section class="alt"><div class="wrap">
+  <h2>Every feature</h2>
+  <div class="grid3">
+    <div class="card"><h3>Reading</h3><ul class="clean"><li>On-device reading of photographed specs and label artwork</li><li>English, Spanish and Japanese</li><li>Live streaming text</li><li>Empty reading retried once, then blocked</li><li>Placeholders ("Otros: no aplica") and mixed-alphabet words flagged</li></ul></div>
+    <div class="card"><h3>Rules</h3><ul class="clean"><li>9 major U.S. allergens, deterministic</li><li>Original-language allergen words</li><li>Look-alikes excluded (coconut milk, 乳化剤)</li><li>Facility and shared-line wording is not an ingredient</li><li>"Contains" lines found by a rule, not the model</li></ul></div>
+    <div class="card"><h3>Impact</h3><ul class="clean"><li>Supplier Change Impact Card with a one-line verdict</li><li>Exact wording that changed and where it is on the spec</li><li>Every affected label re-checked in milliseconds</li><li>Next action for each label</li></ul></div>
+    <div class="card"><h3>Review &amp; sign-off</h3><ul class="clean"><li>Neutral A/B questions, random order, nothing pre-selected</li><li>"I can't tell" sends the label to review</li><li>Sign-off tied to the artwork's SHA-256 fingerprint</li><li>Unchanged labels re-approved for the new supplier revision</li></ul></div>
+    <div class="card"><h3>Audit</h3><ul class="clean"><li>Hash-chained log of every decision</li><li>"Test tamper detection" button</li><li>Export as JSON or CSV</li><li>Verified label library with reviewer, date and supplier revision</li></ul></div>
+    <div class="card"><h3>Hybrid &amp; platform</h3><ul class="clean"><li>Public recall notices: on device or cloud fallback</li><li>Privacy evidence after every private read</li><li>Works offline once the page is open</li><li>Guided 2-minute demo; "type it myself" mode without Nano</li><li>Android: the same on-device reading on a real Galaxy S26</li></ul></div>
+  </div>
+</div></section>
+
+<section id="compare"><div class="wrap">
+  <h2>How LabelGate compares</h2>
+  <p class="sub">From the vendors' own public product pages (November 2026). We have not tested these products; this is what each says it does.</p>
+  <table>
+    <tr><th>Type of tool</th><th>Examples</th><th>What it does (vendor description)</th><th>What LabelGate adds</th></tr>
+    <tr><td><b>Artwork proofreading &amp; label compliance</b></td><td>GlobalVision, Esko Comply, GoVisually, Artwork Flow</td><td>Compare artwork with the approved master text, and check artwork against rulebooks (allergen statements, font sizes, nutrition panels).</td><td>Starts from the <b>supplier change</b>: when the approved text itself is out of date, LabelGate finds it, so a wrong label cannot pass by matching an outdated master.</td></tr>
+    <tr><td><b>Supplier document &amp; spec management</b></td><td>TraceGains, Trustwell (FoodLogiQ + Genesis Foods), NSF TraQtion</td><td>Collect supplier documents and extract data with AI in a cloud platform (TraceGains states it combines its data with an OpenAI model); recalculate allergen declarations for recipes.</td><td>Reads the confidential spec <b>on the device</b> with no cloud fallback, links it to <b>each approved label revision</b>, and <b>blocks print</b> until a person signs off the corrected artwork.</td></tr>
+    <tr><td><b>LabelGate</b></td><td>this project</td><td colspan="2">Supplier change → every affected approved label → PRINT BLOCKED / NEEDS REVIEW / CHECKS CLEAR → A/B review of new artwork → QA sign-off → tamper-evident log. Confidential documents are read on the device; only public recall notices may use the cloud.</td></tr>
+  </table>
+  <p class="src" style="margin-top:10px">Sources: <a href="https://www.globalvision.co/industries/consumer-goods">GlobalVision</a> · <a href="https://www.esko.com/en/products/comply">Esko Comply</a> · <a href="https://govisually.com/industries/food-and-beverage">GoVisually</a> · <a href="https://www.artworkflowhq.com/features/complyai">Artwork Flow</a> · <a href="https://newfoodmagazine.com/?p=249719">TraceGains IDP (New Food)</a> · <a href="https://www.food-safety.com/articles/10065-trustwell-adds-ai-powered-allergen-identification-feature-to-genesis-foods-software">Trustwell Genesis Foods</a> · <a href="https://www.nsf.org/th/en/traqtion/specification-management">NSF TraQtion</a>. LabelGate is a prototype; these are established products with far wider scope.</p>
+</div></section>
+
+<section class="alt" id="evidence"><div class="wrap">
+  <h2>20 tests, including the ones that failed</h2>
+  <p class="sub">Run on a laptop without a dedicated GPU (Chrome 158), an AWS cloud VM and real Samsung phones. Synthetic documents only. Expected outcomes were frozen before the main runs. Full reports are on GitHub.</p>
+  <table>
+    <tr><th>#</th><th>Test</th><th>Result</th></tr>
+    <tr><td>1</td><td><b>Go / no-go:</b> does Gemini Nano run on a CPU-only AWS cloud VM?</td><td class="ok">GO: Nano runs on CPU (slowly). <a href="https://github.com/Gosho1992/labelgate/blob/main/docs/labelgate-PROGRESS-REPORT-2026-11-26.md">report</a></td></tr>
+    <tr><td>2</td><td><b>Held-out benchmark v2</b> (AWS, 20 new text specs × 3 runs): rules vs Nano vs hybrid</td><td class="part">Nano raised recall on unfamiliar wording (0.19 → 0.56) but often named the wrong allergen. <b>Decision: the AI reads, rules decide.</b> <a href="https://github.com/Gosho1992/labelgate/blob/main/bench/results/B2-REPORT-2026-11-25.md">report</a></td></tr>
+    <tr><td>3</td><td><b>Held-out benchmark v3</b>, then the same 60 runs through <b>Firebase AI Logic</b></td><td class="ok">Hybrid found 45/45 allergen ingredients, 0 silent misses. 60/60 Firebase calls OK. <a href="https://github.com/Gosho1992/labelgate/blob/main/bench/results/V3-CHECKPOINT-REPORT-2026-11-26.md">report</a></td></tr>
+    <tr><td>4</td><td><b>Photo reading feasibility</b> (22 photographed specs and labels, <code>ONLY_ON_DEVICE</code>)</td><td class="part">Allergens exactly right on 10/10 specs (EN/ES/JA); 22/22 on device, 0 outside requests. 2 safety failures found and fixed. <a href="https://github.com/Gosho1992/labelgate/blob/main/bench/specproof/SPECPROOF-GO-NOGO-2026-11-26.md">report</a></td></tr>
+    <tr><td>5</td><td><b>Acceptance set A</b> (10 frozen cases)</td><td class="no">Failed: 4/10, every label blocked. Root causes ("plant" wording, placeholders) fixed. <a href="https://github.com/Gosho1992/labelgate/blob/main/bench/acceptance/ACCEPTANCE-REPORT-2026-11-26.md">report</a></td></tr>
+    <tr><td>6</td><td><b>Acceptance set B</b> (6 fresh frozen cases)</td><td class="ok">7/7 as pre-registered; 10/10 reads on device; median 49 s. <a href="https://github.com/Gosho1992/labelgate/blob/main/bench/acceptance/ACCEPTANCE-B-REPORT-2026-11-26.md">report</a></td></tr>
+    <tr><td>7</td><td><b>End-to-end with real Gemini Nano</b></td><td class="ok">Spec read → impact on 3 labels in 6–13 ms → artwork read in 53 s → label LBL-1001@4 signed off.</td></tr>
+    <tr><td>8</td><td><b>Hybrid fallback</b> (public recall notice)</td><td class="ok">With Nano: on device, 43 s. Without Nano: cloud, 2.6 s, App Check OK.</td></tr>
+    <tr><td>9</td><td><b>Offline</b> (Wi-Fi off after the page opened)</td><td class="ok">Spec read on device 67 s; impact 6 ms; recall notice on device 39 s. <a href="https://github.com/Gosho1992/labelgate/blob/main/bench/results/OFFLINE-TEST-2026-11-27.md">report</a></td></tr>
+    <tr><td>10</td><td><b>No Gemini Nano</b> on the device (private document)</td><td class="ok">Read stops; nothing sent to the cloud; reviewer types the reading.</td></tr>
+    <tr><td>11</td><td><b>Privacy evidence</b> on every private read</td><td class="ok"><code>on_device</code> on every chunk; no outside requests during reads.</td></tr>
+    <tr><td>12</td><td><b>Model warm-up</b></td><td class="ok">Cold 23.8 s + 14.2 s → warm 9 ms + 1.6 s.</td></tr>
+    <tr><td>13</td><td><b>Tamper detection</b> on the audit log</td><td class="ok">An edited entry is detected and named.</td></tr>
+    <tr><td>14</td><td><b>AI reviewer stand-in</b> (a different model; not a human)</td><td class="ok">3/3 planted reading errors caught. <a href="https://github.com/Gosho1992/labelgate/blob/main/bench/acceptance/AI-REVIEWER-STANDIN-2026-11-27.md">report</a></td></tr>
+    <tr><td>15</td><td><b>Human blind test 1</b> (2 people, tick-box design)</td><td class="no">0/6 planted errors caught: people ticked to move on. Design replaced. <a href="https://github.com/Gosho1992/labelgate/blob/main/bench/reviewer-test/HUMAN-TEST-1-REPORT-2026-11-27.md">report</a></td></tr>
+    <tr><td>16</td><td><b>Human blind test 2</b> (new person, A/B questions)</td><td class="ok">3/3 planted errors caught; 1 real change wrongly rejected. <a href="https://github.com/Gosho1992/labelgate/blob/main/bench/reviewer-test/HUMAN-TEST-2-REPORT-2026-11-27.md">report</a></td></tr>
+    <tr><td>17</td><td><b>Independent comprehension review</b> of the Impact Card (in progress)</td><td class="part">First reviewer: 4/5 correct, rated 5/5; the one unclear term ("CHECKS CLEAR") is now explained on the card. <a href="https://github.com/Gosho1992/labelgate/blob/main/bench/expert/EXPERT-REVIEW-2026-11-27.md">report</a></td></tr>
+    <tr><td>18</td><td><b>Reading errors seen live</b> while filming</td><td class="part">Nano mixed Cyrillic letters into one word; the reviewer caught it. A new rule now flags mixed-alphabet words.</td></tr>
+    <tr><td>19</td><td><b>Android on real phones</b> (Samsung Remote Test Lab)</td><td class="ok">Galaxy S26: full Spanish spec read on the phone in 12.2 s, same result as Chrome, 0 bytes sent by the app. S25 / S26+ without Nano: stopped safely. <a href="https://github.com/Gosho1992/labelgate/blob/main/bench/android/ANDROID-NANO-CHECK-2026-11-27.md">report</a></td></tr>
+    <tr><td>20</td><td><b>Automated tests</b> (rules, languages, retry, audit chain, hybrid wiring, full UI flow)</td><td class="ok">151 passing</td></tr>
+  </table>
+</div></section>
+
+<section><div class="wrap">
+  <h2>How we built it</h2>
+  <div class="timeline">
+    <div class="t"><div class="d">Nov 25 · Does Nano run at all?</div>Gemini Nano tested on a CPU-only AWS Windows VM, then benchmarked on held-out cases against a rules-only baseline. Finding: Nano reads unfamiliar wording well but cannot be trusted to classify, so it became the reader, not the judge.</div>
+    <div class="t"><div class="d">Nov 26 · The real Firebase path</div>Firebase AI Logic, App Check and Hosting connected; the same benchmark through Firebase AI Logic (60/60). Photo reading proven on the laptop: 22/22 on device. Acceptance set A failed, root causes fixed; fresh set B passed 7/7.</div>
+    <div class="t"><div class="d">Nov 27 · People, offline, Android</div>Two human blind tests (the first failed and forced a redesign), offline test, live reading glitch turned into a rule, Android reading on a real Galaxy S26 via Samsung Remote Test Lab, independent comprehension reviews.</div>
+  </div>
+</div></section>
+
+<section class="alt"><div class="wrap">
+  <h2>Platforms, users and honest limits</h2>
+  <div class="grid2">
+    <div class="card"><h3>Platforms</h3><ul class="clean"><li><b>Desktop Chrome:</b> the full product, live now.</li><li><b>Android:</b> the private on-device reading already runs on a real Galaxy S26 through Firebase AI Logic. Next: the full workflow in the Android app.</li></ul><h3 style="margin-top:14px">Users</h3><p>No public users yet. People tested it in blind reviewer tests and comprehension reviews. Next: a pilot with a real food manufacturer's QA team.</p></div>
+    <div class="card"><h3>Limits we state openly</h3><ul class="clean"><li>On-device reads take 30–90 s on a laptop without a GPU (one read per supplier change).</li><li>Small, synthetic test sets; few human testers.</li><li>Nano can misspell; that is why a person confirms every reading.</li><li>Simplified U.S. allergen rules; single user, browser storage.</li></ul></div>
+  </div>
+</div></section>
+
+<div class="cta-band"><div class="wrap">
+  <h2>Try it yourself</h2>
+  <p>Desktop Chrome with Gemini Nano gives the full on-device experience. The guided demo takes about 2 minutes plus reading time.</p>
+  <a class="btn yel" href="/app/">▶ Open the live demo</a>&nbsp;&nbsp;<a class="btn ghost" href="https://github.com/Gosho1992/labelgate">Source code &amp; reports</a>
+</div></div>
+
+<footer><div class="wrap">LabelGate · Firebase #BuildHybridAI 2026 · <a href="https://github.com/Gosho1992/labelgate">GitHub (Apache-2.0)</a> · <a href="https://youtu.be/Hk8Kiy7bpMY">Demo video</a> · Synthetic demo data · Decision support, not regulatory approval.</div></footer>
+</body>
+</html>

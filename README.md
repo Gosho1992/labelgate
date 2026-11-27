@@ -1,135 +1,275 @@
 # LabelGate
 
-**A supplier quietly changes an ingredient. Three products use it. Two of their approved labels no longer declare milk. LabelGate catches that before the labels are printed.**
+### Catch a supplier ingredient change before the wrong allergen label is printed.
 
-Gemini Nano reads the supplier's photographed spec (English, Spanish or Japanese) **on the device**, because supplier specs and formulas are confidential. Fixed rules then check every affected label against a verified label library in milliseconds. A named QA reviewer confirms each reading and signs off each new artwork.
+A supplier quietly changes an ingredient. Three of your products use it. Two of their approved labels no longer declare milk. **LabelGate finds every affected label and blocks the wrong ones before print.** Gemini Nano reads the confidential supplier document **on the device** through **Firebase AI Logic**, so it is never uploaded. Fixed rules decide, and a named QA reviewer confirms every reading and signs off every new artwork.
 
-Built for the Google / Firebase **#BuildHybridAI** hackathon (Web / Chrome). **All companies, products and documents in this repository are synthetic.** LabelGate is a prototype for decision support; it is not a regulatory compliance certification.
+| | |
+|---|---|
+| **Live app** | https://protean-booth-470411-r7.web.app (problem → how it works → live demo) |
+| **Live demo directly** | https://protean-booth-470411-r7.web.app/app/ |
+| **Demo video (3 min)** | https://youtu.be/Hk8Kiy7bpMY |
+| **Hackathon** | Google / Firebase **#BuildHybridAI 2026**, Web / Chrome |
+| **License** | Apache-2.0 |
 
-**Live app:** https://protean-booth-470411-r7.web.app
+![Supplier Change Impact Card: Supplier added milk, 2 labels PRINT BLOCKED, 1 clear](docs/gallery/01.jpg)
 
-## Why this matters
-Undeclared allergens are one of the main reasons food is recalled. Food Standards Australia New Zealand (FSANZ) counts **197 undeclared-allergen recalls in Australia in 2021–2025**, and **57% of all recalls in 2024** ([FSANZ food recall statistics](https://www.foodstandards.gov.au/food-recalls/recallstats), page updated 30 April 2026). Two of the root causes it names are exactly this workflow:
-- a supplier changes an ingredient and the change is not communicated;
-- a label error from incorrect translation or reformulation of ingredients.
+> All companies, products and documents in this repository are synthetic. LabelGate is a prototype for decision support; it is not a regulatory approval.
 
-## Try it in 2 minutes
-Open the live app in **Chrome on a desktop** (Chrome 148 or later, with Gemini Nano available on the device) and click **▶ Start the 2-minute demo**. A guide bar takes you through it one step at a time, highlighting the button to press. The same steps in writing:
-1. **Gate 1:** click **Use demo document**. A photographed Spanish supplier spec is read on your device; the text appears as it streams. Check the reading against the photo and click **Confirm this reading**. The impact table shows which of the three products are now **PRINT BLOCKED**, with the evidence.
-3. **Gate 2:** pick a blocked product, click **Use demo document** for its corrected artwork, answer the "which wording is printed?" questions by looking at the image, confirm, then sign off. A new verified label record is created.
-3. **Recall notices tab:** read a public recall notice with hybrid inference (on device, or cloud fallback), then match it against your private formulas locally.
+---
 
-The page tells you if your device cannot run Gemini Nano. Without it you can still type a reading yourself (clearly marked "no AI") and the recall notice falls back to the cloud.
+## Contents
+1. [The problem](#1-the-problem)
+2. [What LabelGate does](#2-what-labelgate-does)
+3. [Try it (for judges)](#3-try-it-for-judges)
+4. [How Firebase AI Logic is used](#4-how-firebase-ai-logic-is-used)
+5. [Who decides what: the safety design](#5-who-decides-what-the-safety-design)
+6. [Every feature](#6-every-feature)
+7. [How LabelGate compares](#7-how-labelgate-compares)
+8. [20 tests, including the ones that failed](#8-20-tests-including-the-ones-that-failed)
+9. [How we built it](#9-how-we-built-it)
+10. [Android: the private reading already runs on a real phone](#10-android-the-private-reading-already-runs-on-a-real-phone)
+11. [Users, testers and limits](#11-users-testers-and-limits)
+12. [Run it locally](#12-run-it-locally)
+13. [Architecture and repository map](#13-architecture-and-repository-map)
+14. [Built during the submission period](#14-built-during-the-submission-period)
 
-## How Firebase AI Logic is used (hybrid by data class)
+---
 
-| Data | Example | Firebase AI Logic mode | Why |
-|---|---|---|---|
-| **Private** document images | supplier spec photo, label artwork | `InferenceMode.ONLY_ON_DEVICE`: image + text, `en/es/ja` | Trade secrets. No cloud fallback. The answer is **rejected** unless `inferenceSource` is `on_device` on every streamed chunk and on the final response. |
-| **Private** text specs | spec text in the second tab | `InferenceMode.ONLY_ON_DEVICE` | Same rule |
-| **Public** recall notices | a published recall | `InferenceMode.PREFER_ON_DEVICE`: Gemini Nano if available, otherwise `gemini-3.5-flash-lite` in the cloud | Nothing confidential, so the hybrid fallback is safe. The badge shows where it ran (`on_device` / `in_cloud`). |
+## 1. The problem
 
-- **App Check** (reCAPTCHA Enterprise) protects the cloud path.
-- When the page opens, the app **warms up** Gemini Nano with a fixed one-word prompt. No document content is used.
-- After each private read, the app shows **privacy evidence**: `inferenceSource` for every chunk, plus every request the page made to another server during the read (Resource Timing API).
+A missing allergen on a label is not a typo. For a person with a food allergy it can mean the emergency room; for the manufacturer, a recall.
 
-Measured results:
-- **Hybrid fallback:**
-  - Chrome with Nano: `on_device`.
-  - The Claude desktop app's built-in browser, which has the Prompt API but `unavailable` Nano: `in_cloud` in 2.6 s, App Check OK.
-- **Privacy evidence during reads:** no outside requests. When there were any, they were only App Check / reCAPTCHA. The page cannot see request bodies; it shows which servers were contacted.
-
-## Safety design: the AI reads, rules decide, a person confirms
-- **Gemini Nano only transcribes.** It never decides whether a label is safe.
-- **Fixed rules decide.** Simplified US major-allergen check, 9 allergens. An allergen counts as declared by its common name in the ingredient list, or by a complete "Contains" statement. "May contain" never counts as a declaration.
-
-  Allergen words are matched in the **original language** too (leche, soja, 乳, 大豆, 小麦…), so a wrong English translation does not hide an allergen. Look-alikes are excluded (leche de coco, 乳化剤).
-- **Nothing is decided on an unconfirmed reading.**
-  - An empty reading is retried once, then blocks confirmation.
-  - Placeholders ("Otros: no aplica"), "Contains" lines inside the ingredient field, and "may contain" lines are flagged for the reviewer.
-  - Facility / shared-equipment wording is not treated as an ingredient.
-- **Differences become questions, not tick boxes.** Before an artwork reading can be confirmed, every place where the AI reading differs from the approved label becomes a neutral question: "Which one does the artwork image say?" Both answers (the approved wording and the AI's wording) are shown in random order, styled identically, trimmed to the part that differs, and nothing is pre-selected. "I can't tell from the artwork image" sends the artwork to NEEDS REVIEW. The reviewer's answer, not the AI, decides the confirmed text.
-
-  This replaced tick boxes after a human test in which 2 of 2 testers ticked through 6 of 6 planted errors (see Evidence).
-- **Three outcomes, never "approved by AI":**
-  - `PRINT BLOCKED`;
-  - `NEEDS REVIEW`;
-  - `CHECKS CLEAR — AWAITING QA SIGN-OFF`.
-- **Verified label library:** each record holds the label text, the artwork's SHA-256, the reviewer, the date, and the supplier revision its approval was based on. A supplier change invalidates the old approval. An unchanged label can be re-approved for the new revision (tied to its fingerprint). New artwork always goes through Gate 2.
-- **Tamper-evident review log.** Every decision stores the SHA-256 of its content and of the previous entry, so editing, deleting or reordering an entry is detected. It can be exported as JSON or CSV. This is hash-linked, **not digitally signed**, and it lives in the browser.
-
-## Evidence (honest scope)
-All numbers come from Zain's laptop: Chrome 158, Intel integrated GPU, no dedicated GPU.
-
-| What | Result | Where |
+| | Fact | Source |
 |---|---|---|
-| Acceptance set B: 6 fresh synthetic cases (facility wording, ES placeholder, correct label, missing soy from a JA spec, ES whey/soy without a statement, deliberately wrong transcription). Expected outcomes and image hashes frozen before the run. | 7/7 checks as pre-registered. 10/10 on-device reads, all `on_device`. Median 49 s per document (29–93 s). | [`bench/acceptance/ACCEPTANCE-B-REPORT-2026-11-26.md`](bench/acceptance/ACCEPTANCE-B-REPORT-2026-11-26.md) |
-| Impact check of all affected labels after one confirmed supplier reading | 8–13 ms (fixed rules, no AI) | live runs |
-| Model load | cold 23.8 s + 14.2 s first prompt; warm 9 ms + 1.6 s (hence the warm-up) | [`bench/results/UPDATE-2026-11-26-evening.md`](bench/results/UPDATE-2026-11-26-evening.md) |
-| Recall notice, hybrid | on device 43 s (warm); cloud fallback 2.6 s | this README |
-| AI reviewer stand-in (**not a human test**): a different model checked the 4 blind-test readings against the image | 3/3 planted errors caught, 1/1 correct reading accepted | [`bench/acceptance/AI-REVIEWER-STANDIN-2026-11-27.md`](bench/acceptance/AI-REVIEWER-STANDIN-2026-11-27.md) |
-| **Human blind test 1** (2 people, tick-box design) | **0/6 planted errors caught**, 2/2 correct readings accepted. They ticked to move on. The design was replaced by A/B questions. | [`bench/reviewer-test/HUMAN-TEST-1-REPORT-2026-11-27.md`](bench/reviewer-test/HUMAN-TEST-1-REPORT-2026-11-27.md) |
-| **Human blind test 2** (1 new person, A/B questions) | **3/3 planted errors caught**, 5/6 answers correct. In the control round (milk really added) one real change was wrongly rejected. One person: a usability observation, not proof. | [`bench/reviewer-test/HUMAN-TEST-2-REPORT-2026-11-27.md`](bench/reviewer-test/HUMAN-TEST-2-REPORT-2026-11-27.md) |
-| **Live reading glitches seen while filming the demo (27 Nov)** | Gemini Nano wrote "MALTODEXTRIN" as `MALTOДЕКТРИН` (with Cyrillic letters) in one read and as `MACTODEXTRIN` in the next. The A/B question showed the reviewer the misspelled wording, and the reviewer corrected it before confirming. A new check now flags any word that mixes alphabets as a reading problem that must be resolved. | [`bench/results/proof-evidence/nano-mixed-script-glitch-2026-11-27.png`](bench/results/proof-evidence/nano-mixed-script-glitch-2026-11-27.png), `test/mixed-script.test.js` |
-| **No Gemini Nano on the device** (private document) | The read **stops**: "On-device AI is not available here — type the reading instead". **No outside requests**; no cloud fallback for private documents. | tested in a browser with Nano unavailable |
-| **Offline** (Wi-Fi off after the page was open) | Spec read on device 67 s (`on_device`, no outside requests); impact 6 ms; public recall on device 39 s | [`bench/results/OFFLINE-TEST-2026-11-27.md`](bench/results/OFFLINE-TEST-2026-11-27.md) |
-| Automated tests (rules, original-language matching, retry, audit chain, hybrid wiring, UI flow) | 151 passing | `npm test` |
-| **Android: on-device reading on a real phone** (native Kotlin, Firebase AI Logic `ONLY_ON_DEVICE`, real Samsung phones via Samsung Remote Test Lab) | **Galaxy S26, Android 16:** Gemini Nano (`nano-v3`) read the same spec photos **on the phone** (`ON_DEVICE`) with **0 bytes sent**. The full Spanish reading took 12.2 s and matches the Chrome reading word for word. **Galaxy S25 and S26+ lab units:** Nano unavailable (AICore missing), so the read stopped and nothing was sent to the cloud. | [`bench/android/ANDROID-NANO-CHECK-2026-11-27.md`](bench/android/ANDROID-NANO-CHECK-2026-11-27.md) |
+| **Danger** | Every 10 seconds in the U.S., a food allergy reaction sends someone to the emergency room. 33 million Americans live with food allergy. | [FARE](https://www.foodallergy.org/media-room/fare-announces-support-american-center-cures) |
+| **Frequency** | Undeclared allergens were the **#1 reason for U.S. food recalls in 2025: 38.8%** of 320 recalls. Milk was the most common undeclared allergen. | U.S. PIRG Education Fund, *Food for Thought 2026*, via [Statista](https://www.statista.com/chart/36281/fda-and-usda-food-recalls-in-the-united-states/) and [PIRG](https://pirg.org/edfund/media-center/report-fda-did-not-identify-product-to-recall-in-60-of-food-related-illness-outbreaks-in-2025/) |
+| **Cost** | About **$10 million** in direct costs for an average recall, before lost sales and brand damage. | GMA / FMI / GS1 US study (2010), via [Food Dive](https://www.fooddive.com/news/more-than-money-what-a-recall-truly-costs/426855/) |
+| **Root cause** | Australia's regulator counted **197 undeclared-allergen recalls in 2021–2025**. Among the causes it names: a supplier changes an ingredient and the change is not communicated, and label errors from incorrect translation or reformulation. | [FSANZ recall statistics](https://www.foodstandards.gov.au/food-recalls/recallstats) |
 
-## Android: the private reading step already runs on a real phone
-The full LabelGate workflow runs in Chrome today. To prove that its most sensitive step, reading a confidential supplier spec photo with no cloud fallback, also works on Android, we built a native app in [`android-experimental/`](android-experimental/). It uses the same Firebase AI Logic API (`InferenceMode.ONLY_ON_DEVICE`) and the same prompt. We ran it on real Samsung phones through Samsung Remote Test Lab.
+Two recent cases show the exact pattern LabelGate targets:
+- **May 2026, USDA FSIS, Class I:** 71,603 lb of frozen dumplings recalled; made with peanut oil, peanut not on the label. The company said a formulation change led to the mislabeling ([Food Safety News](https://www.foodsafetynews.com/2026/05/35-tons-of-frozen-dumplings-recalled-because-of-undeclared-peanut-risk/)).
+- **February 2025, FDA:** snacks recalled after a customer's allergic reaction; milk, egg and wheat undeclared because the supplier missed them while translating the ingredient list ([FDA notice](https://www.fda.gov/safety/recalls-market-withdrawals-safety-alerts/zb-importing-issue-voluntary-recall-and-allergy-alert-undeclared-egg-wheat-and-milk-certain-ulker)).
 
-| Phone | Gemini Nano | Private photo read | Sent to the cloud |
+**Why it slips through:** the supplier document and the printed label live in different systems. Supplier specs arrive as photos or scans, sometimes in another language, and they are confidential, so teams are reluctant to upload them to cloud AI. Artwork proofreading compares new artwork with the *approved* text, so when the approved text itself is out of date, a wrong label still passes.
+
+## 2. What LabelGate does
+
+```
+Supplier spec photo (EN/ES/JA)
+        │  Gate 1 — Gemini Nano reads it ON THE DEVICE (Firebase AI Logic ONLY_ON_DEVICE)
+        ▼
+QA reviewer confirms the reading against the photo
+        │  fixed rules, no AI, ~10 ms
+        ▼
+Supplier Change Impact Card ── every label that uses the ingredient:
+        PRINT BLOCKED · NEEDS REVIEW · CHECKS CLEAR (awaiting sign-off)
+        │  Gate 2 — corrected artwork read on device, neutral A/B questions
+        ▼
+QA signs off that exact artwork revision (SHA-256) → new verified label record
+        │
+        ▼
+Hash-chained audit log (tamper test, JSON/CSV export)
+
+Public recall notices → hybrid (PREFER_ON_DEVICE, cloud fallback) → matched to your formulas locally
+```
+
+Demo result with real Gemini Nano: **"Supplier added Milk → 2 labels PRINT BLOCKED · 1 clear"**, computed in 6–13 ms after the reading was confirmed.
+
+## 3. Try it (for judges)
+
+1. Open **https://protean-booth-470411-r7.web.app** in **desktop Chrome**. The first page checks whether your browser can run Gemini Nano. Click **Open the live demo**.
+2. Click **▶ Start the 2-minute demo**. A yellow guide bar shows which button to press at each step:
+   - **Gate 1:** read the Spanish supplier spec on device, check it against the photo, **Confirm this reading**. The Impact Card shows 2 labels PRINT BLOCKED, 1 clear.
+   - **Gate 2:** open a blocked label, read the corrected artwork, answer the "which wording is printed?" questions, confirm, sign off.
+   - **Review history:** see the hash-chained log; click **Test tamper detection**.
+3. **Recall notices & text specs** tab: read a public recall notice with hybrid inference and match it to the formulas locally.
+4. **Reset demo** (in Review history) restores the starting state.
+
+**Requirements for on-device AI:** Chrome 148 or later on desktop, Gemini Nano available (16 GB RAM or a GPU with more than 4 GB VRAM, 22 GB free disk). On a laptop without a GPU each document read takes 30–90 s; the text streams in as it is read.
+**Without Gemini Nano:** private documents are never sent to the cloud. Use **Type it myself (no AI)** to try every rule check; the recall notice uses the cloud fallback. No login needed.
+
+## 4. How Firebase AI Logic is used
+
+LabelGate chooses the inference mode **by how sensitive the data is** (`firebase` JS SDK 13.4, `firebase/ai`). All of it is in [`src/ai/firebase.js`](src/ai/firebase.js).
+
+| Data | Example | Mode | Model | Why |
+|---|---|---|---|---|
+| **Private** document images | supplier spec photo, label artwork | `InferenceMode.ONLY_ON_DEVICE`, image + text, `en/es/ja`, JSON response constraint | Gemini Nano | Trade secrets. No cloud fallback. |
+| **Private** text specs | spec text (second tab) | `InferenceMode.ONLY_ON_DEVICE` | Gemini Nano | Same rule |
+| **Public** recall notices | a published recall | `InferenceMode.PREFER_ON_DEVICE`, JSON schema on both paths | Gemini Nano, else `gemini-3.5-flash-lite` in the cloud | Nothing confidential, so hybrid is safe |
+
+The private path, with its privacy guard (from `src/ai/firebase.js`):
+
+```js
+const model = getGenerativeModel(ai, {
+  mode: InferenceMode.ONLY_ON_DEVICE,
+  onDeviceParams: { createOptions: DOC_CREATE, promptOptions: { responseConstraint: schema } },
+});
+const result = await model.generateContentStream([prompt, { inlineData: image }]);
+for await (const chunk of result.stream) {
+  if (chunk.inferenceSource && chunk.inferenceSource !== InferenceSource.ON_DEVICE)
+    throw new Error(`privacy guard: inferenceSource was "${chunk.inferenceSource}"`);
+  ...
+}
+```
+
+The public, hybrid path:
+
+```js
+getGenerativeModel(ai, {
+  mode: InferenceMode.PREFER_ON_DEVICE,
+  onDeviceParams: { promptOptions: { responseConstraint: RECALL_SCHEMA } },
+  inCloudParams: { model: "gemini-3.5-flash-lite",
+    generationConfig: { responseMimeType: "application/json", responseSchema: RECALL_SCHEMA } },
+});
+```
+
+Also:
+- **App Check** (reCAPTCHA Enterprise) protects the cloud path.
+- **Warm-up:** when the page opens, Gemini Nano is loaded with a fixed one-word prompt (no document content). Cold start ≈ 38 s → warm ≈ 2 s.
+- **Privacy evidence after every private read:** `inferenceSource` of every chunk plus every request the page made to another server during the read (Resource Timing API).
+- **AI call log:** where each call ran (`on_device` / `in_cloud`), how long it took, and bytes sent to the cloud.
+
+## 5. Who decides what: the safety design
+
+| Gemini Nano **reads** | Fixed rules **decide** | A person **confirms** |
+|---|---|---|
+| Turns photos and artwork into text, on the device. Never decides whether a label is safe. | Deterministic check of 9 major U.S. allergens ([`src/proof/rules.js`](src/proof/rules.js)). | A named reviewer confirms every reading and signs off every artwork revision. |
+
+- **Original-language matching.** Allergen words are matched in Spanish and Japanese too (leche, soja, 乳, 大豆, 小麦…), so a wrong English translation cannot hide an allergen. Look-alikes are excluded (leche de coco, 乳化剤).
+- **What counts as declared.** An allergen counts as declared by its common name in the ingredient list, or by a complete "Contains" statement. "May contain" never counts. Facility or shared-line wording is never an ingredient.
+- **The "Contains" line is found by a rule in the full reading**, not only in the model's field (this fixed a real failure, see test 4).
+- **Nothing is decided on an unconfirmed reading.** An empty reading is retried once, then blocks confirmation. Placeholders ("Otros: no aplica"), mixed-alphabet words (`MALTOДЕКТРИН`) and moved "Contains" / "may contain" lines are flagged for the reviewer.
+- **Differences become questions, not tick boxes.** Every place where the AI reading of new artwork differs from the approved label becomes a neutral question: "Which one does the artwork image say?" Both answers are shown in random order, styled the same, with nothing pre-selected. "I can't tell" sends the label to NEEDS REVIEW. This replaced tick boxes after a human test where 2 of 2 testers ticked through 6 of 6 planted errors (test 15).
+- **Three outcomes, never "approved by AI":** `PRINT BLOCKED`, `NEEDS REVIEW`, `CHECKS CLEAR — AWAITING QA SIGN-OFF`.
+- **Verified label library.** Each record holds the label text, the artwork's SHA-256, the reviewer, the date and the supplier revision it was approved against. A supplier change invalidates the old approval. An unchanged label can be re-approved for the new revision; new artwork always goes through Gate 2.
+- **Tamper-evident log.** Every decision stores the SHA-256 of its content and of the previous entry, so editing, deleting or reordering an entry is detected. Hash-linked, not digitally signed; stored in the browser.
+
+## 6. Every feature
+
+| Area | Features |
+|---|---|
+| **Reading** | On-device reading of photographed specs and label artwork · English, Spanish, Japanese · live streaming text · empty-reading retry · placeholder and mixed-alphabet detection |
+| **Rules** | 9 major U.S. allergens · original-language allergen words · look-alike exclusions · facility / shared-line wording handled · "Contains" and "may contain" found by rule |
+| **Impact** | Supplier Change Impact Card with a one-line verdict · exact wording that changed and its location on the spec · every affected label re-checked in milliseconds · next action per label · who-decides-what note |
+| **Review & sign-off** | Neutral A/B questions · "I can't tell" route to review · sign-off tied to the artwork fingerprint · re-approval of unchanged labels |
+| **Audit** | Hash-chained log · **Test tamper detection** button · JSON / CSV export · verified label library |
+| **Hybrid & platform** | Public recall notices on device or in the cloud · local matching to formulas · privacy evidence on every read · AI call log · model warm-up · works offline once open · guided 2-minute demo · "type it myself" mode without Nano · browser check on the landing page |
+| **Android** | Native Kotlin app reading the same spec photos with Firebase AI Logic `ONLY_ON_DEVICE` on a real Galaxy S26 |
+
+## 7. How LabelGate compares
+
+Based on the vendors' own public product pages (November 2026). We have not tested these products; they are established tools with far wider scope than this prototype.
+
+| Type of tool | Examples | What it does (vendor description) | What LabelGate adds |
 |---|---|---|---|
-| Galaxy S26, Android 16 | available after a 4.2 GB model download | on the phone; full Spanish reading in 12.2 s, identical to the Chrome reading | 0 bytes |
-| Galaxy S25 (one lab unit), Android 16 | not available (AICore missing or too old) | stopped with an error | nothing (no cloud fallback) |
-| Galaxy S26+ (US model, one lab unit) | not available (AICore missing or too old) | stopped with an error | nothing (no cloud fallback) |
+| Artwork proofreading & label compliance | [GlobalVision](https://www.globalvision.co/industries/consumer-goods), [Esko Comply](https://www.esko.com/en/products/comply), [GoVisually](https://govisually.com/industries/food-and-beverage), [Artwork Flow](https://www.artworkflowhq.com/features/complyai) | Compare artwork with the approved master text; check artwork against rulebooks (allergen statements, font sizes, nutrition panels). | Starts from the **supplier change**. When the approved text itself is out of date, LabelGate finds it, so a wrong label cannot pass by matching an outdated master. |
+| Supplier document & spec management | [TraceGains](https://newfoodmagazine.com/?p=249719), [Trustwell](https://www.food-safety.com/articles/10065-trustwell-adds-ai-powered-allergen-identification-feature-to-genesis-foods-software), [NSF TraQtion](https://www.nsf.org/th/en/traqtion/specification-management) | Collect supplier documents and extract data with AI in a cloud platform (TraceGains states it combines its data with an OpenAI model); recalculate allergen declarations for recipes. | Reads the confidential spec **on the device** with no cloud fallback, links it to **each approved label revision**, and **blocks print** until a person signs off the corrected artwork. |
 
-What this shows: the private reading step runs on Android through Firebase AI Logic. Whether it can run depends on the individual phone, not just the phone model.
+## 8. 20 tests, including the ones that failed
 
-What's next: bringing the impact card, artwork check, sign-off and audit log to the Android app. Today they run in the web app; the on-device reading they depend on already works on the phone.
+Hardware: Zain's laptop (Chrome 158, Intel integrated GPU, no dedicated GPU), an AWS m5.xlarge Windows VM (CPU only), and real Samsung phones in Samsung Remote Test Lab. Synthetic documents only. For the main runs, expected outcomes and image hashes were frozen before the run.
 
-## Limitations
-- **Speed:** 30–90 s per document read on a laptop without a dedicated GPU. One read per supplier change; the impact on every label is then instant.
-- **Small test sets:** the documents are synthetic and the evaluation sets are small. There are no real supplier PDFs (images only, JPEG/PNG) and no real factory pilot.
-- **Reading errors:** Gemini Nano sometimes misspells words. Mixed alphabets are now caught automatically, but a plain misspelling such as `MACTODEXTRIN` is caught only by the reviewer comparing the reading with the image. That is why every reading must be confirmed by a person.
-- **Human safety step:** tick boxes did not make people check the image (0/6, 2 testers). The A/B questions that replaced them caught 3/3 with 1 new tester, who also rejected one real change. That is too few people to claim reliability, and no interface can force a person to actually look.
-- **Offline:** works once the page is open (shown with Wi-Fi off). There is no offline install, so the page cannot be loaded for the first time without internet.
-- **Rule scope:** a simplified US major-allergen rule set. Not legal or regulatory advice.
-- **Single user, single browser:** the library and log are stored locally. There is no multi-user authorisation or server-side audit store.
-- **Recall details may differ between paths:** on device and in the cloud the model can phrase fields differently (for example, expanding a lot range). Product matching uses the ingredient terms, and a person reviews the result.
+| # | Test | What it checked | Result | Report |
+|---|---|---|---|---|
+| 1 | **Go / no-go on a cloud VM** | Does Gemini Nano run at all on a CPU-only AWS Windows VM? | GO: Nano runs on CPU (slowly). | [progress report](docs/labelgate-PROGRESS-REPORT-2026-11-26.md) |
+| 2 | **Held-out benchmark v2** (AWS) | 20 new text specs × 3 runs: rules only vs Nano only vs hybrid | Nano raised recall on unfamiliar wording (0.19 → 0.56) but often named the wrong allergen. **Decision: the AI reads, rules decide.** | [B2 report](bench/results/B2-REPORT-2026-11-25.md) |
+| 3 | **Held-out benchmark v3 + Firebase AI Logic path** | Fresh frozen cases after the redesign, then the same 60 runs through Firebase AI Logic | Hybrid identified 45/45 allergen-bearing ingredients, 0 silent misses; 60/60 Firebase calls OK; p50 27 s on CPU. | [v3 report](bench/results/V3-CHECKPOINT-REPORT-2026-11-26.md) |
+| 4 | **Photo reading feasibility** | 22 photographed / rotated / blurred specs and labels, `ONLY_ON_DEVICE` | Allergens exactly right on **10/10 specs** (EN/ES/JA); 91.9% ingredient extraction; **22/22 on device, 0 outside requests**. Two safety failures (a "Contains" line read into the wrong field; one invented word) → fixed by rules. | [feasibility report](bench/specproof/SPECPROOF-GO-NOGO-2026-11-26.md) |
+| 5 | **Acceptance set A** (10 frozen cases) | The real app path end to end | **Failed: 4/10**, every label blocked. Root causes ("plant" facility wording, placeholders) fixed with general rules. | [report](bench/acceptance/ACCEPTANCE-REPORT-2026-11-26.md) |
+| 6 | **Acceptance set B** (6 fresh frozen cases) | Facility wording, ES placeholder, correct label, missing soy from a JA spec, ES whey/soy with no statement, a deliberately wrong reading | **7/7 as pre-registered**; 10/10 reads `on_device`; median 49 s (29–93 s). | [report](bench/acceptance/ACCEPTANCE-B-REPORT-2026-11-26.md) |
+| 7 | **End-to-end with real Gemini Nano** | Gate 1 → impact → Gate 2 → sign-off | Spec read 60–111 s; impact on 3 labels in 6–13 ms; artwork read 53 s; label LBL-1001@4 signed off. | [update](bench/results/UPDATE-2026-11-26-evening.md) |
+| 8 | **Hybrid fallback** | Public recall notice with and without Nano | With Nano: `on_device`, 43 s. Without Nano: `in_cloud`, 2.6 s, App Check OK. | [screenshots](bench/results/proof-evidence/) |
+| 9 | **Offline** | Wi-Fi off after the page opened | Spec read on device 67 s, no outside requests; impact 6 ms; recall on device 39 s. | [report](bench/results/OFFLINE-TEST-2026-11-27.md) |
+| 10 | **No Gemini Nano** (private document) | Is anything sent to the cloud? | The read stops; no outside requests; reviewer types the reading. | in-app |
+| 11 | **Privacy evidence** | Servers contacted during every private read | `on_device` on every chunk; no outside requests during reads (App Check only at page start). | [screenshots](bench/results/firebase-evidence/) |
+| 12 | **Model warm-up** | Does loading on page open help? | Cold 23.8 s + 14.2 s → warm 9 ms + 1.6 s. | [update](bench/results/UPDATE-2026-11-26-evening.md) |
+| 13 | **Tamper detection** | Is an edited log entry detected? | Yes: "Audit chain broken at entry 8 — entry content was changed". | [update](bench/results/UPDATE-2026-11-26-evening.md) |
+| 14 | **AI reviewer stand-in** (not a human) | Can a careful reader see the planted reading errors? | 3/3 caught, 1/1 correct reading accepted. | [report](bench/acceptance/AI-REVIEWER-STANDIN-2026-11-27.md) |
+| 15 | **Human blind test 1** (2 people, tick boxes) | Does a person catch a confident but wrong AI reading? | **0/6 caught.** People ticked to move on. Design replaced. | [report](bench/reviewer-test/HUMAN-TEST-1-REPORT-2026-11-27.md) |
+| 16 | **Human blind test 2** (1 new person, A/B questions) | Same, after the redesign | **3/3 caught**; 1 real change wrongly rejected. | [report](bench/reviewer-test/HUMAN-TEST-2-REPORT-2026-11-27.md) |
+| 17 | **Independent comprehension review** of the Impact Card (in progress) | Can a first-time reader understand the card in about a minute? | First reviewer: 4/5 correct, rated 5/5 easy and 5/5 useful. The unclear term ("CHECKS CLEAR") is now explained on the card. | [report](bench/expert/EXPERT-REVIEW-2026-11-27.md) |
+| 18 | **Reading errors seen live** while filming | — | Nano wrote `MALTOДЕКТРИН` (Cyrillic letters) and `MACTODEXTRIN`; the reviewer caught both. A new rule flags mixed-alphabet words. | [screenshot](bench/results/proof-evidence/nano-mixed-script-glitch-2026-11-27.png) |
+| 19 | **Android on real phones** | Same private reading in a native app, Samsung Remote Test Lab | Galaxy S26: full Spanish spec read **on the phone in 12.2 s**, same ingredients and statement as Chrome, 0 bytes sent by the app. S25 / S26+ without Nano: stopped safely. | [report](bench/android/ANDROID-NANO-CHECK-2026-11-27.md) |
+| 20 | **Automated tests** | Rules, original-language words, retry, audit chain, hybrid wiring, A/B questions, full UI flow | **151 passing** (`npm test`) | [`test/`](test/) |
 
-## Run locally
+What the failures changed: test 2 made Gemini Nano a reader instead of a judge; tests 4 and 5 added rule-based "Contains", facility and placeholder handling; test 15 replaced tick boxes with A/B questions; test 17 added the CHECKS CLEAR explanation; test 18 added the mixed-alphabet check. A one-page summary is in [`bench/TEST-SUMMARY-2026-11-27.md`](bench/TEST-SUMMARY-2026-11-27.md).
+
+## 9. How we built it
+
+| Date (2026) | Stage | What happened |
+|---|---|---|
+| Nov 25 | **Does Nano run at all?** | Gemini Nano tested on a CPU-only AWS Windows VM (go / no-go), then benchmarked on held-out cases against a rules-only baseline. Nano read unfamiliar wording well but could not be trusted to classify, so it became the reader, not the judge. |
+| Nov 26 | **The real Firebase path** | Firebase AI Logic, App Check and Hosting connected; the benchmark repeated through Firebase AI Logic (60/60). Photo reading proven on the laptop (22/22 on device). Acceptance set A failed; root causes fixed; fresh set B passed 7/7. Hybrid recall notices added and tested both ways. |
+| Nov 27 | **People, offline, Android** | Two human blind tests (the first failed and forced a redesign), offline test, a live reading glitch turned into a rule, the Android reading on a real Galaxy S26 via Samsung Remote Test Lab, independent comprehension reviews, the website and the demo video. |
+
+Tools used: Firebase AI Logic (JS and Android SDKs), Firebase Hosting, App Check with reCAPTCHA Enterprise, Chrome built-in AI, Vite, Vitest, Kotlin, AWS EC2 (test VM), Samsung Remote Test Lab. Code was written with an AI coding assistant; every number in this README comes from a real run whose report is linked above.
+
+## 10. Android: the private reading already runs on a real phone
+
+The full LabelGate workflow runs in Chrome today. To prove that its most sensitive step, reading a confidential supplier spec photo with no cloud fallback, also works on Android, we built a native app in [`android-experimental/`](android-experimental/). It uses the Firebase AI Logic Android SDK (`firebase-ai` 18.2.0 + `firebase-ai-ondevice`) with `InferenceMode.ONLY_ON_DEVICE` and the same prompt as the web app. We ran it on real Samsung phones through Samsung Remote Test Lab.
+
+| Phone | Gemini Nano | Private photo read | Sent by the app |
+|---|---|---|---|
+| Galaxy S26, Android 16 | available after a 4.2 GB model download (`nano-v3`) | on the phone; full Spanish reading in 12.2 s, same ingredients and allergen statement as Chrome | 0 bytes |
+| Galaxy S25 (one lab unit) | not available (AICore missing or too old) | stopped with an error | nothing (no cloud fallback) |
+| Galaxy S26+ (US model, one lab unit) | not available | stopped with an error | nothing (no cloud fallback) |
+
+Evidence: phone screenshots and a screen recording in [`bench/android/evidence/`](bench/android/evidence/). "0 bytes" is the app's own count of data it sent during the read (Android `TrafficStats`), not a separate network capture. **Next:** bringing the Impact Card, artwork check, sign-off and audit log to the Android app.
+
+## 11. Users, testers and limits
+
+**Users:** no public users yet. People have used it in blind reviewer tests (3) and comprehension reviews (ongoing). The next step is a pilot with a food manufacturer's QA team.
+
+**Limits we state openly:**
+- **Speed:** 30–90 s per document read on a laptop without a GPU. One read per supplier change; the impact on every label is then instant.
+- **Small, synthetic test sets** and few human testers: usability and integration signals, not accuracy claims. No real supplier PDFs yet (images only).
+- **Reading errors:** Nano can misspell. Mixed alphabets are caught automatically; a plain misspelling is caught only by the reviewer, which is why a person confirms every reading.
+- **Human step:** the A/B design caught 3/3 with one new tester, who also rejected one real change. No interface can force a person to look.
+- **Offline** works once the page is open; there is no offline install.
+- **Scope:** simplified U.S. major-allergen rules; single user, browser storage; no server-side audit store.
+
+## 12. Run it locally
+
 ```bash
+git clone https://github.com/Gosho1992/labelgate && cd labelgate
 npm install
 cp .env.example .env.local   # Firebase web config + reCAPTCHA Enterprise site key (see comments in the file)
-npm run dev                  # http://localhost:5173
+npm run dev                  # http://localhost:5173  (/ = landing, /how/ = how it works, /app/ = the demo)
 npm test                     # 151 tests
 npm run build && npx firebase deploy --only hosting
 ```
-For local development, App Check can use a debug token (`VITE_APPCHECK_DEBUG=1`). Register it in the Firebase console and never commit it.
 
-## Repository map
+Firebase setup: create a Firebase project, enable **Firebase AI Logic** (Gemini Developer API), register a web app, and enable **App Check** with reCAPTCHA Enterprise. For local development App Check can use a debug token (`VITE_APPCHECK_DEBUG=1`); register it in the Firebase console and never commit it. Gemini Nano needs desktop Chrome 148+ on a capable device.
+
+Android check app: open `android-experimental/` in Android Studio, add your own `app/google-services.json` (not committed), build, and run on a phone with Gemini Nano (AICore).
+
+## 13. Architecture and repository map
+
+- `index.html`, `how/index.html`: the landing pages (problem, how it works, tests). `src/site.css`.
+- `app/index.html`: the live demo app.
+- `src/ai/firebase.js`: every Firebase AI Logic model and its inference mode, App Check, warm-up, privacy guard.
 - `src/proof/`: the main app.
-  - `ui.js`: Gate 1 / Gate 2 / impact / history.
+  - `ui.js`: Gate 1 / Gate 2 / Impact Card / history.
   - `read.js`: on-device reading and retry.
-  - `rules.js`: deterministic checks.
+  - `rules.js`: deterministic allergen checks.
   - `library.js`: verified label records, re-approval, diffs.
-  - `audit.js`: hash chain.
-  - `privacy.js`: network evidence.
   - `verify.js`: the A/B verification questions.
-  - `reviewer-test.js`, `reviewer-test-page.js`: blind reviewer test (`reviewer-test.html`).
-- `src/ai/firebase.js`: every Firebase AI Logic model and its inference mode, App Check, warm-up.
-- `src/ai/extract.js`, `src/engine/`, `src/allergens/`: second tab (text specs and recall matching).
-- `bench/`: frozen test sets, raw model outputs and reports.
+  - `audit.js`: hash chain and tamper test.
+  - `privacy.js`: network evidence.
+- `src/ai/extract.js`, `src/engine/`, `src/allergens/`: the second tab (text specs and recall matching).
+- `test/`: 151 automated tests.
+- `bench/`: frozen test sets, raw model outputs and every report linked above. `bench/android/`: the Android check.
+- `android-experimental/`: native Android app (Kotlin, Firebase AI Logic on-device).
+- `public/expert/`: the comprehension review page used in test 17.
 - `demo/`: scripts that render the synthetic documents.
-- Dev harness pages: `acceptance.html`, `acceptance-b.html`, `specproof.html`, `privacy-test.html`, `bench.html`.
-- `android-experimental/`: native Android app: the on-device reading step, tested on a real Galaxy S26 (the full workflow is next).
-- `public/expert/`: 7-minute comprehension test for quality professionals.
-- `docs/`: earlier progress and audit notes.
+- Development harness pages: `acceptance.html`, `acceptance-b.html`, `specproof.html`, `privacy-test.html`, `bench.html`, `reviewer-test.html`.
 
-## Disclosure
-The multi-objective routing formula in `src/engine/router.js` was designed before the hackathon. All code in this repository was written during the submission period.
+## 14. Built during the submission period
+
+LabelGate is a new project, started on Nov 25, 2026. All code in this repository was written during the submission period. One idea predates the hackathon: the multi-objective routing formula in `src/engine/router.js` was designed before Nov 11; its code was written during the period.
 
 ## License
+
 Apache-2.0. See [LICENSE](LICENSE).
