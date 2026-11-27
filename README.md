@@ -127,7 +127,13 @@ getGenerativeModel(ai, {
 ```
 
 ### Which Gemini Nano model ran
-On the web an app cannot choose the on-device model: Firebase AI Logic calls Chrome's Prompt API, and Chrome downloads the model variant it decides fits the hardware ([Chrome docs](https://developer.chrome.com/docs/ai/understand-built-in-model-management)). On our test laptop (Chrome 158, performance class "Low"), `chrome://on-device-internals` shows **`nano_v3_gpu_low_tier_model`** (4,088 MiB, version 2025.8.8.1141) installed, so the Chrome results in this README ran on **Gemini Nano v3**. Chrome also lists `gemma4_gpu_low_tier_model`, which it does not download by default on this laptop. The Android test reported `nano-v3` as well; the newer `PREVIEW` model option was unavailable on that phone. LabelGate's code does not depend on the model version: the same Firebase AI Logic calls run on whatever model Chrome provides. We also switched on Chrome's "Gemma 4 for Built-in AI" flag on the same laptop on Nov 27 to test the newer model; Chrome accepted the request (model status "downloading") but had not finished downloading `gemma4_gpu_low_tier_model` when we submitted, so LabelGate has not yet been run on that model.  Screenshots: [`bench/results/chrome-model/`](bench/results/chrome-model/).
+On the web an app cannot choose the on-device model: Firebase AI Logic calls Chrome's Prompt API, and Chrome downloads the model variant it decides fits the hardware ([Chrome docs](https://developer.chrome.com/docs/ai/understand-built-in-model-management)). LabelGate's code does not depend on the model version. We checked `chrome://on-device-internals` on both test machines (screenshots in [`bench/results/chrome-model/`](bench/results/chrome-model/)):
+
+| Machine | Used for | What Chrome shows |
+|---|---|---|
+| **AWS test VM** (Windows, Chrome 158, CPU only) | tests 1–3, including the 60 runs through Firebase AI Logic | "Gemma 4 for Built-in AI" flag on. The **version 4 model** is installed and ready: `gemma4_component` 2026.11.3.1140 *Ready*, `gemma4_cpu_model` 3,113 MiB, and the Prompt API use case `prompt_api_gemma4` *requested, available*. `nano_v3_cpu_model` is also installed. |
+| **Laptop** (Intel integrated GPU, class "Low") | tests 4–18 and the demo video | `nano_v3_gpu_low_tier_model` installed, so these results ran on **Gemini Nano v3**. We switched on the Gemma 4 flag on Nov 27, but the download had not finished when we submitted. |
+| **Galaxy S26** | test 19 | `nano-v3`; the newer `PREVIEW` option was unavailable on that phone. |
 
 Also:
 - **App Check** (reCAPTCHA Enterprise) protects the cloud path.
