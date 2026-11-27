@@ -10,6 +10,7 @@ A supplier quietly changes an ingredient. Three of your products use it. Two of 
 | **Live demo directly** | https://protean-booth-470411-r7.web.app/app/ |
 | **Demo video (3 min)** | https://youtu.be/Hk8Kiy7bpMY |
 | **Hackathon** | Google / Firebase **#BuildHybridAI 2026**, Web / Chrome |
+| **On-device model** | **Gemini Nano 4 generation**: tested on Chrome's built-in **Gemma 4** model ("Gemma 4 for Built-in AI"; [Google: Gemma 4 is the foundation of Gemini Nano 4](https://developer.android.com/blog/posts/announcing-gemma-4-in-the-ai-core-developer-preview)). Also tested on Gemini Nano v3. Evidence: [`bench/results/chrome-model/`](bench/results/chrome-model/) |
 | **License** | Apache-2.0 |
 
 ![Supplier Change Impact Card: Supplier added milk, 2 labels PRINT BLOCKED, 1 clear](docs/gallery/01.jpg)
@@ -126,14 +127,14 @@ getGenerativeModel(ai, {
 });
 ```
 
-### Which Gemini Nano model ran
-On the web an app cannot choose the on-device model: Firebase AI Logic calls Chrome's Prompt API, and Chrome downloads the model variant it decides fits the hardware ([Chrome docs](https://developer.chrome.com/docs/ai/understand-built-in-model-management)). LabelGate's code does not depend on the model version. We checked `chrome://on-device-internals` on both test machines (screenshots in [`bench/results/chrome-model/`](bench/results/chrome-model/)):
+### Which Gemini Nano model ran: Nano 4 generation (Gemma 4), and v3
+On the web an app cannot choose the on-device model: Firebase AI Logic calls Chrome's Prompt API, and Chrome serves the model. LabelGate's code does not depend on the model version. Google describes Gemma 4 as the foundation of Gemini Nano 4 ("code you write today for Gemma 4 will automatically work on Gemini Nano 4-enabled devices", [Google: Gemma 4 is the foundation of Gemini Nano 4](https://developer.android.com/blog/posts/announcing-gemma-4-in-the-ai-core-developer-preview)). Evidence for each machine is in [`bench/results/chrome-model/`](bench/results/chrome-model/):
 
-| Machine | Used for | What Chrome shows |
+| Machine | Model Chrome serves | What ran there |
 |---|---|---|
-| **AWS test VM** (Windows, Chrome 158, CPU only) | tests 1–3, including the 60 runs through Firebase AI Logic | "Gemma 4 for Built-in AI" flag on. The **version 4 model** is installed and ready: `gemma4_component` 2026.11.3.1140 *Ready*, `gemma4_cpu_model` 3,113 MiB, and the Prompt API use case `prompt_api_gemma4` *requested, available*. `nano_v3_cpu_model` is also installed. |
-| **Laptop** (Intel integrated GPU, class "Low") | tests 4–18 and the demo video | `nano_v3_gpu_low_tier_model` installed, so these results ran on **Gemini Nano v3**. We switched on the Gemma 4 flag on Nov 27, but the download had not finished when we submitted. |
-| **Galaxy S26** | test 19 | `nano-v3`; the newer `PREVIEW` option was unavailable on that phone. |
+| **AWS test VM** (Windows, Chrome 158, CPU) | **Gemma 4 (Nano 4 generation).** Flag "Gemma 4 for Built-in AI" *Enabled* ("Enables all built-in AI APIs (Prompt, Summarizer, Writer, etc.) to use the Gemma 4 model"); `gemma4_component` 2026.11.3.1140 *Ready*; Prompt API use case `prompt_api_gemma4` *requested, available*. | Tests 1–3 (incl. the 60 Firebase AI Logic runs) and, on Nov 27, the **live LabelGate demo**: the Spanish supplier spec photo was read **on device in 54 s** (`on_device`, no outside requests), all 8 ingredients and the milk source correct. |
+| **Laptop** (Intel integrated GPU, class "Low") | Gemini Nano v3 (`nano_v3_gpu_low_tier_model`); Chrome had not finished downloading Gemma 4 here | Tests 4–18 and the demo video |
+| **Galaxy S26** | `nano-v3` (the `PREVIEW` option was unavailable) | Test 19 |
 
 Also:
 - **App Check** (reCAPTCHA Enterprise) protects the cloud path.
