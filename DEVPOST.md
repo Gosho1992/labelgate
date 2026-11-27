@@ -46,8 +46,8 @@ Artwork proofreading and label-compliance tools (GlobalVision, Esko Comply, GoVi
 ## How we tested it: 20 tests, including the failures
 Laptop without a dedicated GPU (Chrome 158), an AWS CPU-only Windows VM, and real Samsung phones. Synthetic documents only; expected outcomes and image hashes frozen before the main runs. Every report is in the repo.
 1. **Go/no-go on an AWS VM:** Gemini Nano runs on CPU.
-2. **Held-out benchmark v2 (60 runs):** Nano raised recall on unfamiliar wording (0.19 → 0.56) but often named the wrong allergen → **decision: AI reads, rules decide.**
-3. **Benchmark v3 + Firebase AI Logic path (60/60 OK):** hybrid found 45/45 allergen-bearing ingredients, 0 silent misses.
+2. **Held-out test set 2 (60 runs):** Nano raised recall on unfamiliar wording (0.19 → 0.56) but often named the wrong allergen → **decision: AI reads, rules decide.**
+3. **Held-out test set 3 + Firebase AI Logic path (60/60 OK):** hybrid found 45/45 allergen-bearing ingredients, 0 silent misses.
 4. **Photo reading feasibility (22 images, `ONLY_ON_DEVICE`):** allergens exactly right on 10/10 specs (EN/ES/JA); 22/22 on device, 0 outside requests; 2 safety failures fixed by rules.
 5. **Acceptance set A:** failed 4/10 (blocked everything) → root causes fixed.
 6. **Acceptance set B (fresh, frozen):** 7/7 as pre-registered; 10/10 reads on device; median 49 s.
