@@ -1,0 +1,13 @@
+LabelGate expert review — results
+Role: Doctor
+Date: 2026-11-27T12:37:56.021Z
+Total time: 98 s
+Understanding questions correct: 4 / 5
+q1: a  [first answered at 40 s]  ✓
+q2: SKU-1001, SKU-1003  [first answered at 52 s]  ✓
+q3: a  [first answered at 65 s]  ✓
+q4: b  [first answered at 74 s]  ✓
+q5: d  [first answered at 88 s]  ✗
+q6: 5  [first answered at 93 s]
+q7: 5  [first answered at 96 s]
+q8: (blank)

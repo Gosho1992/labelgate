@@ -368,7 +368,7 @@ function impactCardHTML() {
   const k = impactCardData(); if (!k) return "";
   const chip = (st) => `<span class="chip ${st === STATE.BLOCK ? "c-block" : st === STATE.REVIEW ? "c-rev" : "c-ok"}">${esc(stateLabel(st))}</span>`;
   const reason = (x) => x.approved ? "Approved for revision 2" : x.state === STATE.BLOCK ? `${names(x.findings.filter((f) => f.status === "missing").map((f) => f.allergen))} not declared on the approved label`
-    : x.state === STATE.REVIEW ? (x.reasons?.[0] ?? "Needs a closer look") : "Current label already declares every allergen source";
+    : x.state === STATE.REVIEW ? (x.reasons?.[0] ?? "Needs a closer look") : "Current label already declares every allergen source. CHECKS CLEAR means the rules found no missing allergen; QA still signs off, and it is not regulatory approval.";
   const blocked = k.rows.filter((x) => x.state === STATE.BLOCK && !x.approved), review = k.rows.filter((x) => x.state === STATE.REVIEW), pending = k.rows.filter((x) => x.state === STATE.CLEAR && !x.approved);
   const next = blocked.length ? `Hold print for ${blocked.map((x) => x.name).join(" and ")}. Get corrected artwork, check it in Gate 2, and have QA sign off the exact artwork revision.`
     : review.length ? `Review ${review.map((x) => x.name).join(", ")} before printing.`
