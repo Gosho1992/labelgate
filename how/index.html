@@ -53,6 +53,7 @@
     <div class="lane p"><h3>Private: supplier specs, label artwork, formulas</h3><p><code>InferenceMode.ONLY_ON_DEVICE</code> with image input. A privacy guard checks <code>inferenceSource</code> on every streamed chunk and on the final answer, and the app lists every outside request made during the read. Without Gemini Nano the read stops and the reviewer types the reading. <b>No cloud fallback.</b></p></div>
     <div class="lane h"><h3>Public: recall notices</h3><p><code>InferenceMode.PREFER_ON_DEVICE</code> with a JSON response schema. Gemini Nano when available; otherwise <code>gemini-3.5-flash-lite</code> in the cloud, protected by Firebase App Check (reCAPTCHA Enterprise). The notice is then matched to your own formulas locally.</p></div>
   </div>
+  <p style="margin-top:18px"><b>Which model ran:</b> on the web an app cannot choose the on-device model; Chrome picks it for the hardware. On our test laptop Chrome installed <code>nano_v3_gpu_low_tier_model</code>, so our Chrome results ran on Gemini Nano v3. We also switched on Chrome's "Gemma 4 for Built-in AI" flag on that laptop to test the newer model; it had not finished downloading when we submitted, so LabelGate has not yet run on it. <a href="https://github.com/Gosho1992/labelgate/tree/main/bench/results/chrome-model">Screenshots</a>.</p>
   <p style="margin-top:18px">Also: the model is warmed up when the page opens (cold start ≈ 38 s → warm ≈ 2 s), and every AI call is logged with where it ran, how long it took and the bytes sent to the cloud.</p>
 </div></section>
 

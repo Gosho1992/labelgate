@@ -126,6 +126,9 @@ getGenerativeModel(ai, {
 });
 ```
 
+### Which Gemini Nano model ran
+On the web an app cannot choose the on-device model: Firebase AI Logic calls Chrome's Prompt API, and Chrome downloads the model variant it decides fits the hardware ([Chrome docs](https://developer.chrome.com/docs/ai/understand-built-in-model-management)). On our test laptop (Chrome 158, performance class "Low"), `chrome://on-device-internals` shows **`nano_v3_gpu_low_tier_model`** (4,088 MiB, version 2025.8.8.1141) installed, so the Chrome results in this README ran on **Gemini Nano v3**. Chrome also lists `gemma4_gpu_low_tier_model`, which it does not download by default on this laptop. The Android test reported `nano-v3` as well; the newer `PREVIEW` model option was unavailable on that phone. LabelGate's code does not depend on the model version: the same Firebase AI Logic calls run on whatever model Chrome provides. We also switched on Chrome's "Gemma 4 for Built-in AI" flag on the same laptop on Nov 27 to test the newer model; Chrome accepted the request (model status "downloading") but had not finished downloading `gemma4_gpu_low_tier_model` when we submitted, so LabelGate has not yet been run on that model.  Screenshots: [`bench/results/chrome-model/`](bench/results/chrome-model/).
+
 Also:
 - **App Check** (reCAPTCHA Enterprise) protects the cloud path.
 - **Warm-up:** when the page opens, Gemini Nano is loaded with a fixed one-word prompt (no document content). Cold start ≈ 38 s → warm ≈ 2 s.
