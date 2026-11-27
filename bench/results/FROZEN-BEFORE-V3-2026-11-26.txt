@@ -1,0 +1,14 @@
+# Frozen BEFORE held-out v3 was requested from Nemotron (2026-11-26T04:45:35Z)
+e79a27fd27097a25cfb8de9abe89df2ae6152832375e7071f7a0ec37b597ffab  src/detect/prompt.js
+f1e2dbe32abe4694bd36fe6f6db5a3bab06551567647e8cc390ed761e515fc43  src/schemas.js
+e2c1cd6bcfd0b2fc6725a5e7d53be29ff2e40e0eace33aa7dad5a1c110e629cb  src/allergens/dictionary.js
+628315d1fc47121f81462ce6698c985aae51ab74fe58ee073a5d93af5540c1ab  src/engine/profile.js
+dfc51c912f73e5b0f03d25f731e1aee7174b76fd10999a09102e74409c6ed60c  src/detect/pipeline.js
+prompt_v2 content 62572a8f9b8fbb6fbf020652656f6c862daccb2b3205af6198ea3094e0f41231
+schema_v2 content 28d9fa51272639340bd163b0b529150ec973bfd85418d037c9d715c217276c07
+lookalikes 460eaab5fec6f75de5ee09bce191ae15253fb9818b56bde197b62fb210b83b10
+DICT content 79ce7ff9e408664395858133da8055f4d572b762c3271154cf9e0a2ed58d29cc
+3543bd8f844a7d853699b389bbc4219fa8b64f3d9160c10431a2650d4a05b3a5  bench/cases/heldout-v3-20.js
+# v3 file hash recorded 2026-11-26T04:50:13Z, before any model run
+# CHANGE after v3 file was received, BEFORE any Nano run on v3 (2026-11-26T04:51:46Z): profile.js evidence lookup made strict (no fallback to the term/ingredient name), as Decision 2 requires. Found with a MOCK model in a smoke test, not from any real v3 output.
+a5e2a9002e2edc442e13ae6f061db5e343e775d8febe3d1ef516ac5a9eae3b65  src/engine/profile.js

@@ -1,0 +1,15 @@
+FROZEN 2026-11-26T14:50:27Z before any model run on set B.
+Rules version at freeze: version: "2026.11.26-1"
+Prompt: READ_PROMPT_VERSION = "proof-read-3 (2026-11-26)"
+2b6f542452c106dd20571e087def0e971a32180ada2c5bf003aeccf439ceab92  bench/acceptance/EXPECTED-B-2026-11-26.json
+9b85f28da3ed3ebce4bdd79abec720609ceeb545f2a19bdbb307ffcf0c380ad2  public/acceptance/B1-spec-en-facility.jpg
+c47b2ff4f37e7ab260ed1d6670574690bfb53006fc9450322216196ecdb121e3  public/acceptance/B2-spec-es-placeholder.jpg
+afc95b1480b73d68dea7e18e9a79359cde3c502f00f256e1afd67cc553452669  public/acceptance/B3-label-pretzel-correct.png
+67c4f5534b1248b6dfc44a40959bdbb36627dc639bfbfacf61d8cb08dda8c47f  public/acceptance/B4-spec-ja-soy.jpg
+5ba527e3a9797d31c0cc4dbc21d7b3d98bb676cf3a85b32f04a761128f2f0f5d  public/acceptance/B5-label-crackers-whey-soy.png
+49c9ee2bc3aa68e76aa83a90b5df62fd16facd47e4a62ba6a2536ec179820abd  public/acceptance/B5-spec-es-whey-nostatement.jpg
+8744c5fa83e56e2dfc87e8bc28fdec4307a42fa48cf31468bda3c5756a9b4ac3  public/acceptance/B6-label-pretzel-netwt.png
+0cef5cf918967fc4a2218fcbf281a0697a9049d5091604a281776a9aeb7ba509  public/demo/SEAS-01-rev2-es.jpg
+98480a2f17ccd079dcdee8adb556eb6a03f40029000fcaf63194ea4f2cacf57d  public/demo/LBL-1003-v1.png
+289a2fad5d179672126c071bb9d834e38288ae7c0662d518bdedc03310a5293b  public/demo/LBL-1002-v2.png
+f7a358dc7d5789278da9329df6559dc9c2b1cb17e36444d70aa7a901b6448656  demo/render_acceptance_b.py

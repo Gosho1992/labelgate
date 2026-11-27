@@ -1,0 +1,7 @@
+df5b46d242c9fd1e362fd457625ef46a97a0a7cf8cc040a71e2e021e55b4d816  bench/cases/heldout-v2-20.js
+06147067f3d6f086381683ce70db7c4b5220cc534e4804ff08e415aac9e3da4d  bench/cases/legacy-heldout-10.js
+e521477292f7ca3e9cd8ca835ae77bb987f5f3ae60f535272c1d67f48ed00cac  bench/cases/legacy-tuning-20.js
+0f44e12ff2cf0c432a8d3defea3613a27851dcdc926f39a2ae91960306ac1b5d  src/allergens/dictionary.js
+Wed Nov 25 11:14:04 UTC 2026
+# after adding the FROZEN comment line (content unchanged; content hash enforced in test/frozen.test.js: 79ce7ff9...)
+8fa0423ad55404429e6a3412b0f9e2301df725f86e42d0e27a6cd64d4650d934  src/allergens/dictionary.js

@@ -1,0 +1,7532 @@
+{
+ "versions": {
+  "pipeline": "detect-1",
+  "dictionary": "2026.11.25-1",
+  "prompt": "extract-v1-2026.11.25",
+  "schema": "claims-v1"
+ },
+ "transport": "prompt-api",
+ "ua": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/158.0.0.0 Safari/537.36",
+ "started": "2026-11-25T11:21:12.238Z",
+ "finished": "2026-11-25T11:44:24.025Z",
+ "repeatsV2": 3,
+ "rows": [
+  {
+   "set": "legacy20",
+   "rep": 0,
+   "case": {
+    "id": "S1",
+    "cat": "simple",
+    "text": "Ingredients: wheat flour, sugar, butter (milk), whole eggs, salt.",
+    "gold": {
+     "contains": [
+      "wheat",
+      "milk",
+      "egg"
+     ],
+     "may": [],
+     "review": false
+    }
+   },
+   "ms": 21446,
+   "nanoStatus": "ok",
+   "error": null,
+   "rawNano": {
+    "claims": [
+     {
+      "allergen": "milk",
+      "assertion": "intentional",
+      "evidence": "butter (milk)"
+     },
+     {
+      "allergen": "egg",
+      "assertion": "intentional",
+      "evidence": "whole eggs"
+     },
+     {
+      "allergen": "wheat",
+      "assertion": "intentional",
+      "evidence": "wheat flour"
+     }
+    ],
+    "unresolved": [
+     "lecithin",
+     "sugar",
+     "salt"
+    ]
+   },
+   "rules": {
+    "contains": [
+     "egg",
+     "milk",
+     "wheat"
+    ],
+    "may": [],
+    "review": false,
+    "unresolved": [],
+    "unsupported": [],
+    "evidence": [
+     "dictionary:milk:intentional:\"milk\"",
+     "dictionary:egg:intentional:\"eggs\"",
+     "dictionary:wheat:intentional:\"wheat\""
+    ]
+   },
+   "nano": {
+    "contains": [
+     "egg",
+     "milk",
+     "wheat"
+    ],
+    "may": [],
+    "review": true,
+    "unresolved": [
+     "Nano: lecithin",
+     "Nano: sugar",
+     "Nano: salt"
+    ],
+    "unsupported": [],
+    "evidence": [
+     "nano:milk:intentional:\"butter (milk)\"",
+     "nano:egg:intentional:\"whole eggs\"",
+     "nano:wheat:intentional:\"wheat flour\""
+    ]
+   },
+   "hybrid": {
+    "contains": [
+     "egg",
+     "milk",
+     "wheat"
+    ],
+    "may": [],
+    "review": true,
+    "unresolved": [
+     "Nano: lecithin",
+     "Nano: sugar",
+     "Nano: salt"
+    ],
+    "unsupported": [],
+    "evidence": [
+     "dictionary:milk:intentional:\"milk\"",
+     "dictionary:egg:intentional:\"eggs\"",
+     "dictionary:wheat:intentional:\"wheat\"",
+     "nano:milk:intentional:\"butter (milk)\"",
+     "nano:egg:intentional:\"whole eggs\"",
+     "nano:wheat:intentional:\"wheat flour\""
+    ]
+   }
+  },
+  {
+   "set": "legacy20",
+   "rep": 0,
+   "case": {
+    "id": "S2",
+    "cat": "simple",
+    "text": "Ingredients: roasted peanuts, peanut oil, salt. Contains: peanuts.",
+    "gold": {
+     "contains": [
+      "peanut"
+     ],
+     "may": [],
+     "review": false
+    }
+   },
+   "ms": 11352,
+   "nanoStatus": "ok",
+   "error": null,
+   "rawNano": {
+    "claims": [
+     {
+      "allergen": "peanut",
+      "assertion": "intentional",
+      "evidence": "roasted peanuts, peanut oil, salt. Contains: peanuts."
+     }
+    ],
+    "unresolved": []
+   },
+   "rules": {
+    "contains": [
+     "peanut"
+    ],
+    "may": [],
+    "review": false,
+    "unresolved": [],
+    "unsupported": [],
+    "evidence": [
+     "dictionary:peanut:intentional:\"peanut\"",
+     "dictionary:peanut:intentional:\"peanuts\""
+    ]
+   },
+   "nano": {
+    "contains": [
+     "peanut"
+    ],
+    "may": [],
+    "review": false,
+    "unresolved": [],
+    "unsupported": [],
+    "evidence": [
+     "nano:peanut:intentional:\"roasted peanuts, peanut oil, salt. Contains: peanuts.\""
+    ]
+   },
+   "hybrid": {
+    "contains": [
+     "peanut"
+    ],
+    "may": [],
+    "review": false,
+    "unresolved": [],
+    "unsupported": [],
+    "evidence": [
+     "dictionary:peanut:intentional:\"peanut\"",
+     "dictionary:peanut:intentional:\"peanuts\"",
+     "nano:peanut:intentional:\"roasted peanuts, peanut oil, salt. Contains: peanuts.\""
+    ]
+   }
+  },
+  {
+   "set": "legacy20",
+   "rep": 0,
+   "case": {
+    "id": "S3",
+    "cat": "simple",
+    "text": "Ingredients: water, egg yolk, distilled vinegar, soy lecithin, salt.",
+    "gold": {
+     "contains": [
+      "egg",
+      "soy"
+     ],
+     "may": [],
+     "review": false
+    }
+   },
+   "ms": 16298,
+   "nanoStatus": "ok",
+   "error": null,
+   "rawNano": {
+    "claims": [
+     {
+      "allergen": "egg",
+      "assertion": "intentional",
+      "evidence": "egg yolk"
+     },
+     {
+      "allergen": "soy",
+      "assertion": "intentional",
+      "evidence": "soy lecithin"
+     }
+    ],
+    "unresolved": [
+     "lecithin",
+     "salt"
+    ]
+   },
+   "rules": {
+    "contains": [
+     "egg",
+     "soy"
+    ],
+    "may": [],
+    "review": false,
+    "unresolved": [],
+    "unsupported": [],
+    "evidence": [
+     "dictionary:egg:intentional:\"egg\"",
+     "dictionary:soy:intentional:\"soy\""
+    ]
+   },
+   "nano": {
+    "contains": [
+     "egg",
+     "soy"
+    ],
+    "may": [],
+    "review": true,
+    "unresolved": [
+     "Nano: lecithin",
+     "Nano: salt"
+    ],
+    "unsupported": [],
+    "evidence": [
+     "nano:egg:intentional:\"egg yolk\"",
+     "nano:soy:intentional:\"soy lecithin\""
+    ]
+   },
+   "hybrid": {
+    "contains": [
+     "egg",
+     "soy"
+    ],
+    "may": [],
+    "review": true,
+    "unresolved": [
+     "Nano: lecithin",
+     "Nano: salt"
+    ],
+    "unsupported": [],
+    "evidence": [
+     "dictionary:egg:intentional:\"egg\"",
+     "dictionary:soy:intentional:\"soy\"",
+     "nano:egg:intentional:\"egg yolk\"",
+     "nano:soy:intentional:\"soy lecithin\""
+    ]
+   }
+  },
+  {
+   "set": "legacy20",
+   "rep": 0,
+   "case": {
+    "id": "S4",
+    "cat": "simple",
+    "text": "Ingredients: sesame seeds, tahini (ground sesame), garlic, lemon juice.",
+    "gold": {
+     "contains": [
+      "sesame"
+     ],
+     "may": [],
+     "review": false
+    }
+   },
+   "ms": 14343,
+   "nanoStatus": "ok",
+   "error": null,
+   "rawNano": {
+    "claims": [
+     {
+      "allergen": "sesame",
+      "assertion": "intentional",
+      "evidence": "sesame seeds, tahini (ground sesame)"
+     }
+    ],
+    "unresolved": [
+     "lecithin",
+     "emulsifier",
+     "natural flavour"
+    ]
+   },
+   "rules": {
+    "contains": [
+     "sesame"
+    ],
+    "may": [],
+    "review": false,
+    "unresolved": [],
+    "unsupported": [],
+    "evidence": [
+     "dictionary:sesame:intentional:\"sesame\""
+    ]
+   },
+   "nano": {
+    "contains": [
+     "sesame"
+    ],
+    "may": [],
+    "review": true,
+    "unresolved": [
+     "Nano: lecithin",
+     "Nano: emulsifier",
+     "Nano: natural flavour"
+    ],
+    "unsupported": [],
+    "evidence": [
+     "nano:sesame:intentional:\"sesame seeds, tahini (ground sesame)\""
+    ]
+   },
+   "hybrid": {
+    "contains": [
+     "sesame"
+    ],
+    "may": [],
+    "review": true,
+    "unresolved": [
+     "Nano: lecithin",
+     "Nano: emulsifier",
+     "Nano: natural flavour"
+    ],
+    "unsupported": [],
+    "evidence": [
+     "dictionary:sesame:intentional:\"sesame\"",
+     "nano:sesame:intentional:\"sesame seeds, tahini (ground sesame)\""
+    ]
+   }
+  },
+  {
+   "set": "legacy20",
+   "rep": 0,
+   "case": {
+    "id": "S5",
+    "cat": "simple",
+    "text": "Ingredients: cod fillet, breadcrumbs (wheat flour, yeast, salt), sunflower oil.",
+    "gold": {
+     "contains": [
+      "fish",
+      "wheat"
+     ],
+     "may": [],
+     "review": false
+    }
+   },
+   "ms": 17344,
+   "nanoStatus": "ok",
+   "error": null,
+   "rawNano": {
+    "claims": [
+     {
+      "allergen": "fish",
+      "assertion": "intentional",
+      "evidence": "cod fillet"
+     },
+     {
+      "allergen": "wheat",
+      "assertion": "intentional",
+      "evidence": "wheat flour"
+     }
+    ],
+    "unresolved": [
+     "lecithin",
+     "emulsifier",
+     "natural flavour"
+    ]
+   },
+   "rules": {
+    "contains": [
+     "fish",
+     "wheat"
+    ],
+    "may": [],
+    "review": false,
+    "unresolved": [],
+    "unsupported": [],
+    "evidence": [
+     "dictionary:fish:intentional:\"cod\"",
+     "dictionary:wheat:intentional:\"wheat\""
+    ]
+   },
+   "nano": {
+    "contains": [
+     "fish",
+     "wheat"
+    ],
+    "may": [],
+    "review": true,
+    "unresolved": [
+     "Nano: lecithin",
+     "Nano: emulsifier",
+     "Nano: natural flavour"
+    ],
+    "unsupported": [],
+    "evidence": [
+     "nano:fish:intentional:\"cod fillet\"",
+     "nano:wheat:intentional:\"wheat flour\""
+    ]
+   },
+   "hybrid": {
+    "contains": [
+     "fish",
+     "wheat"
+    ],
+    "may": [],
+    "review": true,
+    "unresolved": [
+     "Nano: lecithin",
+     "Nano: emulsifier",
+     "Nano: natural flavour"
+    ],
+    "unsupported": [],
+    "evidence": [
+     "dictionary:fish:intentional:\"cod\"",
+     "dictionary:wheat:intentional:\"wheat\"",
+     "nano:fish:intentional:\"cod fillet\"",
+     "nano:wheat:intentional:\"wheat flour\""
+    ]
+   }
+  },
+  {
+   "set": "legacy20",
+   "rep": 0,
+   "case": {
+    "id": "M1",
+    "cat": "messy",
+    "text": "Natural flavor \u2014 contains milk-derived carrier. May contain traces of soy.",
+    "gold": {
+     "contains": [
+      "milk"
+     ],
+     "may": [
+      "soy"
+     ],
+     "review": false
+    }
+   },
+   "ms": 18425,
+   "nanoStatus": "ok",
+   "error": null,
+   "rawNano": {
+    "claims": [
+     {
+      "allergen": "milk",
+      "assertion": "intentional",
+      "evidence": "contains milk-derived carrier"
+     },
+     {
+      "allergen": "soy",
+      "assertion": "precautionary",
+      "evidence": "May contain traces of soy"
+     }
+    ],
+    "unresolved": [
+     "lecithin",
+     "emulsifier",
+     "natural flavour"
+    ]
+   },
+   "rules": {
+    "contains": [
+     "milk"
+    ],
+    "may": [
+     "soy"
+    ],
+    "review": true,
+    "unresolved": [
+     "Ingredient with unspecified source (e.g. lecithin / natural flavour / emulsifier)"
+    ],
+    "unsupported": [],
+    "evidence": [
+     "dictionary:milk:intentional:\"milk\"",
+     "dictionary:soy:precautionary:\"soy\""
+    ]
+   },
+   "nano": {
+    "contains": [
+     "milk"
+    ],
+    "may": [
+     "soy"
+    ],
+    "review": true,
+    "unresolved": [
+     "Nano: lecithin",
+     "Nano: emulsifier",
+     "Nano: natural flavour"
+    ],
+    "unsupported": [],
+    "evidence": [
+     "nano:milk:intentional:\"contains milk-derived carrier\"",
+     "nano:soy:precautionary:\"May contain traces of soy\""
+    ]
+   },
+   "hybrid": {
+    "contains": [
+     "milk"
+    ],
+    "may": [
+     "soy"
+    ],
+    "review": true,
+    "unresolved": [
+     "Ingredient with unspecified source (e.g. lecithin / natural flavour / emulsifier)",
+     "Nano: lecithin",
+     "Nano: emulsifier",
+     "Nano: natural flavour"
+    ],
+    "unsupported": [],
+    "evidence": [
+     "dictionary:milk:intentional:\"milk\"",
+     "dictionary:soy:precautionary:\"soy\"",
+     "nano:milk:intentional:\"contains milk-derived carrier\"",
+     "nano:soy:precautionary:\"May contain traces of soy\""
+    ]
+   }
+  },
+  {
+   "set": "legacy20",
+   "rep": 0,
+   "case": {
+    "id": "M2",
+    "cat": "messy",
+    "text": "Seasoning blend: salt, spices, hydrolyzed vegetable protein (source: soy), whey powder, yeast extract. Processed on shared equipment that also processes sesame.",
+    "gold": {
+     "contains": [
+      "soy",
+      "milk"
+     ],
+     "may": [
+      "sesame"
+     ],
+     "review": false
+    }
+   },
+   "ms": 24117,
+   "nanoStatus": "ok",
+   "error": null,
+   "rawNano": {
+    "claims": [
+     {
+      "allergen": "soy",
+      "assertion": "intentional",
+      "evidence": "hydrolyzed vegetable protein (source: soy)"
+     },
+     {
+      "allergen": "milk",
+      "assertion": "intentional",
+      "evidence": "whey powder"
+     },
+     {
+      "allergen": "sesame",
+      "assertion": "precautionary",
+      "evidence": "Processed on shared equipment that also processes sesame"
+     }
+    ],
+    "unresolved": [
+     "lecithin",
+     "emulsifier",
+     "natural flavour"
+    ]
+   },
+   "rules": {
+    "contains": [
+     "milk",
+     "soy"
+    ],
+    "may": [
+     "sesame"
+    ],
+    "review": false,
+    "unresolved": [],
+    "unsupported": [],
+    "evidence": [
+     "dictionary:milk:intentional:\"whey\"",
+     "dictionary:soy:intentional:\"soy\"",
+     "dictionary:sesame:precautionary:\"sesame\""
+    ]
+   },
+   "nano": {
+    "contains": [
+     "milk",
+     "soy"
+    ],
+    "may": [
+     "sesame"
+    ],
+    "review": true,
+    "unresolved": [
+     "Nano: lecithin",
+     "Nano: emulsifier",
+     "Nano: natural flavour"
+    ],
+    "unsupported": [],
+    "evidence": [
+     "nano:soy:intentional:\"hydrolyzed vegetable protein (source: soy)\"",
+     "nano:milk:intentional:\"whey powder\"",
+     "nano:sesame:precautionary:\"Processed on shared equipment that also processes sesame\""
+    ]
+   },
+   "hybrid": {
+    "contains": [
+     "milk",
+     "soy"
+    ],
+    "may": [
+     "sesame"
+    ],
+    "review": true,
+    "unresolved": [
+     "Nano: lecithin",
+     "Nano: emulsifier",
+     "Nano: natural flavour"
+    ],
+    "unsupported": [],
+    "evidence": [
+     "dictionary:milk:intentional:\"whey\"",
+     "dictionary:soy:intentional:\"soy\"",
+     "dictionary:sesame:precautionary:\"sesame\"",
+     "nano:soy:intentional:\"hydrolyzed vegetable protein (source: soy)\"",
+     "nano:milk:intentional:\"whey powder\"",
+     "nano:sesame:precautionary:\"Processed on shared equipment that also processes sesame\""
+    ]
+   }
+  },
+  {
+   "set": "legacy20",
+   "rep": 0,
+   "case": {
+    "id": "M3",
+    "cat": "messy",
+    "text": "Coating: rice flour, tapioca starch, egg white powder (albumen). This product is dairy-free and nut-free.",
+    "gold": {
+     "contains": [
+      "egg"
+     ],
+     "may": [],
+     "review": false
+    }
+   },
+   "ms": 23551,
+   "nanoStatus": "ok",
+   "error": null,
+   "rawNano": {
+    "claims": [
+     {
+      "allergen": "egg",
+      "assertion": "intentional",
+      "evidence": "egg white powder (albumen)"
+     },
+     {
+      "allergen": "milk",
+      "assertion": "explicit_negative",
+      "evidence": "This product is dairy-free"
+     },
+     {
+      "allergen": "peanut",
+      "assertion": "explicit_negative",
+      "evidence": "nut-free"
+     }
+    ],
+    "unresolved": [
+     "lecithin",
+     "emulsifier",
+     "natural flavour"
+    ]
+   },
+   "rules": {
+    "contains": [
+     "egg"
+    ],
+    "may": [],
+    "review": false,
+    "unresolved": [],
+    "unsupported": [],
+    "evidence": [
+     "dictionary:egg:intentional:\"egg\""
+    ]
+   },
+   "nano": {
+    "contains": [
+     "egg"
+    ],
+    "may": [],
+    "review": true,
+    "unresolved": [
+     "Nano: lecithin",
+     "Nano: emulsifier",
+     "Nano: natural flavour"
+    ],
+    "unsupported": [],
+    "evidence": [
+     "nano:egg:intentional:\"egg white powder (albumen)\"",
+     "nano:milk:explicit_negative:\"This product is dairy-free\"",
+     "nano:peanut:explicit_negative:\"nut-free\""
+    ]
+   },
+   "hybrid": {
+    "contains": [
+     "egg"
+    ],
+    "may": [],
+    "review": true,
+    "unresolved": [
+     "Nano: lecithin",
+     "Nano: emulsifier",
+     "Nano: natural flavour"
+    ],
+    "unsupported": [],
+    "evidence": [
+     "dictionary:egg:intentional:\"egg\"",
+     "nano:egg:intentional:\"egg white powder (albumen)\"",
+     "nano:milk:explicit_negative:\"This product is dairy-free\"",
+     "nano:peanut:explicit_negative:\"nut-free\""
+    ]
+   }
+  },
+  {
+   "set": "legacy20",
+   "rep": 0,
+   "case": {
+    "id": "M4",
+    "cat": "messy",
+    "text": "Filling: almond paste (almonds, sugar), glucose syrup. Manufactured in a facility that does not handle peanuts.",
+    "gold": {
+     "contains": [
+      "treenut"
+     ],
+     "may": [],
+     "review": false
+    }
+   },
+   "ms": 14143,
+   "nanoStatus": "ok",
+   "error": null,
+   "rawNano": {
+    "claims": [
+     {
+      "allergen": "treenut",
+      "assertion": "intentional",
+      "evidence": "almond paste (almonds, sugar)"
+     },
+     {
+      "allergen": "peanut",
+      "assertion": "explicit_negative",
+      "evidence": "Manufactured in a facility that does not handle peanuts."
+     }
+    ],
+    "unresolved": [
+     "lecithin",
+     "emulsifier",
+     "natural flavour"
+    ]
+   },
+   "rules": {
+    "contains": [
+     "treenut"
+    ],
+    "may": [],
+    "review": false,
+    "unresolved": [],
+    "unsupported": [],
+    "evidence": [
+     "dictionary:treenut:intentional:\"almond\""
+    ]
+   },
+   "nano": {
+    "contains": [
+     "treenut"
+    ],
+    "may": [],
+    "review": true,
+    "unresolved": [
+     "Nano: lecithin",
+     "Nano: emulsifier",
+     "Nano: natural flavour"
+    ],
+    "unsupported": [],
+    "evidence": [
+     "nano:treenut:intentional:\"almond paste (almonds, sugar)\"",
+     "nano:peanut:explicit_negative:\"Manufactured in a facility that does not handle peanuts.\""
+    ]
+   },
+   "hybrid": {
+    "contains": [
+     "treenut"
+    ],
+    "may": [],
+    "review": true,
+    "unresolved": [
+     "Nano: lecithin",
+     "Nano: emulsifier",
+     "Nano: natural flavour"
+    ],
+    "unsupported": [],
+    "evidence": [
+     "dictionary:treenut:intentional:\"almond\"",
+     "nano:treenut:intentional:\"almond paste (almonds, sugar)\"",
+     "nano:peanut:explicit_negative:\"Manufactured in a facility that does not handle peanuts.\""
+    ]
+   }
+  },
+  {
+   "set": "legacy20",
+   "rep": 0,
+   "case": {
+    "id": "M5",
+    "cat": "messy",
+    "text": "Sauce base: water, tomato paste, Worcestershire sauce (vinegar, molasses, anchovies, tamarind), spices.",
+    "gold": {
+     "contains": [
+      "fish"
+     ],
+     "may": [],
+     "review": false
+    }
+   },
+   "ms": 15201,
+   "nanoStatus": "ok",
+   "error": null,
+   "rawNano": {
+    "claims": [
+     {
+      "allergen": "fish",
+      "assertion": "intentional",
+      "evidence": "Worcestershire sauce (vinegar, molasses, anchovies, tamarind)"
+     }
+    ],
+    "unresolved": [
+     "lecithin",
+     "emulsifier",
+     "natural flavour"
+    ]
+   },
+   "rules": {
+    "contains": [
+     "fish"
+    ],
+    "may": [],
+    "review": false,
+    "unresolved": [],
+    "unsupported": [],
+    "evidence": [
+     "dictionary:fish:intentional:\"anchovies\""
+    ]
+   },
+   "nano": {
+    "contains": [
+     "fish"
+    ],
+    "may": [],
+    "review": true,
+    "unresolved": [
+     "Nano: lecithin",
+     "Nano: emulsifier",
+     "Nano: natural flavour"
+    ],
+    "unsupported": [],
+    "evidence": [
+     "nano:fish:intentional:\"Worcestershire sauce (vinegar, molasses, anchovies, tamarind)\""
+    ]
+   },
+   "hybrid": {
+    "contains": [
+     "fish"
+    ],
+    "may": [],
+    "review": true,
+    "unresolved": [
+     "Nano: lecithin",
+     "Nano: emulsifier",
+     "Nano: natural flavour"
+    ],
+    "unsupported": [],
+    "evidence": [
+     "dictionary:fish:intentional:\"anchovies\"",
+     "nano:fish:intentional:\"Worcestershire sauce (vinegar, molasses, anchovies, tamarind)\""
+    ]
+   }
+  },
+  {
+   "set": "legacy20",
+   "rep": 0,
+   "case": {
+    "id": "N1",
+    "cat": "nested",
+    "text": "Chocolate chips [sugar, chocolate liquor, cocoa butter, emulsifier (lecithin), vanilla]. Emulsifier source not specified by sub-supplier.",
+    "gold": {
+     "contains": [],
+     "may": [],
+     "review": true
+    }
+   },
+   "ms": 18237,
+   "nanoStatus": "ok",
+   "error": null,
+   "rawNano": {
+    "claims": [
+     {
+      "allergen": "soy",
+      "assertion": "intentional",
+      "evidence": "emulsifier (lecithin)"
+     },
+     {
+      "allergen": "sesame",
+      "assertion": "intentional",
+      "evidence": "emulsifier (lecithin)"
+     }
+    ],
+    "unresolved": [
+     "emulsifier source not specified by sub-supplier"
+    ]
+   },
+   "rules": {
+    "contains": [],
+    "may": [],
+    "review": true,
+    "unresolved": [
+     "Ingredient with unspecified source (e.g. lecithin / natural flavour / emulsifier)"
+    ],
+    "unsupported": [],
+    "evidence": []
+   },
+   "nano": {
+    "contains": [
+     "sesame",
+     "soy"
+    ],
+    "may": [],
+    "review": true,
+    "unresolved": [
+     "Nano: emulsifier source not specified by sub-supplier"
+    ],
+    "unsupported": [],
+    "evidence": [
+     "nano:soy:intentional:\"emulsifier (lecithin)\"",
+     "nano:sesame:intentional:\"emulsifier (lecithin)\""
+    ]
+   },
+   "hybrid": {
+    "contains": [
+     "sesame",
+     "soy"
+    ],
+    "may": [],
+    "review": true,
+    "unresolved": [
+     "Ingredient with unspecified source (e.g. lecithin / natural flavour / emulsifier)",
+     "Nano: emulsifier source not specified by sub-supplier"
+    ],
+    "unsupported": [],
+    "evidence": [
+     "nano:soy:intentional:\"emulsifier (lecithin)\"",
+     "nano:sesame:intentional:\"emulsifier (lecithin)\""
+    ]
+   }
+  },
+  {
+   "set": "legacy20",
+   "rep": 0,
+   "case": {
+    "id": "N2",
+    "cat": "nested",
+    "text": "Crumb topping (enriched flour [wheat flour, niacin, iron], margarine [palm oil, water, salt, mono- and diglycerides, natural flavor (milk)]).",
+    "gold": {
+     "contains": [
+      "wheat",
+      "milk"
+     ],
+     "may": [],
+     "review": false
+    }
+   },
+   "ms": 18554,
+   "nanoStatus": "ok",
+   "error": null,
+   "rawNano": {
+    "claims": [
+     {
+      "allergen": "wheat",
+      "assertion": "intentional",
+      "evidence": "enriched flour [wheat flour, niacin, iron]"
+     },
+     {
+      "allergen": "milk",
+      "assertion": "intentional",
+      "evidence": "[natural flavor (milk)]"
+     }
+    ],
+    "unresolved": [
+     "lecithin",
+     "emulsifier",
+     "natural flavour"
+    ]
+   },
+   "rules": {
+    "contains": [
+     "milk",
+     "wheat"
+    ],
+    "may": [],
+    "review": false,
+    "unresolved": [],
+    "unsupported": [],
+    "evidence": [
+     "dictionary:milk:intentional:\"milk\"",
+     "dictionary:wheat:intentional:\"wheat\""
+    ]
+   },
+   "nano": {
+    "contains": [
+     "wheat"
+    ],
+    "may": [],
+    "review": true,
+    "unresolved": [
+     "Nano: lecithin",
+     "Nano: emulsifier",
+     "Nano: natural flavour",
+     "Model claim for milk has no matching text in the spec (\"[natural flavor (milk)]\")"
+    ],
+    "unsupported": [
+     "milk:\"[natural flavor (milk)]\""
+    ],
+    "evidence": [
+     "nano:wheat:intentional:\"enriched flour [wheat flour, niacin, iron]\""
+    ]
+   },
+   "hybrid": {
+    "contains": [
+     "milk",
+     "wheat"
+    ],
+    "may": [],
+    "review": true,
+    "unresolved": [
+     "Nano: lecithin",
+     "Nano: emulsifier",
+     "Nano: natural flavour",
+     "Model claim for milk has no matching text in the spec (\"[natural flavor (milk)]\")",
+     "Dictionary found milk but on-device model did not; kept as present, please confirm"
+    ],
+    "unsupported": [
+     "milk:\"[natural flavor (milk)]\""
+    ],
+    "evidence": [
+     "dictionary:milk:intentional:\"milk\"",
+     "dictionary:wheat:intentional:\"wheat\"",
+     "nano:wheat:intentional:\"enriched flour [wheat flour, niacin, iron]\""
+    ]
+   }
+  },
+  {
+   "set": "legacy20",
+   "rep": 0,
+   "case": {
+    "id": "N3",
+    "cat": "nested",
+    "text": "Prawn crackers: tapioca starch, palm oil, sugar, salt, dried prawn powder (5%), flavor enhancer (E621).",
+    "gold": {
+     "contains": [
+      "shellfish"
+     ],
+     "may": [],
+     "review": false
+    }
+   },
+   "ms": 12496,
+   "nanoStatus": "ok",
+   "error": null,
+   "rawNano": {
+    "claims": [
+     {
+      "allergen": "fish",
+      "assertion": "intentional",
+      "evidence": "dried prawn powder (5%)"
+     }
+    ],
+    "unresolved": [
+     "flavor enhancer (E621)"
+    ]
+   },
+   "rules": {
+    "contains": [
+     "shellfish"
+    ],
+    "may": [],
+    "review": false,
+    "unresolved": [],
+    "unsupported": [],
+    "evidence": [
+     "dictionary:shellfish:intentional:\"Prawn\""
+    ]
+   },
+   "nano": {
+    "contains": [
+     "fish"
+    ],
+    "may": [],
+    "review": true,
+    "unresolved": [
+     "Nano: flavor enhancer (E621)"
+    ],
+    "unsupported": [],
+    "evidence": [
+     "nano:fish:intentional:\"dried prawn powder (5%)\""
+    ]
+   },
+   "hybrid": {
+    "contains": [
+     "fish",
+     "shellfish"
+    ],
+    "may": [],
+    "review": true,
+    "unresolved": [
+     "Nano: flavor enhancer (E621)",
+     "Dictionary found shellfish but on-device model did not; kept as present, please confirm"
+    ],
+    "unsupported": [],
+    "evidence": [
+     "dictionary:shellfish:intentional:\"Prawn\"",
+     "nano:fish:intentional:\"dried prawn powder (5%)\""
+    ]
+   }
+  },
+  {
+   "set": "legacy20",
+   "rep": 0,
+   "case": {
+    "id": "N4",
+    "cat": "nested",
+    "text": "Pesto: basil, sunflower oil, grana padano cheese (cow's milk, salt, rennet, egg lysozyme), pine nuts, garlic.",
+    "gold": {
+     "contains": [
+      "milk",
+      "egg",
+      "treenut"
+     ],
+     "may": [],
+     "review": false
+    }
+   },
+   "ms": 23489,
+   "nanoStatus": "ok",
+   "error": null,
+   "rawNano": {
+    "claims": [
+     {
+      "allergen": "milk",
+      "assertion": "intentional",
+      "evidence": "grana padano cheese (cow's milk, salt, rennet)"
+     },
+     {
+      "allergen": "egg",
+      "assertion": "intentional",
+      "evidence": "egg lysozyme"
+     },
+     {
+      "allergen": "treenut",
+      "assertion": "intentional",
+      "evidence": "pine nuts"
+     }
+    ],
+    "unresolved": [
+     "lecithin",
+     "emulsifier",
+     "natural flavour"
+    ]
+   },
+   "rules": {
+    "contains": [
+     "egg",
+     "milk",
+     "treenut"
+    ],
+    "may": [],
+    "review": false,
+    "unresolved": [],
+    "unsupported": [],
+    "evidence": [
+     "dictionary:milk:intentional:\"milk\"",
+     "dictionary:egg:intentional:\"egg\"",
+     "dictionary:treenut:intentional:\"pine nuts\""
+    ]
+   },
+   "nano": {
+    "contains": [
+     "egg",
+     "treenut"
+    ],
+    "may": [],
+    "review": true,
+    "unresolved": [
+     "Nano: lecithin",
+     "Nano: emulsifier",
+     "Nano: natural flavour",
+     "Model claim for milk has no matching text in the spec (\"grana padano cheese (cow's milk, salt, rennet)\")"
+    ],
+    "unsupported": [
+     "milk:\"grana padano cheese (cow's milk, salt, rennet)\""
+    ],
+    "evidence": [
+     "nano:egg:intentional:\"egg lysozyme\"",
+     "nano:treenut:intentional:\"pine nuts\""
+    ]
+   },
+   "hybrid": {
+    "contains": [
+     "egg",
+     "milk",
+     "treenut"
+    ],
+    "may": [],
+    "review": true,
+    "unresolved": [
+     "Nano: lecithin",
+     "Nano: emulsifier",
+     "Nano: natural flavour",
+     "Model claim for milk has no matching text in the spec (\"grana padano cheese (cow's milk, salt, rennet)\")",
+     "Dictionary found milk but on-device model did not; kept as present, please confirm"
+    ],
+    "unsupported": [
+     "milk:\"grana padano cheese (cow's milk, salt, rennet)\""
+    ],
+    "evidence": [
+     "dictionary:milk:intentional:\"milk\"",
+     "dictionary:egg:intentional:\"egg\"",
+     "dictionary:treenut:intentional:\"pine nuts\"",
+     "nano:egg:intentional:\"egg lysozyme\"",
+     "nano:treenut:intentional:\"pine nuts\""
+    ]
+   }
+  },
+  {
+   "set": "legacy20",
+   "rep": 0,
+   "case": {
+    "id": "N5",
+    "cat": "nested",
+    "text": "Glaze: icing sugar, water, flavouring (contains a butter-derived component), colour (E160a).",
+    "gold": {
+     "contains": [
+      "milk"
+     ],
+     "may": [],
+     "review": false
+    }
+   },
+   "ms": 11814,
+   "nanoStatus": "ok",
+   "error": null,
+   "rawNano": {
+    "claims": [
+     {
+      "allergen": "milk",
+      "assertion": "intentional",
+      "evidence": "contains a butter-derived component"
+     }
+    ],
+    "unresolved": [
+     "flavouring"
+    ]
+   },
+   "rules": {
+    "contains": [
+     "milk"
+    ],
+    "may": [],
+    "review": false,
+    "unresolved": [],
+    "unsupported": [],
+    "evidence": [
+     "dictionary:milk:intentional:\"butter\""
+    ]
+   },
+   "nano": {
+    "contains": [
+     "milk"
+    ],
+    "may": [],
+    "review": true,
+    "unresolved": [
+     "Nano: flavouring"
+    ],
+    "unsupported": [],
+    "evidence": [
+     "nano:milk:intentional:\"contains a butter-derived component\""
+    ]
+   },
+   "hybrid": {
+    "contains": [
+     "milk"
+    ],
+    "may": [],
+    "review": true,
+    "unresolved": [
+     "Nano: flavouring"
+    ],
+    "unsupported": [],
+    "evidence": [
+     "dictionary:milk:intentional:\"butter\"",
+     "nano:milk:intentional:\"contains a butter-derived component\""
+    ]
+   }
+  },
+  {
+   "set": "legacy20",
+   "rep": 0,
+   "case": {
+    "id": "C1",
+    "cat": "contradictory",
+    "text": "Allergen statement: none. Ingredients: wheat flour, water, salt, yeast.",
+    "gold": {
+     "contains": [
+      "wheat"
+     ],
+     "may": [],
+     "review": true
+    }
+   },
+   "ms": 12816,
+   "nanoStatus": "ok",
+   "error": null,
+   "rawNano": {
+    "claims": [
+     {
+      "allergen": "wheat",
+      "assertion": "intentional",
+      "evidence": "wheat flour"
+     }
+    ],
+    "unresolved": [
+     "lecithin",
+     "emulsifier",
+     "natural flavour"
+    ]
+   },
+   "rules": {
+    "contains": [
+     "wheat"
+    ],
+    "may": [],
+    "review": true,
+    "unresolved": [
+     "Spec has an allergen statement that must be cross-checked against the ingredient list"
+    ],
+    "unsupported": [],
+    "evidence": [
+     "dictionary:wheat:intentional:\"wheat\""
+    ]
+   },
+   "nano": {
+    "contains": [
+     "wheat"
+    ],
+    "may": [],
+    "review": true,
+    "unresolved": [
+     "Nano: lecithin",
+     "Nano: emulsifier",
+     "Nano: natural flavour"
+    ],
+    "unsupported": [],
+    "evidence": [
+     "nano:wheat:intentional:\"wheat flour\""
+    ]
+   },
+   "hybrid": {
+    "contains": [
+     "wheat"
+    ],
+    "may": [],
+    "review": true,
+    "unresolved": [
+     "Spec has an allergen statement that must be cross-checked against the ingredient list",
+     "Nano: lecithin",
+     "Nano: emulsifier",
+     "Nano: natural flavour"
+    ],
+    "unsupported": [],
+    "evidence": [
+     "dictionary:wheat:intentional:\"wheat\"",
+     "nano:wheat:intentional:\"wheat flour\""
+    ]
+   }
+  },
+  {
+   "set": "legacy20",
+   "rep": 0,
+   "case": {
+    "id": "C2",
+    "cat": "contradictory",
+    "text": "Ingredients: sugar, cocoa, natural and artificial flavors, emulsifier.",
+    "gold": {
+     "contains": [],
+     "may": [],
+     "review": true
+    }
+   },
+   "ms": 11424,
+   "nanoStatus": "ok",
+   "error": null,
+   "rawNano": {
+    "claims": [
+     {
+      "allergen": "milk",
+      "assertion": "intentional",
+      "evidence": "emulsifier"
+     }
+    ],
+    "unresolved": [
+     "emulsifier"
+    ]
+   },
+   "rules": {
+    "contains": [],
+    "may": [],
+    "review": true,
+    "unresolved": [
+     "Ingredient with unspecified source (e.g. lecithin / natural flavour / emulsifier)"
+    ],
+    "unsupported": [],
+    "evidence": []
+   },
+   "nano": {
+    "contains": [
+     "milk"
+    ],
+    "may": [],
+    "review": true,
+    "unresolved": [
+     "Nano: emulsifier"
+    ],
+    "unsupported": [],
+    "evidence": [
+     "nano:milk:intentional:\"emulsifier\""
+    ]
+   },
+   "hybrid": {
+    "contains": [
+     "milk"
+    ],
+    "may": [],
+    "review": true,
+    "unresolved": [
+     "Ingredient with unspecified source (e.g. lecithin / natural flavour / emulsifier)",
+     "Nano: emulsifier"
+    ],
+    "unsupported": [],
+    "evidence": [
+     "nano:milk:intentional:\"emulsifier\""
+    ]
+   }
+  },
+  {
+   "set": "legacy20",
+   "rep": 0,
+   "case": {
+    "id": "C3",
+    "cat": "contradictory",
+    "text": "Contains: milk. Ingredients: oat base (water, oats), sunflower oil, calcium carbonate, salt.",
+    "gold": {
+     "contains": [
+      "milk"
+     ],
+     "may": [],
+     "review": true
+    }
+   },
+   "ms": 12083,
+   "nanoStatus": "ok",
+   "error": null,
+   "rawNano": {
+    "claims": [
+     {
+      "allergen": "milk",
+      "assertion": "intentional",
+      "evidence": "Contains: milk."
+     }
+    ],
+    "unresolved": [
+     "lecithin",
+     "emulsifier",
+     "natural flavour"
+    ]
+   },
+   "rules": {
+    "contains": [
+     "milk"
+    ],
+    "may": [],
+    "review": false,
+    "unresolved": [],
+    "unsupported": [],
+    "evidence": [
+     "dictionary:milk:intentional:\"milk\""
+    ]
+   },
+   "nano": {
+    "contains": [
+     "milk"
+    ],
+    "may": [],
+    "review": true,
+    "unresolved": [
+     "Nano: lecithin",
+     "Nano: emulsifier",
+     "Nano: natural flavour"
+    ],
+    "unsupported": [],
+    "evidence": [
+     "nano:milk:intentional:\"Contains: milk.\""
+    ]
+   },
+   "hybrid": {
+    "contains": [
+     "milk"
+    ],
+    "may": [],
+    "review": true,
+    "unresolved": [
+     "Nano: lecithin",
+     "Nano: emulsifier",
+     "Nano: natural flavour"
+    ],
+    "unsupported": [],
+    "evidence": [
+     "dictionary:milk:intentional:\"milk\"",
+     "nano:milk:intentional:\"Contains: milk.\""
+    ]
+   }
+  },
+  {
+   "set": "legacy20",
+   "rep": 0,
+   "case": {
+    "id": "C4",
+    "cat": "contradictory",
+    "text": "Spice mix: paprika, garlic, onion, mustard seed, celery seed. Allergen information: see page 2 (not provided).",
+    "gold": {
+     "contains": [],
+     "may": [],
+     "review": true
+    }
+   },
+   "ms": 13641,
+   "nanoStatus": "ok",
+   "error": null,
+   "rawNano": {
+    "claims": [
+     {
+      "allergen": "wheat",
+      "assertion": "precautionary",
+      "evidence": "paprika, garlic, onion, mustard seed, celery seed"
+     }
+    ],
+    "unresolved": [
+     "see page 2 (not provided)"
+    ]
+   },
+   "rules": {
+    "contains": [],
+    "may": [],
+    "review": true,
+    "unresolved": [
+     "Spec has an allergen statement that must be cross-checked against the ingredient list"
+    ],
+    "unsupported": [],
+    "evidence": []
+   },
+   "nano": {
+    "contains": [],
+    "may": [
+     "wheat"
+    ],
+    "review": true,
+    "unresolved": [
+     "Nano: see page 2 (not provided)"
+    ],
+    "unsupported": [],
+    "evidence": [
+     "nano:wheat:precautionary:\"paprika, garlic, onion, mustard seed, celery seed\""
+    ]
+   },
+   "hybrid": {
+    "contains": [],
+    "may": [
+     "wheat"
+    ],
+    "review": true,
+    "unresolved": [
+     "Spec has an allergen statement that must be cross-checked against the ingredient list",
+     "Nano: see page 2 (not provided)"
+    ],
+    "unsupported": [],
+    "evidence": [
+     "nano:wheat:precautionary:\"paprika, garlic, onion, mustard seed, celery seed\""
+    ]
+   }
+  },
+  {
+   "set": "legacy20",
+   "rep": 0,
+   "case": {
+    "id": "C5",
+    "cat": "contradictory",
+    "text": "Ingredients: whey protein isolate, cocoa, sucralose. Suitable for vegans.",
+    "gold": {
+     "contains": [
+      "milk"
+     ],
+     "may": [],
+     "review": true
+    }
+   },
+   "ms": 13312,
+   "nanoStatus": "ok",
+   "error": null,
+   "rawNano": {
+    "claims": [
+     {
+      "allergen": "milk",
+      "assertion": "intentional",
+      "evidence": "whey protein isolate"
+     }
+    ],
+    "unresolved": [
+     "lecithin",
+     "emulsifier",
+     "natural flavour"
+    ]
+   },
+   "rules": {
+    "contains": [
+     "milk"
+    ],
+    "may": [],
+    "review": false,
+    "unresolved": [],
+    "unsupported": [],
+    "evidence": [
+     "dictionary:milk:intentional:\"whey\""
+    ]
+   },
+   "nano": {
+    "contains": [
+     "milk"
+    ],
+    "may": [],
+    "review": true,
+    "unresolved": [
+     "Nano: lecithin",
+     "Nano: emulsifier",
+     "Nano: natural flavour"
+    ],
+    "unsupported": [],
+    "evidence": [
+     "nano:milk:intentional:\"whey protein isolate\""
+    ]
+   },
+   "hybrid": {
+    "contains": [
+     "milk"
+    ],
+    "may": [],
+    "review": true,
+    "unresolved": [
+     "Nano: lecithin",
+     "Nano: emulsifier",
+     "Nano: natural flavour"
+    ],
+    "unsupported": [],
+    "evidence": [
+     "dictionary:milk:intentional:\"whey\"",
+     "nano:milk:intentional:\"whey protein isolate\""
+    ]
+   }
+  },
+  {
+   "set": "legacy10",
+   "rep": 0,
+   "case": {
+    "id": "H1",
+    "cat": "heldout",
+    "text": "Protein crisp: rice, lactalbumin, cocoa powder, salt.",
+    "gold": {
+     "contains": [
+      "milk"
+     ],
+     "may": [],
+     "review": false
+    }
+   },
+   "ms": 7691,
+   "nanoStatus": "ok",
+   "error": null,
+   "rawNano": {
+    "claims": [
+     {
+      "allergen": "milk",
+      "assertion": "intentional",
+      "evidence": "lactalbumin"
+     }
+    ],
+    "unresolved": [
+     "lecithin",
+     "emulsifier",
+     "natural flavour"
+    ]
+   },
+   "rules": {
+    "contains": [
+     "milk"
+    ],
+    "may": [],
+    "review": false,
+    "unresolved": [],
+    "unsupported": [],
+    "evidence": [
+     "dictionary:milk:intentional:\"lactalbumin\""
+    ]
+   },
+   "nano": {
+    "contains": [
+     "milk"
+    ],
+    "may": [],
+    "review": true,
+    "unresolved": [
+     "Nano: lecithin",
+     "Nano: emulsifier",
+     "Nano: natural flavour"
+    ],
+    "unsupported": [],
+    "evidence": [
+     "nano:milk:intentional:\"lactalbumin\""
+    ]
+   },
+   "hybrid": {
+    "contains": [
+     "milk"
+    ],
+    "may": [],
+    "review": true,
+    "unresolved": [
+     "Nano: lecithin",
+     "Nano: emulsifier",
+     "Nano: natural flavour"
+    ],
+    "unsupported": [],
+    "evidence": [
+     "dictionary:milk:intentional:\"lactalbumin\"",
+     "nano:milk:intentional:\"lactalbumin\""
+    ]
+   }
+  },
+  {
+   "set": "legacy10",
+   "rep": 0,
+   "case": {
+    "id": "H2",
+    "cat": "heldout",
+    "text": "Flavour preparation contains a hydrolysate of crustacean origin (approx. 2%).",
+    "gold": {
+     "contains": [
+      "shellfish"
+     ],
+     "may": [],
+     "review": false
+    }
+   },
+   "ms": 10882,
+   "nanoStatus": "ok",
+   "error": null,
+   "rawNano": {
+    "claims": [
+     {
+      "allergen": "shellfish",
+      "assertion": "intentional",
+      "evidence": "hydrolysate of crustacean origin (approx. 2%)"
+     }
+    ],
+    "unresolved": []
+   },
+   "rules": {
+    "contains": [
+     "shellfish"
+    ],
+    "may": [],
+    "review": false,
+    "unresolved": [],
+    "unsupported": [],
+    "evidence": [
+     "dictionary:shellfish:intentional:\"crustacean\""
+    ]
+   },
+   "nano": {
+    "contains": [
+     "shellfish"
+    ],
+    "may": [],
+    "review": false,
+    "unresolved": [],
+    "unsupported": [],
+    "evidence": [
+     "nano:shellfish:intentional:\"hydrolysate of crustacean origin (approx. 2%)\""
+    ]
+   },
+   "hybrid": {
+    "contains": [
+     "shellfish"
+    ],
+    "may": [],
+    "review": false,
+    "unresolved": [],
+    "unsupported": [],
+    "evidence": [
+     "dictionary:shellfish:intentional:\"crustacean\"",
+     "nano:shellfish:intentional:\"hydrolysate of crustacean origin (approx. 2%)\""
+    ]
+   }
+  },
+  {
+   "set": "legacy10",
+   "rep": 0,
+   "case": {
+    "id": "H3",
+    "cat": "heldout",
+    "text": "Binder: hydrolysed vegetable protein from Triticum aestivum, maltodextrin.",
+    "gold": {
+     "contains": [
+      "wheat"
+     ],
+     "may": [],
+     "review": false
+    }
+   },
+   "ms": 14320,
+   "nanoStatus": "ok",
+   "error": null,
+   "rawNano": {
+    "claims": [
+     {
+      "allergen": "wheat",
+      "assertion": "intentional",
+      "evidence": "hydrolysed vegetable protein from Triticum aestivum"
+     }
+    ],
+    "unresolved": [
+     "lecithin",
+     "emulsifier",
+     "natural flavour"
+    ]
+   },
+   "rules": {
+    "contains": [
+     "wheat"
+    ],
+    "may": [],
+    "review": false,
+    "unresolved": [],
+    "unsupported": [],
+    "evidence": [
+     "dictionary:wheat:intentional:\"Triticum\""
+    ]
+   },
+   "nano": {
+    "contains": [
+     "wheat"
+    ],
+    "may": [],
+    "review": true,
+    "unresolved": [
+     "Nano: lecithin",
+     "Nano: emulsifier",
+     "Nano: natural flavour"
+    ],
+    "unsupported": [],
+    "evidence": [
+     "nano:wheat:intentional:\"hydrolysed vegetable protein from Triticum aestivum\""
+    ]
+   },
+   "hybrid": {
+    "contains": [
+     "wheat"
+    ],
+    "may": [],
+    "review": true,
+    "unresolved": [
+     "Nano: lecithin",
+     "Nano: emulsifier",
+     "Nano: natural flavour"
+    ],
+    "unsupported": [],
+    "evidence": [
+     "dictionary:wheat:intentional:\"Triticum\"",
+     "nano:wheat:intentional:\"hydrolysed vegetable protein from Triticum aestivum\""
+    ]
+   }
+  },
+  {
+   "set": "legacy10",
+   "rep": 0,
+   "case": {
+    "id": "H4",
+    "cat": "heldout",
+    "text": "Dressing: rapeseed oil, pasteurised hen's yolk, mustard, vinegar.",
+    "gold": {
+     "contains": [
+      "egg"
+     ],
+     "may": [],
+     "review": false
+    }
+   },
+   "ms": 13910,
+   "nanoStatus": "ok",
+   "error": null,
+   "rawNano": {
+    "claims": [
+     {
+      "allergen": "egg",
+      "assertion": "intentional",
+      "evidence": "pasteurised hen's yolk"
+     }
+    ],
+    "unresolved": [
+     "lecithin",
+     "emulsifier",
+     "natural flavour"
+    ]
+   },
+   "rules": {
+    "contains": [
+     "egg"
+    ],
+    "may": [],
+    "review": false,
+    "unresolved": [],
+    "unsupported": [],
+    "evidence": [
+     "dictionary:egg:intentional:\"yolk\""
+    ]
+   },
+   "nano": {
+    "contains": [
+     "egg"
+    ],
+    "may": [],
+    "review": true,
+    "unresolved": [
+     "Nano: lecithin",
+     "Nano: emulsifier",
+     "Nano: natural flavour"
+    ],
+    "unsupported": [],
+    "evidence": [
+     "nano:egg:intentional:\"pasteurised hen's yolk\""
+    ]
+   },
+   "hybrid": {
+    "contains": [
+     "egg"
+    ],
+    "may": [],
+    "review": true,
+    "unresolved": [
+     "Nano: lecithin",
+     "Nano: emulsifier",
+     "Nano: natural flavour"
+    ],
+    "unsupported": [],
+    "evidence": [
+     "dictionary:egg:intentional:\"yolk\"",
+     "nano:egg:intentional:\"pasteurised hen's yolk\""
+    ]
+   }
+  },
+  {
+   "set": "legacy10",
+   "rep": 0,
+   "case": {
+    "id": "H5",
+    "cat": "heldout",
+    "text": "Granola: oats, honey, chopped filberts, raisins.",
+    "gold": {
+     "contains": [
+      "treenut"
+     ],
+     "may": [],
+     "review": false
+    }
+   },
+   "ms": 17776,
+   "nanoStatus": "ok",
+   "error": null,
+   "rawNano": {
+    "claims": [
+     {
+      "allergen": "wheat",
+      "assertion": "intentional",
+      "evidence": "oats"
+     },
+     {
+      "allergen": "treenut",
+      "assertion": "intentional",
+      "evidence": "chopped filberts"
+     }
+    ],
+    "unresolved": [
+     "lecithin",
+     "emulsifier",
+     "natural flavour"
+    ]
+   },
+   "rules": {
+    "contains": [
+     "treenut"
+    ],
+    "may": [],
+    "review": false,
+    "unresolved": [],
+    "unsupported": [],
+    "evidence": [
+     "dictionary:treenut:intentional:\"filberts\""
+    ]
+   },
+   "nano": {
+    "contains": [
+     "treenut",
+     "wheat"
+    ],
+    "may": [],
+    "review": true,
+    "unresolved": [
+     "Nano: lecithin",
+     "Nano: emulsifier",
+     "Nano: natural flavour"
+    ],
+    "unsupported": [],
+    "evidence": [
+     "nano:wheat:intentional:\"oats\"",
+     "nano:treenut:intentional:\"chopped filberts\""
+    ]
+   },
+   "hybrid": {
+    "contains": [
+     "treenut",
+     "wheat"
+    ],
+    "may": [],
+    "review": true,
+    "unresolved": [
+     "Nano: lecithin",
+     "Nano: emulsifier",
+     "Nano: natural flavour"
+    ],
+    "unsupported": [],
+    "evidence": [
+     "dictionary:treenut:intentional:\"filberts\"",
+     "nano:wheat:intentional:\"oats\"",
+     "nano:treenut:intentional:\"chopped filberts\""
+    ]
+   }
+  },
+  {
+   "set": "legacy10",
+   "rep": 0,
+   "case": {
+    "id": "H6",
+    "cat": "heldout",
+    "text": "Seasoning: salt, garlic, dried bonito flakes, kelp.",
+    "gold": {
+     "contains": [
+      "fish"
+     ],
+     "may": [],
+     "review": false
+    }
+   },
+   "ms": 13102,
+   "nanoStatus": "ok",
+   "error": null,
+   "rawNano": {
+    "claims": [
+     {
+      "allergen": "fish",
+      "assertion": "intentional",
+      "evidence": "dried bonito flakes"
+     }
+    ],
+    "unresolved": [
+     "lecithin",
+     "emulsifier",
+     "natural flavour"
+    ]
+   },
+   "rules": {
+    "contains": [
+     "fish"
+    ],
+    "may": [],
+    "review": false,
+    "unresolved": [],
+    "unsupported": [],
+    "evidence": [
+     "dictionary:fish:intentional:\"bonito\""
+    ]
+   },
+   "nano": {
+    "contains": [
+     "fish"
+    ],
+    "may": [],
+    "review": true,
+    "unresolved": [
+     "Nano: lecithin",
+     "Nano: emulsifier",
+     "Nano: natural flavour"
+    ],
+    "unsupported": [],
+    "evidence": [
+     "nano:fish:intentional:\"dried bonito flakes\""
+    ]
+   },
+   "hybrid": {
+    "contains": [
+     "fish"
+    ],
+    "may": [],
+    "review": true,
+    "unresolved": [
+     "Nano: lecithin",
+     "Nano: emulsifier",
+     "Nano: natural flavour"
+    ],
+    "unsupported": [],
+    "evidence": [
+     "dictionary:fish:intentional:\"bonito\"",
+     "nano:fish:intentional:\"dried bonito flakes\""
+    ]
+   }
+  },
+  {
+   "set": "legacy10",
+   "rep": 0,
+   "case": {
+    "id": "H7",
+    "cat": "heldout",
+    "text": "Ingredients: chickpeas, olive oil, lemon juice, salt. Line also runs products with peanuts; cleaning validated but not guaranteed.",
+    "gold": {
+     "contains": [],
+     "may": [
+      "peanut"
+     ],
+     "review": false
+    }
+   },
+   "ms": 13615,
+   "nanoStatus": "ok",
+   "error": null,
+   "rawNano": {
+    "claims": [
+     {
+      "allergen": "peanut",
+      "assertion": "intentional",
+      "evidence": "Line also runs products with peanuts"
+     }
+    ],
+    "unresolved": [
+     "lecithin",
+     "emulsifier",
+     "natural flavour"
+    ]
+   },
+   "rules": {
+    "contains": [],
+    "may": [
+     "peanut"
+    ],
+    "review": false,
+    "unresolved": [],
+    "unsupported": [],
+    "evidence": [
+     "dictionary:peanut:precautionary:\"peanuts\""
+    ]
+   },
+   "nano": {
+    "contains": [
+     "peanut"
+    ],
+    "may": [],
+    "review": true,
+    "unresolved": [
+     "Nano: lecithin",
+     "Nano: emulsifier",
+     "Nano: natural flavour"
+    ],
+    "unsupported": [],
+    "evidence": [
+     "nano:peanut:intentional:\"Line also runs products with peanuts\""
+    ]
+   },
+   "hybrid": {
+    "contains": [
+     "peanut"
+    ],
+    "may": [],
+    "review": true,
+    "unresolved": [
+     "Nano: lecithin",
+     "Nano: emulsifier",
+     "Nano: natural flavour"
+    ],
+    "unsupported": [],
+    "evidence": [
+     "dictionary:peanut:precautionary:\"peanuts\"",
+     "nano:peanut:intentional:\"Line also runs products with peanuts\""
+    ]
+   }
+  },
+  {
+   "set": "legacy10",
+   "rep": 0,
+   "case": {
+    "id": "H8",
+    "cat": "heldout",
+    "text": "Cheese alternative: cashew base, coconut oil, cultures. Declared allergens: none.",
+    "gold": {
+     "contains": [
+      "treenut"
+     ],
+     "may": [],
+     "review": true
+    }
+   },
+   "ms": 12667,
+   "nanoStatus": "ok",
+   "error": null,
+   "rawNano": {
+    "claims": [
+     {
+      "allergen": "treenut",
+      "assertion": "intentional",
+      "evidence": "cashew base"
+     }
+    ],
+    "unresolved": [
+     "lecithin",
+     "emulsifier"
+    ]
+   },
+   "rules": {
+    "contains": [
+     "milk",
+     "treenut"
+    ],
+    "may": [],
+    "review": false,
+    "unresolved": [],
+    "unsupported": [],
+    "evidence": [
+     "dictionary:milk:intentional:\"Cheese\"",
+     "dictionary:treenut:intentional:\"cashew\""
+    ]
+   },
+   "nano": {
+    "contains": [
+     "treenut"
+    ],
+    "may": [],
+    "review": true,
+    "unresolved": [
+     "Nano: lecithin",
+     "Nano: emulsifier"
+    ],
+    "unsupported": [],
+    "evidence": [
+     "nano:treenut:intentional:\"cashew base\""
+    ]
+   },
+   "hybrid": {
+    "contains": [
+     "milk",
+     "treenut"
+    ],
+    "may": [],
+    "review": true,
+    "unresolved": [
+     "Nano: lecithin",
+     "Nano: emulsifier",
+     "Dictionary found milk but on-device model did not; kept as present, please confirm"
+    ],
+    "unsupported": [],
+    "evidence": [
+     "dictionary:milk:intentional:\"Cheese\"",
+     "dictionary:treenut:intentional:\"cashew\"",
+     "nano:treenut:intentional:\"cashew base\""
+    ]
+   }
+  },
+  {
+   "set": "legacy10",
+   "rep": 0,
+   "case": {
+    "id": "H9",
+    "cat": "heldout",
+    "text": "Snack bar: dates, marzipan, cocoa, sea salt.",
+    "gold": {
+     "contains": [
+      "treenut"
+     ],
+     "may": [],
+     "review": false
+    }
+   },
+   "ms": 16664,
+   "nanoStatus": "ok",
+   "error": null,
+   "rawNano": {
+    "claims": [
+     {
+      "allergen": "wheat",
+      "assertion": "intentional",
+      "evidence": "spelt"
+     },
+     {
+      "allergen": "soy",
+      "assertion": "intentional",
+      "evidence": ""
+     }
+    ],
+    "unresolved": [
+     "lecithin",
+     "emulsifier",
+     "natural flavour"
+    ]
+   },
+   "rules": {
+    "contains": [
+     "treenut"
+    ],
+    "may": [],
+    "review": false,
+    "unresolved": [],
+    "unsupported": [],
+    "evidence": [
+     "dictionary:treenut:intentional:\"marzipan\""
+    ]
+   },
+   "nano": {
+    "contains": [],
+    "may": [],
+    "review": true,
+    "unresolved": [
+     "Nano: lecithin",
+     "Nano: emulsifier",
+     "Nano: natural flavour",
+     "Model claim for wheat has no matching text in the spec (\"spelt\")",
+     "Model claim for soy has no matching text in the spec (\"\")"
+    ],
+    "unsupported": [
+     "wheat:\"spelt\"",
+     "soy:\"\""
+    ],
+    "evidence": []
+   },
+   "hybrid": {
+    "contains": [
+     "treenut"
+    ],
+    "may": [],
+    "review": true,
+    "unresolved": [
+     "Nano: lecithin",
+     "Nano: emulsifier",
+     "Nano: natural flavour",
+     "Model claim for wheat has no matching text in the spec (\"spelt\")",
+     "Model claim for soy has no matching text in the spec (\"\")",
+     "Dictionary found treenut but on-device model did not; kept as present, please confirm"
+    ],
+    "unsupported": [
+     "wheat:\"spelt\"",
+     "soy:\"\""
+    ],
+    "evidence": [
+     "dictionary:treenut:intentional:\"marzipan\""
+    ]
+   }
+  },
+  {
+   "set": "legacy10",
+   "rep": 0,
+   "case": {
+    "id": "H10",
+    "cat": "heldout",
+    "text": "Noodles: buckwheat flour (60%), common wheat flour (40%), water.",
+    "gold": {
+     "contains": [
+      "wheat"
+     ],
+     "may": [],
+     "review": false
+    }
+   },
+   "ms": 13628,
+   "nanoStatus": "ok",
+   "error": null,
+   "rawNano": {
+    "claims": [
+     {
+      "allergen": "wheat",
+      "assertion": "intentional",
+      "evidence": "common wheat flour (40%)"
+     }
+    ],
+    "unresolved": [
+     "lecithin",
+     "emulsifier",
+     "natural flavour"
+    ]
+   },
+   "rules": {
+    "contains": [
+     "wheat"
+    ],
+    "may": [],
+    "review": false,
+    "unresolved": [],
+    "unsupported": [],
+    "evidence": [
+     "dictionary:wheat:intentional:\"wheat\""
+    ]
+   },
+   "nano": {
+    "contains": [
+     "wheat"
+    ],
+    "may": [],
+    "review": true,
+    "unresolved": [
+     "Nano: lecithin",
+     "Nano: emulsifier",
+     "Nano: natural flavour"
+    ],
+    "unsupported": [],
+    "evidence": [
+     "nano:wheat:intentional:\"common wheat flour (40%)\""
+    ]
+   },
+   "hybrid": {
+    "contains": [
+     "wheat"
+    ],
+    "may": [],
+    "review": true,
+    "unresolved": [
+     "Nano: lecithin",
+     "Nano: emulsifier",
+     "Nano: natural flavour"
+    ],
+    "unsupported": [],
+    "evidence": [
+     "dictionary:wheat:intentional:\"wheat\"",
+     "nano:wheat:intentional:\"common wheat flour (40%)\""
+    ]
+   }
+  },
+  {
+   "set": "v2",
+   "rep": 0,
+   "case": {
+    "id": "H11",
+    "cat": "scientific",
+    "text": "Thickener: flour from Glycine max, guar gum, water.",
+    "gold": {
+     "contains": [
+      "soy"
+     ],
+     "may": [],
+     "review": false
+    },
+    "unseenTerm": "Glycine max"
+   },
+   "ms": 13817,
+   "nanoStatus": "ok",
+   "error": null,
+   "rawNano": {
+    "claims": [
+     {
+      "allergen": "wheat",
+      "assertion": "intentional",
+      "evidence": "flour from Glycine max"
+     }
+    ],
+    "unresolved": [
+     "lecithin",
+     "emulsifier",
+     "natural flavour"
+    ]
+   },
+   "rules": {
+    "contains": [],
+    "may": [],
+    "review": false,
+    "unresolved": [],
+    "unsupported": [],
+    "evidence": []
+   },
+   "nano": {
+    "contains": [
+     "wheat"
+    ],
+    "may": [],
+    "review": true,
+    "unresolved": [
+     "Nano: lecithin",
+     "Nano: emulsifier",
+     "Nano: natural flavour"
+    ],
+    "unsupported": [],
+    "evidence": [
+     "nano:wheat:intentional:\"flour from Glycine max\""
+    ]
+   },
+   "hybrid": {
+    "contains": [
+     "wheat"
+    ],
+    "may": [],
+    "review": true,
+    "unresolved": [
+     "Nano: lecithin",
+     "Nano: emulsifier",
+     "Nano: natural flavour"
+    ],
+    "unsupported": [],
+    "evidence": [
+     "nano:wheat:intentional:\"flour from Glycine max\""
+    ]
+   }
+  },
+  {
+   "set": "v2",
+   "rep": 0,
+   "case": {
+    "id": "H12",
+    "cat": "scientific",
+    "text": "Topping: sliced kernels of Prunus dulcis, lightly toasted.",
+    "gold": {
+     "contains": [
+      "treenut"
+     ],
+     "may": [],
+     "review": false
+    },
+    "unseenTerm": "Prunus dulcis"
+   },
+   "ms": 14094,
+   "nanoStatus": "ok",
+   "error": null,
+   "rawNano": {
+    "claims": [
+     {
+      "allergen": "treenut",
+      "assertion": "intentional",
+      "evidence": "sliced kernels of Prunus dulcis"
+     }
+    ],
+    "unresolved": [
+     "lecithin",
+     "emulsifier",
+     "natural flavour"
+    ]
+   },
+   "rules": {
+    "contains": [],
+    "may": [],
+    "review": false,
+    "unresolved": [],
+    "unsupported": [],
+    "evidence": []
+   },
+   "nano": {
+    "contains": [
+     "treenut"
+    ],
+    "may": [],
+    "review": true,
+    "unresolved": [
+     "Nano: lecithin",
+     "Nano: emulsifier",
+     "Nano: natural flavour"
+    ],
+    "unsupported": [],
+    "evidence": [
+     "nano:treenut:intentional:\"sliced kernels of Prunus dulcis\""
+    ]
+   },
+   "hybrid": {
+    "contains": [
+     "treenut"
+    ],
+    "may": [],
+    "review": true,
+    "unresolved": [
+     "Nano: lecithin",
+     "Nano: emulsifier",
+     "Nano: natural flavour"
+    ],
+    "unsupported": [],
+    "evidence": [
+     "nano:treenut:intentional:\"sliced kernels of Prunus dulcis\""
+    ]
+   }
+  },
+  {
+   "set": "v2",
+   "rep": 0,
+   "case": {
+    "id": "H13",
+    "cat": "scientific",
+    "text": "Oil blend: rapeseed oil, oil of Sesamum indicum (10%).",
+    "gold": {
+     "contains": [
+      "sesame"
+     ],
+     "may": [],
+     "review": false
+    },
+    "unseenTerm": "Sesamum indicum"
+   },
+   "ms": 14189,
+   "nanoStatus": "ok",
+   "error": null,
+   "rawNano": {
+    "claims": [
+     {
+      "allergen": "sesame",
+      "assertion": "intentional",
+      "evidence": "oil of Sesamum indicum (10%)."
+     }
+    ],
+    "unresolved": [
+     "lecithin",
+     "emulsifier",
+     "natural flavour"
+    ]
+   },
+   "rules": {
+    "contains": [],
+    "may": [],
+    "review": false,
+    "unresolved": [],
+    "unsupported": [],
+    "evidence": []
+   },
+   "nano": {
+    "contains": [
+     "sesame"
+    ],
+    "may": [],
+    "review": true,
+    "unresolved": [
+     "Nano: lecithin",
+     "Nano: emulsifier",
+     "Nano: natural flavour"
+    ],
+    "unsupported": [],
+    "evidence": [
+     "nano:sesame:intentional:\"oil of Sesamum indicum (10%).\""
+    ]
+   },
+   "hybrid": {
+    "contains": [
+     "sesame"
+    ],
+    "may": [],
+    "review": true,
+    "unresolved": [
+     "Nano: lecithin",
+     "Nano: emulsifier",
+     "Nano: natural flavour"
+    ],
+    "unsupported": [],
+    "evidence": [
+     "nano:sesame:intentional:\"oil of Sesamum indicum (10%).\""
+    ]
+   }
+  },
+  {
+   "set": "v2",
+   "rep": 0,
+   "case": {
+    "id": "H14",
+    "cat": "derivative",
+    "text": "Binder: ovomucoid (0.5%), potato starch, water.",
+    "gold": {
+     "contains": [
+      "egg"
+     ],
+     "may": [],
+     "review": false
+    },
+    "unseenTerm": "ovomucoid"
+   },
+   "ms": 13750,
+   "nanoStatus": "ok",
+   "error": null,
+   "rawNano": {
+    "claims": [
+     {
+      "allergen": "milk",
+      "assertion": "intentional",
+      "evidence": "ovomucoid (0.5%)"
+     }
+    ],
+    "unresolved": [
+     "lecithin",
+     "emulsifier",
+     "natural flavour"
+    ]
+   },
+   "rules": {
+    "contains": [],
+    "may": [],
+    "review": false,
+    "unresolved": [],
+    "unsupported": [],
+    "evidence": []
+   },
+   "nano": {
+    "contains": [
+     "milk"
+    ],
+    "may": [],
+    "review": true,
+    "unresolved": [
+     "Nano: lecithin",
+     "Nano: emulsifier",
+     "Nano: natural flavour"
+    ],
+    "unsupported": [],
+    "evidence": [
+     "nano:milk:intentional:\"ovomucoid (0.5%)\""
+    ]
+   },
+   "hybrid": {
+    "contains": [
+     "milk"
+    ],
+    "may": [],
+    "review": true,
+    "unresolved": [
+     "Nano: lecithin",
+     "Nano: emulsifier",
+     "Nano: natural flavour"
+    ],
+    "unsupported": [],
+    "evidence": [
+     "nano:milk:intentional:\"ovomucoid (0.5%)\""
+    ]
+   }
+  },
+  {
+   "set": "v2",
+   "rep": 0,
+   "case": {
+    "id": "H15",
+    "cat": "derivative",
+    "text": "Crisp mix: corn, rice, kamaboko pieces (2%), salt.",
+    "gold": {
+     "contains": [
+      "fish"
+     ],
+     "may": [],
+     "review": false
+    },
+    "unseenTerm": "kamaboko"
+   },
+   "ms": 14573,
+   "nanoStatus": "ok",
+   "error": null,
+   "rawNano": {
+    "claims": [
+     {
+      "allergen": "wheat",
+      "assertion": "explicit_negative",
+      "evidence": "corn, rice, kamaboko pieces (2%), salt"
+     }
+    ],
+    "unresolved": [
+     "lecithin",
+     "emulsifier",
+     "natural flavour"
+    ]
+   },
+   "rules": {
+    "contains": [],
+    "may": [],
+    "review": false,
+    "unresolved": [],
+    "unsupported": [],
+    "evidence": []
+   },
+   "nano": {
+    "contains": [],
+    "may": [],
+    "review": true,
+    "unresolved": [
+     "Nano: lecithin",
+     "Nano: emulsifier",
+     "Nano: natural flavour"
+    ],
+    "unsupported": [],
+    "evidence": [
+     "nano:wheat:explicit_negative:\"corn, rice, kamaboko pieces (2%), salt\""
+    ]
+   },
+   "hybrid": {
+    "contains": [],
+    "may": [],
+    "review": true,
+    "unresolved": [
+     "Nano: lecithin",
+     "Nano: emulsifier",
+     "Nano: natural flavour"
+    ],
+    "unsupported": [],
+    "evidence": [
+     "nano:wheat:explicit_negative:\"corn, rice, kamaboko pieces (2%), salt\""
+    ]
+   }
+  },
+  {
+   "set": "v2",
+   "rep": 0,
+   "case": {
+    "id": "H20",
+    "cat": "derivative",
+    "text": "Coating mix: einkorn flour, rice flour, salt.",
+    "gold": {
+     "contains": [
+      "wheat"
+     ],
+     "may": [],
+     "review": false
+    },
+    "unseenTerm": "einkorn"
+   },
+   "ms": 14178,
+   "nanoStatus": "ok",
+   "error": null,
+   "rawNano": {
+    "claims": [
+     {
+      "allergen": "wheat",
+      "assertion": "intentional",
+      "evidence": "einkorn flour, rice flour, salt"
+     }
+    ],
+    "unresolved": [
+     "lecithin",
+     "emulsifier",
+     "natural flavour"
+    ]
+   },
+   "rules": {
+    "contains": [],
+    "may": [],
+    "review": false,
+    "unresolved": [],
+    "unsupported": [],
+    "evidence": []
+   },
+   "nano": {
+    "contains": [
+     "wheat"
+    ],
+    "may": [],
+    "review": true,
+    "unresolved": [
+     "Nano: lecithin",
+     "Nano: emulsifier",
+     "Nano: natural flavour"
+    ],
+    "unsupported": [],
+    "evidence": [
+     "nano:wheat:intentional:\"einkorn flour, rice flour, salt\""
+    ]
+   },
+   "hybrid": {
+    "contains": [
+     "wheat"
+    ],
+    "may": [],
+    "review": true,
+    "unresolved": [
+     "Nano: lecithin",
+     "Nano: emulsifier",
+     "Nano: natural flavour"
+    ],
+    "unsupported": [],
+    "evidence": [
+     "nano:wheat:intentional:\"einkorn flour, rice flour, salt\""
+    ]
+   }
+  },
+  {
+   "set": "v2",
+   "rep": 0,
+   "case": {
+    "id": "H29",
+    "cat": "derivative",
+    "text": "Pasta: semola di grano duro, water.",
+    "gold": {
+     "contains": [
+      "wheat"
+     ],
+     "may": [],
+     "review": false
+    },
+    "unseenTerm": "grano duro"
+   },
+   "ms": 13624,
+   "nanoStatus": "ok",
+   "error": null,
+   "rawNano": {
+    "claims": [
+     {
+      "allergen": "wheat",
+      "assertion": "intentional",
+      "evidence": "semola di grano duro"
+     }
+    ],
+    "unresolved": [
+     "lecithin",
+     "emulsifier",
+     "natural flavour"
+    ]
+   },
+   "rules": {
+    "contains": [],
+    "may": [],
+    "review": false,
+    "unresolved": [],
+    "unsupported": [],
+    "evidence": []
+   },
+   "nano": {
+    "contains": [
+     "wheat"
+    ],
+    "may": [],
+    "review": true,
+    "unresolved": [
+     "Nano: lecithin",
+     "Nano: emulsifier",
+     "Nano: natural flavour"
+    ],
+    "unsupported": [],
+    "evidence": [
+     "nano:wheat:intentional:\"semola di grano duro\""
+    ]
+   },
+   "hybrid": {
+    "contains": [
+     "wheat"
+    ],
+    "may": [],
+    "review": true,
+    "unresolved": [
+     "Nano: lecithin",
+     "Nano: emulsifier",
+     "Nano: natural flavour"
+    ],
+    "unsupported": [],
+    "evidence": [
+     "nano:wheat:intentional:\"semola di grano duro\""
+    ]
+   }
+  },
+  {
+   "set": "v2",
+   "rep": 0,
+   "case": {
+    "id": "H16",
+    "cat": "carrier",
+    "text": "Omega-3 powder: maltodextrin, refined oil of Clupea harengus, glucose syrup, antioxidant.",
+    "gold": {
+     "contains": [
+      "fish"
+     ],
+     "may": [],
+     "review": false
+    },
+    "unseenTerm": "Clupea harengus"
+   },
+   "ms": 12510,
+   "nanoStatus": "ok",
+   "error": null,
+   "rawNano": {
+    "claims": [
+     {
+      "allergen": "fish",
+      "assertion": "intentional",
+      "evidence": "refined oil of Clupea harengus"
+     }
+    ],
+    "unresolved": [
+     "antioxidant"
+    ]
+   },
+   "rules": {
+    "contains": [],
+    "may": [],
+    "review": false,
+    "unresolved": [],
+    "unsupported": [],
+    "evidence": []
+   },
+   "nano": {
+    "contains": [
+     "fish"
+    ],
+    "may": [],
+    "review": true,
+    "unresolved": [
+     "Nano: antioxidant"
+    ],
+    "unsupported": [],
+    "evidence": [
+     "nano:fish:intentional:\"refined oil of Clupea harengus\""
+    ]
+   },
+   "hybrid": {
+    "contains": [
+     "fish"
+    ],
+    "may": [],
+    "review": true,
+    "unresolved": [
+     "Nano: antioxidant"
+    ],
+    "unsupported": [],
+    "evidence": [
+     "nano:fish:intentional:\"refined oil of Clupea harengus\""
+    ]
+   }
+  },
+  {
+   "set": "v2",
+   "rep": 0,
+   "case": {
+    "id": "H17",
+    "cat": "carrier",
+    "text": "Natural vanilla flavour (carrier: dried quark powder), sugar.",
+    "gold": {
+     "contains": [
+      "milk"
+     ],
+     "may": [],
+     "review": false
+    },
+    "unseenTerm": "quark"
+   },
+   "ms": 12971,
+   "nanoStatus": "ok",
+   "error": null,
+   "rawNano": {
+    "claims": [
+     {
+      "allergen": "wheat",
+      "assertion": "intentional",
+      "evidence": "dried quark powder"
+     }
+    ],
+    "unresolved": [
+     "Natural vanilla flavour (carrier: dried quark powder)",
+     "sugar"
+    ]
+   },
+   "rules": {
+    "contains": [],
+    "may": [],
+    "review": false,
+    "unresolved": [],
+    "unsupported": [],
+    "evidence": []
+   },
+   "nano": {
+    "contains": [
+     "wheat"
+    ],
+    "may": [],
+    "review": true,
+    "unresolved": [
+     "Nano: Natural vanilla flavour (carrier: dried quark powder)",
+     "Nano: sugar"
+    ],
+    "unsupported": [],
+    "evidence": [
+     "nano:wheat:intentional:\"dried quark powder\""
+    ]
+   },
+   "hybrid": {
+    "contains": [
+     "wheat"
+    ],
+    "may": [],
+    "review": true,
+    "unresolved": [
+     "Nano: Natural vanilla flavour (carrier: dried quark powder)",
+     "Nano: sugar"
+    ],
+    "unsupported": [],
+    "evidence": [
+     "nano:wheat:intentional:\"dried quark powder\""
+    ]
+   }
+  },
+  {
+   "set": "v2",
+   "rep": 0,
+   "case": {
+    "id": "H18",
+    "cat": "compound",
+    "text": "Satay sauce (water, monkey nut paste, chilli, palm sugar, salt).",
+    "gold": {
+     "contains": [
+      "peanut"
+     ],
+     "may": [],
+     "review": false
+    },
+    "unseenTerm": "monkey nut"
+   },
+   "ms": 13501,
+   "nanoStatus": "ok",
+   "error": null,
+   "rawNano": {
+    "claims": [
+     {
+      "allergen": "treenut",
+      "assertion": "intentional",
+      "evidence": "monkey nut paste"
+     }
+    ],
+    "unresolved": [
+     "lecithin",
+     "emulsifier",
+     "natural flavour"
+    ]
+   },
+   "rules": {
+    "contains": [],
+    "may": [],
+    "review": false,
+    "unresolved": [],
+    "unsupported": [],
+    "evidence": []
+   },
+   "nano": {
+    "contains": [
+     "treenut"
+    ],
+    "may": [],
+    "review": true,
+    "unresolved": [
+     "Nano: lecithin",
+     "Nano: emulsifier",
+     "Nano: natural flavour"
+    ],
+    "unsupported": [],
+    "evidence": [
+     "nano:treenut:intentional:\"monkey nut paste\""
+    ]
+   },
+   "hybrid": {
+    "contains": [
+     "treenut"
+    ],
+    "may": [],
+    "review": true,
+    "unresolved": [
+     "Nano: lecithin",
+     "Nano: emulsifier",
+     "Nano: natural flavour"
+    ],
+    "unsupported": [],
+    "evidence": [
+     "nano:treenut:intentional:\"monkey nut paste\""
+    ]
+   }
+  },
+  {
+   "set": "v2",
+   "rep": 0,
+   "case": {
+    "id": "H19",
+    "cat": "compound",
+    "text": "Fried rice seasoning [salt, sugar, dried krill powder, garlic].",
+    "gold": {
+     "contains": [
+      "shellfish"
+     ],
+     "may": [],
+     "review": false
+    },
+    "unseenTerm": "krill"
+   },
+   "ms": 13313,
+   "nanoStatus": "ok",
+   "error": null,
+   "rawNano": {
+    "claims": [
+     {
+      "allergen": "fish",
+      "assertion": "intentional",
+      "evidence": "dried krill powder"
+     }
+    ],
+    "unresolved": [
+     "lecithin",
+     "emulsifier",
+     "natural flavour"
+    ]
+   },
+   "rules": {
+    "contains": [],
+    "may": [],
+    "review": false,
+    "unresolved": [],
+    "unsupported": [],
+    "evidence": []
+   },
+   "nano": {
+    "contains": [
+     "fish"
+    ],
+    "may": [],
+    "review": true,
+    "unresolved": [
+     "Nano: lecithin",
+     "Nano: emulsifier",
+     "Nano: natural flavour"
+    ],
+    "unsupported": [],
+    "evidence": [
+     "nano:fish:intentional:\"dried krill powder\""
+    ]
+   },
+   "hybrid": {
+    "contains": [
+     "fish"
+    ],
+    "may": [],
+    "review": true,
+    "unresolved": [
+     "Nano: lecithin",
+     "Nano: emulsifier",
+     "Nano: natural flavour"
+    ],
+    "unsupported": [],
+    "evidence": [
+     "nano:fish:intentional:\"dried krill powder\""
+    ]
+   }
+  },
+  {
+   "set": "v2",
+   "rep": 0,
+   "case": {
+    "id": "H30",
+    "cat": "compound",
+    "text": "Pastry: wheat flour, butter, egg wash, Corylus avellana praline (20%).",
+    "gold": {
+     "contains": [
+      "wheat",
+      "milk",
+      "egg",
+      "treenut"
+     ],
+     "may": [],
+     "review": false
+    },
+    "unseenTerm": "Corylus avellana"
+   },
+   "ms": 15322,
+   "nanoStatus": "ok",
+   "error": null,
+   "rawNano": {
+    "claims": [
+     {
+      "allergen": "wheat",
+      "assertion": "intentional",
+      "evidence": "wheat flour"
+     },
+     {
+      "allergen": "egg",
+      "assertion": "intentional",
+      "evidence": "egg wash"
+     }
+    ],
+    "unresolved": [
+     "lecithin"
+    ]
+   },
+   "rules": {
+    "contains": [
+     "egg",
+     "milk",
+     "wheat"
+    ],
+    "may": [],
+    "review": false,
+    "unresolved": [],
+    "unsupported": [],
+    "evidence": [
+     "dictionary:milk:intentional:\"butter\"",
+     "dictionary:egg:intentional:\"egg\"",
+     "dictionary:wheat:intentional:\"wheat\""
+    ]
+   },
+   "nano": {
+    "contains": [
+     "egg",
+     "wheat"
+    ],
+    "may": [],
+    "review": true,
+    "unresolved": [
+     "Nano: lecithin"
+    ],
+    "unsupported": [],
+    "evidence": [
+     "nano:wheat:intentional:\"wheat flour\"",
+     "nano:egg:intentional:\"egg wash\""
+    ]
+   },
+   "hybrid": {
+    "contains": [
+     "egg",
+     "milk",
+     "wheat"
+    ],
+    "may": [],
+    "review": true,
+    "unresolved": [
+     "Nano: lecithin",
+     "Dictionary found milk but on-device model did not; kept as present, please confirm"
+    ],
+    "unsupported": [],
+    "evidence": [
+     "dictionary:milk:intentional:\"butter\"",
+     "dictionary:egg:intentional:\"egg\"",
+     "dictionary:wheat:intentional:\"wheat\"",
+     "nano:wheat:intentional:\"wheat flour\"",
+     "nano:egg:intentional:\"egg wash\""
+    ]
+   }
+  },
+  {
+   "set": "v2",
+   "rep": 0,
+   "case": {
+    "id": "H21",
+    "cat": "negative",
+    "text": "Ingredients: water chestnuts, coconut milk, salt.",
+    "gold": {
+     "contains": [],
+     "may": [],
+     "review": false
+    }
+   },
+   "ms": 13017,
+   "nanoStatus": "ok",
+   "error": null,
+   "rawNano": {
+    "claims": [
+     {
+      "allergen": "milk",
+      "assertion": "intentional",
+      "evidence": "coconut milk"
+     }
+    ],
+    "unresolved": [
+     "lecithin",
+     "emulsifier",
+     "natural flavour"
+    ]
+   },
+   "rules": {
+    "contains": [
+     "milk"
+    ],
+    "may": [],
+    "review": false,
+    "unresolved": [],
+    "unsupported": [],
+    "evidence": [
+     "dictionary:milk:intentional:\"milk\""
+    ]
+   },
+   "nano": {
+    "contains": [
+     "milk"
+    ],
+    "may": [],
+    "review": true,
+    "unresolved": [
+     "Nano: lecithin",
+     "Nano: emulsifier",
+     "Nano: natural flavour"
+    ],
+    "unsupported": [],
+    "evidence": [
+     "nano:milk:intentional:\"coconut milk\""
+    ]
+   },
+   "hybrid": {
+    "contains": [
+     "milk"
+    ],
+    "may": [],
+    "review": true,
+    "unresolved": [
+     "Nano: lecithin",
+     "Nano: emulsifier",
+     "Nano: natural flavour"
+    ],
+    "unsupported": [],
+    "evidence": [
+     "dictionary:milk:intentional:\"milk\"",
+     "nano:milk:intentional:\"coconut milk\""
+    ]
+   }
+  },
+  {
+   "set": "v2",
+   "rep": 0,
+   "case": {
+    "id": "H22",
+    "cat": "negative",
+    "text": "Ingredients: sunflower seed butter, cane sugar, sunflower oil, salt.",
+    "gold": {
+     "contains": [],
+     "may": [],
+     "review": false
+    }
+   },
+   "ms": 13670,
+   "nanoStatus": "ok",
+   "error": null,
+   "rawNano": {
+    "claims": [
+     {
+      "allergen": "soy",
+      "assertion": "precautionary",
+      "evidence": "sunflower seed butter"
+     }
+    ],
+    "unresolved": [
+     "lecithin",
+     "emulsifier",
+     "natural flavour"
+    ]
+   },
+   "rules": {
+    "contains": [
+     "milk"
+    ],
+    "may": [],
+    "review": false,
+    "unresolved": [],
+    "unsupported": [],
+    "evidence": [
+     "dictionary:milk:intentional:\"butter\""
+    ]
+   },
+   "nano": {
+    "contains": [],
+    "may": [
+     "soy"
+    ],
+    "review": true,
+    "unresolved": [
+     "Nano: lecithin",
+     "Nano: emulsifier",
+     "Nano: natural flavour"
+    ],
+    "unsupported": [],
+    "evidence": [
+     "nano:soy:precautionary:\"sunflower seed butter\""
+    ]
+   },
+   "hybrid": {
+    "contains": [
+     "milk"
+    ],
+    "may": [
+     "soy"
+    ],
+    "review": true,
+    "unresolved": [
+     "Nano: lecithin",
+     "Nano: emulsifier",
+     "Nano: natural flavour",
+     "Dictionary found milk but on-device model did not; kept as present, please confirm"
+    ],
+    "unsupported": [],
+    "evidence": [
+     "dictionary:milk:intentional:\"butter\"",
+     "nano:soy:precautionary:\"sunflower seed butter\""
+    ]
+   }
+  },
+  {
+   "set": "v2",
+   "rep": 0,
+   "case": {
+    "id": "H23",
+    "cat": "negative",
+    "text": "Ingredients: rice, nutritional yeast, cream of tartar, salt.",
+    "gold": {
+     "contains": [],
+     "may": [],
+     "review": false
+    }
+   },
+   "ms": 15301,
+   "nanoStatus": "ok",
+   "error": null,
+   "rawNano": {
+    "claims": [
+     {
+      "allergen": "milk",
+      "assertion": "intentional",
+      "evidence": "cream of tartar"
+     },
+     {
+      "allergen": "egg",
+      "assertion": "intentional",
+      "evidence": ""
+     }
+    ],
+    "unresolved": [
+     "natural flavour"
+    ]
+   },
+   "rules": {
+    "contains": [
+     "milk"
+    ],
+    "may": [],
+    "review": false,
+    "unresolved": [],
+    "unsupported": [],
+    "evidence": [
+     "dictionary:milk:intentional:\"cream\""
+    ]
+   },
+   "nano": {
+    "contains": [
+     "milk"
+    ],
+    "may": [],
+    "review": true,
+    "unresolved": [
+     "Nano: natural flavour",
+     "Model claim for egg has no matching text in the spec (\"\")"
+    ],
+    "unsupported": [
+     "egg:\"\""
+    ],
+    "evidence": [
+     "nano:milk:intentional:\"cream of tartar\""
+    ]
+   },
+   "hybrid": {
+    "contains": [
+     "milk"
+    ],
+    "may": [],
+    "review": true,
+    "unresolved": [
+     "Nano: natural flavour",
+     "Model claim for egg has no matching text in the spec (\"\")"
+    ],
+    "unsupported": [
+     "egg:\"\""
+    ],
+    "evidence": [
+     "dictionary:milk:intentional:\"cream\"",
+     "nano:milk:intentional:\"cream of tartar\""
+    ]
+   }
+  },
+  {
+   "set": "v2",
+   "rep": 0,
+   "case": {
+    "id": "H24",
+    "cat": "negative",
+    "text": "Ingredients: potatoes, sunflower oil, sea salt, rosemary.",
+    "gold": {
+     "contains": [],
+     "may": [],
+     "review": false
+    }
+   },
+   "ms": 54410,
+   "nanoStatus": "ok",
+   "error": null,
+   "rawNano": {
+    "claims": [
+     {
+      "allergen": "milk",
+      "assertion": "explicit_negative",
+      "evidence": "dairy-free"
+     },
+     {
+      "allergen": "egg",
+      "assertion": "explicit_negative",
+      "evidence": "dairy-free"
+     },
+     {
+      "allergen": "fish",
+      "assertion": "explicit_negative",
+      "evidence": "sea salt"
+     },
+     {
+      "allergen": "shellfish",
+      "assertion": "explicit_negative",
+      "evidence": "sea salt"
+     },
+     {
+      "allergen": "treenut",
+      "assertion": "explicit_negative",
+      "evidence": "potatoes, sunflower oil, sea salt, rosemary"
+     },
+     {
+      "allergen": "peanut",
+      "assertion": "explicit_negative",
+      "evidence": "potatoes, sunflower oil, sea salt, rosemary"
+     },
+     {
+      "allergen": "wheat",
+      "assertion": "explicit_negative",
+      "evidence": "potatoes, sunflower oil, sea salt, rosemary"
+     },
+     {
+      "allergen": "soy",
+      "assertion": "explicit_negative",
+      "evidence": "potatoes, sunflower oil, sea salt, rosemary"
+     },
+     {
+      "allergen": "sesame",
+      "assertion": "explicit_negative",
+      "evidence": "potatoes, sunflower oil, sea salt, rosemary"
+     }
+    ],
+    "unresolved": [
+     "lecithin",
+     "emulsifier",
+     "natural flavour"
+    ]
+   },
+   "rules": {
+    "contains": [],
+    "may": [],
+    "review": false,
+    "unresolved": [],
+    "unsupported": [],
+    "evidence": []
+   },
+   "nano": {
+    "contains": [],
+    "may": [],
+    "review": true,
+    "unresolved": [
+     "Nano: lecithin",
+     "Nano: emulsifier",
+     "Nano: natural flavour",
+     "Model claim for milk has no matching text in the spec (\"dairy-free\")",
+     "Model claim for egg has no matching text in the spec (\"dairy-free\")"
+    ],
+    "unsupported": [
+     "milk:\"dairy-free\"",
+     "egg:\"dairy-free\""
+    ],
+    "evidence": [
+     "nano:fish:explicit_negative:\"sea salt\"",
+     "nano:shellfish:explicit_negative:\"sea salt\"",
+     "nano:treenut:explicit_negative:\"potatoes, sunflower oil, sea salt, rosemary\"",
+     "nano:peanut:explicit_negative:\"potatoes, sunflower oil, sea salt, rosemary\"",
+     "nano:wheat:explicit_negative:\"potatoes, sunflower oil, sea salt, rosemary\"",
+     "nano:soy:explicit_negative:\"potatoes, sunflower oil, sea salt, rosemary\"",
+     "nano:sesame:explicit_negative:\"potatoes, sunflower oil, sea salt, rosemary\""
+    ]
+   },
+   "hybrid": {
+    "contains": [],
+    "may": [],
+    "review": true,
+    "unresolved": [
+     "Nano: lecithin",
+     "Nano: emulsifier",
+     "Nano: natural flavour",
+     "Model claim for milk has no matching text in the spec (\"dairy-free\")",
+     "Model claim for egg has no matching text in the spec (\"dairy-free\")"
+    ],
+    "unsupported": [
+     "milk:\"dairy-free\"",
+     "egg:\"dairy-free\""
+    ],
+    "evidence": [
+     "nano:fish:explicit_negative:\"sea salt\"",
+     "nano:shellfish:explicit_negative:\"sea salt\"",
+     "nano:treenut:explicit_negative:\"potatoes, sunflower oil, sea salt, rosemary\"",
+     "nano:peanut:explicit_negative:\"potatoes, sunflower oil, sea salt, rosemary\"",
+     "nano:wheat:explicit_negative:\"potatoes, sunflower oil, sea salt, rosemary\"",
+     "nano:soy:explicit_negative:\"potatoes, sunflower oil, sea salt, rosemary\"",
+     "nano:sesame:explicit_negative:\"potatoes, sunflower oil, sea salt, rosemary\""
+    ]
+   }
+  },
+  {
+   "set": "v2",
+   "rep": 0,
+   "case": {
+    "id": "H25",
+    "cat": "ambiguous",
+    "text": "Glaze: sugar, water, modified starch, flavouring preparation (composition on request).",
+    "gold": {
+     "contains": [],
+     "may": [],
+     "review": true
+    }
+   },
+   "ms": 12095,
+   "nanoStatus": "ok",
+   "error": null,
+   "rawNano": {
+    "claims": [
+     {
+      "allergen": "wheat",
+      "assertion": "intentional",
+      "evidence": "modified starch"
+     }
+    ],
+    "unresolved": [
+     "flavouring preparation (composition on request)"
+    ]
+   },
+   "rules": {
+    "contains": [],
+    "may": [],
+    "review": true,
+    "unresolved": [
+     "Ingredient with unspecified source (e.g. lecithin / natural flavour / emulsifier)"
+    ],
+    "unsupported": [],
+    "evidence": []
+   },
+   "nano": {
+    "contains": [
+     "wheat"
+    ],
+    "may": [],
+    "review": true,
+    "unresolved": [
+     "Nano: flavouring preparation (composition on request)"
+    ],
+    "unsupported": [],
+    "evidence": [
+     "nano:wheat:intentional:\"modified starch\""
+    ]
+   },
+   "hybrid": {
+    "contains": [
+     "wheat"
+    ],
+    "may": [],
+    "review": true,
+    "unresolved": [
+     "Ingredient with unspecified source (e.g. lecithin / natural flavour / emulsifier)",
+     "Nano: flavouring preparation (composition on request)"
+    ],
+    "unsupported": [],
+    "evidence": [
+     "nano:wheat:intentional:\"modified starch\""
+    ]
+   }
+  },
+  {
+   "set": "v2",
+   "rep": 0,
+   "case": {
+    "id": "H26",
+    "cat": "ambiguous",
+    "text": "Batter: starch, raising agents, protein isolate (source not stated), salt.",
+    "gold": {
+     "contains": [],
+     "may": [],
+     "review": true
+    }
+   },
+   "ms": 20410,
+   "nanoStatus": "ok",
+   "error": null,
+   "rawNano": {
+    "claims": [
+     {
+      "allergen": "wheat",
+      "assertion": "intentional",
+      "evidence": "starch"
+     },
+     {
+      "allergen": "wheat",
+      "assertion": "intentional",
+      "evidence": "raising agents"
+     },
+     {
+      "allergen": "wheat",
+      "assertion": "intentional",
+      "evidence": "protein isolate (source not stated)"
+     }
+    ],
+    "unresolved": [
+     "source not stated (for protein isolate)"
+    ]
+   },
+   "rules": {
+    "contains": [],
+    "may": [],
+    "review": false,
+    "unresolved": [],
+    "unsupported": [],
+    "evidence": []
+   },
+   "nano": {
+    "contains": [
+     "wheat"
+    ],
+    "may": [],
+    "review": true,
+    "unresolved": [
+     "Nano: source not stated (for protein isolate)"
+    ],
+    "unsupported": [],
+    "evidence": [
+     "nano:wheat:intentional:\"starch\"",
+     "nano:wheat:intentional:\"raising agents\"",
+     "nano:wheat:intentional:\"protein isolate (source not stated)\""
+    ]
+   },
+   "hybrid": {
+    "contains": [
+     "wheat"
+    ],
+    "may": [],
+    "review": true,
+    "unresolved": [
+     "Nano: source not stated (for protein isolate)"
+    ],
+    "unsupported": [],
+    "evidence": [
+     "nano:wheat:intentional:\"starch\"",
+     "nano:wheat:intentional:\"raising agents\"",
+     "nano:wheat:intentional:\"protein isolate (source not stated)\""
+    ]
+   }
+  },
+  {
+   "set": "v2",
+   "rep": 0,
+   "case": {
+    "id": "H27",
+    "cat": "contradiction",
+    "text": "Allergens: none declared. Ingredients: rice crackers, nori, katsuobushi flakes, soy-free tamari alternative.",
+    "gold": {
+     "contains": [
+      "fish"
+     ],
+     "may": [],
+     "review": true
+    },
+    "unseenTerm": "katsuobushi"
+   },
+   "ms": 13710,
+   "nanoStatus": "ok",
+   "error": null,
+   "rawNano": {
+    "claims": [
+     {
+      "allergen": "soy",
+      "assertion": "explicit_negative",
+      "evidence": "soy-free tamari alternative"
+     }
+    ],
+    "unresolved": [
+     "lecithin",
+     "emulsifier",
+     "natural flavour"
+    ]
+   },
+   "rules": {
+    "contains": [
+     "soy"
+    ],
+    "may": [],
+    "review": false,
+    "unresolved": [],
+    "unsupported": [],
+    "evidence": [
+     "dictionary:soy:intentional:\"tamari\""
+    ]
+   },
+   "nano": {
+    "contains": [],
+    "may": [],
+    "review": true,
+    "unresolved": [
+     "Nano: lecithin",
+     "Nano: emulsifier",
+     "Nano: natural flavour"
+    ],
+    "unsupported": [],
+    "evidence": [
+     "nano:soy:explicit_negative:\"soy-free tamari alternative\""
+    ]
+   },
+   "hybrid": {
+    "contains": [
+     "soy"
+    ],
+    "may": [],
+    "review": true,
+    "unresolved": [
+     "Nano: lecithin",
+     "Nano: emulsifier",
+     "Nano: natural flavour",
+     "Dictionary found soy but on-device model did not; kept as present, please confirm",
+     "Contradiction: spec says no soy (\"soy-free tamari alternative\") but an ingredient contains it"
+    ],
+    "unsupported": [],
+    "evidence": [
+     "dictionary:soy:intentional:\"tamari\"",
+     "nano:soy:explicit_negative:\"soy-free tamari alternative\""
+    ]
+   }
+  },
+  {
+   "set": "v2",
+   "rep": 0,
+   "case": {
+    "id": "H28",
+    "cat": "precaution",
+    "text": "Ingredients: oats, raisins, sunflower seeds. Made in a bakery where hazelnuts and sesame are handled.",
+    "gold": {
+     "contains": [],
+     "may": [
+      "treenut",
+      "sesame"
+     ],
+     "review": false
+    }
+   },
+   "ms": 16404,
+   "nanoStatus": "ok",
+   "error": null,
+   "rawNano": {
+    "claims": [
+     {
+      "allergen": "treenut",
+      "assertion": "intentional",
+      "evidence": "hazelnuts"
+     },
+     {
+      "allergen": "sesame",
+      "assertion": "intentional",
+      "evidence": "sesame are handled"
+     }
+    ],
+    "unresolved": [
+     "lecithin"
+    ]
+   },
+   "rules": {
+    "contains": [
+     "sesame",
+     "treenut"
+    ],
+    "may": [],
+    "review": false,
+    "unresolved": [],
+    "unsupported": [],
+    "evidence": [
+     "dictionary:treenut:intentional:\"hazelnuts\"",
+     "dictionary:sesame:intentional:\"sesame\""
+    ]
+   },
+   "nano": {
+    "contains": [
+     "sesame",
+     "treenut"
+    ],
+    "may": [],
+    "review": true,
+    "unresolved": [
+     "Nano: lecithin"
+    ],
+    "unsupported": [],
+    "evidence": [
+     "nano:treenut:intentional:\"hazelnuts\"",
+     "nano:sesame:intentional:\"sesame are handled\""
+    ]
+   },
+   "hybrid": {
+    "contains": [
+     "sesame",
+     "treenut"
+    ],
+    "may": [],
+    "review": true,
+    "unresolved": [
+     "Nano: lecithin"
+    ],
+    "unsupported": [],
+    "evidence": [
+     "dictionary:treenut:intentional:\"hazelnuts\"",
+     "dictionary:sesame:intentional:\"sesame\"",
+     "nano:treenut:intentional:\"hazelnuts\"",
+     "nano:sesame:intentional:\"sesame are handled\""
+    ]
+   }
+  },
+  {
+   "set": "v2",
+   "rep": 1,
+   "case": {
+    "id": "H11",
+    "cat": "scientific",
+    "text": "Thickener: flour from Glycine max, guar gum, water.",
+    "gold": {
+     "contains": [
+      "soy"
+     ],
+     "may": [],
+     "review": false
+    },
+    "unseenTerm": "Glycine max"
+   },
+   "ms": 13503,
+   "nanoStatus": "ok",
+   "error": null,
+   "rawNano": {
+    "claims": [
+     {
+      "allergen": "wheat",
+      "assertion": "intentional",
+      "evidence": "flour from Glycine max"
+     }
+    ],
+    "unresolved": [
+     "lecithin",
+     "emulsifier",
+     "natural flavour"
+    ]
+   },
+   "rules": {
+    "contains": [],
+    "may": [],
+    "review": false,
+    "unresolved": [],
+    "unsupported": [],
+    "evidence": []
+   },
+   "nano": {
+    "contains": [
+     "wheat"
+    ],
+    "may": [],
+    "review": true,
+    "unresolved": [
+     "Nano: lecithin",
+     "Nano: emulsifier",
+     "Nano: natural flavour"
+    ],
+    "unsupported": [],
+    "evidence": [
+     "nano:wheat:intentional:\"flour from Glycine max\""
+    ]
+   },
+   "hybrid": {
+    "contains": [
+     "wheat"
+    ],
+    "may": [],
+    "review": true,
+    "unresolved": [
+     "Nano: lecithin",
+     "Nano: emulsifier",
+     "Nano: natural flavour"
+    ],
+    "unsupported": [],
+    "evidence": [
+     "nano:wheat:intentional:\"flour from Glycine max\""
+    ]
+   }
+  },
+  {
+   "set": "v2",
+   "rep": 1,
+   "case": {
+    "id": "H12",
+    "cat": "scientific",
+    "text": "Topping: sliced kernels of Prunus dulcis, lightly toasted.",
+    "gold": {
+     "contains": [
+      "treenut"
+     ],
+     "may": [],
+     "review": false
+    },
+    "unseenTerm": "Prunus dulcis"
+   },
+   "ms": 14331,
+   "nanoStatus": "ok",
+   "error": null,
+   "rawNano": {
+    "claims": [
+     {
+      "allergen": "treenut",
+      "assertion": "intentional",
+      "evidence": "sliced kernels of Prunus dulcis, lightly toasted"
+     }
+    ],
+    "unresolved": [
+     "lecithin",
+     "emulsifier",
+     "natural flavour"
+    ]
+   },
+   "rules": {
+    "contains": [],
+    "may": [],
+    "review": false,
+    "unresolved": [],
+    "unsupported": [],
+    "evidence": []
+   },
+   "nano": {
+    "contains": [
+     "treenut"
+    ],
+    "may": [],
+    "review": true,
+    "unresolved": [
+     "Nano: lecithin",
+     "Nano: emulsifier",
+     "Nano: natural flavour"
+    ],
+    "unsupported": [],
+    "evidence": [
+     "nano:treenut:intentional:\"sliced kernels of Prunus dulcis, lightly toasted\""
+    ]
+   },
+   "hybrid": {
+    "contains": [
+     "treenut"
+    ],
+    "may": [],
+    "review": true,
+    "unresolved": [
+     "Nano: lecithin",
+     "Nano: emulsifier",
+     "Nano: natural flavour"
+    ],
+    "unsupported": [],
+    "evidence": [
+     "nano:treenut:intentional:\"sliced kernels of Prunus dulcis, lightly toasted\""
+    ]
+   }
+  },
+  {
+   "set": "v2",
+   "rep": 1,
+   "case": {
+    "id": "H13",
+    "cat": "scientific",
+    "text": "Oil blend: rapeseed oil, oil of Sesamum indicum (10%).",
+    "gold": {
+     "contains": [
+      "sesame"
+     ],
+     "may": [],
+     "review": false
+    },
+    "unseenTerm": "Sesamum indicum"
+   },
+   "ms": 14176,
+   "nanoStatus": "ok",
+   "error": null,
+   "rawNano": {
+    "claims": [
+     {
+      "allergen": "sesame",
+      "assertion": "intentional",
+      "evidence": "oil of Sesamum indicum (10%)"
+     }
+    ],
+    "unresolved": [
+     "lecithin",
+     "emulsifier",
+     "natural flavour"
+    ]
+   },
+   "rules": {
+    "contains": [],
+    "may": [],
+    "review": false,
+    "unresolved": [],
+    "unsupported": [],
+    "evidence": []
+   },
+   "nano": {
+    "contains": [
+     "sesame"
+    ],
+    "may": [],
+    "review": true,
+    "unresolved": [
+     "Nano: lecithin",
+     "Nano: emulsifier",
+     "Nano: natural flavour"
+    ],
+    "unsupported": [],
+    "evidence": [
+     "nano:sesame:intentional:\"oil of Sesamum indicum (10%)\""
+    ]
+   },
+   "hybrid": {
+    "contains": [
+     "sesame"
+    ],
+    "may": [],
+    "review": true,
+    "unresolved": [
+     "Nano: lecithin",
+     "Nano: emulsifier",
+     "Nano: natural flavour"
+    ],
+    "unsupported": [],
+    "evidence": [
+     "nano:sesame:intentional:\"oil of Sesamum indicum (10%)\""
+    ]
+   }
+  },
+  {
+   "set": "v2",
+   "rep": 1,
+   "case": {
+    "id": "H14",
+    "cat": "derivative",
+    "text": "Binder: ovomucoid (0.5%), potato starch, water.",
+    "gold": {
+     "contains": [
+      "egg"
+     ],
+     "may": [],
+     "review": false
+    },
+    "unseenTerm": "ovomucoid"
+   },
+   "ms": 44527,
+   "nanoStatus": "ok",
+   "error": null,
+   "rawNano": {
+    "claims": [
+     {
+      "allergen": "milk",
+      "assertion": "intentional",
+      "evidence": "ovomucoid (0.5%)"
+     },
+     {
+      "allergen": "egg",
+      "assertion": "intentional",
+      "evidence": ""
+     },
+     {
+      "allergen": "fish",
+      "assertion": "intentional",
+      "evidence": ""
+     },
+     {
+      "allergen": "shellfish",
+      "assertion": "intentional",
+      "evidence": ""
+     },
+     {
+      "allergen": "treenut",
+      "assertion": "intentional",
+      "evidence": ""
+     },
+     {
+      "allergen": "peanut",
+      "assertion": "explicit_negative",
+      "evidence": ""
+     },
+     {
+      "allergen": "wheat",
+      "assertion": "intentional",
+      "evidence": "potato starch"
+     },
+     {
+      "allergen": "soy",
+      "assertion": "intentional",
+      "evidence": ""
+     },
+     {
+      "allergen": "sesame",
+      "assertion": "intentional",
+      "evidence": ""
+     }
+    ],
+    "unresolved": [
+     "lecithin",
+     "emulsifier",
+     "natural flavour"
+    ]
+   },
+   "rules": {
+    "contains": [],
+    "may": [],
+    "review": false,
+    "unresolved": [],
+    "unsupported": [],
+    "evidence": []
+   },
+   "nano": {
+    "contains": [
+     "milk",
+     "wheat"
+    ],
+    "may": [],
+    "review": true,
+    "unresolved": [
+     "Nano: lecithin",
+     "Nano: emulsifier",
+     "Nano: natural flavour",
+     "Model claim for egg has no matching text in the spec (\"\")",
+     "Model claim for fish has no matching text in the spec (\"\")",
+     "Model claim for shellfish has no matching text in the spec (\"\")",
+     "Model claim for treenut has no matching text in the spec (\"\")",
+     "Model claim for peanut has no matching text in the spec (\"\")",
+     "Model claim for soy has no matching text in the spec (\"\")",
+     "Model claim for sesame has no matching text in the spec (\"\")"
+    ],
+    "unsupported": [
+     "egg:\"\"",
+     "fish:\"\"",
+     "shellfish:\"\"",
+     "treenut:\"\"",
+     "peanut:\"\"",
+     "soy:\"\"",
+     "sesame:\"\""
+    ],
+    "evidence": [
+     "nano:milk:intentional:\"ovomucoid (0.5%)\"",
+     "nano:wheat:intentional:\"potato starch\""
+    ]
+   },
+   "hybrid": {
+    "contains": [
+     "milk",
+     "wheat"
+    ],
+    "may": [],
+    "review": true,
+    "unresolved": [
+     "Nano: lecithin",
+     "Nano: emulsifier",
+     "Nano: natural flavour",
+     "Model claim for egg has no matching text in the spec (\"\")",
+     "Model claim for fish has no matching text in the spec (\"\")",
+     "Model claim for shellfish has no matching text in the spec (\"\")",
+     "Model claim for treenut has no matching text in the spec (\"\")",
+     "Model claim for peanut has no matching text in the spec (\"\")",
+     "Model claim for soy has no matching text in the spec (\"\")",
+     "Model claim for sesame has no matching text in the spec (\"\")"
+    ],
+    "unsupported": [
+     "egg:\"\"",
+     "fish:\"\"",
+     "shellfish:\"\"",
+     "treenut:\"\"",
+     "peanut:\"\"",
+     "soy:\"\"",
+     "sesame:\"\""
+    ],
+    "evidence": [
+     "nano:milk:intentional:\"ovomucoid (0.5%)\"",
+     "nano:wheat:intentional:\"potato starch\""
+    ]
+   }
+  },
+  {
+   "set": "v2",
+   "rep": 1,
+   "case": {
+    "id": "H15",
+    "cat": "derivative",
+    "text": "Crisp mix: corn, rice, kamaboko pieces (2%), salt.",
+    "gold": {
+     "contains": [
+      "fish"
+     ],
+     "may": [],
+     "review": false
+    },
+    "unseenTerm": "kamaboko"
+   },
+   "ms": 19925,
+   "nanoStatus": "ok",
+   "error": null,
+   "rawNano": {
+    "claims": [
+     {
+      "allergen": "wheat",
+      "assertion": "explicit_negative",
+      "evidence": "crisp mix: corn, rice, kamaboko pieces (2%), salt."
+     },
+     {
+      "allergen": "soy",
+      "assertion": "precautionary",
+      "evidence": "kamaboko pieces (2%)."
+     }
+    ],
+    "unresolved": [
+     "lecithin",
+     "emulsifier",
+     "natural flavour"
+    ]
+   },
+   "rules": {
+    "contains": [],
+    "may": [],
+    "review": false,
+    "unresolved": [],
+    "unsupported": [],
+    "evidence": []
+   },
+   "nano": {
+    "contains": [],
+    "may": [],
+    "review": true,
+    "unresolved": [
+     "Nano: lecithin",
+     "Nano: emulsifier",
+     "Nano: natural flavour",
+     "Model claim for soy has no matching text in the spec (\"kamaboko pieces (2%).\")"
+    ],
+    "unsupported": [
+     "soy:\"kamaboko pieces (2%).\""
+    ],
+    "evidence": [
+     "nano:wheat:explicit_negative:\"crisp mix: corn, rice, kamaboko pieces (2%), salt.\""
+    ]
+   },
+   "hybrid": {
+    "contains": [],
+    "may": [],
+    "review": true,
+    "unresolved": [
+     "Nano: lecithin",
+     "Nano: emulsifier",
+     "Nano: natural flavour",
+     "Model claim for soy has no matching text in the spec (\"kamaboko pieces (2%).\")"
+    ],
+    "unsupported": [
+     "soy:\"kamaboko pieces (2%).\""
+    ],
+    "evidence": [
+     "nano:wheat:explicit_negative:\"crisp mix: corn, rice, kamaboko pieces (2%), salt.\""
+    ]
+   }
+  },
+  {
+   "set": "v2",
+   "rep": 1,
+   "case": {
+    "id": "H20",
+    "cat": "derivative",
+    "text": "Coating mix: einkorn flour, rice flour, salt.",
+    "gold": {
+     "contains": [
+      "wheat"
+     ],
+     "may": [],
+     "review": false
+    },
+    "unseenTerm": "einkorn"
+   },
+   "ms": 13863,
+   "nanoStatus": "ok",
+   "error": null,
+   "rawNano": {
+    "claims": [
+     {
+      "allergen": "wheat",
+      "assertion": "intentional",
+      "evidence": "einkorn flour, rice flour, salt"
+     }
+    ],
+    "unresolved": [
+     "lecithin",
+     "emulsifier",
+     "natural flavour"
+    ]
+   },
+   "rules": {
+    "contains": [],
+    "may": [],
+    "review": false,
+    "unresolved": [],
+    "unsupported": [],
+    "evidence": []
+   },
+   "nano": {
+    "contains": [
+     "wheat"
+    ],
+    "may": [],
+    "review": true,
+    "unresolved": [
+     "Nano: lecithin",
+     "Nano: emulsifier",
+     "Nano: natural flavour"
+    ],
+    "unsupported": [],
+    "evidence": [
+     "nano:wheat:intentional:\"einkorn flour, rice flour, salt\""
+    ]
+   },
+   "hybrid": {
+    "contains": [
+     "wheat"
+    ],
+    "may": [],
+    "review": true,
+    "unresolved": [
+     "Nano: lecithin",
+     "Nano: emulsifier",
+     "Nano: natural flavour"
+    ],
+    "unsupported": [],
+    "evidence": [
+     "nano:wheat:intentional:\"einkorn flour, rice flour, salt\""
+    ]
+   }
+  },
+  {
+   "set": "v2",
+   "rep": 1,
+   "case": {
+    "id": "H29",
+    "cat": "derivative",
+    "text": "Pasta: semola di grano duro, water.",
+    "gold": {
+     "contains": [
+      "wheat"
+     ],
+     "may": [],
+     "review": false
+    },
+    "unseenTerm": "grano duro"
+   },
+   "ms": 11494,
+   "nanoStatus": "ok",
+   "error": null,
+   "rawNano": {
+    "claims": [
+     {
+      "allergen": "wheat",
+      "assertion": "intentional",
+      "evidence": "semola di grano duro"
+     }
+    ],
+    "unresolved": [
+     "water"
+    ]
+   },
+   "rules": {
+    "contains": [],
+    "may": [],
+    "review": false,
+    "unresolved": [],
+    "unsupported": [],
+    "evidence": []
+   },
+   "nano": {
+    "contains": [
+     "wheat"
+    ],
+    "may": [],
+    "review": true,
+    "unresolved": [
+     "Nano: water"
+    ],
+    "unsupported": [],
+    "evidence": [
+     "nano:wheat:intentional:\"semola di grano duro\""
+    ]
+   },
+   "hybrid": {
+    "contains": [
+     "wheat"
+    ],
+    "may": [],
+    "review": true,
+    "unresolved": [
+     "Nano: water"
+    ],
+    "unsupported": [],
+    "evidence": [
+     "nano:wheat:intentional:\"semola di grano duro\""
+    ]
+   }
+  },
+  {
+   "set": "v2",
+   "rep": 1,
+   "case": {
+    "id": "H16",
+    "cat": "carrier",
+    "text": "Omega-3 powder: maltodextrin, refined oil of Clupea harengus, glucose syrup, antioxidant.",
+    "gold": {
+     "contains": [
+      "fish"
+     ],
+     "may": [],
+     "review": false
+    },
+    "unseenTerm": "Clupea harengus"
+   },
+   "ms": 12376,
+   "nanoStatus": "ok",
+   "error": null,
+   "rawNano": {
+    "claims": [
+     {
+      "allergen": "fish",
+      "assertion": "intentional",
+      "evidence": "refined oil of Clupea harengus"
+     }
+    ],
+    "unresolved": [
+     "antioxidant"
+    ]
+   },
+   "rules": {
+    "contains": [],
+    "may": [],
+    "review": false,
+    "unresolved": [],
+    "unsupported": [],
+    "evidence": []
+   },
+   "nano": {
+    "contains": [
+     "fish"
+    ],
+    "may": [],
+    "review": true,
+    "unresolved": [
+     "Nano: antioxidant"
+    ],
+    "unsupported": [],
+    "evidence": [
+     "nano:fish:intentional:\"refined oil of Clupea harengus\""
+    ]
+   },
+   "hybrid": {
+    "contains": [
+     "fish"
+    ],
+    "may": [],
+    "review": true,
+    "unresolved": [
+     "Nano: antioxidant"
+    ],
+    "unsupported": [],
+    "evidence": [
+     "nano:fish:intentional:\"refined oil of Clupea harengus\""
+    ]
+   }
+  },
+  {
+   "set": "v2",
+   "rep": 1,
+   "case": {
+    "id": "H17",
+    "cat": "carrier",
+    "text": "Natural vanilla flavour (carrier: dried quark powder), sugar.",
+    "gold": {
+     "contains": [
+      "milk"
+     ],
+     "may": [],
+     "review": false
+    },
+    "unseenTerm": "quark"
+   },
+   "ms": 12314,
+   "nanoStatus": "ok",
+   "error": null,
+   "rawNano": {
+    "claims": [
+     {
+      "allergen": "milk",
+      "assertion": "intentional",
+      "evidence": "dried quark powder"
+     }
+    ],
+    "unresolved": [
+     "vanilla flavour",
+     "sugar"
+    ]
+   },
+   "rules": {
+    "contains": [],
+    "may": [],
+    "review": false,
+    "unresolved": [],
+    "unsupported": [],
+    "evidence": []
+   },
+   "nano": {
+    "contains": [
+     "milk"
+    ],
+    "may": [],
+    "review": true,
+    "unresolved": [
+     "Nano: vanilla flavour",
+     "Nano: sugar"
+    ],
+    "unsupported": [],
+    "evidence": [
+     "nano:milk:intentional:\"dried quark powder\""
+    ]
+   },
+   "hybrid": {
+    "contains": [
+     "milk"
+    ],
+    "may": [],
+    "review": true,
+    "unresolved": [
+     "Nano: vanilla flavour",
+     "Nano: sugar"
+    ],
+    "unsupported": [],
+    "evidence": [
+     "nano:milk:intentional:\"dried quark powder\""
+    ]
+   }
+  },
+  {
+   "set": "v2",
+   "rep": 1,
+   "case": {
+    "id": "H18",
+    "cat": "compound",
+    "text": "Satay sauce (water, monkey nut paste, chilli, palm sugar, salt).",
+    "gold": {
+     "contains": [
+      "peanut"
+     ],
+     "may": [],
+     "review": false
+    },
+    "unseenTerm": "monkey nut"
+   },
+   "ms": 13589,
+   "nanoStatus": "ok",
+   "error": null,
+   "rawNano": {
+    "claims": [
+     {
+      "allergen": "treenut",
+      "assertion": "intentional",
+      "evidence": "monkey nut paste"
+     }
+    ],
+    "unresolved": [
+     "lecithin",
+     "emulsifier",
+     "natural flavour"
+    ]
+   },
+   "rules": {
+    "contains": [],
+    "may": [],
+    "review": false,
+    "unresolved": [],
+    "unsupported": [],
+    "evidence": []
+   },
+   "nano": {
+    "contains": [
+     "treenut"
+    ],
+    "may": [],
+    "review": true,
+    "unresolved": [
+     "Nano: lecithin",
+     "Nano: emulsifier",
+     "Nano: natural flavour"
+    ],
+    "unsupported": [],
+    "evidence": [
+     "nano:treenut:intentional:\"monkey nut paste\""
+    ]
+   },
+   "hybrid": {
+    "contains": [
+     "treenut"
+    ],
+    "may": [],
+    "review": true,
+    "unresolved": [
+     "Nano: lecithin",
+     "Nano: emulsifier",
+     "Nano: natural flavour"
+    ],
+    "unsupported": [],
+    "evidence": [
+     "nano:treenut:intentional:\"monkey nut paste\""
+    ]
+   }
+  },
+  {
+   "set": "v2",
+   "rep": 1,
+   "case": {
+    "id": "H19",
+    "cat": "compound",
+    "text": "Fried rice seasoning [salt, sugar, dried krill powder, garlic].",
+    "gold": {
+     "contains": [
+      "shellfish"
+     ],
+     "may": [],
+     "review": false
+    },
+    "unseenTerm": "krill"
+   },
+   "ms": 13245,
+   "nanoStatus": "ok",
+   "error": null,
+   "rawNano": {
+    "claims": [
+     {
+      "allergen": "fish",
+      "assertion": "intentional",
+      "evidence": "dried krill powder"
+     }
+    ],
+    "unresolved": [
+     "lecithin",
+     "emulsifier",
+     "natural flavour"
+    ]
+   },
+   "rules": {
+    "contains": [],
+    "may": [],
+    "review": false,
+    "unresolved": [],
+    "unsupported": [],
+    "evidence": []
+   },
+   "nano": {
+    "contains": [
+     "fish"
+    ],
+    "may": [],
+    "review": true,
+    "unresolved": [
+     "Nano: lecithin",
+     "Nano: emulsifier",
+     "Nano: natural flavour"
+    ],
+    "unsupported": [],
+    "evidence": [
+     "nano:fish:intentional:\"dried krill powder\""
+    ]
+   },
+   "hybrid": {
+    "contains": [
+     "fish"
+    ],
+    "may": [],
+    "review": true,
+    "unresolved": [
+     "Nano: lecithin",
+     "Nano: emulsifier",
+     "Nano: natural flavour"
+    ],
+    "unsupported": [],
+    "evidence": [
+     "nano:fish:intentional:\"dried krill powder\""
+    ]
+   }
+  },
+  {
+   "set": "v2",
+   "rep": 1,
+   "case": {
+    "id": "H30",
+    "cat": "compound",
+    "text": "Pastry: wheat flour, butter, egg wash, Corylus avellana praline (20%).",
+    "gold": {
+     "contains": [
+      "wheat",
+      "milk",
+      "egg",
+      "treenut"
+     ],
+     "may": [],
+     "review": false
+    },
+    "unseenTerm": "Corylus avellana"
+   },
+   "ms": 16320,
+   "nanoStatus": "ok",
+   "error": null,
+   "rawNano": {
+    "claims": [
+     {
+      "allergen": "wheat",
+      "assertion": "intentional",
+      "evidence": "wheat flour"
+     },
+     {
+      "allergen": "egg",
+      "assertion": "intentional",
+      "evidence": "egg wash"
+     }
+    ],
+    "unresolved": [
+     "lecithin, emulsifier, natural flavour"
+    ]
+   },
+   "rules": {
+    "contains": [
+     "egg",
+     "milk",
+     "wheat"
+    ],
+    "may": [],
+    "review": false,
+    "unresolved": [],
+    "unsupported": [],
+    "evidence": [
+     "dictionary:milk:intentional:\"butter\"",
+     "dictionary:egg:intentional:\"egg\"",
+     "dictionary:wheat:intentional:\"wheat\""
+    ]
+   },
+   "nano": {
+    "contains": [
+     "egg",
+     "wheat"
+    ],
+    "may": [],
+    "review": true,
+    "unresolved": [
+     "Nano: lecithin, emulsifier, natural flavour"
+    ],
+    "unsupported": [],
+    "evidence": [
+     "nano:wheat:intentional:\"wheat flour\"",
+     "nano:egg:intentional:\"egg wash\""
+    ]
+   },
+   "hybrid": {
+    "contains": [
+     "egg",
+     "milk",
+     "wheat"
+    ],
+    "may": [],
+    "review": true,
+    "unresolved": [
+     "Nano: lecithin, emulsifier, natural flavour",
+     "Dictionary found milk but on-device model did not; kept as present, please confirm"
+    ],
+    "unsupported": [],
+    "evidence": [
+     "dictionary:milk:intentional:\"butter\"",
+     "dictionary:egg:intentional:\"egg\"",
+     "dictionary:wheat:intentional:\"wheat\"",
+     "nano:wheat:intentional:\"wheat flour\"",
+     "nano:egg:intentional:\"egg wash\""
+    ]
+   }
+  },
+  {
+   "set": "v2",
+   "rep": 1,
+   "case": {
+    "id": "H21",
+    "cat": "negative",
+    "text": "Ingredients: water chestnuts, coconut milk, salt.",
+    "gold": {
+     "contains": [],
+     "may": [],
+     "review": false
+    }
+   },
+   "ms": 13031,
+   "nanoStatus": "ok",
+   "error": null,
+   "rawNano": {
+    "claims": [
+     {
+      "allergen": "milk",
+      "assertion": "intentional",
+      "evidence": "coconut milk"
+     }
+    ],
+    "unresolved": [
+     "lecithin",
+     "emulsifier",
+     "natural flavour"
+    ]
+   },
+   "rules": {
+    "contains": [
+     "milk"
+    ],
+    "may": [],
+    "review": false,
+    "unresolved": [],
+    "unsupported": [],
+    "evidence": [
+     "dictionary:milk:intentional:\"milk\""
+    ]
+   },
+   "nano": {
+    "contains": [
+     "milk"
+    ],
+    "may": [],
+    "review": true,
+    "unresolved": [
+     "Nano: lecithin",
+     "Nano: emulsifier",
+     "Nano: natural flavour"
+    ],
+    "unsupported": [],
+    "evidence": [
+     "nano:milk:intentional:\"coconut milk\""
+    ]
+   },
+   "hybrid": {
+    "contains": [
+     "milk"
+    ],
+    "may": [],
+    "review": true,
+    "unresolved": [
+     "Nano: lecithin",
+     "Nano: emulsifier",
+     "Nano: natural flavour"
+    ],
+    "unsupported": [],
+    "evidence": [
+     "dictionary:milk:intentional:\"milk\"",
+     "nano:milk:intentional:\"coconut milk\""
+    ]
+   }
+  },
+  {
+   "set": "v2",
+   "rep": 1,
+   "case": {
+    "id": "H22",
+    "cat": "negative",
+    "text": "Ingredients: sunflower seed butter, cane sugar, sunflower oil, salt.",
+    "gold": {
+     "contains": [],
+     "may": [],
+     "review": false
+    }
+   },
+   "ms": 10971,
+   "nanoStatus": "ok",
+   "error": null,
+   "rawNano": {
+    "claims": [
+     {
+      "allergen": "soy",
+      "assertion": "intentional",
+      "evidence": "sunflower seed butter"
+     },
+     {
+      "allergen": "treenut",
+      "assertion": "intentional",
+      "evidence": "sunflower seed butter"
+     }
+    ],
+    "unresolved": [],
+    "unresolved_values": [
+     "lecithin",
+     "emulsifier",
+     "natural flavour"
+    ]
+   },
+   "rules": {
+    "contains": [
+     "milk"
+    ],
+    "may": [],
+    "review": false,
+    "unresolved": [],
+    "unsupported": [],
+    "evidence": [
+     "dictionary:milk:intentional:\"butter\""
+    ]
+   },
+   "nano": {
+    "contains": [
+     "soy",
+     "treenut"
+    ],
+    "may": [],
+    "review": false,
+    "unresolved": [],
+    "unsupported": [],
+    "evidence": [
+     "nano:soy:intentional:\"sunflower seed butter\"",
+     "nano:treenut:intentional:\"sunflower seed butter\""
+    ]
+   },
+   "hybrid": {
+    "contains": [
+     "milk",
+     "soy",
+     "treenut"
+    ],
+    "may": [],
+    "review": true,
+    "unresolved": [
+     "Dictionary found milk but on-device model did not; kept as present, please confirm"
+    ],
+    "unsupported": [],
+    "evidence": [
+     "dictionary:milk:intentional:\"butter\"",
+     "nano:soy:intentional:\"sunflower seed butter\"",
+     "nano:treenut:intentional:\"sunflower seed butter\""
+    ]
+   }
+  },
+  {
+   "set": "v2",
+   "rep": 1,
+   "case": {
+    "id": "H23",
+    "cat": "negative",
+    "text": "Ingredients: rice, nutritional yeast, cream of tartar, salt.",
+    "gold": {
+     "contains": [],
+     "may": [],
+     "review": false
+    }
+   },
+   "ms": 12667,
+   "nanoStatus": "ok",
+   "error": null,
+   "rawNano": {
+    "claims": [
+     {
+      "allergen": "milk",
+      "assertion": "explicit_negative",
+      "evidence": "cream of tartar"
+     }
+    ],
+    "unresolved": [
+     "nutritional yeast",
+     "salt"
+    ]
+   },
+   "rules": {
+    "contains": [
+     "milk"
+    ],
+    "may": [],
+    "review": false,
+    "unresolved": [],
+    "unsupported": [],
+    "evidence": [
+     "dictionary:milk:intentional:\"cream\""
+    ]
+   },
+   "nano": {
+    "contains": [],
+    "may": [],
+    "review": true,
+    "unresolved": [
+     "Nano: nutritional yeast",
+     "Nano: salt"
+    ],
+    "unsupported": [],
+    "evidence": [
+     "nano:milk:explicit_negative:\"cream of tartar\""
+    ]
+   },
+   "hybrid": {
+    "contains": [
+     "milk"
+    ],
+    "may": [],
+    "review": true,
+    "unresolved": [
+     "Nano: nutritional yeast",
+     "Nano: salt",
+     "Dictionary found milk but on-device model did not; kept as present, please confirm",
+     "Contradiction: spec says no milk (\"cream of tartar\") but an ingredient contains it"
+    ],
+    "unsupported": [],
+    "evidence": [
+     "dictionary:milk:intentional:\"cream\"",
+     "nano:milk:explicit_negative:\"cream of tartar\""
+    ]
+   }
+  },
+  {
+   "set": "v2",
+   "rep": 1,
+   "case": {
+    "id": "H24",
+    "cat": "negative",
+    "text": "Ingredients: potatoes, sunflower oil, sea salt, rosemary.",
+    "gold": {
+     "contains": [],
+     "may": [],
+     "review": false
+    }
+   },
+   "ms": 13204,
+   "nanoStatus": "ok",
+   "error": null,
+   "rawNano": {
+    "claims": [
+     {
+      "allergen": "wheat",
+      "assertion": "explicit_negative",
+      "evidence": "potatoes"
+     }
+    ],
+    "unresolved": [
+     "lecithin",
+     "emulsifier",
+     "natural flavour"
+    ]
+   },
+   "rules": {
+    "contains": [],
+    "may": [],
+    "review": false,
+    "unresolved": [],
+    "unsupported": [],
+    "evidence": []
+   },
+   "nano": {
+    "contains": [],
+    "may": [],
+    "review": true,
+    "unresolved": [
+     "Nano: lecithin",
+     "Nano: emulsifier",
+     "Nano: natural flavour"
+    ],
+    "unsupported": [],
+    "evidence": [
+     "nano:wheat:explicit_negative:\"potatoes\""
+    ]
+   },
+   "hybrid": {
+    "contains": [],
+    "may": [],
+    "review": true,
+    "unresolved": [
+     "Nano: lecithin",
+     "Nano: emulsifier",
+     "Nano: natural flavour"
+    ],
+    "unsupported": [],
+    "evidence": [
+     "nano:wheat:explicit_negative:\"potatoes\""
+    ]
+   }
+  },
+  {
+   "set": "v2",
+   "rep": 1,
+   "case": {
+    "id": "H25",
+    "cat": "ambiguous",
+    "text": "Glaze: sugar, water, modified starch, flavouring preparation (composition on request).",
+    "gold": {
+     "contains": [],
+     "may": [],
+     "review": true
+    }
+   },
+   "ms": 12050,
+   "nanoStatus": "ok",
+   "error": null,
+   "rawNano": {
+    "claims": [
+     {
+      "allergen": "wheat",
+      "assertion": "intentional",
+      "evidence": "modified starch"
+     }
+    ],
+    "unresolved": [
+     "flavouring preparation (composition on request)"
+    ]
+   },
+   "rules": {
+    "contains": [],
+    "may": [],
+    "review": true,
+    "unresolved": [
+     "Ingredient with unspecified source (e.g. lecithin / natural flavour / emulsifier)"
+    ],
+    "unsupported": [],
+    "evidence": []
+   },
+   "nano": {
+    "contains": [
+     "wheat"
+    ],
+    "may": [],
+    "review": true,
+    "unresolved": [
+     "Nano: flavouring preparation (composition on request)"
+    ],
+    "unsupported": [],
+    "evidence": [
+     "nano:wheat:intentional:\"modified starch\""
+    ]
+   },
+   "hybrid": {
+    "contains": [
+     "wheat"
+    ],
+    "may": [],
+    "review": true,
+    "unresolved": [
+     "Ingredient with unspecified source (e.g. lecithin / natural flavour / emulsifier)",
+     "Nano: flavouring preparation (composition on request)"
+    ],
+    "unsupported": [],
+    "evidence": [
+     "nano:wheat:intentional:\"modified starch\""
+    ]
+   }
+  },
+  {
+   "set": "v2",
+   "rep": 1,
+   "case": {
+    "id": "H26",
+    "cat": "ambiguous",
+    "text": "Batter: starch, raising agents, protein isolate (source not stated), salt.",
+    "gold": {
+     "contains": [],
+     "may": [],
+     "review": true
+    }
+   },
+   "ms": 11598,
+   "nanoStatus": "ok",
+   "error": null,
+   "rawNano": {
+    "claims": [
+     {
+      "allergen": "wheat",
+      "assertion": "intentional",
+      "evidence": "starch"
+     }
+    ],
+    "unresolved": [
+     "protein isolate (source not stated)"
+    ]
+   },
+   "rules": {
+    "contains": [],
+    "may": [],
+    "review": false,
+    "unresolved": [],
+    "unsupported": [],
+    "evidence": []
+   },
+   "nano": {
+    "contains": [
+     "wheat"
+    ],
+    "may": [],
+    "review": true,
+    "unresolved": [
+     "Nano: protein isolate (source not stated)"
+    ],
+    "unsupported": [],
+    "evidence": [
+     "nano:wheat:intentional:\"starch\""
+    ]
+   },
+   "hybrid": {
+    "contains": [
+     "wheat"
+    ],
+    "may": [],
+    "review": true,
+    "unresolved": [
+     "Nano: protein isolate (source not stated)"
+    ],
+    "unsupported": [],
+    "evidence": [
+     "nano:wheat:intentional:\"starch\""
+    ]
+   }
+  },
+  {
+   "set": "v2",
+   "rep": 1,
+   "case": {
+    "id": "H27",
+    "cat": "contradiction",
+    "text": "Allergens: none declared. Ingredients: rice crackers, nori, katsuobushi flakes, soy-free tamari alternative.",
+    "gold": {
+     "contains": [
+      "fish"
+     ],
+     "may": [],
+     "review": true
+    },
+    "unseenTerm": "katsuobushi"
+   },
+   "ms": 13902,
+   "nanoStatus": "ok",
+   "error": null,
+   "rawNano": {
+    "claims": [
+     {
+      "allergen": "soy",
+      "assertion": "explicit_negative",
+      "evidence": "soy-free tamari alternative"
+     }
+    ],
+    "unresolved": [
+     "lecithin",
+     "emulsifier",
+     "natural flavour"
+    ]
+   },
+   "rules": {
+    "contains": [
+     "soy"
+    ],
+    "may": [],
+    "review": false,
+    "unresolved": [],
+    "unsupported": [],
+    "evidence": [
+     "dictionary:soy:intentional:\"tamari\""
+    ]
+   },
+   "nano": {
+    "contains": [],
+    "may": [],
+    "review": true,
+    "unresolved": [
+     "Nano: lecithin",
+     "Nano: emulsifier",
+     "Nano: natural flavour"
+    ],
+    "unsupported": [],
+    "evidence": [
+     "nano:soy:explicit_negative:\"soy-free tamari alternative\""
+    ]
+   },
+   "hybrid": {
+    "contains": [
+     "soy"
+    ],
+    "may": [],
+    "review": true,
+    "unresolved": [
+     "Nano: lecithin",
+     "Nano: emulsifier",
+     "Nano: natural flavour",
+     "Dictionary found soy but on-device model did not; kept as present, please confirm",
+     "Contradiction: spec says no soy (\"soy-free tamari alternative\") but an ingredient contains it"
+    ],
+    "unsupported": [],
+    "evidence": [
+     "dictionary:soy:intentional:\"tamari\"",
+     "nano:soy:explicit_negative:\"soy-free tamari alternative\""
+    ]
+   }
+  },
+  {
+   "set": "v2",
+   "rep": 1,
+   "case": {
+    "id": "H28",
+    "cat": "precaution",
+    "text": "Ingredients: oats, raisins, sunflower seeds. Made in a bakery where hazelnuts and sesame are handled.",
+    "gold": {
+     "contains": [],
+     "may": [
+      "treenut",
+      "sesame"
+     ],
+     "review": false
+    }
+   },
+   "ms": 17899,
+   "nanoStatus": "ok",
+   "error": null,
+   "rawNano": {
+    "claims": [
+     {
+      "allergen": "treenut",
+      "assertion": "intentional",
+      "evidence": "hazelnuts"
+     },
+     {
+      "allergen": "sesame",
+      "assertion": "intentional",
+      "evidence": "sesame are handled"
+     }
+    ],
+    "unresolved": [
+     "lecithin",
+     "emulsifier",
+     "natural flavour"
+    ]
+   },
+   "rules": {
+    "contains": [
+     "sesame",
+     "treenut"
+    ],
+    "may": [],
+    "review": false,
+    "unresolved": [],
+    "unsupported": [],
+    "evidence": [
+     "dictionary:treenut:intentional:\"hazelnuts\"",
+     "dictionary:sesame:intentional:\"sesame\""
+    ]
+   },
+   "nano": {
+    "contains": [
+     "sesame",
+     "treenut"
+    ],
+    "may": [],
+    "review": true,
+    "unresolved": [
+     "Nano: lecithin",
+     "Nano: emulsifier",
+     "Nano: natural flavour"
+    ],
+    "unsupported": [],
+    "evidence": [
+     "nano:treenut:intentional:\"hazelnuts\"",
+     "nano:sesame:intentional:\"sesame are handled\""
+    ]
+   },
+   "hybrid": {
+    "contains": [
+     "sesame",
+     "treenut"
+    ],
+    "may": [],
+    "review": true,
+    "unresolved": [
+     "Nano: lecithin",
+     "Nano: emulsifier",
+     "Nano: natural flavour"
+    ],
+    "unsupported": [],
+    "evidence": [
+     "dictionary:treenut:intentional:\"hazelnuts\"",
+     "dictionary:sesame:intentional:\"sesame\"",
+     "nano:treenut:intentional:\"hazelnuts\"",
+     "nano:sesame:intentional:\"sesame are handled\""
+    ]
+   }
+  },
+  {
+   "set": "v2",
+   "rep": 2,
+   "case": {
+    "id": "H11",
+    "cat": "scientific",
+    "text": "Thickener: flour from Glycine max, guar gum, water.",
+    "gold": {
+     "contains": [
+      "soy"
+     ],
+     "may": [],
+     "review": false
+    },
+    "unseenTerm": "Glycine max"
+   },
+   "ms": 12707,
+   "nanoStatus": "ok",
+   "error": null,
+   "rawNano": {
+    "claims": [
+     {
+      "allergen": "wheat",
+      "assertion": "intentional",
+      "evidence": "flour from Glycine max"
+     }
+    ],
+    "unresolved": [
+     "lecithin, emulsifier, natural flavour"
+    ]
+   },
+   "rules": {
+    "contains": [],
+    "may": [],
+    "review": false,
+    "unresolved": [],
+    "unsupported": [],
+    "evidence": []
+   },
+   "nano": {
+    "contains": [
+     "wheat"
+    ],
+    "may": [],
+    "review": true,
+    "unresolved": [
+     "Nano: lecithin, emulsifier, natural flavour"
+    ],
+    "unsupported": [],
+    "evidence": [
+     "nano:wheat:intentional:\"flour from Glycine max\""
+    ]
+   },
+   "hybrid": {
+    "contains": [
+     "wheat"
+    ],
+    "may": [],
+    "review": true,
+    "unresolved": [
+     "Nano: lecithin, emulsifier, natural flavour"
+    ],
+    "unsupported": [],
+    "evidence": [
+     "nano:wheat:intentional:\"flour from Glycine max\""
+    ]
+   }
+  },
+  {
+   "set": "v2",
+   "rep": 2,
+   "case": {
+    "id": "H12",
+    "cat": "scientific",
+    "text": "Topping: sliced kernels of Prunus dulcis, lightly toasted.",
+    "gold": {
+     "contains": [
+      "treenut"
+     ],
+     "may": [],
+     "review": false
+    },
+    "unseenTerm": "Prunus dulcis"
+   },
+   "ms": 13855,
+   "nanoStatus": "ok",
+   "error": null,
+   "rawNano": {
+    "claims": [
+     {
+      "allergen": "treenut",
+      "assertion": "intentional",
+      "evidence": "sliced kernels of Prunus dulcis"
+     }
+    ],
+    "unresolved": [
+     "lecithin",
+     "emulsifier",
+     "natural flavour"
+    ]
+   },
+   "rules": {
+    "contains": [],
+    "may": [],
+    "review": false,
+    "unresolved": [],
+    "unsupported": [],
+    "evidence": []
+   },
+   "nano": {
+    "contains": [
+     "treenut"
+    ],
+    "may": [],
+    "review": true,
+    "unresolved": [
+     "Nano: lecithin",
+     "Nano: emulsifier",
+     "Nano: natural flavour"
+    ],
+    "unsupported": [],
+    "evidence": [
+     "nano:treenut:intentional:\"sliced kernels of Prunus dulcis\""
+    ]
+   },
+   "hybrid": {
+    "contains": [
+     "treenut"
+    ],
+    "may": [],
+    "review": true,
+    "unresolved": [
+     "Nano: lecithin",
+     "Nano: emulsifier",
+     "Nano: natural flavour"
+    ],
+    "unsupported": [],
+    "evidence": [
+     "nano:treenut:intentional:\"sliced kernels of Prunus dulcis\""
+    ]
+   }
+  },
+  {
+   "set": "v2",
+   "rep": 2,
+   "case": {
+    "id": "H13",
+    "cat": "scientific",
+    "text": "Oil blend: rapeseed oil, oil of Sesamum indicum (10%).",
+    "gold": {
+     "contains": [
+      "sesame"
+     ],
+     "may": [],
+     "review": false
+    },
+    "unseenTerm": "Sesamum indicum"
+   },
+   "ms": 14169,
+   "nanoStatus": "ok",
+   "error": null,
+   "rawNano": {
+    "claims": [
+     {
+      "allergen": "sesame",
+      "assertion": "intentional",
+      "evidence": "oil of Sesamum indicum (10%)."
+     }
+    ],
+    "unresolved": [
+     "lecithin",
+     "emulsifier",
+     "natural flavour"
+    ]
+   },
+   "rules": {
+    "contains": [],
+    "may": [],
+    "review": false,
+    "unresolved": [],
+    "unsupported": [],
+    "evidence": []
+   },
+   "nano": {
+    "contains": [
+     "sesame"
+    ],
+    "may": [],
+    "review": true,
+    "unresolved": [
+     "Nano: lecithin",
+     "Nano: emulsifier",
+     "Nano: natural flavour"
+    ],
+    "unsupported": [],
+    "evidence": [
+     "nano:sesame:intentional:\"oil of Sesamum indicum (10%).\""
+    ]
+   },
+   "hybrid": {
+    "contains": [
+     "sesame"
+    ],
+    "may": [],
+    "review": true,
+    "unresolved": [
+     "Nano: lecithin",
+     "Nano: emulsifier",
+     "Nano: natural flavour"
+    ],
+    "unsupported": [],
+    "evidence": [
+     "nano:sesame:intentional:\"oil of Sesamum indicum (10%).\""
+    ]
+   }
+  },
+  {
+   "set": "v2",
+   "rep": 2,
+   "case": {
+    "id": "H14",
+    "cat": "derivative",
+    "text": "Binder: ovomucoid (0.5%), potato starch, water.",
+    "gold": {
+     "contains": [
+      "egg"
+     ],
+     "may": [],
+     "review": false
+    },
+    "unseenTerm": "ovomucoid"
+   },
+   "ms": 13987,
+   "nanoStatus": "ok",
+   "error": null,
+   "rawNano": {
+    "claims": [
+     {
+      "allergen": "milk",
+      "assertion": "intentional",
+      "evidence": "ovomucoid (0.5%)"
+     }
+    ],
+    "unresolved": [
+     "lecithin",
+     "emulsifier",
+     "natural flavour"
+    ]
+   },
+   "rules": {
+    "contains": [],
+    "may": [],
+    "review": false,
+    "unresolved": [],
+    "unsupported": [],
+    "evidence": []
+   },
+   "nano": {
+    "contains": [
+     "milk"
+    ],
+    "may": [],
+    "review": true,
+    "unresolved": [
+     "Nano: lecithin",
+     "Nano: emulsifier",
+     "Nano: natural flavour"
+    ],
+    "unsupported": [],
+    "evidence": [
+     "nano:milk:intentional:\"ovomucoid (0.5%)\""
+    ]
+   },
+   "hybrid": {
+    "contains": [
+     "milk"
+    ],
+    "may": [],
+    "review": true,
+    "unresolved": [
+     "Nano: lecithin",
+     "Nano: emulsifier",
+     "Nano: natural flavour"
+    ],
+    "unsupported": [],
+    "evidence": [
+     "nano:milk:intentional:\"ovomucoid (0.5%)\""
+    ]
+   }
+  },
+  {
+   "set": "v2",
+   "rep": 2,
+   "case": {
+    "id": "H15",
+    "cat": "derivative",
+    "text": "Crisp mix: corn, rice, kamaboko pieces (2%), salt.",
+    "gold": {
+     "contains": [
+      "fish"
+     ],
+     "may": [],
+     "review": false
+    },
+    "unseenTerm": "kamaboko"
+   },
+   "ms": 14149,
+   "nanoStatus": "ok",
+   "error": null,
+   "rawNano": {
+    "claims": [
+     {
+      "allergen": "wheat",
+      "assertion": "explicit_negative",
+      "evidence": "corn, rice, kamaboko pieces (2%), salt."
+     },
+     {
+      "allergen": "sesame",
+      "assertion": "precautionary",
+      "evidence": "kamaboko pieces (2%), salt."
+     }
+    ],
+    "unresolved": [
+     "lecithin",
+     "emulsifier",
+     "natural flavour"
+    ]
+   },
+   "rules": {
+    "contains": [],
+    "may": [],
+    "review": false,
+    "unresolved": [],
+    "unsupported": [],
+    "evidence": []
+   },
+   "nano": {
+    "contains": [],
+    "may": [
+     "sesame"
+    ],
+    "review": true,
+    "unresolved": [
+     "Nano: lecithin",
+     "Nano: emulsifier",
+     "Nano: natural flavour"
+    ],
+    "unsupported": [],
+    "evidence": [
+     "nano:wheat:explicit_negative:\"corn, rice, kamaboko pieces (2%), salt.\"",
+     "nano:sesame:precautionary:\"kamaboko pieces (2%), salt.\""
+    ]
+   },
+   "hybrid": {
+    "contains": [],
+    "may": [
+     "sesame"
+    ],
+    "review": true,
+    "unresolved": [
+     "Nano: lecithin",
+     "Nano: emulsifier",
+     "Nano: natural flavour"
+    ],
+    "unsupported": [],
+    "evidence": [
+     "nano:wheat:explicit_negative:\"corn, rice, kamaboko pieces (2%), salt.\"",
+     "nano:sesame:precautionary:\"kamaboko pieces (2%), salt.\""
+    ]
+   }
+  },
+  {
+   "set": "v2",
+   "rep": 2,
+   "case": {
+    "id": "H20",
+    "cat": "derivative",
+    "text": "Coating mix: einkorn flour, rice flour, salt.",
+    "gold": {
+     "contains": [
+      "wheat"
+     ],
+     "may": [],
+     "review": false
+    },
+    "unseenTerm": "einkorn"
+   },
+   "ms": 13822,
+   "nanoStatus": "ok",
+   "error": null,
+   "rawNano": {
+    "claims": [
+     {
+      "allergen": "wheat",
+      "assertion": "intentional",
+      "evidence": "einkorn flour, rice flour, salt"
+     }
+    ],
+    "unresolved": [
+     "lecithin",
+     "emulsifier",
+     "natural flavour"
+    ]
+   },
+   "rules": {
+    "contains": [],
+    "may": [],
+    "review": false,
+    "unresolved": [],
+    "unsupported": [],
+    "evidence": []
+   },
+   "nano": {
+    "contains": [
+     "wheat"
+    ],
+    "may": [],
+    "review": true,
+    "unresolved": [
+     "Nano: lecithin",
+     "Nano: emulsifier",
+     "Nano: natural flavour"
+    ],
+    "unsupported": [],
+    "evidence": [
+     "nano:wheat:intentional:\"einkorn flour, rice flour, salt\""
+    ]
+   },
+   "hybrid": {
+    "contains": [
+     "wheat"
+    ],
+    "may": [],
+    "review": true,
+    "unresolved": [
+     "Nano: lecithin",
+     "Nano: emulsifier",
+     "Nano: natural flavour"
+    ],
+    "unsupported": [],
+    "evidence": [
+     "nano:wheat:intentional:\"einkorn flour, rice flour, salt\""
+    ]
+   }
+  },
+  {
+   "set": "v2",
+   "rep": 2,
+   "case": {
+    "id": "H29",
+    "cat": "derivative",
+    "text": "Pasta: semola di grano duro, water.",
+    "gold": {
+     "contains": [
+      "wheat"
+     ],
+     "may": [],
+     "review": false
+    },
+    "unseenTerm": "grano duro"
+   },
+   "ms": 13784,
+   "nanoStatus": "ok",
+   "error": null,
+   "rawNano": {
+    "claims": [
+     {
+      "allergen": "wheat",
+      "assertion": "intentional",
+      "evidence": "semola di grano duro"
+     },
+     {
+      "allergen": "wheat",
+      "assertion": "intentional",
+      "evidence": "grano duro"
+     }
+    ],
+    "unresolved": [
+     "water"
+    ]
+   },
+   "rules": {
+    "contains": [],
+    "may": [],
+    "review": false,
+    "unresolved": [],
+    "unsupported": [],
+    "evidence": []
+   },
+   "nano": {
+    "contains": [
+     "wheat"
+    ],
+    "may": [],
+    "review": true,
+    "unresolved": [
+     "Nano: water"
+    ],
+    "unsupported": [],
+    "evidence": [
+     "nano:wheat:intentional:\"semola di grano duro\"",
+     "nano:wheat:intentional:\"grano duro\""
+    ]
+   },
+   "hybrid": {
+    "contains": [
+     "wheat"
+    ],
+    "may": [],
+    "review": true,
+    "unresolved": [
+     "Nano: water"
+    ],
+    "unsupported": [],
+    "evidence": [
+     "nano:wheat:intentional:\"semola di grano duro\"",
+     "nano:wheat:intentional:\"grano duro\""
+    ]
+   }
+  },
+  {
+   "set": "v2",
+   "rep": 2,
+   "case": {
+    "id": "H16",
+    "cat": "carrier",
+    "text": "Omega-3 powder: maltodextrin, refined oil of Clupea harengus, glucose syrup, antioxidant.",
+    "gold": {
+     "contains": [
+      "fish"
+     ],
+     "may": [],
+     "review": false
+    },
+    "unseenTerm": "Clupea harengus"
+   },
+   "ms": 12374,
+   "nanoStatus": "ok",
+   "error": null,
+   "rawNano": {
+    "claims": [
+     {
+      "allergen": "fish",
+      "assertion": "intentional",
+      "evidence": "refined oil of Clupea harengus"
+     }
+    ],
+    "unresolved": [
+     "antioxidant"
+    ]
+   },
+   "rules": {
+    "contains": [],
+    "may": [],
+    "review": false,
+    "unresolved": [],
+    "unsupported": [],
+    "evidence": []
+   },
+   "nano": {
+    "contains": [
+     "fish"
+    ],
+    "may": [],
+    "review": true,
+    "unresolved": [
+     "Nano: antioxidant"
+    ],
+    "unsupported": [],
+    "evidence": [
+     "nano:fish:intentional:\"refined oil of Clupea harengus\""
+    ]
+   },
+   "hybrid": {
+    "contains": [
+     "fish"
+    ],
+    "may": [],
+    "review": true,
+    "unresolved": [
+     "Nano: antioxidant"
+    ],
+    "unsupported": [],
+    "evidence": [
+     "nano:fish:intentional:\"refined oil of Clupea harengus\""
+    ]
+   }
+  },
+  {
+   "set": "v2",
+   "rep": 2,
+   "case": {
+    "id": "H17",
+    "cat": "carrier",
+    "text": "Natural vanilla flavour (carrier: dried quark powder), sugar.",
+    "gold": {
+     "contains": [
+      "milk"
+     ],
+     "may": [],
+     "review": false
+    },
+    "unseenTerm": "quark"
+   },
+   "ms": 12305,
+   "nanoStatus": "ok",
+   "error": null,
+   "rawNano": {
+    "claims": [
+     {
+      "allergen": "milk",
+      "assertion": "intentional",
+      "evidence": "dried quark powder"
+     }
+    ],
+    "unresolved": [
+     "Natural vanilla flavour (carrier: dried quark powder)"
+    ]
+   },
+   "rules": {
+    "contains": [],
+    "may": [],
+    "review": false,
+    "unresolved": [],
+    "unsupported": [],
+    "evidence": []
+   },
+   "nano": {
+    "contains": [
+     "milk"
+    ],
+    "may": [],
+    "review": true,
+    "unresolved": [
+     "Nano: Natural vanilla flavour (carrier: dried quark powder)"
+    ],
+    "unsupported": [],
+    "evidence": [
+     "nano:milk:intentional:\"dried quark powder\""
+    ]
+   },
+   "hybrid": {
+    "contains": [
+     "milk"
+    ],
+    "may": [],
+    "review": true,
+    "unresolved": [
+     "Nano: Natural vanilla flavour (carrier: dried quark powder)"
+    ],
+    "unsupported": [],
+    "evidence": [
+     "nano:milk:intentional:\"dried quark powder\""
+    ]
+   }
+  },
+  {
+   "set": "v2",
+   "rep": 2,
+   "case": {
+    "id": "H18",
+    "cat": "compound",
+    "text": "Satay sauce (water, monkey nut paste, chilli, palm sugar, salt).",
+    "gold": {
+     "contains": [
+      "peanut"
+     ],
+     "may": [],
+     "review": false
+    },
+    "unseenTerm": "monkey nut"
+   },
+   "ms": 13218,
+   "nanoStatus": "ok",
+   "error": null,
+   "rawNano": {
+    "claims": [
+     {
+      "allergen": "treenut",
+      "assertion": "intentional",
+      "evidence": "monkey nut paste"
+     }
+    ],
+    "unresolved": [
+     "lecithin",
+     "emulsifier",
+     "natural flavour"
+    ]
+   },
+   "rules": {
+    "contains": [],
+    "may": [],
+    "review": false,
+    "unresolved": [],
+    "unsupported": [],
+    "evidence": []
+   },
+   "nano": {
+    "contains": [
+     "treenut"
+    ],
+    "may": [],
+    "review": true,
+    "unresolved": [
+     "Nano: lecithin",
+     "Nano: emulsifier",
+     "Nano: natural flavour"
+    ],
+    "unsupported": [],
+    "evidence": [
+     "nano:treenut:intentional:\"monkey nut paste\""
+    ]
+   },
+   "hybrid": {
+    "contains": [
+     "treenut"
+    ],
+    "may": [],
+    "review": true,
+    "unresolved": [
+     "Nano: lecithin",
+     "Nano: emulsifier",
+     "Nano: natural flavour"
+    ],
+    "unsupported": [],
+    "evidence": [
+     "nano:treenut:intentional:\"monkey nut paste\""
+    ]
+   }
+  },
+  {
+   "set": "v2",
+   "rep": 2,
+   "case": {
+    "id": "H19",
+    "cat": "compound",
+    "text": "Fried rice seasoning [salt, sugar, dried krill powder, garlic].",
+    "gold": {
+     "contains": [
+      "shellfish"
+     ],
+     "may": [],
+     "review": false
+    },
+    "unseenTerm": "krill"
+   },
+   "ms": 13216,
+   "nanoStatus": "ok",
+   "error": null,
+   "rawNano": {
+    "claims": [
+     {
+      "allergen": "fish",
+      "assertion": "intentional",
+      "evidence": "dried krill powder"
+     }
+    ],
+    "unresolved": [
+     "lecithin",
+     "emulsifier",
+     "natural flavour"
+    ]
+   },
+   "rules": {
+    "contains": [],
+    "may": [],
+    "review": false,
+    "unresolved": [],
+    "unsupported": [],
+    "evidence": []
+   },
+   "nano": {
+    "contains": [
+     "fish"
+    ],
+    "may": [],
+    "review": true,
+    "unresolved": [
+     "Nano: lecithin",
+     "Nano: emulsifier",
+     "Nano: natural flavour"
+    ],
+    "unsupported": [],
+    "evidence": [
+     "nano:fish:intentional:\"dried krill powder\""
+    ]
+   },
+   "hybrid": {
+    "contains": [
+     "fish"
+    ],
+    "may": [],
+    "review": true,
+    "unresolved": [
+     "Nano: lecithin",
+     "Nano: emulsifier",
+     "Nano: natural flavour"
+    ],
+    "unsupported": [],
+    "evidence": [
+     "nano:fish:intentional:\"dried krill powder\""
+    ]
+   }
+  },
+  {
+   "set": "v2",
+   "rep": 2,
+   "case": {
+    "id": "H30",
+    "cat": "compound",
+    "text": "Pastry: wheat flour, butter, egg wash, Corylus avellana praline (20%).",
+    "gold": {
+     "contains": [
+      "wheat",
+      "milk",
+      "egg",
+      "treenut"
+     ],
+     "may": [],
+     "review": false
+    },
+    "unseenTerm": "Corylus avellana"
+   },
+   "ms": 18420,
+   "nanoStatus": "ok",
+   "error": null,
+   "rawNano": {
+    "claims": [
+     {
+      "allergen": "wheat",
+      "assertion": "intentional",
+      "evidence": "wheat flour"
+     },
+     {
+      "allergen": "egg",
+      "assertion": "intentional",
+      "evidence": "egg wash"
+     }
+    ],
+    "unresolved": [
+     "butter (potential milk/dairy content)",
+     "Corylus avellana praline (potential treenut content)"
+    ]
+   },
+   "rules": {
+    "contains": [
+     "egg",
+     "milk",
+     "wheat"
+    ],
+    "may": [],
+    "review": false,
+    "unresolved": [],
+    "unsupported": [],
+    "evidence": [
+     "dictionary:milk:intentional:\"butter\"",
+     "dictionary:egg:intentional:\"egg\"",
+     "dictionary:wheat:intentional:\"wheat\""
+    ]
+   },
+   "nano": {
+    "contains": [
+     "egg",
+     "wheat"
+    ],
+    "may": [],
+    "review": true,
+    "unresolved": [
+     "Nano: butter (potential milk/dairy content)",
+     "Nano: Corylus avellana praline (potential treenut content)"
+    ],
+    "unsupported": [],
+    "evidence": [
+     "nano:wheat:intentional:\"wheat flour\"",
+     "nano:egg:intentional:\"egg wash\""
+    ]
+   },
+   "hybrid": {
+    "contains": [
+     "egg",
+     "milk",
+     "wheat"
+    ],
+    "may": [],
+    "review": true,
+    "unresolved": [
+     "Nano: butter (potential milk/dairy content)",
+     "Nano: Corylus avellana praline (potential treenut content)",
+     "Dictionary found milk but on-device model did not; kept as present, please confirm"
+    ],
+    "unsupported": [],
+    "evidence": [
+     "dictionary:milk:intentional:\"butter\"",
+     "dictionary:egg:intentional:\"egg\"",
+     "dictionary:wheat:intentional:\"wheat\"",
+     "nano:wheat:intentional:\"wheat flour\"",
+     "nano:egg:intentional:\"egg wash\""
+    ]
+   }
+  },
+  {
+   "set": "v2",
+   "rep": 2,
+   "case": {
+    "id": "H21",
+    "cat": "negative",
+    "text": "Ingredients: water chestnuts, coconut milk, salt.",
+    "gold": {
+     "contains": [],
+     "may": [],
+     "review": false
+    }
+   },
+   "ms": 12962,
+   "nanoStatus": "ok",
+   "error": null,
+   "rawNano": {
+    "claims": [
+     {
+      "allergen": "milk",
+      "assertion": "intentional",
+      "evidence": "coconut milk"
+     }
+    ],
+    "unresolved": [
+     "lecithin",
+     "emulsifier",
+     "natural flavour"
+    ]
+   },
+   "rules": {
+    "contains": [
+     "milk"
+    ],
+    "may": [],
+    "review": false,
+    "unresolved": [],
+    "unsupported": [],
+    "evidence": [
+     "dictionary:milk:intentional:\"milk\""
+    ]
+   },
+   "nano": {
+    "contains": [
+     "milk"
+    ],
+    "may": [],
+    "review": true,
+    "unresolved": [
+     "Nano: lecithin",
+     "Nano: emulsifier",
+     "Nano: natural flavour"
+    ],
+    "unsupported": [],
+    "evidence": [
+     "nano:milk:intentional:\"coconut milk\""
+    ]
+   },
+   "hybrid": {
+    "contains": [
+     "milk"
+    ],
+    "may": [],
+    "review": true,
+    "unresolved": [
+     "Nano: lecithin",
+     "Nano: emulsifier",
+     "Nano: natural flavour"
+    ],
+    "unsupported": [],
+    "evidence": [
+     "dictionary:milk:intentional:\"milk\"",
+     "nano:milk:intentional:\"coconut milk\""
+    ]
+   }
+  },
+  {
+   "set": "v2",
+   "rep": 2,
+   "case": {
+    "id": "H22",
+    "cat": "negative",
+    "text": "Ingredients: sunflower seed butter, cane sugar, sunflower oil, salt.",
+    "gold": {
+     "contains": [],
+     "may": [],
+     "review": false
+    }
+   },
+   "ms": 13480,
+   "nanoStatus": "ok",
+   "error": null,
+   "rawNano": {
+    "claims": [
+     {
+      "allergen": "peanut",
+      "assertion": "intentional",
+      "evidence": "sunflower seed butter"
+     }
+    ],
+    "unresolved": [
+     "lecithin",
+     "emulsifier",
+     "natural flavour"
+    ]
+   },
+   "rules": {
+    "contains": [
+     "milk"
+    ],
+    "may": [],
+    "review": false,
+    "unresolved": [],
+    "unsupported": [],
+    "evidence": [
+     "dictionary:milk:intentional:\"butter\""
+    ]
+   },
+   "nano": {
+    "contains": [
+     "peanut"
+    ],
+    "may": [],
+    "review": true,
+    "unresolved": [
+     "Nano: lecithin",
+     "Nano: emulsifier",
+     "Nano: natural flavour"
+    ],
+    "unsupported": [],
+    "evidence": [
+     "nano:peanut:intentional:\"sunflower seed butter\""
+    ]
+   },
+   "hybrid": {
+    "contains": [
+     "milk",
+     "peanut"
+    ],
+    "may": [],
+    "review": true,
+    "unresolved": [
+     "Nano: lecithin",
+     "Nano: emulsifier",
+     "Nano: natural flavour",
+     "Dictionary found milk but on-device model did not; kept as present, please confirm"
+    ],
+    "unsupported": [],
+    "evidence": [
+     "dictionary:milk:intentional:\"butter\"",
+     "nano:peanut:intentional:\"sunflower seed butter\""
+    ]
+   }
+  },
+  {
+   "set": "v2",
+   "rep": 2,
+   "case": {
+    "id": "H23",
+    "cat": "negative",
+    "text": "Ingredients: rice, nutritional yeast, cream of tartar, salt.",
+    "gold": {
+     "contains": [],
+     "may": [],
+     "review": false
+    }
+   },
+   "ms": 12478,
+   "nanoStatus": "ok",
+   "error": null,
+   "rawNano": {
+    "claims": [
+     {
+      "allergen": "milk",
+      "assertion": "explicit_negative",
+      "evidence": "cream of tartar"
+     }
+    ],
+    "unresolved": [
+     "nutritional yeast",
+     "salt"
+    ]
+   },
+   "rules": {
+    "contains": [
+     "milk"
+    ],
+    "may": [],
+    "review": false,
+    "unresolved": [],
+    "unsupported": [],
+    "evidence": [
+     "dictionary:milk:intentional:\"cream\""
+    ]
+   },
+   "nano": {
+    "contains": [],
+    "may": [],
+    "review": true,
+    "unresolved": [
+     "Nano: nutritional yeast",
+     "Nano: salt"
+    ],
+    "unsupported": [],
+    "evidence": [
+     "nano:milk:explicit_negative:\"cream of tartar\""
+    ]
+   },
+   "hybrid": {
+    "contains": [
+     "milk"
+    ],
+    "may": [],
+    "review": true,
+    "unresolved": [
+     "Nano: nutritional yeast",
+     "Nano: salt",
+     "Dictionary found milk but on-device model did not; kept as present, please confirm",
+     "Contradiction: spec says no milk (\"cream of tartar\") but an ingredient contains it"
+    ],
+    "unsupported": [],
+    "evidence": [
+     "dictionary:milk:intentional:\"cream\"",
+     "nano:milk:explicit_negative:\"cream of tartar\""
+    ]
+   }
+  },
+  {
+   "set": "v2",
+   "rep": 2,
+   "case": {
+    "id": "H24",
+    "cat": "negative",
+    "text": "Ingredients: potatoes, sunflower oil, sea salt, rosemary.",
+    "gold": {
+     "contains": [],
+     "may": [],
+     "review": false
+    }
+   },
+   "ms": 36061,
+   "nanoStatus": "ok",
+   "error": null,
+   "rawNano": {
+    "claims": [
+     {
+      "allergen": "wheat",
+      "assertion": "explicit_negative",
+      "evidence": "potatoes, sunflower oil, sea salt, rosemary."
+     },
+     {
+      "allergen": "milk",
+      "assertion": "explicit_negative",
+      "evidence": "potatoes, sunflower oil, sea salt, rosemary."
+     },
+     {
+      "allergen": "egg",
+      "assertion": "explicit_negative",
+      "evidence": "potatoes, sunflower oil, sea salt, rosemary."
+     },
+     {
+      "allergen": "fish",
+      "assertion": "explicit_negative",
+      "evidence": "potatoes, sunflower oil, sea salt, rosemary."
+     },
+     {
+      "allergen": "shellfish",
+      "assertion": "explicit_negative",
+      "evidence": "potatoes, sunflower oil, sea salt, rosemary."
+     },
+     {
+      "allergen": "treenut",
+      "assertion": "explicit_negative",
+      "evidence": "potatoes, sunflower oil, sea salt, rosemary."
+     },
+     {
+      "allergen": "peanut",
+      "assertion": "explicit_negative",
+      "evidence": "potatoes, sunflower oil, sea salt, rosemary."
+     },
+     {
+      "allergen": "soy",
+      "assertion": "explicit_negative",
+      "evidence": "potatoes, sunflower oil, sea salt, rosemary."
+     },
+     {
+      "allergen": "sesame",
+      "assertion": "explicit_negative",
+      "evidence": "potatoes, sunflower oil, sea salt, rosemary."
+     }
+    ],
+    "unresolved": [],
+    "unresolved_items": [
+     "lecithin",
+     "emulsifier",
+     "natural flavour"
+    ]
+   },
+   "rules": {
+    "contains": [],
+    "may": [],
+    "review": false,
+    "unresolved": [],
+    "unsupported": [],
+    "evidence": []
+   },
+   "nano": {
+    "contains": [],
+    "may": [],
+    "review": false,
+    "unresolved": [],
+    "unsupported": [],
+    "evidence": [
+     "nano:wheat:explicit_negative:\"potatoes, sunflower oil, sea salt, rosemary.\"",
+     "nano:milk:explicit_negative:\"potatoes, sunflower oil, sea salt, rosemary.\"",
+     "nano:egg:explicit_negative:\"potatoes, sunflower oil, sea salt, rosemary.\"",
+     "nano:fish:explicit_negative:\"potatoes, sunflower oil, sea salt, rosemary.\"",
+     "nano:shellfish:explicit_negative:\"potatoes, sunflower oil, sea salt, rosemary.\"",
+     "nano:treenut:explicit_negative:\"potatoes, sunflower oil, sea salt, rosemary.\"",
+     "nano:peanut:explicit_negative:\"potatoes, sunflower oil, sea salt, rosemary.\"",
+     "nano:soy:explicit_negative:\"potatoes, sunflower oil, sea salt, rosemary.\"",
+     "nano:sesame:explicit_negative:\"potatoes, sunflower oil, sea salt, rosemary.\""
+    ]
+   },
+   "hybrid": {
+    "contains": [],
+    "may": [],
+    "review": false,
+    "unresolved": [],
+    "unsupported": [],
+    "evidence": [
+     "nano:wheat:explicit_negative:\"potatoes, sunflower oil, sea salt, rosemary.\"",
+     "nano:milk:explicit_negative:\"potatoes, sunflower oil, sea salt, rosemary.\"",
+     "nano:egg:explicit_negative:\"potatoes, sunflower oil, sea salt, rosemary.\"",
+     "nano:fish:explicit_negative:\"potatoes, sunflower oil, sea salt, rosemary.\"",
+     "nano:shellfish:explicit_negative:\"potatoes, sunflower oil, sea salt, rosemary.\"",
+     "nano:treenut:explicit_negative:\"potatoes, sunflower oil, sea salt, rosemary.\"",
+     "nano:peanut:explicit_negative:\"potatoes, sunflower oil, sea salt, rosemary.\"",
+     "nano:soy:explicit_negative:\"potatoes, sunflower oil, sea salt, rosemary.\"",
+     "nano:sesame:explicit_negative:\"potatoes, sunflower oil, sea salt, rosemary.\""
+    ]
+   }
+  },
+  {
+   "set": "v2",
+   "rep": 2,
+   "case": {
+    "id": "H25",
+    "cat": "ambiguous",
+    "text": "Glaze: sugar, water, modified starch, flavouring preparation (composition on request).",
+    "gold": {
+     "contains": [],
+     "may": [],
+     "review": true
+    }
+   },
+   "ms": 10235,
+   "nanoStatus": "ok",
+   "error": null,
+   "rawNano": {
+    "claims": [
+     {
+      "allergen": "wheat",
+      "assertion": "intentional",
+      "evidence": "modified starch"
+     },
+     {
+      "allergen": "soy",
+      "assertion": "intentional",
+      "evidence": "flavouring preparation (composition on request)"
+     }
+    ],
+    "unresolved": [
+     "flavouring preparation (composition on request)"
+    ]
+   },
+   "rules": {
+    "contains": [],
+    "may": [],
+    "review": true,
+    "unresolved": [
+     "Ingredient with unspecified source (e.g. lecithin / natural flavour / emulsifier)"
+    ],
+    "unsupported": [],
+    "evidence": []
+   },
+   "nano": {
+    "contains": [
+     "soy",
+     "wheat"
+    ],
+    "may": [],
+    "review": true,
+    "unresolved": [
+     "Nano: flavouring preparation (composition on request)"
+    ],
+    "unsupported": [],
+    "evidence": [
+     "nano:wheat:intentional:\"modified starch\"",
+     "nano:soy:intentional:\"flavouring preparation (composition on request)\""
+    ]
+   },
+   "hybrid": {
+    "contains": [
+     "soy",
+     "wheat"
+    ],
+    "may": [],
+    "review": true,
+    "unresolved": [
+     "Ingredient with unspecified source (e.g. lecithin / natural flavour / emulsifier)",
+     "Nano: flavouring preparation (composition on request)"
+    ],
+    "unsupported": [],
+    "evidence": [
+     "nano:wheat:intentional:\"modified starch\"",
+     "nano:soy:intentional:\"flavouring preparation (composition on request)\""
+    ]
+   }
+  },
+  {
+   "set": "v2",
+   "rep": 2,
+   "case": {
+    "id": "H26",
+    "cat": "ambiguous",
+    "text": "Batter: starch, raising agents, protein isolate (source not stated), salt.",
+    "gold": {
+     "contains": [],
+     "may": [],
+     "review": true
+    }
+   },
+   "ms": 15680,
+   "nanoStatus": "ok",
+   "error": null,
+   "rawNano": {
+    "claims": [
+     {
+      "allergen": "wheat",
+      "assertion": "intentional",
+      "evidence": "starch"
+     },
+     {
+      "allergen": "wheat",
+      "assertion": "intentional",
+      "evidence": "protein isolate"
+     }
+    ],
+    "unresolved": [
+     "protein isolate (source not stated)"
+    ]
+   },
+   "rules": {
+    "contains": [],
+    "may": [],
+    "review": false,
+    "unresolved": [],
+    "unsupported": [],
+    "evidence": []
+   },
+   "nano": {
+    "contains": [
+     "wheat"
+    ],
+    "may": [],
+    "review": true,
+    "unresolved": [
+     "Nano: protein isolate (source not stated)"
+    ],
+    "unsupported": [],
+    "evidence": [
+     "nano:wheat:intentional:\"starch\"",
+     "nano:wheat:intentional:\"protein isolate\""
+    ]
+   },
+   "hybrid": {
+    "contains": [
+     "wheat"
+    ],
+    "may": [],
+    "review": true,
+    "unresolved": [
+     "Nano: protein isolate (source not stated)"
+    ],
+    "unsupported": [],
+    "evidence": [
+     "nano:wheat:intentional:\"starch\"",
+     "nano:wheat:intentional:\"protein isolate\""
+    ]
+   }
+  },
+  {
+   "set": "v2",
+   "rep": 2,
+   "case": {
+    "id": "H27",
+    "cat": "contradiction",
+    "text": "Allergens: none declared. Ingredients: rice crackers, nori, katsuobushi flakes, soy-free tamari alternative.",
+    "gold": {
+     "contains": [
+      "fish"
+     ],
+     "may": [],
+     "review": true
+    },
+    "unseenTerm": "katsuobushi"
+   },
+   "ms": 18271,
+   "nanoStatus": "ok",
+   "error": null,
+   "rawNano": {
+    "claims": [
+     {
+      "allergen": "soy",
+      "assertion": "explicit_negative",
+      "evidence": "soy-free tamari alternative"
+     },
+     {
+      "allergen": "fish",
+      "assertion": "intentional",
+      "evidence": "katsuobushi flakes"
+     }
+    ],
+    "unresolved": [
+     "lecithin",
+     "emulsifier",
+     "natural flavour"
+    ]
+   },
+   "rules": {
+    "contains": [
+     "soy"
+    ],
+    "may": [],
+    "review": false,
+    "unresolved": [],
+    "unsupported": [],
+    "evidence": [
+     "dictionary:soy:intentional:\"tamari\""
+    ]
+   },
+   "nano": {
+    "contains": [
+     "fish"
+    ],
+    "may": [],
+    "review": true,
+    "unresolved": [
+     "Nano: lecithin",
+     "Nano: emulsifier",
+     "Nano: natural flavour"
+    ],
+    "unsupported": [],
+    "evidence": [
+     "nano:soy:explicit_negative:\"soy-free tamari alternative\"",
+     "nano:fish:intentional:\"katsuobushi flakes\""
+    ]
+   },
+   "hybrid": {
+    "contains": [
+     "fish",
+     "soy"
+    ],
+    "may": [],
+    "review": true,
+    "unresolved": [
+     "Nano: lecithin",
+     "Nano: emulsifier",
+     "Nano: natural flavour",
+     "Dictionary found soy but on-device model did not; kept as present, please confirm",
+     "Contradiction: spec says no soy (\"soy-free tamari alternative\") but an ingredient contains it"
+    ],
+    "unsupported": [],
+    "evidence": [
+     "dictionary:soy:intentional:\"tamari\"",
+     "nano:soy:explicit_negative:\"soy-free tamari alternative\"",
+     "nano:fish:intentional:\"katsuobushi flakes\""
+    ]
+   }
+  },
+  {
+   "set": "v2",
+   "rep": 2,
+   "case": {
+    "id": "H28",
+    "cat": "precaution",
+    "text": "Ingredients: oats, raisins, sunflower seeds. Made in a bakery where hazelnuts and sesame are handled.",
+    "gold": {
+     "contains": [],
+     "may": [
+      "treenut",
+      "sesame"
+     ],
+     "review": false
+    }
+   },
+   "ms": 18216,
+   "nanoStatus": "ok",
+   "error": null,
+   "rawNano": {
+    "claims": [
+     {
+      "allergen": "treenut",
+      "assertion": "precautionary",
+      "evidence": "hazelnuts"
+     },
+     {
+      "allergen": "sesame",
+      "assertion": "precautionary",
+      "evidence": "sesame"
+     }
+    ],
+    "unresolved": [
+     "lecithin",
+     "emulsifier",
+     "natural flavour"
+    ]
+   },
+   "rules": {
+    "contains": [
+     "sesame",
+     "treenut"
+    ],
+    "may": [],
+    "review": false,
+    "unresolved": [],
+    "unsupported": [],
+    "evidence": [
+     "dictionary:treenut:intentional:\"hazelnuts\"",
+     "dictionary:sesame:intentional:\"sesame\""
+    ]
+   },
+   "nano": {
+    "contains": [],
+    "may": [
+     "sesame",
+     "treenut"
+    ],
+    "review": true,
+    "unresolved": [
+     "Nano: lecithin",
+     "Nano: emulsifier",
+     "Nano: natural flavour"
+    ],
+    "unsupported": [],
+    "evidence": [
+     "nano:treenut:precautionary:\"hazelnuts\"",
+     "nano:sesame:precautionary:\"sesame\""
+    ]
+   },
+   "hybrid": {
+    "contains": [
+     "sesame",
+     "treenut"
+    ],
+    "may": [],
+    "review": true,
+    "unresolved": [
+     "Nano: lecithin",
+     "Nano: emulsifier",
+     "Nano: natural flavour",
+     "Dictionary found treenut but on-device model did not; kept as present, please confirm",
+     "Dictionary found sesame but on-device model did not; kept as present, please confirm"
+    ],
+    "unsupported": [],
+    "evidence": [
+     "dictionary:treenut:intentional:\"hazelnuts\"",
+     "dictionary:sesame:intentional:\"sesame\"",
+     "nano:treenut:precautionary:\"hazelnuts\"",
+     "nano:sesame:precautionary:\"sesame\""
+    ]
+   }
+  }
+ ],
+ "summary": {
+  "legacy20": {
+   "name": "Legacy tuning 20 (dictionary/prompt were tuned on these)",
+   "rules": {
+    "n": 20,
+    "precision": 1,
+    "recall": 1,
+    "missed": 0,
+    "silentMisses": 0,
+    "silentIds": [],
+    "falsePositives": 0,
+    "fpIds": [],
+    "reviewRate": 0.25,
+    "reviewFlags": 5,
+    "reviewRecall": "4/6",
+    "unsupportedClaims": 0,
+    "precautionaryCorrect": "20/20",
+    "containsExact": "20/20"
+   },
+   "nano": {
+    "n": 20,
+    "precision": 0.846,
+    "recall": 0.88,
+    "missed": 3,
+    "silentMisses": 0,
+    "silentIds": [],
+    "falsePositives": 4,
+    "fpIds": [
+     "N1",
+     "N3",
+     "C2"
+    ],
+    "reviewRate": 0.95,
+    "reviewFlags": 19,
+    "reviewRecall": "6/6",
+    "unsupportedClaims": 2,
+    "precautionaryCorrect": "19/20",
+    "containsExact": "15/20"
+   },
+   "hybrid": {
+    "n": 20,
+    "precision": 0.862,
+    "recall": 1,
+    "missed": 0,
+    "silentMisses": 0,
+    "silentIds": [],
+    "falsePositives": 4,
+    "fpIds": [
+     "N1",
+     "N3",
+     "C2"
+    ],
+    "reviewRate": 0.95,
+    "reviewFlags": 19,
+    "reviewRecall": "6/6",
+    "unsupportedClaims": 2,
+    "precautionaryCorrect": "19/20",
+    "containsExact": "17/20"
+   },
+   "latency": {
+    "n": 20,
+    "p50": 15201,
+    "p90": 23551,
+    "max": 24117,
+    "mean": 16204
+   },
+   "statuses": {
+    "ok": 20
+   }
+  },
+  "legacy10": {
+   "name": "Legacy held-out 10 (CONTAMINATED for app: words later added to dictionary+prompt)",
+   "rules": {
+    "n": 10,
+    "precision": 0.9,
+    "recall": 1,
+    "missed": 0,
+    "silentMisses": 0,
+    "silentIds": [],
+    "falsePositives": 1,
+    "fpIds": [
+     "H8"
+    ],
+    "reviewRate": 0,
+    "reviewFlags": 0,
+    "reviewRecall": "0/1",
+    "unsupportedClaims": 0,
+    "precautionaryCorrect": "10/10",
+    "containsExact": "9/10"
+   },
+   "nano": {
+    "n": 10,
+    "precision": 0.8,
+    "recall": 0.889,
+    "missed": 1,
+    "silentMisses": 0,
+    "silentIds": [],
+    "falsePositives": 2,
+    "fpIds": [
+     "H5",
+     "H7"
+    ],
+    "reviewRate": 0.9,
+    "reviewFlags": 9,
+    "reviewRecall": "1/1",
+    "unsupportedClaims": 2,
+    "precautionaryCorrect": "9/10",
+    "containsExact": "7/10"
+   },
+   "hybrid": {
+    "n": 10,
+    "precision": 0.75,
+    "recall": 1,
+    "missed": 0,
+    "silentMisses": 0,
+    "silentIds": [],
+    "falsePositives": 3,
+    "fpIds": [
+     "H5",
+     "H7",
+     "H8"
+    ],
+    "reviewRate": 0.9,
+    "reviewFlags": 9,
+    "reviewRecall": "1/1",
+    "unsupportedClaims": 2,
+    "precautionaryCorrect": "9/10",
+    "containsExact": "7/10"
+   },
+   "latency": {
+    "n": 10,
+    "p50": 13628,
+    "p90": 17776,
+    "max": 17776,
+    "mean": 13426
+   },
+   "statuses": {
+    "ok": 10
+   }
+  },
+  "v2": {
+   "name": "Held-out v2 20 (clean, never tuned on)",
+   "rules": {
+    "n": 60,
+    "precision": 0.333,
+    "recall": 0.188,
+    "missed": 39,
+    "silentMisses": 39,
+    "silentIds": [
+     "H11",
+     "H12",
+     "H13",
+     "H14",
+     "H15",
+     "H20",
+     "H29",
+     "H16",
+     "H17",
+     "H18",
+     "H19",
+     "H30",
+     "H27",
+     "H11",
+     "H12",
+     "H13",
+     "H14",
+     "H15",
+     "H20",
+     "H29",
+     "H16",
+     "H17",
+     "H18",
+     "H19",
+     "H30",
+     "H27",
+     "H11",
+     "H12",
+     "H13",
+     "H14",
+     "H15",
+     "H20",
+     "H29",
+     "H16",
+     "H17",
+     "H18",
+     "H19",
+     "H30",
+     "H27"
+    ],
+    "falsePositives": 18,
+    "fpIds": [
+     "H21",
+     "H22",
+     "H23",
+     "H27",
+     "H28",
+     "H21",
+     "H22",
+     "H23",
+     "H27",
+     "H28",
+     "H21",
+     "H22",
+     "H23",
+     "H27",
+     "H28"
+    ],
+    "reviewRate": 0.05,
+    "reviewFlags": 3,
+    "reviewRecall": "3/9",
+    "unsupportedClaims": 0,
+    "precautionaryCorrect": "57/60",
+    "containsExact": "9/60"
+   },
+   "nano": {
+    "n": 60,
+    "precision": 0.429,
+    "recall": 0.5,
+    "missed": 24,
+    "silentMisses": 0,
+    "silentIds": [],
+    "falsePositives": 32,
+    "fpIds": [
+     "H11",
+     "H14",
+     "H17",
+     "H18",
+     "H19",
+     "H21",
+     "H23",
+     "H25",
+     "H26",
+     "H28",
+     "H11",
+     "H14",
+     "H18",
+     "H19",
+     "H21",
+     "H22",
+     "H25",
+     "H26",
+     "H28",
+     "H11",
+     "H14",
+     "H18",
+     "H19",
+     "H21",
+     "H22",
+     "H25",
+     "H26"
+    ],
+    "reviewRate": 0.97,
+    "reviewFlags": 58,
+    "reviewRecall": "9/9",
+    "unsupportedClaims": 11,
+    "precautionaryCorrect": "56/60",
+    "containsExact": "25/60"
+   },
+   "hybrid": {
+    "n": 60,
+    "precision": 0.391,
+    "recall": 0.563,
+    "missed": 21,
+    "silentMisses": 0,
+    "silentIds": [],
+    "falsePositives": 42,
+    "fpIds": [
+     "H11",
+     "H14",
+     "H17",
+     "H18",
+     "H19",
+     "H21",
+     "H22",
+     "H23",
+     "H25",
+     "H26",
+     "H27",
+     "H28",
+     "H11",
+     "H14",
+     "H18",
+     "H19",
+     "H21",
+     "H22",
+     "H23",
+     "H25",
+     "H26",
+     "H27",
+     "H28",
+     "H11",
+     "H14",
+     "H18",
+     "H19",
+     "H21",
+     "H22",
+     "H23",
+     "H25",
+     "H26",
+     "H27",
+     "H28"
+    ],
+    "reviewRate": 0.98,
+    "reviewFlags": 59,
+    "reviewRecall": "9/9",
+    "unsupportedClaims": 11,
+    "precautionaryCorrect": "55/60",
+    "containsExact": "20/60"
+   },
+   "latency": {
+    "n": 60,
+    "p50": 13750,
+    "p90": 18420,
+    "max": 54410,
+    "mean": 15554
+   },
+   "statuses": {
+    "ok": 60
+   }
+  }
+ }
+}

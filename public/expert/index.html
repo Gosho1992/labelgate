@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>LabelGate — 7-minute review for quality professionals</title>
+<style>
+  body { font: 16px/1.5 system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; margin: 0; background: #f6f7f9; color: #1d232b; }
+  main { max-width: 820px; margin: 0 auto; padding: 24px 18px 60px; }
+  h1 { font-size: 24px; margin: 0 0 6px; }
+  h2 { font-size: 19px; margin: 0 0 10px; }
+  .card { background: #fff; border: 1px solid #dde1e7; border-radius: 10px; padding: 18px 20px; margin: 16px 0; }
+  .muted { color: #5b6573; }
+  .small { font-size: 14px; }
+  button { font: inherit; padding: 10px 18px; border-radius: 8px; border: 1px solid #1f5fbf; background: #1f5fbf; color: #fff; cursor: pointer; }
+  button[disabled] { opacity: .45; cursor: default; }
+  button.ghost { background: #fff; color: #1f5fbf; }
+  label.opt { display: block; border: 1px solid #d5dae1; border-radius: 8px; padding: 10px 12px; margin: 8px 0; cursor: pointer; background: #fff; }
+  label.opt:hover { border-color: #1f5fbf; }
+  label.opt input { margin-right: 10px; }
+  .scale { display: flex; gap: 8px; flex-wrap: wrap; }
+  .scale label.opt { flex: 1 1 60px; text-align: center; margin: 4px 0; }
+  img.shot { width: 100%; border: 1px solid #ccd2da; border-radius: 8px; }
+  textarea, input[type=text] { width: 100%; box-sizing: border-box; font: inherit; padding: 8px 10px; border: 1px solid #ccd2da; border-radius: 8px; }
+  .step { font-size: 13px; color: #5b6573; text-transform: uppercase; letter-spacing: .04em; }
+  pre { white-space: pre-wrap; background: #f1f3f6; border-radius: 8px; padding: 12px; font-size: 13px; }
+  .row { display: flex; gap: 10px; align-items: center; flex-wrap: wrap; }
+  .hidden { display: none; }
+  .ok { color: #1a7f37; font-weight: 600; }
+</style>
+</head>
+<body>
+<main>
+  <section id="s-intro" class="card">
+    <div class="step">LabelGate · independent review</div>
+    <h1>7-minute review for quality &amp; labelling professionals</h1>
+    <p>LabelGate is a prototype tool for food manufacturers. When a supplier changes an ingredient, it finds every product label that is now wrong, before the label is printed.</p>
+    <p>You will look at <b>one real LabelGate screen</b> and answer <b>8 short questions</b>. There are no trick questions; we are testing whether the screen is clear, not testing you.</p>
+    <ul class="muted small">
+      <li>All data is invented (synthetic products and suppliers).</li>
+      <li>Nothing is sent anywhere. At the end you copy your answers and send them back to the person who shared this link.</li>
+      <li>Please don't ask anyone for help, and answer from the screen only.</li>
+    </ul>
+    <label>Your role (optional, no names), e.g. "QA manager, food manufacturing, 6 years"
+      <input type="text" id="role" maxlength="120">
+    </label>
+    <p><button id="start">Start</button></p>
+  </section>
+
+  <section id="s-test" class="hidden">
+    <div class="card">
+      <div class="step">The situation</div>
+      <p><b>Northfield Flavor Co.</b> supplies a seasoning (<b>SEAS-01</b>) used in three of your products. They sent revision 2 of its specification sheet, in Spanish. A QA reviewer has already checked LabelGate's reading of the sheet against the photo and confirmed it.</p>
+      <p>Below is the screen LabelGate then shows: the <b>Supplier Change Impact Card</b>.</p>
+      <img class="shot" src="impact-card.png" alt="LabelGate Supplier Change Impact Card">
+      <p class="small muted">Supplier spec photo (for reference): <a href="/demo/SEAS-01-rev2-es.jpg" target="_blank" rel="noopener">open</a></p>
+    </div>
+    <form id="qs"></form>
+    <div class="card">
+      <button id="finish" disabled>Finish and show my answers</button>
+      <span class="muted small" id="left"></span>
+    </div>
+  </section>
+
+  <section id="s-done" class="card hidden">
+    <div class="step">Thank you</div>
+    <h2>Please copy your answers and send them back</h2>
+    <p>Press <b>Copy</b>, then paste into WhatsApp or email to the person who shared this link.</p>
+    <pre id="out"></pre>
+    <div class="row"><button id="copy">Copy</button><span id="copied" class="ok hidden">Copied ✓</span></div>
+  </section>
+</main>
+<script>
+// Questions. "key" marks the answer that matches what the screen shows (checked after the test, not shown to the tester).
+const Q = [
+  { id: "q1", type: "one", text: "1. What did the supplier change?",
+    opts: [["a", "They added a natural flavour that contains a milk-derived carrier"], ["b", "They removed salt from the seasoning"], ["c", "They only changed the factory address"], ["d", "Nothing that affects the labels"]], key: "a" },
+  { id: "q2", type: "many", text: "2. Which product labels must NOT be printed right now? (tick all that apply)",
+    opts: [["SKU-1001", "Crispy Garden Crackers (SKU-1001)"], ["SKU-1002", "Herb Croutons (SKU-1002)"], ["SKU-1003", "Pretzel Bites (SKU-1003)"]], key: ["SKU-1001", "SKU-1003"] },
+  { id: "q3", type: "one", text: "3. Why can Herb Croutons still go ahead?",
+    opts: [["a", "Its current label already declares milk"], ["b", "Croutons don't use this seasoning"], ["c", "The AI approved it"], ["d", "I can't tell from the screen"]], key: "a" },
+  { id: "q4", type: "one", text: "4. What is the right next step for a blocked product?",
+    opts: [["a", "Print it anyway — the change is small"], ["b", "Update the artwork so it declares milk, then a QA reviewer checks the new artwork and signs it off"], ["c", "Wait for the AI to fix the label automatically"], ["d", "I can't tell from the screen"]], key: "b" },
+  { id: "q5", type: "one", text: "5. On this screen, what does \"CHECKS CLEAR\" mean?",
+    opts: [["a", "The label is legally approved"], ["b", "Automated checks found no missing allergen; a person still has to sign off, and it is not regulatory approval"], ["c", "The supplier has approved the label"], ["d", "I can't tell from the screen"]], key: "b" },
+  { id: "q6", type: "scale", text: "6. How easy was the screen to understand? (1 = very hard, 5 = very easy)" },
+  { id: "q7", type: "scale", text: "7. How useful would a tool like this be in your work? (1 = not useful, 5 = very useful)" },
+  { id: "q8", type: "text", text: "8. What would stop you from using it, or what is missing? (one or two sentences)" },
+];
+const ans = {}, times = {};
+let t0 = 0;
+const $ = (id) => document.getElementById(id);
+const esc = (s) => String(s).replace(/[&<>"]/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]));
+
+function render() {
+  $("qs").innerHTML = Q.map((q) => {
+    let body = "";
+    if (q.type === "one" || q.type === "many") body = q.opts.map(([v, t]) => `<label class="opt"><input type="${q.type === "one" ? "radio" : "checkbox"}" name="${q.id}" value="${v}">${esc(t)}</label>`).join("");
+    if (q.type === "scale") body = `<div class="scale">${[1, 2, 3, 4, 5].map((n) => `<label class="opt"><input type="radio" name="${q.id}" value="${n}">${n}</label>`).join("")}</div>`;
+    if (q.type === "text") body = `<textarea name="${q.id}" rows="3" maxlength="600"></textarea>`;
+    return `<div class="card"><h2>${esc(q.text)}</h2>${body}</div>`;
+  }).join("");
+}
+function collect() {
+  for (const q of Q) {
+    if (q.type === "many") ans[q.id] = [...document.querySelectorAll(`input[name=${q.id}]:checked`)].map((i) => i.value);
+    else if (q.type === "text") ans[q.id] = document.querySelector(`textarea[name=${q.id}]`).value.trim();
+    else ans[q.id] = document.querySelector(`input[name=${q.id}]:checked`)?.value ?? null;
+  }
+}
+function answered(q) {
+  const a = ans[q.id];
+  return q.type === "text" ? true : q.type === "many" ? true : a != null;
+}
+function update() {
+  collect();
+  const missing = Q.filter((q) => !answered(q)).length;
+  $("finish").disabled = missing > 0;
+  $("left").textContent = missing ? `${missing} question(s) left` : "";
+}
+$("start").onclick = () => {
+  $("s-intro").classList.add("hidden"); $("s-test").classList.remove("hidden");
+  render(); t0 = Date.now(); window.scrollTo(0, 0);
+  $("qs").addEventListener("change", (e) => { const n = e.target.name; if (n && !times[n]) times[n] = Math.round((Date.now() - t0) / 1000); update(); });
+  $("qs").addEventListener("input", update);
+  update();
+};
+$("finish").onclick = () => {
+  collect();
+  const total = Math.round((Date.now() - t0) / 1000);
+  const correct = Q.filter((q) => q.key).map((q) => {
+    const a = ans[q.id];
+    const ok = Array.isArray(q.key) ? Array.isArray(a) && a.length === q.key.length && q.key.every((k) => a.includes(k)) : a === q.key;
+    return [q.id, ok];
+  });
+  const lines = [
+    "LabelGate expert review — results",
+    `Role: ${$("role").value.trim() || "(not given)"}`,
+    `Date: ${new Date().toISOString()}`,
+    `Total time: ${total} s`,
+    `Understanding questions correct: ${correct.filter((c) => c[1]).length} / ${correct.length}`,
+    ...Q.map((q) => `${q.id}: ${Array.isArray(ans[q.id]) ? ans[q.id].join(", ") || "(none)" : ans[q.id] || "(blank)"}` + (times[q.id] ? `  [first answered at ${times[q.id]} s]` : "") + (q.key ? (correct.find((c) => c[0] === q.id)[1] ? "  ✓" : "  ✗") : "")),
+  ];
+  const text = lines.join("\n");
+  try { const all = JSON.parse(localStorage.getItem("lg-expert-runs") || "[]"); all.push(text); localStorage.setItem("lg-expert-runs", JSON.stringify(all)); } catch {}
+  $("out").textContent = text;
+  $("s-test").classList.add("hidden"); $("s-done").classList.remove("hidden"); window.scrollTo(0, 0);
+};
+$("copy").onclick = async () => {
+  try { await navigator.clipboard.writeText($("out").textContent); $("copied").classList.remove("hidden"); }
+  catch { const r = document.createRange(); r.selectNode($("out")); getSelection().removeAllRanges(); getSelection().addRange(r); }
+};
+</script>
+</body>
+</html>

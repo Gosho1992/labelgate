@@ -1,0 +1,11 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8"><title>LabelGate — privacy test (canaries)</title>
+<style>body{font-family:system-ui,Segoe UI,sans-serif;margin:20px;max-width:1000px}button{font-size:15px;padding:7px 14px;margin:4px 8px 4px 0}pre{background:#f4f4f4;padding:8px;white-space:pre-wrap;font-size:12px}</style></head>
+<body><h1 style="font-size:19px">LabelGate privacy test E (+ offline test C)</h1>
+<p>Synthetic PRIVATE spec with unique canary strings. Analysed through the real app path: Firebase AI Logic <code>ONLY_ON_DEVICE</code> → detect() → label gate. Every request this page makes during analysis is recorded and searched for the canaries.</p>
+<p id="cfg"></p><p id="model">Model: …</p>
+<pre id="spec"></pre>
+<button id="btn-init">1. Initialise on-device model</button><span id="init"></span><br>
+<button id="btn-run">2. Run private analysis</button><button id="btn-copy">Copy report JSON</button><button id="btn-appcheck">App Check token status</button><span id="appcheck"></span>
+<div id="out"></div>
+<script type="module" src="/src/privacy/run.js"></script></body></html>

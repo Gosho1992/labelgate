@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Label check — a 5-minute test</title>
+<style>
+  :root{--ink:#1d2430;--muted:#5d6878;--line:#d7dde6;--blue:#1a5fb4;--amber:#d9a400}
+  *{box-sizing:border-box}
+  body{margin:0;font:17px/1.5 system-ui,Segoe UI,Roboto,sans-serif;color:var(--ink);background:#f4f6f9}
+  .wrap{max-width:1100px;margin:0 auto;padding:28px 20px 60px}
+  .card{background:#fff;border:1px solid var(--line);border-radius:14px;padding:28px;box-shadow:0 2px 10px rgba(0,0,0,.04)}
+  h1{font-size:28px;margin:0 0 12px}
+  h2{font-size:22px;margin:0 0 6px}
+  .progress{display:flex;gap:8px;margin-bottom:18px;align-items:center;color:var(--muted);font-size:15px}
+  .dot{width:34px;height:8px;border-radius:4px;background:#dfe4ec}.dot.on{background:var(--blue)}.dot.done{background:#7fa7dc}
+  .big{font-size:19px}
+  ol.steps li{margin:6px 0}
+  input[type=text]{font:inherit;padding:10px 12px;border:2px solid var(--line);border-radius:8px;width:320px;max-width:100%}
+  button.go{font:inherit;font-size:19px;font-weight:600;background:var(--blue);color:#fff;border:0;border-radius:10px;padding:12px 26px;cursor:pointer}
+  button.go:disabled{background:#a9b6c8;cursor:not-allowed}
+  .grid{display:grid;grid-template-columns:1fr 1fr;gap:24px;align-items:start}
+  @media (max-width:900px){.grid{grid-template-columns:1fr}}
+  .pic{border:1px solid var(--line);border-radius:10px;padding:8px;background:#fafafa}
+  .pic img{width:100%;display:block}
+  label.f{display:block;font-weight:600;margin:14px 0 4px}
+  textarea{width:100%;font:inherit;font-size:16px;padding:10px;border:2px solid var(--line);border-radius:8px;min-height:120px}
+  textarea.one{min-height:48px}
+  .hint{color:var(--muted);font-size:14px}
+  .chk{border:2px solid var(--amber);background:#fffaf0;border-radius:10px;padding:12px 14px;margin-top:16px}
+  .chk ul{list-style:none;padding:0;margin:8px 0 0}.chk li{margin:10px 0;display:flex;gap:10px;align-items:flex-start}
+  .chk input{width:22px;height:22px;flex:0 0 auto;margin-top:2px}
+  mark{background:#ffd54f;font-weight:700;padding:0 2px;border-radius:2px}
+  .ok{border-color:#2e7d32;background:#f1f8f1}
+  .row{display:flex;gap:14px;align-items:center;margin-top:22px;flex-wrap:wrap}
+  .pic.big{padding:12px}.pic.big img{max-width:720px;margin:0 auto}
+  .q{border:1px solid var(--line);border-radius:12px;padding:14px 16px;margin:12px 0;background:#fbfcfe}
+  .qp{font-weight:700;font-size:18px;margin-bottom:8px}
+  label.opt{display:flex;gap:12px;align-items:flex-start;border:2px solid var(--line);border-radius:10px;padding:12px 14px;margin:8px 0;cursor:pointer;background:#fff;font-size:17px}
+  label.opt:hover{border-color:#9db7de}
+  label.opt.sel{border-color:var(--blue);background:#eef4fd}
+  label.opt.unsure{border-style:dashed;color:var(--muted)}
+  label.opt input{width:20px;height:20px;margin-top:3px;flex:0 0 auto}
+  .tag{display:inline-block;background:#eef3fb;color:var(--blue);border-radius:12px;padding:2px 10px;font-size:13px;font-weight:600}
+</style>
+</head>
+<body>
+<div class="wrap"><div class="card" id="app">Loading…</div></div>
+<script type="module" src="/src/proof/reviewer-test-page.js"></script>
+</body>
+</html>

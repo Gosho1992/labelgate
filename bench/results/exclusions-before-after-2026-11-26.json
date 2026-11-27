@@ -1,0 +1,177 @@
+{
+ "after": "2026.11.26-1",
+ "before": "2026.11.25-1",
+ "sets": {
+  "legacy20": {
+   "before": {
+    "n": 20,
+    "precision": 1,
+    "recall": 1,
+    "missed": 0,
+    "silentMisses": 0,
+    "silentIds": [],
+    "falsePositives": 0,
+    "fpIds": [],
+    "reviewRate": 0.25,
+    "reviewFlags": 5,
+    "reviewRecall": "4/6",
+    "unsupportedClaims": 0,
+    "precautionaryCorrect": "20/20",
+    "containsExact": "20/20"
+   },
+   "after": {
+    "n": 20,
+    "precision": 1,
+    "recall": 1,
+    "missed": 0,
+    "silentMisses": 0,
+    "silentIds": [],
+    "falsePositives": 0,
+    "fpIds": [],
+    "reviewRate": 0.25,
+    "reviewFlags": 5,
+    "reviewRecall": "4/6",
+    "unsupportedClaims": 0,
+    "precautionaryCorrect": "20/20",
+    "containsExact": "20/20"
+   },
+   "changed": []
+  },
+  "legacy10": {
+   "before": {
+    "n": 10,
+    "precision": 0.9,
+    "recall": 1,
+    "missed": 0,
+    "silentMisses": 0,
+    "silentIds": [],
+    "falsePositives": 1,
+    "fpIds": [
+     "H8"
+    ],
+    "reviewRate": 0,
+    "reviewFlags": 0,
+    "reviewRecall": "0/1",
+    "unsupportedClaims": 0,
+    "precautionaryCorrect": "10/10",
+    "containsExact": "9/10"
+   },
+   "after": {
+    "n": 10,
+    "precision": 0.9,
+    "recall": 1,
+    "missed": 0,
+    "silentMisses": 0,
+    "silentIds": [],
+    "falsePositives": 1,
+    "fpIds": [
+     "H8"
+    ],
+    "reviewRate": 0,
+    "reviewFlags": 0,
+    "reviewRecall": "0/1",
+    "unsupportedClaims": 0,
+    "precautionaryCorrect": "10/10",
+    "containsExact": "9/10"
+   },
+   "changed": []
+  },
+  "v2": {
+   "before": {
+    "n": 20,
+    "precision": 0.333,
+    "recall": 0.188,
+    "missed": 13,
+    "silentMisses": 13,
+    "silentIds": [
+     "H11",
+     "H12",
+     "H13",
+     "H14",
+     "H15",
+     "H20",
+     "H29",
+     "H16",
+     "H17",
+     "H18",
+     "H19",
+     "H30",
+     "H27"
+    ],
+    "falsePositives": 6,
+    "fpIds": [
+     "H21",
+     "H22",
+     "H23",
+     "H27",
+     "H28"
+    ],
+    "reviewRate": 0.05,
+    "reviewFlags": 1,
+    "reviewRecall": "1/3",
+    "unsupportedClaims": 0,
+    "precautionaryCorrect": "19/20",
+    "containsExact": "3/20"
+   },
+   "after": {
+    "n": 20,
+    "precision": 0.5,
+    "recall": 0.188,
+    "missed": 13,
+    "silentMisses": 13,
+    "silentIds": [
+     "H11",
+     "H12",
+     "H13",
+     "H14",
+     "H15",
+     "H20",
+     "H29",
+     "H16",
+     "H17",
+     "H18",
+     "H19",
+     "H30",
+     "H27"
+    ],
+    "falsePositives": 3,
+    "fpIds": [
+     "H27",
+     "H28"
+    ],
+    "reviewRate": 0.05,
+    "reviewFlags": 1,
+    "reviewRecall": "1/3",
+    "unsupportedClaims": 0,
+    "precautionaryCorrect": "19/20",
+    "containsExact": "6/20"
+   },
+   "changed": [
+    {
+     "id": "H21",
+     "before": [
+      "milk"
+     ],
+     "after": [],
+     "gold": []
+    },
+    {
+     "id": "H22",
+     "before": [
+      "milk"
+     ],
+     "after": [],
+     "gold": []
+    },
+    {
+     "id": "H23",
+     "before": [
+      "milk"
+     ],
+     "after": [],
+     "gold": []
+    }
+   ]
+  }
+ }
+}

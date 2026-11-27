@@ -1,0 +1,8233 @@
+{
+ "versions": {
+  "pipeline": "detect-2",
+  "dictionary": "2026.11.26-1",
+  "prompt": "discovery-v2-2026.11.26",
+  "schema": "discovery-v2"
+ },
+ "transport": "prompt-api",
+ "ua": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/158.0.0.0 Safari/537.36",
+ "started": "2026-11-26T05:09:26.215Z",
+ "finished": "2026-11-26T05:41:33.891Z",
+ "repeatsV2": 3,
+ "rows": [
+  {
+   "set": "v3",
+   "rep": 0,
+   "case": {
+    "id": "V01",
+    "cat": "unfamiliar",
+    "text": "Product: Khoa Powder Ingredients: Khoa (concentrated milk solids), anticaking agent (silicon dioxide).",
+    "ingredients": [
+     {
+      "term": "Khoa",
+      "allergen": "milk"
+     }
+    ],
+    "lookalikes": [],
+    "may": [],
+    "review": false,
+    "rationale": "Khoa is a traditional Indian dairy ingredient (concentrated milk solids); the term appears verbatim and maps to milk."
+   },
+   "ms": 15158,
+   "nanoStatus": "ok",
+   "error": null,
+   "rawNano": {
+    "ingredients": [
+     {
+      "term": "milk solids",
+      "evidence": "Khoa (concentrated milk solids)",
+      "assertion": "intentional",
+      "allergen_guess": "milk"
+     }
+    ],
+    "absences": []
+   },
+   "rules": {
+    "contains": [
+     "milk"
+    ],
+    "may": [],
+    "review": false,
+    "unresolved": [],
+    "unsupported": [],
+    "unsupportedAbsences": [],
+    "possible": [],
+    "absences": [],
+    "dictSpans": [
+     {
+      "allergen": "milk",
+      "assertion": "intentional",
+      "evidence": "milk",
+      "start": 53,
+      "end": 57
+     }
+    ],
+    "evidence": [
+     "dictionary:milk:intentional:\"milk\""
+    ]
+   },
+   "nano": {
+    "contains": [],
+    "may": [],
+    "review": true,
+    "unresolved": [
+     "Possible allergen in \"milk solids\" (intentional) \u2014 allergen UNKNOWN, verify"
+    ],
+    "unsupported": [],
+    "unsupportedAbsences": [],
+    "possible": [
+     {
+      "term": "milk solids",
+      "evidence": "Khoa (concentrated milk solids",
+      "assertion": "intentional",
+      "modelGuess": "milk",
+      "start": 34,
+      "end": 64
+     }
+    ],
+    "absences": [],
+    "dictSpans": [],
+    "evidence": []
+   },
+   "hybrid": {
+    "contains": [
+     "milk"
+    ],
+    "may": [],
+    "review": false,
+    "unresolved": [],
+    "unsupported": [],
+    "unsupportedAbsences": [],
+    "possible": [],
+    "absences": [],
+    "dictSpans": [
+     {
+      "allergen": "milk",
+      "assertion": "intentional",
+      "evidence": "milk",
+      "start": 53,
+      "end": 57
+     }
+    ],
+    "evidence": [
+     "dictionary:milk:intentional:\"milk\""
+    ]
+   }
+  },
+  {
+   "set": "v3",
+   "rep": 0,
+   "case": {
+    "id": "V02",
+    "cat": "unfamiliar",
+    "text": "Product: Surimi Base Ingredients: Surimi (Alaska pollock, sugar, sorbitol, polyphosphates), water, starch.",
+    "ingredients": [
+     {
+      "term": "Surimi",
+      "allergen": "fish"
+     }
+    ],
+    "lookalikes": [],
+    "may": [],
+    "review": false,
+    "rationale": "Surimi is a Japanese term for minced fish paste; the snippet names Alaska pollock, confirming fish."
+   },
+   "ms": 15729,
+   "nanoStatus": "ok",
+   "error": null,
+   "rawNano": {
+    "ingredients": [
+     {
+      "term": "Alaska pollock",
+      "evidence": "Surimi (Alaska pollock, sugar, sorbitol, polyphosphates)",
+      "assertion": "intentional",
+      "allergen_guess": "fish"
+     }
+    ],
+    "absences": []
+   },
+   "rules": {
+    "contains": [
+     "fish"
+    ],
+    "may": [],
+    "review": false,
+    "unresolved": [],
+    "unsupported": [],
+    "unsupportedAbsences": [],
+    "possible": [],
+    "absences": [],
+    "dictSpans": [
+     {
+      "allergen": "fish",
+      "assertion": "intentional",
+      "evidence": "pollock",
+      "start": 49,
+      "end": 56
+     }
+    ],
+    "evidence": [
+     "dictionary:fish:intentional:\"pollock\""
+    ]
+   },
+   "nano": {
+    "contains": [],
+    "may": [],
+    "review": true,
+    "unresolved": [
+     "Possible allergen in \"Alaska pollock\" (intentional) \u2014 allergen UNKNOWN, verify"
+    ],
+    "unsupported": [],
+    "unsupportedAbsences": [],
+    "possible": [
+     {
+      "term": "Alaska pollock",
+      "evidence": "Surimi (Alaska pollock, sugar, sorbitol, polyphosphates",
+      "assertion": "intentional",
+      "modelGuess": "fish",
+      "start": 34,
+      "end": 89
+     }
+    ],
+    "absences": [],
+    "dictSpans": [],
+    "evidence": []
+   },
+   "hybrid": {
+    "contains": [
+     "fish"
+    ],
+    "may": [],
+    "review": false,
+    "unresolved": [],
+    "unsupported": [],
+    "unsupportedAbsences": [],
+    "possible": [],
+    "absences": [],
+    "dictSpans": [
+     {
+      "allergen": "fish",
+      "assertion": "intentional",
+      "evidence": "pollock",
+      "start": 49,
+      "end": 56
+     }
+    ],
+    "evidence": [
+     "dictionary:fish:intentional:\"pollock\""
+    ]
+   }
+  },
+  {
+   "set": "v3",
+   "rep": 0,
+   "case": {
+    "id": "V03",
+    "cat": "unfamiliar",
+    "text": "Product: Tahini Paste Ingredients: Tahini (100% roasted sesame seed), salt.",
+    "ingredients": [
+     {
+      "term": "Tahini",
+      "allergen": "sesame"
+     }
+    ],
+    "lookalikes": [],
+    "may": [],
+    "review": false,
+    "rationale": "Tahini is the common Middle-Eastern name for sesame seed paste; sesame is a US major allergen."
+   },
+   "ms": 65943,
+   "nanoStatus": "ok",
+   "error": null,
+   "rawNano": {
+    "ingredients": [
+     {
+      "term": "Tahini",
+      "evidence": "Tahini (100% roasted sesame seed)",
+      "assertion": "intentional",
+      "allergen_guess": "sesame"
+     },
+     {
+      "term": "salt",
+      "evidence": "salt",
+      "assertion": "intentional",
+      "allergen_guess": "unknown"
+     }
+    ],
+    "absences": [
+     {
+      "ingredient": "milk",
+      "missing": "source",
+      "ingredient_evidence": ""
+     },
+     {
+      "ingredient": "egg",
+      "missing": "source",
+      "ingredient_evidence": ""
+     },
+     {
+      "ingredient": "fish",
+      "missing": "source",
+      "ingredient_evidence": ""
+     },
+     {
+      "ingredient": "crustacean shellfish",
+      "missing": "source",
+      "ingredient_evidence": ""
+     },
+     {
+      "ingredient": "tree nuts",
+      "missing": "source",
+      "ingredient_evidence": ""
+     },
+     {
+      "ingredient": "peanut",
+      "missing": "source",
+      "ingredient_evidence": ""
+     },
+     {
+      "ingredient": "wheat",
+      "missing": "source",
+      "ingredient_evidence": ""
+     },
+     {
+      "ingredient": "soy",
+      "missing": "source",
+      "ingredient_evidence": ""
+     },
+     {
+      "ingredient": "sesame",
+      "missing": "source",
+      "ingredient_evidence": "Tahini (100% roasted sesame seed)"
+     }
+    ]
+   },
+   "rules": {
+    "contains": [
+     "sesame"
+    ],
+    "may": [],
+    "review": false,
+    "unresolved": [],
+    "unsupported": [],
+    "unsupportedAbsences": [],
+    "possible": [],
+    "absences": [],
+    "dictSpans": [
+     {
+      "allergen": "sesame",
+      "assertion": "intentional",
+      "evidence": "sesame",
+      "start": 56,
+      "end": 62
+     }
+    ],
+    "evidence": [
+     "dictionary:sesame:intentional:\"sesame\""
+    ]
+   },
+   "nano": {
+    "contains": [],
+    "may": [],
+    "review": true,
+    "unresolved": [
+     "Possible allergen in \"Tahini\" (intentional) \u2014 allergen UNKNOWN, verify",
+     "Possible allergen in \"salt\" (intentional) \u2014 allergen UNKNOWN, verify",
+     "\"Tahini (100% roasted sesame seed\": source not stated \u2014 could hide an allergen"
+    ],
+    "unsupported": [],
+    "unsupportedAbsences": [
+     "\"\"",
+     "\"\"",
+     "\"\"",
+     "\"\"",
+     "\"\"",
+     "\"\"",
+     "\"\"",
+     "\"\""
+    ],
+    "possible": [
+     {
+      "term": "Tahini",
+      "evidence": "Tahini (100% roasted sesame seed",
+      "assertion": "intentional",
+      "modelGuess": "sesame",
+      "start": 35,
+      "end": 67
+     },
+     {
+      "term": "salt",
+      "evidence": "salt",
+      "assertion": "intentional",
+      "modelGuess": "unknown",
+      "start": 70,
+      "end": 74
+     }
+    ],
+    "absences": [
+     {
+      "ingredient": "Tahini (100% roasted sesame seed",
+      "missing": "source",
+      "start": 35,
+      "end": 67
+     }
+    ],
+    "dictSpans": [],
+    "evidence": []
+   },
+   "hybrid": {
+    "contains": [
+     "sesame"
+    ],
+    "may": [],
+    "review": true,
+    "unresolved": [
+     "Possible allergen in \"salt\" (intentional) \u2014 allergen UNKNOWN, verify",
+     "\"Tahini (100% roasted sesame seed\": source not stated \u2014 could hide an allergen"
+    ],
+    "unsupported": [],
+    "unsupportedAbsences": [
+     "\"\"",
+     "\"\"",
+     "\"\"",
+     "\"\"",
+     "\"\"",
+     "\"\"",
+     "\"\"",
+     "\"\""
+    ],
+    "possible": [
+     {
+      "term": "salt",
+      "evidence": "salt",
+      "assertion": "intentional",
+      "modelGuess": "unknown",
+      "start": 70,
+      "end": 74
+     }
+    ],
+    "absences": [
+     {
+      "ingredient": "Tahini (100% roasted sesame seed",
+      "missing": "source",
+      "start": 35,
+      "end": 67
+     }
+    ],
+    "dictSpans": [
+     {
+      "allergen": "sesame",
+      "assertion": "intentional",
+      "evidence": "sesame",
+      "start": 56,
+      "end": 62
+     }
+    ],
+    "evidence": [
+     "dictionary:sesame:intentional:\"sesame\""
+    ]
+   }
+  },
+  {
+   "set": "v3",
+   "rep": 0,
+   "case": {
+    "id": "V04",
+    "cat": "unfamiliar",
+    "text": "Product: Emulsifier Blend Ingredients: Lecithin de soja (soybean lecithin), sunflower oil.",
+    "ingredients": [
+     {
+      "term": "Lecithin de soja",
+      "allergen": "soy"
+     }
+    ],
+    "lookalikes": [],
+    "may": [],
+    "review": false,
+    "rationale": "Lecithin de soja is Spanish for soy lecithin; the parenthetical confirms soybean origin."
+   },
+   "ms": 14697,
+   "nanoStatus": "ok",
+   "error": null,
+   "rawNano": {
+    "ingredients": [
+     {
+      "term": "Lecithin de soja",
+      "evidence": "Lecithin de soja (soybean lecithin)",
+      "assertion": "intentional",
+      "allergen_guess": "soy"
+     }
+    ],
+    "absences": []
+   },
+   "rules": {
+    "contains": [
+     "soy"
+    ],
+    "may": [],
+    "review": true,
+    "unresolved": [
+     "Ingredient with unspecified source (e.g. lecithin / natural flavour / emulsifier)"
+    ],
+    "unsupported": [],
+    "unsupportedAbsences": [],
+    "possible": [],
+    "absences": [],
+    "dictSpans": [
+     {
+      "allergen": "soy",
+      "assertion": "intentional",
+      "evidence": "soybean",
+      "start": 57,
+      "end": 64
+     }
+    ],
+    "evidence": [
+     "dictionary:soy:intentional:\"soybean\""
+    ]
+   },
+   "nano": {
+    "contains": [],
+    "may": [],
+    "review": true,
+    "unresolved": [
+     "Possible allergen in \"Lecithin de soja\" (intentional) \u2014 allergen UNKNOWN, verify"
+    ],
+    "unsupported": [],
+    "unsupportedAbsences": [],
+    "possible": [
+     {
+      "term": "Lecithin de soja",
+      "evidence": "Lecithin de soja (soybean lecithin",
+      "assertion": "intentional",
+      "modelGuess": "soy",
+      "start": 39,
+      "end": 73
+     }
+    ],
+    "absences": [],
+    "dictSpans": [],
+    "evidence": []
+   },
+   "hybrid": {
+    "contains": [
+     "soy"
+    ],
+    "may": [],
+    "review": true,
+    "unresolved": [
+     "Ingredient with unspecified source (e.g. lecithin / natural flavour / emulsifier)"
+    ],
+    "unsupported": [],
+    "unsupportedAbsences": [],
+    "possible": [],
+    "absences": [],
+    "dictSpans": [
+     {
+      "allergen": "soy",
+      "assertion": "intentional",
+      "evidence": "soybean",
+      "start": 57,
+      "end": 64
+     }
+    ],
+    "evidence": [
+     "dictionary:soy:intentional:\"soybean\""
+    ]
+   }
+  },
+  {
+   "set": "v3",
+   "rep": 0,
+   "case": {
+    "id": "V05",
+    "cat": "scientific_derivative",
+    "text": "Product: High-Gel Protein Ingredients: Casein (Bos taurus), calcium chloride.",
+    "ingredients": [
+     {
+      "term": "Casein (Bos taurus)",
+      "allergen": "milk"
+     }
+    ],
+    "lookalikes": [],
+    "may": [],
+    "review": false,
+    "rationale": "Casein is the principal milk protein; Bos taurus is the Latin binomial for cattle, confirming milk source."
+   },
+   "ms": 14475,
+   "nanoStatus": "ok",
+   "error": null,
+   "rawNano": {
+    "ingredients": [
+     {
+      "term": "Casein (Bos taurus)",
+      "evidence": "Casein (Bos taurus)",
+      "assertion": "intentional",
+      "allergen_guess": "milk"
+     }
+    ],
+    "absences": []
+   },
+   "rules": {
+    "contains": [
+     "milk"
+    ],
+    "may": [],
+    "review": false,
+    "unresolved": [],
+    "unsupported": [],
+    "unsupportedAbsences": [],
+    "possible": [],
+    "absences": [],
+    "dictSpans": [
+     {
+      "allergen": "milk",
+      "assertion": "intentional",
+      "evidence": "Casein",
+      "start": 39,
+      "end": 45
+     }
+    ],
+    "evidence": [
+     "dictionary:milk:intentional:\"Casein\""
+    ]
+   },
+   "nano": {
+    "contains": [],
+    "may": [],
+    "review": true,
+    "unresolved": [
+     "Possible allergen in \"Casein (Bos taurus)\" (intentional) \u2014 allergen UNKNOWN, verify"
+    ],
+    "unsupported": [],
+    "unsupportedAbsences": [],
+    "possible": [
+     {
+      "term": "Casein (Bos taurus)",
+      "evidence": "Casein (Bos taurus",
+      "assertion": "intentional",
+      "modelGuess": "milk",
+      "start": 39,
+      "end": 57
+     }
+    ],
+    "absences": [],
+    "dictSpans": [],
+    "evidence": []
+   },
+   "hybrid": {
+    "contains": [
+     "milk"
+    ],
+    "may": [],
+    "review": false,
+    "unresolved": [],
+    "unsupported": [],
+    "unsupportedAbsences": [],
+    "possible": [],
+    "absences": [],
+    "dictSpans": [
+     {
+      "allergen": "milk",
+      "assertion": "intentional",
+      "evidence": "Casein",
+      "start": 39,
+      "end": 45
+     }
+    ],
+    "evidence": [
+     "dictionary:milk:intentional:\"Casein\""
+    ]
+   }
+  },
+  {
+   "set": "v3",
+   "rep": 0,
+   "case": {
+    "id": "V06",
+    "cat": "scientific_derivative",
+    "text": "Product: Foaming Agent Ingredients: Ovalbumin (Gallus gallus), sodium lauryl sulfate.",
+    "ingredients": [
+     {
+      "term": "Ovalbumin (Gallus gallus)",
+      "allergen": "egg"
+     }
+    ],
+    "lookalikes": [],
+    "may": [],
+    "review": false,
+    "rationale": "Ovalbumin is the main protein in egg white; Gallus gallus is the scientific name for chicken."
+   },
+   "ms": 66417,
+   "nanoStatus": "ok",
+   "error": null,
+   "rawNano": {
+    "ingredients": [
+     {
+      "term": "Ovalbumin (Gallus gallus)",
+      "evidence": "Ovalbumin (Gallus gallus)",
+      "assertion": "intentional",
+      "allergen_guess": "egg"
+     },
+     {
+      "term": "sodium lauryl sulfate",
+      "evidence": "sodium lauryl sulfate",
+      "assertion": "precautionary",
+      "allergen_guess": "unknown"
+     }
+    ],
+    "absences": [
+     {
+      "ingredient": "milk",
+      "missing": "source",
+      "ingredient_evidence": ""
+     },
+     {
+      "ingredient": "egg",
+      "missing": "source",
+      "ingredient_evidence": ""
+     },
+     {
+      "ingredient": "fish",
+      "missing": "source",
+      "ingredient_evidence": ""
+     },
+     {
+      "ingredient": "crustacean shellfish",
+      "missing": "source",
+      "ingredient_evidence": ""
+     },
+     {
+      "ingredient": "tree nuts",
+      "missing": "source",
+      "ingredient_evidence": ""
+     },
+     {
+      "ingredient": "peanut",
+      "missing": "source",
+      "ingredient_evidence": ""
+     },
+     {
+      "ingredient": "wheat",
+      "missing": "source",
+      "ingredient_evidence": ""
+     },
+     {
+      "ingredient": "soy",
+      "missing": "source",
+      "ingredient_evidence": ""
+     },
+     {
+      "ingredient": "sesame",
+      "missing": "source",
+      "ingredient_evidence": ""
+     }
+    ]
+   },
+   "rules": {
+    "contains": [
+     "egg"
+    ],
+    "may": [],
+    "review": false,
+    "unresolved": [],
+    "unsupported": [],
+    "unsupportedAbsences": [],
+    "possible": [],
+    "absences": [],
+    "dictSpans": [
+     {
+      "allergen": "egg",
+      "assertion": "intentional",
+      "evidence": "Ovalbumin",
+      "start": 36,
+      "end": 45
+     }
+    ],
+    "evidence": [
+     "dictionary:egg:intentional:\"Ovalbumin\""
+    ]
+   },
+   "nano": {
+    "contains": [],
+    "may": [],
+    "review": true,
+    "unresolved": [
+     "Possible allergen in \"Ovalbumin (Gallus gallus)\" (intentional) \u2014 allergen UNKNOWN, verify",
+     "Possible allergen in \"sodium lauryl sulfate\" (precautionary) \u2014 allergen UNKNOWN, verify"
+    ],
+    "unsupported": [],
+    "unsupportedAbsences": [
+     "\"\"",
+     "\"\"",
+     "\"\"",
+     "\"\"",
+     "\"\"",
+     "\"\"",
+     "\"\"",
+     "\"\"",
+     "\"\""
+    ],
+    "possible": [
+     {
+      "term": "Ovalbumin (Gallus gallus)",
+      "evidence": "Ovalbumin (Gallus gallus",
+      "assertion": "intentional",
+      "modelGuess": "egg",
+      "start": 36,
+      "end": 60
+     },
+     {
+      "term": "sodium lauryl sulfate",
+      "evidence": "sodium lauryl sulfate",
+      "assertion": "precautionary",
+      "modelGuess": "unknown",
+      "start": 63,
+      "end": 84
+     }
+    ],
+    "absences": [],
+    "dictSpans": [],
+    "evidence": []
+   },
+   "hybrid": {
+    "contains": [
+     "egg"
+    ],
+    "may": [],
+    "review": true,
+    "unresolved": [
+     "Possible allergen in \"sodium lauryl sulfate\" (precautionary) \u2014 allergen UNKNOWN, verify"
+    ],
+    "unsupported": [],
+    "unsupportedAbsences": [
+     "\"\"",
+     "\"\"",
+     "\"\"",
+     "\"\"",
+     "\"\"",
+     "\"\"",
+     "\"\"",
+     "\"\"",
+     "\"\""
+    ],
+    "possible": [
+     {
+      "term": "sodium lauryl sulfate",
+      "evidence": "sodium lauryl sulfate",
+      "assertion": "precautionary",
+      "modelGuess": "unknown",
+      "start": 63,
+      "end": 84
+     }
+    ],
+    "absences": [],
+    "dictSpans": [
+     {
+      "allergen": "egg",
+      "assertion": "intentional",
+      "evidence": "Ovalbumin",
+      "start": 36,
+      "end": 45
+     }
+    ],
+    "evidence": [
+     "dictionary:egg:intentional:\"Ovalbumin\""
+    ]
+   }
+  },
+  {
+   "set": "v3",
+   "rep": 0,
+   "case": {
+    "id": "V07",
+    "cat": "scientific_derivative",
+    "text": "Product: Peptide Powder Ingredients: Arachis hypogaea protein isolate, maltodextrin.",
+    "ingredients": [
+     {
+      "term": "Arachis hypogaea protein isolate",
+      "allergen": "peanut"
+     }
+    ],
+    "lookalikes": [],
+    "may": [],
+    "review": false,
+    "rationale": "Arachis hypogaea is the Latin binomial for peanut; protein isolate indicates derivative."
+   },
+   "ms": 22805,
+   "nanoStatus": "ok",
+   "error": null,
+   "rawNano": {
+    "ingredients": [
+     {
+      "term": "Arachis hypogaea protein isolate",
+      "evidence": "Arachis hypogaea protein isolate",
+      "assertion": "intentional",
+      "allergen_guess": "unknown"
+     },
+     {
+      "term": "maltodextrin",
+      "evidence": "maltodextrin",
+      "assertion": "intentional",
+      "allergen_guess": "unknown"
+     }
+    ],
+    "absences": []
+   },
+   "rules": {
+    "contains": [
+     "peanut"
+    ],
+    "may": [],
+    "review": false,
+    "unresolved": [],
+    "unsupported": [],
+    "unsupportedAbsences": [],
+    "possible": [],
+    "absences": [],
+    "dictSpans": [
+     {
+      "allergen": "peanut",
+      "assertion": "intentional",
+      "evidence": "Arachis",
+      "start": 37,
+      "end": 44
+     }
+    ],
+    "evidence": [
+     "dictionary:peanut:intentional:\"Arachis\""
+    ]
+   },
+   "nano": {
+    "contains": [],
+    "may": [],
+    "review": true,
+    "unresolved": [
+     "Possible allergen in \"Arachis hypogaea protein isolate\" (intentional) \u2014 allergen UNKNOWN, verify",
+     "Possible allergen in \"maltodextrin\" (intentional) \u2014 allergen UNKNOWN, verify"
+    ],
+    "unsupported": [],
+    "unsupportedAbsences": [],
+    "possible": [
+     {
+      "term": "Arachis hypogaea protein isolate",
+      "evidence": "Arachis hypogaea protein isolate",
+      "assertion": "intentional",
+      "modelGuess": "unknown",
+      "start": 37,
+      "end": 69
+     },
+     {
+      "term": "maltodextrin",
+      "evidence": "maltodextrin",
+      "assertion": "intentional",
+      "modelGuess": "unknown",
+      "start": 71,
+      "end": 83
+     }
+    ],
+    "absences": [],
+    "dictSpans": [],
+    "evidence": []
+   },
+   "hybrid": {
+    "contains": [
+     "peanut"
+    ],
+    "may": [],
+    "review": true,
+    "unresolved": [
+     "Possible allergen in \"maltodextrin\" (intentional) \u2014 allergen UNKNOWN, verify"
+    ],
+    "unsupported": [],
+    "unsupportedAbsences": [],
+    "possible": [
+     {
+      "term": "maltodextrin",
+      "evidence": "maltodextrin",
+      "assertion": "intentional",
+      "modelGuess": "unknown",
+      "start": 71,
+      "end": 83
+     }
+    ],
+    "absences": [],
+    "dictSpans": [
+     {
+      "allergen": "peanut",
+      "assertion": "intentional",
+      "evidence": "Arachis",
+      "start": 37,
+      "end": 44
+     }
+    ],
+    "evidence": [
+     "dictionary:peanut:intentional:\"Arachis\""
+    ]
+   }
+  },
+  {
+   "set": "v3",
+   "rep": 0,
+   "case": {
+    "id": "V08",
+    "cat": "scientific_derivative",
+    "text": "Product: Hydrolysate 90 Ingredients: Glycine max protein hydrolysate, citric acid.",
+    "ingredients": [
+     {
+      "term": "Glycine max protein hydrolysate",
+      "allergen": "soy"
+     }
+    ],
+    "lookalikes": [],
+    "may": [],
+    "review": false,
+    "rationale": "Glycine max is the Latin binomial for soybean; protein hydrolysate confirms soy derivative."
+   },
+   "ms": 22284,
+   "nanoStatus": "ok",
+   "error": null,
+   "rawNano": {
+    "ingredients": [
+     {
+      "term": "Glycine max protein hydrolysate",
+      "evidence": "Glycine max protein hydrolysate",
+      "assertion": "intentional",
+      "allergen_guess": "soy"
+     },
+     {
+      "term": "citric acid",
+      "evidence": "citric acid",
+      "assertion": "intentional",
+      "allergen_guess": "unknown"
+     }
+    ],
+    "absences": []
+   },
+   "rules": {
+    "contains": [],
+    "may": [],
+    "review": false,
+    "unresolved": [],
+    "unsupported": [],
+    "unsupportedAbsences": [],
+    "possible": [],
+    "absences": [],
+    "dictSpans": [],
+    "evidence": []
+   },
+   "nano": {
+    "contains": [],
+    "may": [],
+    "review": true,
+    "unresolved": [
+     "Possible allergen in \"Glycine max protein hydrolysate\" (intentional) \u2014 allergen UNKNOWN, verify",
+     "Possible allergen in \"citric acid\" (intentional) \u2014 allergen UNKNOWN, verify"
+    ],
+    "unsupported": [],
+    "unsupportedAbsences": [],
+    "possible": [
+     {
+      "term": "Glycine max protein hydrolysate",
+      "evidence": "Glycine max protein hydrolysate",
+      "assertion": "intentional",
+      "modelGuess": "soy",
+      "start": 37,
+      "end": 68
+     },
+     {
+      "term": "citric acid",
+      "evidence": "citric acid",
+      "assertion": "intentional",
+      "modelGuess": "unknown",
+      "start": 70,
+      "end": 81
+     }
+    ],
+    "absences": [],
+    "dictSpans": [],
+    "evidence": []
+   },
+   "hybrid": {
+    "contains": [],
+    "may": [],
+    "review": true,
+    "unresolved": [
+     "Possible allergen in \"Glycine max protein hydrolysate\" (intentional) \u2014 allergen UNKNOWN, verify",
+     "Possible allergen in \"citric acid\" (intentional) \u2014 allergen UNKNOWN, verify"
+    ],
+    "unsupported": [],
+    "unsupportedAbsences": [],
+    "possible": [
+     {
+      "term": "Glycine max protein hydrolysate",
+      "evidence": "Glycine max protein hydrolysate",
+      "assertion": "intentional",
+      "modelGuess": "soy",
+      "start": 37,
+      "end": 68
+     },
+     {
+      "term": "citric acid",
+      "evidence": "citric acid",
+      "assertion": "intentional",
+      "modelGuess": "unknown",
+      "start": 70,
+      "end": 81
+     }
+    ],
+    "absences": [],
+    "dictSpans": [],
+    "evidence": []
+   }
+  },
+  {
+   "set": "v3",
+   "rep": 0,
+   "case": {
+    "id": "V09",
+    "cat": "subingredient_carrier",
+    "text": "Product: Natural Flavor System Ingredients: Natural flavor (contains wheat starch, propylene glycol), ethanol.",
+    "ingredients": [
+     {
+      "term": "wheat starch",
+      "allergen": "wheat"
+     }
+    ],
+    "lookalikes": [],
+    "may": [],
+    "review": false,
+    "rationale": "Wheat starch is declared inside the sub-ingredient list for natural flavor; wheat is a major allergen."
+   },
+   "ms": 14812,
+   "nanoStatus": "ok",
+   "error": null,
+   "rawNano": {
+    "ingredients": [
+     {
+      "term": "wheat starch",
+      "evidence": "Natural flavor (contains wheat starch, propylene glycol)",
+      "assertion": "intentional",
+      "allergen_guess": "wheat"
+     }
+    ],
+    "absences": []
+   },
+   "rules": {
+    "contains": [
+     "wheat"
+    ],
+    "may": [],
+    "review": true,
+    "unresolved": [
+     "Ingredient with unspecified source (e.g. lecithin / natural flavour / emulsifier)"
+    ],
+    "unsupported": [],
+    "unsupportedAbsences": [],
+    "possible": [],
+    "absences": [],
+    "dictSpans": [
+     {
+      "allergen": "wheat",
+      "assertion": "intentional",
+      "evidence": "wheat",
+      "start": 69,
+      "end": 74
+     }
+    ],
+    "evidence": [
+     "dictionary:wheat:intentional:\"wheat\""
+    ]
+   },
+   "nano": {
+    "contains": [],
+    "may": [],
+    "review": true,
+    "unresolved": [
+     "Possible allergen in \"wheat starch\" (intentional) \u2014 allergen UNKNOWN, verify"
+    ],
+    "unsupported": [],
+    "unsupportedAbsences": [],
+    "possible": [
+     {
+      "term": "wheat starch",
+      "evidence": "Natural flavor (contains wheat starch, propylene glycol",
+      "assertion": "intentional",
+      "modelGuess": "wheat",
+      "start": 44,
+      "end": 99
+     }
+    ],
+    "absences": [],
+    "dictSpans": [],
+    "evidence": []
+   },
+   "hybrid": {
+    "contains": [
+     "wheat"
+    ],
+    "may": [],
+    "review": true,
+    "unresolved": [
+     "Ingredient with unspecified source (e.g. lecithin / natural flavour / emulsifier)"
+    ],
+    "unsupported": [],
+    "unsupportedAbsences": [],
+    "possible": [],
+    "absences": [],
+    "dictSpans": [
+     {
+      "allergen": "wheat",
+      "assertion": "intentional",
+      "evidence": "wheat",
+      "start": 69,
+      "end": 74
+     }
+    ],
+    "evidence": [
+     "dictionary:wheat:intentional:\"wheat\""
+    ]
+   }
+  },
+  {
+   "set": "v3",
+   "rep": 0,
+   "case": {
+    "id": "V10",
+    "cat": "subingredient_carrier",
+    "text": "Product: Seasoning Blend Ingredients: Spice blend [contains soy flour, silicon dioxide], salt, garlic powder.",
+    "ingredients": [
+     {
+      "term": "soy flour",
+      "allergen": "soy"
+     }
+    ],
+    "lookalikes": [],
+    "may": [],
+    "review": false,
+    "rationale": "Soy flour appears inside the bracketed sub-ingredient list for spice blend; soy is a major allergen."
+   },
+   "ms": 52874,
+   "nanoStatus": "ok",
+   "error": null,
+   "rawNano": {
+    "ingredients": [
+     {
+      "term": "soy flour",
+      "evidence": "Spice blend [contains soy flour, silicon dioxide]",
+      "assertion": "intentional",
+      "allergen_guess": "soy"
+     }
+    ],
+    "absences": [
+     {
+      "ingredient": "milk",
+      "missing": "source",
+      "ingredient_evidence": ""
+     },
+     {
+      "ingredient": "egg",
+      "missing": "source",
+      "ingredient_evidence": ""
+     },
+     {
+      "ingredient": "fish",
+      "missing": "source",
+      "ingredient_evidence": ""
+     },
+     {
+      "ingredient": "crustacean shellfish",
+      "missing": "source",
+      "ingredient_evidence": ""
+     },
+     {
+      "ingredient": "tree nuts",
+      "missing": "source",
+      "ingredient_evidence": ""
+     },
+     {
+      "ingredient": "peanut",
+      "missing": "source",
+      "ingredient_evidence": ""
+     },
+     {
+      "ingredient": "wheat",
+      "missing": "source",
+      "ingredient_evidence": ""
+     },
+     {
+      "ingredient": "sesame",
+      "missing": "source",
+      "ingredient_evidence": ""
+     }
+    ]
+   },
+   "rules": {
+    "contains": [
+     "soy"
+    ],
+    "may": [],
+    "review": false,
+    "unresolved": [],
+    "unsupported": [],
+    "unsupportedAbsences": [],
+    "possible": [],
+    "absences": [],
+    "dictSpans": [
+     {
+      "allergen": "soy",
+      "assertion": "intentional",
+      "evidence": "soy",
+      "start": 60,
+      "end": 63
+     }
+    ],
+    "evidence": [
+     "dictionary:soy:intentional:\"soy\""
+    ]
+   },
+   "nano": {
+    "contains": [],
+    "may": [],
+    "review": true,
+    "unresolved": [
+     "Possible allergen in \"soy flour\" (intentional) \u2014 allergen UNKNOWN, verify"
+    ],
+    "unsupported": [],
+    "unsupportedAbsences": [
+     "\"\"",
+     "\"\"",
+     "\"\"",
+     "\"\"",
+     "\"\"",
+     "\"\"",
+     "\"\"",
+     "\"\""
+    ],
+    "possible": [
+     {
+      "term": "soy flour",
+      "evidence": "Spice blend [contains soy flour, silicon dioxide",
+      "assertion": "intentional",
+      "modelGuess": "soy",
+      "start": 38,
+      "end": 86
+     }
+    ],
+    "absences": [],
+    "dictSpans": [],
+    "evidence": []
+   },
+   "hybrid": {
+    "contains": [
+     "soy"
+    ],
+    "may": [],
+    "review": false,
+    "unresolved": [],
+    "unsupported": [],
+    "unsupportedAbsences": [
+     "\"\"",
+     "\"\"",
+     "\"\"",
+     "\"\"",
+     "\"\"",
+     "\"\"",
+     "\"\"",
+     "\"\""
+    ],
+    "possible": [],
+    "absences": [],
+    "dictSpans": [
+     {
+      "allergen": "soy",
+      "assertion": "intentional",
+      "evidence": "soy",
+      "start": 60,
+      "end": 63
+     }
+    ],
+    "evidence": [
+     "dictionary:soy:intentional:\"soy\""
+    ]
+   }
+  },
+  {
+   "set": "v3",
+   "rep": 0,
+   "case": {
+    "id": "V11",
+    "cat": "subingredient_carrier",
+    "text": "Product: Vitamin Premix Ingredients: Vitamin premix (carrier: maltodextrin from wheat, tricalcium phosphate), ascorbic acid.",
+    "ingredients": [
+     {
+      "term": "maltodextrin from wheat",
+      "allergen": "wheat"
+     }
+    ],
+    "lookalikes": [],
+    "may": [],
+    "review": false,
+    "rationale": "Maltodextrin from wheat is explicitly called out as a carrier in the vitamin premix sub-list."
+   },
+   "ms": 21868,
+   "nanoStatus": "ok",
+   "error": null,
+   "rawNano": {
+    "ingredients": [
+     {
+      "term": "maltodextrin",
+      "evidence": "carrier: maltodextrin from wheat",
+      "assertion": "intentional",
+      "allergen_guess": "wheat"
+     },
+     {
+      "term": "wheat",
+      "evidence": "carrier: maltodextrin from wheat",
+      "assertion": "intentional",
+      "allergen_guess": "wheat"
+     }
+    ],
+    "absences": []
+   },
+   "rules": {
+    "contains": [
+     "wheat"
+    ],
+    "may": [],
+    "review": false,
+    "unresolved": [],
+    "unsupported": [],
+    "unsupportedAbsences": [],
+    "possible": [],
+    "absences": [],
+    "dictSpans": [
+     {
+      "allergen": "wheat",
+      "assertion": "intentional",
+      "evidence": "wheat",
+      "start": 80,
+      "end": 85
+     }
+    ],
+    "evidence": [
+     "dictionary:wheat:intentional:\"wheat\""
+    ]
+   },
+   "nano": {
+    "contains": [],
+    "may": [],
+    "review": true,
+    "unresolved": [
+     "Possible allergen in \"maltodextrin\" (intentional) \u2014 allergen UNKNOWN, verify",
+     "Possible allergen in \"wheat\" (intentional) \u2014 allergen UNKNOWN, verify"
+    ],
+    "unsupported": [],
+    "unsupportedAbsences": [],
+    "possible": [
+     {
+      "term": "maltodextrin",
+      "evidence": "carrier: maltodextrin from wheat",
+      "assertion": "intentional",
+      "modelGuess": "wheat",
+      "start": 53,
+      "end": 85
+     },
+     {
+      "term": "wheat",
+      "evidence": "carrier: maltodextrin from wheat",
+      "assertion": "intentional",
+      "modelGuess": "wheat",
+      "start": 53,
+      "end": 85
+     }
+    ],
+    "absences": [],
+    "dictSpans": [],
+    "evidence": []
+   },
+   "hybrid": {
+    "contains": [
+     "wheat"
+    ],
+    "may": [],
+    "review": false,
+    "unresolved": [],
+    "unsupported": [],
+    "unsupportedAbsences": [],
+    "possible": [],
+    "absences": [],
+    "dictSpans": [
+     {
+      "allergen": "wheat",
+      "assertion": "intentional",
+      "evidence": "wheat",
+      "start": 80,
+      "end": 85
+     }
+    ],
+    "evidence": [
+     "dictionary:wheat:intentional:\"wheat\""
+    ]
+   }
+  },
+  {
+   "set": "v3",
+   "rep": 0,
+   "case": {
+    "id": "V12",
+    "cat": "subingredient_carrier",
+    "text": "Product: Color Preparation Ingredients: Color added (carrier: sodium caseinate, glycerin), water.",
+    "ingredients": [
+     {
+      "term": "sodium caseinate",
+      "allergen": "milk"
+     }
+    ],
+    "lookalikes": [],
+    "may": [],
+    "review": false,
+    "rationale": "Sodium caseinate is a milk-derived protein used as a carrier; it appears in the parenthetical carrier list."
+   },
+   "ms": 14426,
+   "nanoStatus": "ok",
+   "error": null,
+   "rawNano": {
+    "ingredients": [
+     {
+      "term": "caseinate",
+      "evidence": "Color added (carrier: sodium caseinate, glycerin)",
+      "assertion": "intentional",
+      "allergen_guess": "milk"
+     }
+    ],
+    "absences": []
+   },
+   "rules": {
+    "contains": [
+     "milk"
+    ],
+    "may": [],
+    "review": false,
+    "unresolved": [],
+    "unsupported": [],
+    "unsupportedAbsences": [],
+    "possible": [],
+    "absences": [],
+    "dictSpans": [
+     {
+      "allergen": "milk",
+      "assertion": "intentional",
+      "evidence": "caseinate",
+      "start": 69,
+      "end": 78
+     }
+    ],
+    "evidence": [
+     "dictionary:milk:intentional:\"caseinate\""
+    ]
+   },
+   "nano": {
+    "contains": [],
+    "may": [],
+    "review": true,
+    "unresolved": [
+     "Possible allergen in \"caseinate\" (intentional) \u2014 allergen UNKNOWN, verify"
+    ],
+    "unsupported": [],
+    "unsupportedAbsences": [],
+    "possible": [
+     {
+      "term": "caseinate",
+      "evidence": "Color added (carrier: sodium caseinate, glycerin",
+      "assertion": "intentional",
+      "modelGuess": "milk",
+      "start": 40,
+      "end": 88
+     }
+    ],
+    "absences": [],
+    "dictSpans": [],
+    "evidence": []
+   },
+   "hybrid": {
+    "contains": [
+     "milk"
+    ],
+    "may": [],
+    "review": false,
+    "unresolved": [],
+    "unsupported": [],
+    "unsupportedAbsences": [],
+    "possible": [],
+    "absences": [],
+    "dictSpans": [
+     {
+      "allergen": "milk",
+      "assertion": "intentional",
+      "evidence": "caseinate",
+      "start": 69,
+      "end": 78
+     }
+    ],
+    "evidence": [
+     "dictionary:milk:intentional:\"caseinate\""
+    ]
+   }
+  },
+  {
+   "set": "v3",
+   "rep": 0,
+   "case": {
+    "id": "V13",
+    "cat": "ambiguous",
+    "text": "Product: Savory Base Ingredients: Natural flavor, salt, yeast extract.",
+    "ingredients": [
+     {
+      "term": "Natural flavor",
+      "allergen": "ambiguous"
+     }
+    ],
+    "lookalikes": [],
+    "may": [],
+    "review": true,
+    "rationale": "Natural flavor has no declared source; it could be derived from any major allergen or none, requiring supplier clarification."
+   },
+   "ms": 13246,
+   "nanoStatus": "ok",
+   "error": null,
+   "rawNano": {
+    "ingredients": [
+     {
+      "term": "yeast extract",
+      "evidence": "yeast extract",
+      "assertion": "intentional",
+      "allergen_guess": "unknown"
+     }
+    ],
+    "absences": []
+   },
+   "rules": {
+    "contains": [],
+    "may": [],
+    "review": true,
+    "unresolved": [
+     "Ingredient with unspecified source (e.g. lecithin / natural flavour / emulsifier)"
+    ],
+    "unsupported": [],
+    "unsupportedAbsences": [],
+    "possible": [],
+    "absences": [],
+    "dictSpans": [],
+    "evidence": []
+   },
+   "nano": {
+    "contains": [],
+    "may": [],
+    "review": true,
+    "unresolved": [
+     "Possible allergen in \"yeast extract\" (intentional) \u2014 allergen UNKNOWN, verify"
+    ],
+    "unsupported": [],
+    "unsupportedAbsences": [],
+    "possible": [
+     {
+      "term": "yeast extract",
+      "evidence": "yeast extract",
+      "assertion": "intentional",
+      "modelGuess": "unknown",
+      "start": 56,
+      "end": 69
+     }
+    ],
+    "absences": [],
+    "dictSpans": [],
+    "evidence": []
+   },
+   "hybrid": {
+    "contains": [],
+    "may": [],
+    "review": true,
+    "unresolved": [
+     "Ingredient with unspecified source (e.g. lecithin / natural flavour / emulsifier)",
+     "Possible allergen in \"yeast extract\" (intentional) \u2014 allergen UNKNOWN, verify"
+    ],
+    "unsupported": [],
+    "unsupportedAbsences": [],
+    "possible": [
+     {
+      "term": "yeast extract",
+      "evidence": "yeast extract",
+      "assertion": "intentional",
+      "modelGuess": "unknown",
+      "start": 56,
+      "end": 69
+     }
+    ],
+    "absences": [],
+    "dictSpans": [],
+    "evidence": []
+   }
+  },
+  {
+   "set": "v3",
+   "rep": 0,
+   "case": {
+    "id": "V14",
+    "cat": "ambiguous",
+    "text": "Product: Protein Booster Ingredients: Vegetable protein, carrageenan.",
+    "ingredients": [
+     {
+      "term": "Vegetable protein",
+      "allergen": "ambiguous"
+     }
+    ],
+    "lookalikes": [],
+    "may": [],
+    "review": true,
+    "rationale": "Vegetable protein does not identify the botanical source; it could be soy, wheat, pea, etc., so allergen status is unknown."
+   },
+   "ms": 64191,
+   "nanoStatus": "ok",
+   "error": null,
+   "rawNano": {
+    "ingredients": [
+     {
+      "term": "Vegetable protein",
+      "evidence": "Vegetable protein",
+      "assertion": "explicit_negative",
+      "allergen_guess": "unknown"
+     },
+     {
+      "term": "carrageenan",
+      "evidence": "carrageenan",
+      "assertion": "explicit_negative",
+      "allergen_guess": "unknown"
+     }
+    ],
+    "absences": [
+     {
+      "ingredient": "milk",
+      "missing": "source",
+      "ingredient_evidence": ""
+     },
+     {
+      "ingredient": "egg",
+      "missing": "source",
+      "ingredient_evidence": ""
+     },
+     {
+      "ingredient": "fish",
+      "missing": "source",
+      "ingredient_evidence": ""
+     },
+     {
+      "ingredient": "crustacean shellfish",
+      "missing": "source",
+      "ingredient_evidence": ""
+     },
+     {
+      "ingredient": "tree nuts",
+      "missing": "source",
+      "ingredient_evidence": ""
+     },
+     {
+      "ingredient": "peanut",
+      "missing": "source",
+      "ingredient_evidence": ""
+     },
+     {
+      "ingredient": "wheat",
+      "missing": "source",
+      "ingredient_evidence": ""
+     },
+     {
+      "ingredient": "soy",
+      "missing": "source",
+      "ingredient_evidence": ""
+     },
+     {
+      "ingredient": "sesame",
+      "missing": "source",
+      "ingredient_evidence": ""
+     }
+    ]
+   },
+   "rules": {
+    "contains": [],
+    "may": [],
+    "review": false,
+    "unresolved": [],
+    "unsupported": [],
+    "unsupportedAbsences": [],
+    "possible": [],
+    "absences": [],
+    "dictSpans": [],
+    "evidence": []
+   },
+   "nano": {
+    "contains": [],
+    "may": [],
+    "review": false,
+    "unresolved": [],
+    "unsupported": [],
+    "unsupportedAbsences": [
+     "\"\"",
+     "\"\"",
+     "\"\"",
+     "\"\"",
+     "\"\"",
+     "\"\"",
+     "\"\"",
+     "\"\"",
+     "\"\""
+    ],
+    "possible": [],
+    "absences": [],
+    "dictSpans": [],
+    "evidence": []
+   },
+   "hybrid": {
+    "contains": [],
+    "may": [],
+    "review": false,
+    "unresolved": [],
+    "unsupported": [],
+    "unsupportedAbsences": [
+     "\"\"",
+     "\"\"",
+     "\"\"",
+     "\"\"",
+     "\"\"",
+     "\"\"",
+     "\"\"",
+     "\"\"",
+     "\"\""
+    ],
+    "possible": [],
+    "absences": [],
+    "dictSpans": [],
+    "evidence": []
+   }
+  },
+  {
+   "set": "v3",
+   "rep": 0,
+   "case": {
+    "id": "V15",
+    "cat": "ambiguous",
+    "text": "Product: Hydrolyzed Protein Blend Ingredients: Hydrolyzed plant protein, disodium inosinate.",
+    "ingredients": [
+     {
+      "term": "Hydrolyzed plant protein",
+      "allergen": "ambiguous"
+     }
+    ],
+    "lookalikes": [],
+    "may": [],
+    "review": true,
+    "rationale": "Hydrolyzed plant protein lacks a source declaration; it may originate from soy, wheat, or other allergens."
+   },
+   "ms": 22102,
+   "nanoStatus": "ok",
+   "error": null,
+   "rawNano": {
+    "ingredients": [
+     {
+      "term": "Hydrolyzed plant protein",
+      "evidence": "Hydrolyzed plant protein",
+      "assertion": "intentional",
+      "allergen_guess": "soy"
+     },
+     {
+      "term": "disodium inosinate",
+      "evidence": "disodium inosinate",
+      "assertion": "intentional",
+      "allergen_guess": "unknown"
+     }
+    ],
+    "absences": []
+   },
+   "rules": {
+    "contains": [],
+    "may": [],
+    "review": false,
+    "unresolved": [],
+    "unsupported": [],
+    "unsupportedAbsences": [],
+    "possible": [],
+    "absences": [],
+    "dictSpans": [],
+    "evidence": []
+   },
+   "nano": {
+    "contains": [],
+    "may": [],
+    "review": true,
+    "unresolved": [
+     "Possible allergen in \"Hydrolyzed plant protein\" (intentional) \u2014 allergen UNKNOWN, verify",
+     "Possible allergen in \"disodium inosinate\" (intentional) \u2014 allergen UNKNOWN, verify"
+    ],
+    "unsupported": [],
+    "unsupportedAbsences": [],
+    "possible": [
+     {
+      "term": "Hydrolyzed plant protein",
+      "evidence": "Hydrolyzed plant protein",
+      "assertion": "intentional",
+      "modelGuess": "soy",
+      "start": 47,
+      "end": 71
+     },
+     {
+      "term": "disodium inosinate",
+      "evidence": "disodium inosinate",
+      "assertion": "intentional",
+      "modelGuess": "unknown",
+      "start": 73,
+      "end": 91
+     }
+    ],
+    "absences": [],
+    "dictSpans": [],
+    "evidence": []
+   },
+   "hybrid": {
+    "contains": [],
+    "may": [],
+    "review": true,
+    "unresolved": [
+     "Possible allergen in \"Hydrolyzed plant protein\" (intentional) \u2014 allergen UNKNOWN, verify",
+     "Possible allergen in \"disodium inosinate\" (intentional) \u2014 allergen UNKNOWN, verify"
+    ],
+    "unsupported": [],
+    "unsupportedAbsences": [],
+    "possible": [
+     {
+      "term": "Hydrolyzed plant protein",
+      "evidence": "Hydrolyzed plant protein",
+      "assertion": "intentional",
+      "modelGuess": "soy",
+      "start": 47,
+      "end": 71
+     },
+     {
+      "term": "disodium inosinate",
+      "evidence": "disodium inosinate",
+      "assertion": "intentional",
+      "modelGuess": "unknown",
+      "start": 73,
+      "end": 91
+     }
+    ],
+    "absences": [],
+    "dictSpans": [],
+    "evidence": []
+   }
+  },
+  {
+   "set": "v3",
+   "rep": 0,
+   "case": {
+    "id": "V16",
+    "cat": "negative_lookalike",
+    "text": "Product: Oat Beverage Base Ingredients: Oat milk (water, oats, enzymes), calcium carbonate.",
+    "ingredients": [],
+    "lookalikes": [
+     "Oat milk"
+    ],
+    "may": [],
+    "review": false,
+    "rationale": "Oat milk contains the word 'milk' but oats are not a US major allergen; no major allergen ingredients present."
+   },
+   "ms": 22321,
+   "nanoStatus": "ok",
+   "error": null,
+   "rawNano": {
+    "ingredients": [
+     {
+      "term": "Oat milk",
+      "evidence": "Oat milk (water, oats, enzymes)",
+      "assertion": "intentional",
+      "allergen_guess": "milk"
+     },
+     {
+      "term": "oats",
+      "evidence": "Oat milk (water, oats, enzymes)",
+      "assertion": "intentional",
+      "allergen_guess": "unknown"
+     }
+    ],
+    "absences": []
+   },
+   "rules": {
+    "contains": [
+     "milk"
+    ],
+    "may": [],
+    "review": false,
+    "unresolved": [],
+    "unsupported": [],
+    "unsupportedAbsences": [],
+    "possible": [],
+    "absences": [],
+    "dictSpans": [
+     {
+      "allergen": "milk",
+      "assertion": "intentional",
+      "evidence": "milk",
+      "start": 44,
+      "end": 48
+     }
+    ],
+    "evidence": [
+     "dictionary:milk:intentional:\"milk\""
+    ]
+   },
+   "nano": {
+    "contains": [],
+    "may": [],
+    "review": true,
+    "unresolved": [
+     "Possible allergen in \"Oat milk\" (intentional) \u2014 allergen UNKNOWN, verify",
+     "Possible allergen in \"oats\" (intentional) \u2014 allergen UNKNOWN, verify"
+    ],
+    "unsupported": [],
+    "unsupportedAbsences": [],
+    "possible": [
+     {
+      "term": "Oat milk",
+      "evidence": "Oat milk (water, oats, enzymes",
+      "assertion": "intentional",
+      "modelGuess": "milk",
+      "start": 40,
+      "end": 70
+     },
+     {
+      "term": "oats",
+      "evidence": "Oat milk (water, oats, enzymes",
+      "assertion": "intentional",
+      "modelGuess": "unknown",
+      "start": 40,
+      "end": 70
+     }
+    ],
+    "absences": [],
+    "dictSpans": [],
+    "evidence": []
+   },
+   "hybrid": {
+    "contains": [
+     "milk"
+    ],
+    "may": [],
+    "review": false,
+    "unresolved": [],
+    "unsupported": [],
+    "unsupportedAbsences": [],
+    "possible": [],
+    "absences": [],
+    "dictSpans": [
+     {
+      "allergen": "milk",
+      "assertion": "intentional",
+      "evidence": "milk",
+      "start": 44,
+      "end": 48
+     }
+    ],
+    "evidence": [
+     "dictionary:milk:intentional:\"milk\""
+    ]
+   }
+  },
+  {
+   "set": "v3",
+   "rep": 0,
+   "case": {
+    "id": "V17",
+    "cat": "negative_lookalike",
+    "text": "Product: Chocolate Coating Ingredients: Cocoa butter, sugar, soy lecithin, vanilla.",
+    "ingredients": [
+     {
+      "term": "soy lecithin",
+      "allergen": "soy"
+     }
+    ],
+    "lookalikes": [
+     "Cocoa butter"
+    ],
+    "may": [],
+    "review": false,
+    "rationale": "Cocoa butter contains 'butter' but is a vegetable fat from cacao, not dairy; soy lecithin is the only major allergen."
+   },
+   "ms": 13185,
+   "nanoStatus": "ok",
+   "error": null,
+   "rawNano": {
+    "ingredients": [
+     {
+      "term": "soy lecithin",
+      "evidence": "soy lecithin",
+      "assertion": "intentional",
+      "allergen_guess": "soy"
+     }
+    ],
+    "absences": []
+   },
+   "rules": {
+    "contains": [
+     "soy"
+    ],
+    "may": [],
+    "review": false,
+    "unresolved": [],
+    "unsupported": [],
+    "unsupportedAbsences": [],
+    "possible": [],
+    "absences": [],
+    "dictSpans": [
+     {
+      "allergen": "soy",
+      "assertion": "intentional",
+      "evidence": "soy",
+      "start": 61,
+      "end": 64
+     }
+    ],
+    "evidence": [
+     "dictionary:soy:intentional:\"soy\""
+    ]
+   },
+   "nano": {
+    "contains": [],
+    "may": [],
+    "review": true,
+    "unresolved": [
+     "Possible allergen in \"soy lecithin\" (intentional) \u2014 allergen UNKNOWN, verify"
+    ],
+    "unsupported": [],
+    "unsupportedAbsences": [],
+    "possible": [
+     {
+      "term": "soy lecithin",
+      "evidence": "soy lecithin",
+      "assertion": "intentional",
+      "modelGuess": "soy",
+      "start": 61,
+      "end": 73
+     }
+    ],
+    "absences": [],
+    "dictSpans": [],
+    "evidence": []
+   },
+   "hybrid": {
+    "contains": [
+     "soy"
+    ],
+    "may": [],
+    "review": false,
+    "unresolved": [],
+    "unsupported": [],
+    "unsupportedAbsences": [],
+    "possible": [],
+    "absences": [],
+    "dictSpans": [
+     {
+      "allergen": "soy",
+      "assertion": "intentional",
+      "evidence": "soy",
+      "start": 61,
+      "end": 64
+     }
+    ],
+    "evidence": [
+     "dictionary:soy:intentional:\"soy\""
+    ]
+   }
+  },
+  {
+   "set": "v3",
+   "rep": 0,
+   "case": {
+    "id": "V18",
+    "cat": "negative_lookalike",
+    "text": "Product: Stir-Fry Mix Ingredients: Water chestnut, bamboo shoots, soy sauce (water, wheat, soybeans, salt).",
+    "ingredients": [
+     {
+      "term": "soy sauce (water, wheat, soybeans, salt)",
+      "allergen": "soy"
+     },
+     {
+      "term": "soy sauce (water, wheat, soybeans, salt)",
+      "allergen": "wheat"
+     }
+    ],
+    "lookalikes": [
+     "Water chestnut"
+    ],
+    "may": [],
+    "review": false,
+    "rationale": "Water chestnut includes 'nut' but is an aquatic vegetable, not a tree nut; soy sauce contributes soy and wheat allergens."
+   },
+   "ms": 29618,
+   "nanoStatus": "ok",
+   "error": null,
+   "rawNano": {
+    "ingredients": [
+     {
+      "term": "soy sauce",
+      "evidence": "soy sauce (water, wheat, soybeans, salt)",
+      "assertion": "intentional",
+      "allergen_guess": "soy"
+     },
+     {
+      "term": "wheat",
+      "evidence": "soy sauce (water, wheat, soybeans, salt)",
+      "assertion": "intentional",
+      "allergen_guess": "wheat"
+     },
+     {
+      "term": "soybeans",
+      "evidence": "soy sauce (water, wheat, soybeans, salt)",
+      "assertion": "intentional",
+      "allergen_guess": "soy"
+     }
+    ],
+    "absences": []
+   },
+   "rules": {
+    "contains": [
+     "soy",
+     "wheat"
+    ],
+    "may": [],
+    "review": false,
+    "unresolved": [],
+    "unsupported": [],
+    "unsupportedAbsences": [],
+    "possible": [],
+    "absences": [],
+    "dictSpans": [
+     {
+      "allergen": "wheat",
+      "assertion": "intentional",
+      "evidence": "wheat",
+      "start": 84,
+      "end": 89
+     },
+     {
+      "allergen": "soy",
+      "assertion": "intentional",
+      "evidence": "soy",
+      "start": 66,
+      "end": 69
+     }
+    ],
+    "evidence": [
+     "dictionary:wheat:intentional:\"wheat\"",
+     "dictionary:soy:intentional:\"soy\""
+    ]
+   },
+   "nano": {
+    "contains": [],
+    "may": [],
+    "review": true,
+    "unresolved": [
+     "Possible allergen in \"soy sauce\" (intentional) \u2014 allergen UNKNOWN, verify",
+     "Possible allergen in \"wheat\" (intentional) \u2014 allergen UNKNOWN, verify",
+     "Possible allergen in \"soybeans\" (intentional) \u2014 allergen UNKNOWN, verify"
+    ],
+    "unsupported": [],
+    "unsupportedAbsences": [],
+    "possible": [
+     {
+      "term": "soy sauce",
+      "evidence": "soy sauce (water, wheat, soybeans, salt",
+      "assertion": "intentional",
+      "modelGuess": "soy",
+      "start": 66,
+      "end": 105
+     },
+     {
+      "term": "wheat",
+      "evidence": "soy sauce (water, wheat, soybeans, salt",
+      "assertion": "intentional",
+      "modelGuess": "wheat",
+      "start": 66,
+      "end": 105
+     },
+     {
+      "term": "soybeans",
+      "evidence": "soy sauce (water, wheat, soybeans, salt",
+      "assertion": "intentional",
+      "modelGuess": "soy",
+      "start": 66,
+      "end": 105
+     }
+    ],
+    "absences": [],
+    "dictSpans": [],
+    "evidence": []
+   },
+   "hybrid": {
+    "contains": [
+     "soy",
+     "wheat"
+    ],
+    "may": [],
+    "review": false,
+    "unresolved": [],
+    "unsupported": [],
+    "unsupportedAbsences": [],
+    "possible": [],
+    "absences": [],
+    "dictSpans": [
+     {
+      "allergen": "wheat",
+      "assertion": "intentional",
+      "evidence": "wheat",
+      "start": 84,
+      "end": 89
+     },
+     {
+      "allergen": "soy",
+      "assertion": "intentional",
+      "evidence": "soy",
+      "start": 66,
+      "end": 69
+     }
+    ],
+    "evidence": [
+     "dictionary:wheat:intentional:\"wheat\"",
+     "dictionary:soy:intentional:\"soy\""
+    ]
+   }
+  },
+  {
+   "set": "v3",
+   "rep": 0,
+   "case": {
+    "id": "V19",
+    "cat": "negative_lookalike",
+    "text": "Product: Fruit Spread Ingredients: Apple butter (apples, sugar, cinnamon), pectin.",
+    "ingredients": [],
+    "lookalikes": [
+     "Apple butter"
+    ],
+    "may": [],
+    "review": false,
+    "rationale": "Apple butter contains 'butter' but is a fruit concentrate with no dairy; no major allergen ingredients present."
+   },
+   "ms": 33834,
+   "nanoStatus": "ok",
+   "error": null,
+   "rawNano": {
+    "ingredients": [
+     {
+      "term": "apples",
+      "evidence": "Apple butter (apples, sugar, cinnamon)",
+      "assertion": "intentional",
+      "allergen_guess": "unknown"
+     },
+     {
+      "term": "sugar",
+      "evidence": "Apple butter (apples, sugar, cinnamon)",
+      "assertion": "intentional",
+      "allergen_guess": "unknown"
+     },
+     {
+      "term": "cinnamon",
+      "evidence": "Apple butter (apples, sugar, cinnamon)",
+      "assertion": "intentional",
+      "allergen_guess": "unknown"
+     },
+     {
+      "term": "pectin",
+      "evidence": "pectin",
+      "assertion": "intentional",
+      "allergen_guess": "unknown"
+     }
+    ],
+    "absences": []
+   },
+   "rules": {
+    "contains": [
+     "milk"
+    ],
+    "may": [],
+    "review": false,
+    "unresolved": [],
+    "unsupported": [],
+    "unsupportedAbsences": [],
+    "possible": [],
+    "absences": [],
+    "dictSpans": [
+     {
+      "allergen": "milk",
+      "assertion": "intentional",
+      "evidence": "butter",
+      "start": 41,
+      "end": 47
+     }
+    ],
+    "evidence": [
+     "dictionary:milk:intentional:\"butter\""
+    ]
+   },
+   "nano": {
+    "contains": [],
+    "may": [],
+    "review": true,
+    "unresolved": [
+     "Possible allergen in \"apples\" (intentional) \u2014 allergen UNKNOWN, verify",
+     "Possible allergen in \"sugar\" (intentional) \u2014 allergen UNKNOWN, verify",
+     "Possible allergen in \"cinnamon\" (intentional) \u2014 allergen UNKNOWN, verify",
+     "Possible allergen in \"pectin\" (intentional) \u2014 allergen UNKNOWN, verify"
+    ],
+    "unsupported": [],
+    "unsupportedAbsences": [],
+    "possible": [
+     {
+      "term": "apples",
+      "evidence": "Apple butter (apples, sugar, cinnamon",
+      "assertion": "intentional",
+      "modelGuess": "unknown",
+      "start": 35,
+      "end": 72
+     },
+     {
+      "term": "sugar",
+      "evidence": "Apple butter (apples, sugar, cinnamon",
+      "assertion": "intentional",
+      "modelGuess": "unknown",
+      "start": 35,
+      "end": 72
+     },
+     {
+      "term": "cinnamon",
+      "evidence": "Apple butter (apples, sugar, cinnamon",
+      "assertion": "intentional",
+      "modelGuess": "unknown",
+      "start": 35,
+      "end": 72
+     },
+     {
+      "term": "pectin",
+      "evidence": "pectin",
+      "assertion": "intentional",
+      "modelGuess": "unknown",
+      "start": 75,
+      "end": 81
+     }
+    ],
+    "absences": [],
+    "dictSpans": [],
+    "evidence": []
+   },
+   "hybrid": {
+    "contains": [
+     "milk"
+    ],
+    "may": [],
+    "review": true,
+    "unresolved": [
+     "Possible allergen in \"pectin\" (intentional) \u2014 allergen UNKNOWN, verify"
+    ],
+    "unsupported": [],
+    "unsupportedAbsences": [],
+    "possible": [
+     {
+      "term": "pectin",
+      "evidence": "pectin",
+      "assertion": "intentional",
+      "modelGuess": "unknown",
+      "start": 75,
+      "end": 81
+     }
+    ],
+    "absences": [],
+    "dictSpans": [
+     {
+      "allergen": "milk",
+      "assertion": "intentional",
+      "evidence": "butter",
+      "start": 41,
+      "end": 47
+     }
+    ],
+    "evidence": [
+     "dictionary:milk:intentional:\"butter\""
+    ]
+   }
+  },
+  {
+   "set": "v3",
+   "rep": 0,
+   "case": {
+    "id": "V20",
+    "cat": "negative_lookalike",
+    "text": "Product: Gluten-Free Flour Blend Ingredients: Tiger nut flour, rice flour, tapioca starch.",
+    "ingredients": [],
+    "lookalikes": [
+     "Tiger nut flour"
+    ],
+    "may": [],
+    "review": false,
+    "rationale": "Tiger nut is a tuber (Cyperus esculentus), not a tree nut; the term 'nut' appears but no major allergen is present."
+   },
+   "ms": 27025,
+   "nanoStatus": "ok",
+   "error": null,
+   "rawNano": {
+    "ingredients": [
+     {
+      "term": "Tiger nut flour",
+      "evidence": "Tiger nut flour",
+      "assertion": "intentional",
+      "allergen_guess": "treenut"
+     },
+     {
+      "term": "rice flour",
+      "evidence": "rice flour",
+      "assertion": "intentional",
+      "allergen_guess": "unknown"
+     },
+     {
+      "term": "tapioca starch",
+      "evidence": "tapioca starch",
+      "assertion": "intentional",
+      "allergen_guess": "unknown"
+     }
+    ],
+    "absences": []
+   },
+   "rules": {
+    "contains": [],
+    "may": [],
+    "review": false,
+    "unresolved": [],
+    "unsupported": [],
+    "unsupportedAbsences": [],
+    "possible": [],
+    "absences": [],
+    "dictSpans": [],
+    "evidence": []
+   },
+   "nano": {
+    "contains": [],
+    "may": [],
+    "review": true,
+    "unresolved": [
+     "Possible allergen in \"Tiger nut flour\" (intentional) \u2014 allergen UNKNOWN, verify",
+     "Possible allergen in \"rice flour\" (intentional) \u2014 allergen UNKNOWN, verify",
+     "Possible allergen in \"tapioca starch\" (intentional) \u2014 allergen UNKNOWN, verify"
+    ],
+    "unsupported": [],
+    "unsupportedAbsences": [],
+    "possible": [
+     {
+      "term": "Tiger nut flour",
+      "evidence": "Tiger nut flour",
+      "assertion": "intentional",
+      "modelGuess": "treenut",
+      "start": 46,
+      "end": 61
+     },
+     {
+      "term": "rice flour",
+      "evidence": "rice flour",
+      "assertion": "intentional",
+      "modelGuess": "unknown",
+      "start": 63,
+      "end": 73
+     },
+     {
+      "term": "tapioca starch",
+      "evidence": "tapioca starch",
+      "assertion": "intentional",
+      "modelGuess": "unknown",
+      "start": 75,
+      "end": 89
+     }
+    ],
+    "absences": [],
+    "dictSpans": [],
+    "evidence": []
+   },
+   "hybrid": {
+    "contains": [],
+    "may": [],
+    "review": true,
+    "unresolved": [
+     "Possible allergen in \"Tiger nut flour\" (intentional) \u2014 allergen UNKNOWN, verify",
+     "Possible allergen in \"rice flour\" (intentional) \u2014 allergen UNKNOWN, verify",
+     "Possible allergen in \"tapioca starch\" (intentional) \u2014 allergen UNKNOWN, verify"
+    ],
+    "unsupported": [],
+    "unsupportedAbsences": [],
+    "possible": [
+     {
+      "term": "Tiger nut flour",
+      "evidence": "Tiger nut flour",
+      "assertion": "intentional",
+      "modelGuess": "treenut",
+      "start": 46,
+      "end": 61
+     },
+     {
+      "term": "rice flour",
+      "evidence": "rice flour",
+      "assertion": "intentional",
+      "modelGuess": "unknown",
+      "start": 63,
+      "end": 73
+     },
+     {
+      "term": "tapioca starch",
+      "evidence": "tapioca starch",
+      "assertion": "intentional",
+      "modelGuess": "unknown",
+      "start": 75,
+      "end": 89
+     }
+    ],
+    "absences": [],
+    "dictSpans": [],
+    "evidence": []
+   }
+  },
+  {
+   "set": "v3",
+   "rep": 1,
+   "case": {
+    "id": "V01",
+    "cat": "unfamiliar",
+    "text": "Product: Khoa Powder Ingredients: Khoa (concentrated milk solids), anticaking agent (silicon dioxide).",
+    "ingredients": [
+     {
+      "term": "Khoa",
+      "allergen": "milk"
+     }
+    ],
+    "lookalikes": [],
+    "may": [],
+    "review": false,
+    "rationale": "Khoa is a traditional Indian dairy ingredient (concentrated milk solids); the term appears verbatim and maps to milk."
+   },
+   "ms": 48414,
+   "nanoStatus": "ok",
+   "error": null,
+   "rawNano": {
+    "ingredients": [
+     {
+      "term": "milk solids",
+      "evidence": "(concentrated milk solids)",
+      "assertion": "intentional",
+      "allergen_guess": "milk"
+     }
+    ],
+    "absences": [
+     {
+      "ingredient": "egg",
+      "missing": "source",
+      "ingredient_evidence": ""
+     },
+     {
+      "ingredient": "fish",
+      "missing": "source",
+      "ingredient_evidence": ""
+     },
+     {
+      "ingredient": "crustacean shellfish",
+      "missing": "source",
+      "ingredient_evidence": ""
+     },
+     {
+      "ingredient": "tree nuts",
+      "missing": "source",
+      "ingredient_evidence": ""
+     },
+     {
+      "ingredient": "peanut",
+      "missing": "source",
+      "ingredient_evidence": ""
+     },
+     {
+      "ingredient": "wheat",
+      "missing": "source",
+      "ingredient_evidence": ""
+     },
+     {
+      "ingredient": "soy",
+      "missing": "source",
+      "ingredient_evidence": ""
+     },
+     {
+      "ingredient": "sesame",
+      "missing": "source",
+      "ingredient_evidence": ""
+     }
+    ]
+   },
+   "rules": {
+    "contains": [
+     "milk"
+    ],
+    "may": [],
+    "review": false,
+    "unresolved": [],
+    "unsupported": [],
+    "unsupportedAbsences": [],
+    "possible": [],
+    "absences": [],
+    "dictSpans": [
+     {
+      "allergen": "milk",
+      "assertion": "intentional",
+      "evidence": "milk",
+      "start": 53,
+      "end": 57
+     }
+    ],
+    "evidence": [
+     "dictionary:milk:intentional:\"milk\""
+    ]
+   },
+   "nano": {
+    "contains": [],
+    "may": [],
+    "review": true,
+    "unresolved": [
+     "Possible allergen in \"milk solids\" (intentional) \u2014 allergen UNKNOWN, verify"
+    ],
+    "unsupported": [],
+    "unsupportedAbsences": [
+     "\"\"",
+     "\"\"",
+     "\"\"",
+     "\"\"",
+     "\"\"",
+     "\"\"",
+     "\"\"",
+     "\"\""
+    ],
+    "possible": [
+     {
+      "term": "milk solids",
+      "evidence": "concentrated milk solids",
+      "assertion": "intentional",
+      "modelGuess": "milk",
+      "start": 40,
+      "end": 64
+     }
+    ],
+    "absences": [],
+    "dictSpans": [],
+    "evidence": []
+   },
+   "hybrid": {
+    "contains": [
+     "milk"
+    ],
+    "may": [],
+    "review": false,
+    "unresolved": [],
+    "unsupported": [],
+    "unsupportedAbsences": [
+     "\"\"",
+     "\"\"",
+     "\"\"",
+     "\"\"",
+     "\"\"",
+     "\"\"",
+     "\"\"",
+     "\"\""
+    ],
+    "possible": [],
+    "absences": [],
+    "dictSpans": [
+     {
+      "allergen": "milk",
+      "assertion": "intentional",
+      "evidence": "milk",
+      "start": 53,
+      "end": 57
+     }
+    ],
+    "evidence": [
+     "dictionary:milk:intentional:\"milk\""
+    ]
+   }
+  },
+  {
+   "set": "v3",
+   "rep": 1,
+   "case": {
+    "id": "V02",
+    "cat": "unfamiliar",
+    "text": "Product: Surimi Base Ingredients: Surimi (Alaska pollock, sugar, sorbitol, polyphosphates), water, starch.",
+    "ingredients": [
+     {
+      "term": "Surimi",
+      "allergen": "fish"
+     }
+    ],
+    "lookalikes": [],
+    "may": [],
+    "review": false,
+    "rationale": "Surimi is a Japanese term for minced fish paste; the snippet names Alaska pollock, confirming fish."
+   },
+   "ms": 15236,
+   "nanoStatus": "ok",
+   "error": null,
+   "rawNano": {
+    "ingredients": [
+     {
+      "term": "Surimi",
+      "evidence": "Surimi (Alaska pollock, sugar, sorbitol, polyphosphates)",
+      "assertion": "intentional",
+      "allergen_guess": "fish"
+     }
+    ],
+    "absences": []
+   },
+   "rules": {
+    "contains": [
+     "fish"
+    ],
+    "may": [],
+    "review": false,
+    "unresolved": [],
+    "unsupported": [],
+    "unsupportedAbsences": [],
+    "possible": [],
+    "absences": [],
+    "dictSpans": [
+     {
+      "allergen": "fish",
+      "assertion": "intentional",
+      "evidence": "pollock",
+      "start": 49,
+      "end": 56
+     }
+    ],
+    "evidence": [
+     "dictionary:fish:intentional:\"pollock\""
+    ]
+   },
+   "nano": {
+    "contains": [],
+    "may": [],
+    "review": true,
+    "unresolved": [
+     "Possible allergen in \"Surimi\" (intentional) \u2014 allergen UNKNOWN, verify"
+    ],
+    "unsupported": [],
+    "unsupportedAbsences": [],
+    "possible": [
+     {
+      "term": "Surimi",
+      "evidence": "Surimi (Alaska pollock, sugar, sorbitol, polyphosphates",
+      "assertion": "intentional",
+      "modelGuess": "fish",
+      "start": 34,
+      "end": 89
+     }
+    ],
+    "absences": [],
+    "dictSpans": [],
+    "evidence": []
+   },
+   "hybrid": {
+    "contains": [
+     "fish"
+    ],
+    "may": [],
+    "review": false,
+    "unresolved": [],
+    "unsupported": [],
+    "unsupportedAbsences": [],
+    "possible": [],
+    "absences": [],
+    "dictSpans": [
+     {
+      "allergen": "fish",
+      "assertion": "intentional",
+      "evidence": "pollock",
+      "start": 49,
+      "end": 56
+     }
+    ],
+    "evidence": [
+     "dictionary:fish:intentional:\"pollock\""
+    ]
+   }
+  },
+  {
+   "set": "v3",
+   "rep": 1,
+   "case": {
+    "id": "V03",
+    "cat": "unfamiliar",
+    "text": "Product: Tahini Paste Ingredients: Tahini (100% roasted sesame seed), salt.",
+    "ingredients": [
+     {
+      "term": "Tahini",
+      "allergen": "sesame"
+     }
+    ],
+    "lookalikes": [],
+    "may": [],
+    "review": false,
+    "rationale": "Tahini is the common Middle-Eastern name for sesame seed paste; sesame is a US major allergen."
+   },
+   "ms": 30101,
+   "nanoStatus": "ok",
+   "error": null,
+   "rawNano": {
+    "ingredients": [
+     {
+      "term": "Tahini",
+      "evidence": "Tahini (100% roasted sesame seed)",
+      "assertion": "intentional",
+      "allergen_guess": "sesame"
+     },
+     {
+      "term": "roasted sesame seed",
+      "evidence": "Tahini (100% roasted sesame seed)",
+      "assertion": "intentional",
+      "allergen_guess": "sesame"
+     },
+     {
+      "term": "salt",
+      "evidence": "salt",
+      "assertion": "intentional",
+      "allergen_guess": "unknown"
+     }
+    ],
+    "absences": []
+   },
+   "rules": {
+    "contains": [
+     "sesame"
+    ],
+    "may": [],
+    "review": false,
+    "unresolved": [],
+    "unsupported": [],
+    "unsupportedAbsences": [],
+    "possible": [],
+    "absences": [],
+    "dictSpans": [
+     {
+      "allergen": "sesame",
+      "assertion": "intentional",
+      "evidence": "sesame",
+      "start": 56,
+      "end": 62
+     }
+    ],
+    "evidence": [
+     "dictionary:sesame:intentional:\"sesame\""
+    ]
+   },
+   "nano": {
+    "contains": [],
+    "may": [],
+    "review": true,
+    "unresolved": [
+     "Possible allergen in \"Tahini\" (intentional) \u2014 allergen UNKNOWN, verify",
+     "Possible allergen in \"roasted sesame seed\" (intentional) \u2014 allergen UNKNOWN, verify",
+     "Possible allergen in \"salt\" (intentional) \u2014 allergen UNKNOWN, verify"
+    ],
+    "unsupported": [],
+    "unsupportedAbsences": [],
+    "possible": [
+     {
+      "term": "Tahini",
+      "evidence": "Tahini (100% roasted sesame seed",
+      "assertion": "intentional",
+      "modelGuess": "sesame",
+      "start": 35,
+      "end": 67
+     },
+     {
+      "term": "roasted sesame seed",
+      "evidence": "Tahini (100% roasted sesame seed",
+      "assertion": "intentional",
+      "modelGuess": "sesame",
+      "start": 35,
+      "end": 67
+     },
+     {
+      "term": "salt",
+      "evidence": "salt",
+      "assertion": "intentional",
+      "modelGuess": "unknown",
+      "start": 70,
+      "end": 74
+     }
+    ],
+    "absences": [],
+    "dictSpans": [],
+    "evidence": []
+   },
+   "hybrid": {
+    "contains": [
+     "sesame"
+    ],
+    "may": [],
+    "review": true,
+    "unresolved": [
+     "Possible allergen in \"salt\" (intentional) \u2014 allergen UNKNOWN, verify"
+    ],
+    "unsupported": [],
+    "unsupportedAbsences": [],
+    "possible": [
+     {
+      "term": "salt",
+      "evidence": "salt",
+      "assertion": "intentional",
+      "modelGuess": "unknown",
+      "start": 70,
+      "end": 74
+     }
+    ],
+    "absences": [],
+    "dictSpans": [
+     {
+      "allergen": "sesame",
+      "assertion": "intentional",
+      "evidence": "sesame",
+      "start": 56,
+      "end": 62
+     }
+    ],
+    "evidence": [
+     "dictionary:sesame:intentional:\"sesame\""
+    ]
+   }
+  },
+  {
+   "set": "v3",
+   "rep": 1,
+   "case": {
+    "id": "V04",
+    "cat": "unfamiliar",
+    "text": "Product: Emulsifier Blend Ingredients: Lecithin de soja (soybean lecithin), sunflower oil.",
+    "ingredients": [
+     {
+      "term": "Lecithin de soja",
+      "allergen": "soy"
+     }
+    ],
+    "lookalikes": [],
+    "may": [],
+    "review": false,
+    "rationale": "Lecithin de soja is Spanish for soy lecithin; the parenthetical confirms soybean origin."
+   },
+   "ms": 59549,
+   "nanoStatus": "ok",
+   "error": null,
+   "rawNano": {
+    "ingredients": [
+     {
+      "term": "Lecithin de soja",
+      "evidence": "Lecithin de soja (soybean lecithin)",
+      "assertion": "intentional",
+      "allergen_guess": "soy"
+     }
+    ],
+    "absences": [
+     {
+      "ingredient": "milk",
+      "missing": "source",
+      "ingredient_evidence": ""
+     },
+     {
+      "ingredient": "egg",
+      "missing": "source",
+      "ingredient_evidence": ""
+     },
+     {
+      "ingredient": "fish",
+      "missing": "source",
+      "ingredient_evidence": ""
+     },
+     {
+      "ingredient": "crustacean shellfish",
+      "missing": "source",
+      "ingredient_evidence": ""
+     },
+     {
+      "ingredient": "tree nuts",
+      "missing": "source",
+      "ingredient_evidence": ""
+     },
+     {
+      "ingredient": "peanut",
+      "missing": "source",
+      "ingredient_evidence": ""
+     },
+     {
+      "ingredient": "wheat",
+      "missing": "source",
+      "ingredient_evidence": ""
+     },
+     {
+      "ingredient": "soy",
+      "missing": "source",
+      "ingredient_evidence": "Lecithin de soja"
+     },
+     {
+      "ingredient": "sesame",
+      "missing": "source",
+      "ingredient_evidence": ""
+     }
+    ]
+   },
+   "rules": {
+    "contains": [
+     "soy"
+    ],
+    "may": [],
+    "review": true,
+    "unresolved": [
+     "Ingredient with unspecified source (e.g. lecithin / natural flavour / emulsifier)"
+    ],
+    "unsupported": [],
+    "unsupportedAbsences": [],
+    "possible": [],
+    "absences": [],
+    "dictSpans": [
+     {
+      "allergen": "soy",
+      "assertion": "intentional",
+      "evidence": "soybean",
+      "start": 57,
+      "end": 64
+     }
+    ],
+    "evidence": [
+     "dictionary:soy:intentional:\"soybean\""
+    ]
+   },
+   "nano": {
+    "contains": [],
+    "may": [],
+    "review": true,
+    "unresolved": [
+     "Possible allergen in \"Lecithin de soja\" (intentional) \u2014 allergen UNKNOWN, verify",
+     "\"Lecithin de soja\": source not stated \u2014 could hide an allergen"
+    ],
+    "unsupported": [],
+    "unsupportedAbsences": [
+     "\"\"",
+     "\"\"",
+     "\"\"",
+     "\"\"",
+     "\"\"",
+     "\"\"",
+     "\"\"",
+     "\"\""
+    ],
+    "possible": [
+     {
+      "term": "Lecithin de soja",
+      "evidence": "Lecithin de soja (soybean lecithin",
+      "assertion": "intentional",
+      "modelGuess": "soy",
+      "start": 39,
+      "end": 73
+     }
+    ],
+    "absences": [
+     {
+      "ingredient": "Lecithin de soja",
+      "missing": "source",
+      "start": 39,
+      "end": 55
+     }
+    ],
+    "dictSpans": [],
+    "evidence": []
+   },
+   "hybrid": {
+    "contains": [
+     "soy"
+    ],
+    "may": [],
+    "review": true,
+    "unresolved": [
+     "Ingredient with unspecified source (e.g. lecithin / natural flavour / emulsifier)",
+     "\"Lecithin de soja\": source not stated \u2014 could hide an allergen"
+    ],
+    "unsupported": [],
+    "unsupportedAbsences": [
+     "\"\"",
+     "\"\"",
+     "\"\"",
+     "\"\"",
+     "\"\"",
+     "\"\"",
+     "\"\"",
+     "\"\""
+    ],
+    "possible": [],
+    "absences": [
+     {
+      "ingredient": "Lecithin de soja",
+      "missing": "source",
+      "start": 39,
+      "end": 55
+     }
+    ],
+    "dictSpans": [
+     {
+      "allergen": "soy",
+      "assertion": "intentional",
+      "evidence": "soybean",
+      "start": 57,
+      "end": 64
+     }
+    ],
+    "evidence": [
+     "dictionary:soy:intentional:\"soybean\""
+    ]
+   }
+  },
+  {
+   "set": "v3",
+   "rep": 1,
+   "case": {
+    "id": "V05",
+    "cat": "scientific_derivative",
+    "text": "Product: High-Gel Protein Ingredients: Casein (Bos taurus), calcium chloride.",
+    "ingredients": [
+     {
+      "term": "Casein (Bos taurus)",
+      "allergen": "milk"
+     }
+    ],
+    "lookalikes": [],
+    "may": [],
+    "review": false,
+    "rationale": "Casein is the principal milk protein; Bos taurus is the Latin binomial for cattle, confirming milk source."
+   },
+   "ms": 14878,
+   "nanoStatus": "ok",
+   "error": null,
+   "rawNano": {
+    "ingredients": [
+     {
+      "term": "Casein (Bos taurus)",
+      "evidence": "Casein (Bos taurus)",
+      "assertion": "intentional",
+      "allergen_guess": "milk"
+     }
+    ],
+    "absences": []
+   },
+   "rules": {
+    "contains": [
+     "milk"
+    ],
+    "may": [],
+    "review": false,
+    "unresolved": [],
+    "unsupported": [],
+    "unsupportedAbsences": [],
+    "possible": [],
+    "absences": [],
+    "dictSpans": [
+     {
+      "allergen": "milk",
+      "assertion": "intentional",
+      "evidence": "Casein",
+      "start": 39,
+      "end": 45
+     }
+    ],
+    "evidence": [
+     "dictionary:milk:intentional:\"Casein\""
+    ]
+   },
+   "nano": {
+    "contains": [],
+    "may": [],
+    "review": true,
+    "unresolved": [
+     "Possible allergen in \"Casein (Bos taurus)\" (intentional) \u2014 allergen UNKNOWN, verify"
+    ],
+    "unsupported": [],
+    "unsupportedAbsences": [],
+    "possible": [
+     {
+      "term": "Casein (Bos taurus)",
+      "evidence": "Casein (Bos taurus",
+      "assertion": "intentional",
+      "modelGuess": "milk",
+      "start": 39,
+      "end": 57
+     }
+    ],
+    "absences": [],
+    "dictSpans": [],
+    "evidence": []
+   },
+   "hybrid": {
+    "contains": [
+     "milk"
+    ],
+    "may": [],
+    "review": false,
+    "unresolved": [],
+    "unsupported": [],
+    "unsupportedAbsences": [],
+    "possible": [],
+    "absences": [],
+    "dictSpans": [
+     {
+      "allergen": "milk",
+      "assertion": "intentional",
+      "evidence": "Casein",
+      "start": 39,
+      "end": 45
+     }
+    ],
+    "evidence": [
+     "dictionary:milk:intentional:\"Casein\""
+    ]
+   }
+  },
+  {
+   "set": "v3",
+   "rep": 1,
+   "case": {
+    "id": "V06",
+    "cat": "scientific_derivative",
+    "text": "Product: Foaming Agent Ingredients: Ovalbumin (Gallus gallus), sodium lauryl sulfate.",
+    "ingredients": [
+     {
+      "term": "Ovalbumin (Gallus gallus)",
+      "allergen": "egg"
+     }
+    ],
+    "lookalikes": [],
+    "may": [],
+    "review": false,
+    "rationale": "Ovalbumin is the main protein in egg white; Gallus gallus is the scientific name for chicken."
+   },
+   "ms": 22474,
+   "nanoStatus": "ok",
+   "error": null,
+   "rawNano": {
+    "ingredients": [
+     {
+      "term": "Ovalbumin",
+      "evidence": "Ovalbumin (Gallus gallus)",
+      "assertion": "intentional",
+      "allergen_guess": "egg"
+     },
+     {
+      "term": "sodium lauryl sulfate",
+      "evidence": "sodium lauryl sulfate",
+      "assertion": "precautionary",
+      "allergen_guess": "unknown"
+     }
+    ],
+    "absences": []
+   },
+   "rules": {
+    "contains": [
+     "egg"
+    ],
+    "may": [],
+    "review": false,
+    "unresolved": [],
+    "unsupported": [],
+    "unsupportedAbsences": [],
+    "possible": [],
+    "absences": [],
+    "dictSpans": [
+     {
+      "allergen": "egg",
+      "assertion": "intentional",
+      "evidence": "Ovalbumin",
+      "start": 36,
+      "end": 45
+     }
+    ],
+    "evidence": [
+     "dictionary:egg:intentional:\"Ovalbumin\""
+    ]
+   },
+   "nano": {
+    "contains": [],
+    "may": [],
+    "review": true,
+    "unresolved": [
+     "Possible allergen in \"Ovalbumin\" (intentional) \u2014 allergen UNKNOWN, verify",
+     "Possible allergen in \"sodium lauryl sulfate\" (precautionary) \u2014 allergen UNKNOWN, verify"
+    ],
+    "unsupported": [],
+    "unsupportedAbsences": [],
+    "possible": [
+     {
+      "term": "Ovalbumin",
+      "evidence": "Ovalbumin (Gallus gallus",
+      "assertion": "intentional",
+      "modelGuess": "egg",
+      "start": 36,
+      "end": 60
+     },
+     {
+      "term": "sodium lauryl sulfate",
+      "evidence": "sodium lauryl sulfate",
+      "assertion": "precautionary",
+      "modelGuess": "unknown",
+      "start": 63,
+      "end": 84
+     }
+    ],
+    "absences": [],
+    "dictSpans": [],
+    "evidence": []
+   },
+   "hybrid": {
+    "contains": [
+     "egg"
+    ],
+    "may": [],
+    "review": true,
+    "unresolved": [
+     "Possible allergen in \"sodium lauryl sulfate\" (precautionary) \u2014 allergen UNKNOWN, verify"
+    ],
+    "unsupported": [],
+    "unsupportedAbsences": [],
+    "possible": [
+     {
+      "term": "sodium lauryl sulfate",
+      "evidence": "sodium lauryl sulfate",
+      "assertion": "precautionary",
+      "modelGuess": "unknown",
+      "start": 63,
+      "end": 84
+     }
+    ],
+    "absences": [],
+    "dictSpans": [
+     {
+      "allergen": "egg",
+      "assertion": "intentional",
+      "evidence": "Ovalbumin",
+      "start": 36,
+      "end": 45
+     }
+    ],
+    "evidence": [
+     "dictionary:egg:intentional:\"Ovalbumin\""
+    ]
+   }
+  },
+  {
+   "set": "v3",
+   "rep": 1,
+   "case": {
+    "id": "V07",
+    "cat": "scientific_derivative",
+    "text": "Product: Peptide Powder Ingredients: Arachis hypogaea protein isolate, maltodextrin.",
+    "ingredients": [
+     {
+      "term": "Arachis hypogaea protein isolate",
+      "allergen": "peanut"
+     }
+    ],
+    "lookalikes": [],
+    "may": [],
+    "review": false,
+    "rationale": "Arachis hypogaea is the Latin binomial for peanut; protein isolate indicates derivative."
+   },
+   "ms": 16876,
+   "nanoStatus": "ok",
+   "error": null,
+   "rawNano": {
+    "ingredients": [
+     {
+      "term": "Arachis hypogaea protein isolate",
+      "evidence": "Arachis hypogaea protein isolate",
+      "assertion": "intentional",
+      "allergen_guess": "unknown"
+     },
+     {
+      "term": "maltodextrin",
+      "evidence": "maltodextrin",
+      "assertion": "intentional",
+      "allergen_guess": "unknown"
+     }
+    ],
+    "absences": []
+   },
+   "rules": {
+    "contains": [
+     "peanut"
+    ],
+    "may": [],
+    "review": false,
+    "unresolved": [],
+    "unsupported": [],
+    "unsupportedAbsences": [],
+    "possible": [],
+    "absences": [],
+    "dictSpans": [
+     {
+      "allergen": "peanut",
+      "assertion": "intentional",
+      "evidence": "Arachis",
+      "start": 37,
+      "end": 44
+     }
+    ],
+    "evidence": [
+     "dictionary:peanut:intentional:\"Arachis\""
+    ]
+   },
+   "nano": {
+    "contains": [],
+    "may": [],
+    "review": true,
+    "unresolved": [
+     "Possible allergen in \"Arachis hypogaea protein isolate\" (intentional) \u2014 allergen UNKNOWN, verify",
+     "Possible allergen in \"maltodextrin\" (intentional) \u2014 allergen UNKNOWN, verify"
+    ],
+    "unsupported": [],
+    "unsupportedAbsences": [],
+    "possible": [
+     {
+      "term": "Arachis hypogaea protein isolate",
+      "evidence": "Arachis hypogaea protein isolate",
+      "assertion": "intentional",
+      "modelGuess": "unknown",
+      "start": 37,
+      "end": 69
+     },
+     {
+      "term": "maltodextrin",
+      "evidence": "maltodextrin",
+      "assertion": "intentional",
+      "modelGuess": "unknown",
+      "start": 71,
+      "end": 83
+     }
+    ],
+    "absences": [],
+    "dictSpans": [],
+    "evidence": []
+   },
+   "hybrid": {
+    "contains": [
+     "peanut"
+    ],
+    "may": [],
+    "review": true,
+    "unresolved": [
+     "Possible allergen in \"maltodextrin\" (intentional) \u2014 allergen UNKNOWN, verify"
+    ],
+    "unsupported": [],
+    "unsupportedAbsences": [],
+    "possible": [
+     {
+      "term": "maltodextrin",
+      "evidence": "maltodextrin",
+      "assertion": "intentional",
+      "modelGuess": "unknown",
+      "start": 71,
+      "end": 83
+     }
+    ],
+    "absences": [],
+    "dictSpans": [
+     {
+      "allergen": "peanut",
+      "assertion": "intentional",
+      "evidence": "Arachis",
+      "start": 37,
+      "end": 44
+     }
+    ],
+    "evidence": [
+     "dictionary:peanut:intentional:\"Arachis\""
+    ]
+   }
+  },
+  {
+   "set": "v3",
+   "rep": 1,
+   "case": {
+    "id": "V08",
+    "cat": "scientific_derivative",
+    "text": "Product: Hydrolysate 90 Ingredients: Glycine max protein hydrolysate, citric acid.",
+    "ingredients": [
+     {
+      "term": "Glycine max protein hydrolysate",
+      "allergen": "soy"
+     }
+    ],
+    "lookalikes": [],
+    "may": [],
+    "review": false,
+    "rationale": "Glycine max is the Latin binomial for soybean; protein hydrolysate confirms soy derivative."
+   },
+   "ms": 11340,
+   "nanoStatus": "ok",
+   "error": null,
+   "rawNano": {
+    "ingredients": [
+     {
+      "term": "Glycine max protein hydrolysate",
+      "evidence": "Glycine max protein hydrolysate",
+      "assertion": "intentional",
+      "allergen_guess": "unknown"
+     }
+    ],
+    "absences": []
+   },
+   "rules": {
+    "contains": [],
+    "may": [],
+    "review": false,
+    "unresolved": [],
+    "unsupported": [],
+    "unsupportedAbsences": [],
+    "possible": [],
+    "absences": [],
+    "dictSpans": [],
+    "evidence": []
+   },
+   "nano": {
+    "contains": [],
+    "may": [],
+    "review": true,
+    "unresolved": [
+     "Possible allergen in \"Glycine max protein hydrolysate\" (intentional) \u2014 allergen UNKNOWN, verify"
+    ],
+    "unsupported": [],
+    "unsupportedAbsences": [],
+    "possible": [
+     {
+      "term": "Glycine max protein hydrolysate",
+      "evidence": "Glycine max protein hydrolysate",
+      "assertion": "intentional",
+      "modelGuess": "unknown",
+      "start": 37,
+      "end": 68
+     }
+    ],
+    "absences": [],
+    "dictSpans": [],
+    "evidence": []
+   },
+   "hybrid": {
+    "contains": [],
+    "may": [],
+    "review": true,
+    "unresolved": [
+     "Possible allergen in \"Glycine max protein hydrolysate\" (intentional) \u2014 allergen UNKNOWN, verify"
+    ],
+    "unsupported": [],
+    "unsupportedAbsences": [],
+    "possible": [
+     {
+      "term": "Glycine max protein hydrolysate",
+      "evidence": "Glycine max protein hydrolysate",
+      "assertion": "intentional",
+      "modelGuess": "unknown",
+      "start": 37,
+      "end": 68
+     }
+    ],
+    "absences": [],
+    "dictSpans": [],
+    "evidence": []
+   }
+  },
+  {
+   "set": "v3",
+   "rep": 1,
+   "case": {
+    "id": "V09",
+    "cat": "subingredient_carrier",
+    "text": "Product: Natural Flavor System Ingredients: Natural flavor (contains wheat starch, propylene glycol), ethanol.",
+    "ingredients": [
+     {
+      "term": "wheat starch",
+      "allergen": "wheat"
+     }
+    ],
+    "lookalikes": [],
+    "may": [],
+    "review": false,
+    "rationale": "Wheat starch is declared inside the sub-ingredient list for natural flavor; wheat is a major allergen."
+   },
+   "ms": 14357,
+   "nanoStatus": "ok",
+   "error": null,
+   "rawNano": {
+    "ingredients": [
+     {
+      "term": "wheat starch",
+      "evidence": "Natural flavor (contains wheat starch, propylene glycol)",
+      "assertion": "intentional",
+      "allergen_guess": "wheat"
+     },
+     {
+      "term": "propylene glycol",
+      "evidence": "Natural flavor (contains wheat starch, propylene glycol)",
+      "assertion": "intentional",
+      "allergen_guess": "unknown"
+     }
+    ],
+    "absences": []
+   },
+   "rules": {
+    "contains": [
+     "wheat"
+    ],
+    "may": [],
+    "review": true,
+    "unresolved": [
+     "Ingredient with unspecified source (e.g. lecithin / natural flavour / emulsifier)"
+    ],
+    "unsupported": [],
+    "unsupportedAbsences": [],
+    "possible": [],
+    "absences": [],
+    "dictSpans": [
+     {
+      "allergen": "wheat",
+      "assertion": "intentional",
+      "evidence": "wheat",
+      "start": 69,
+      "end": 74
+     }
+    ],
+    "evidence": [
+     "dictionary:wheat:intentional:\"wheat\""
+    ]
+   },
+   "nano": {
+    "contains": [],
+    "may": [],
+    "review": true,
+    "unresolved": [
+     "Possible allergen in \"wheat starch\" (intentional) \u2014 allergen UNKNOWN, verify",
+     "Possible allergen in \"propylene glycol\" (intentional) \u2014 allergen UNKNOWN, verify"
+    ],
+    "unsupported": [],
+    "unsupportedAbsences": [],
+    "possible": [
+     {
+      "term": "wheat starch",
+      "evidence": "Natural flavor (contains wheat starch, propylene glycol",
+      "assertion": "intentional",
+      "modelGuess": "wheat",
+      "start": 44,
+      "end": 99
+     },
+     {
+      "term": "propylene glycol",
+      "evidence": "Natural flavor (contains wheat starch, propylene glycol",
+      "assertion": "intentional",
+      "modelGuess": "unknown",
+      "start": 44,
+      "end": 99
+     }
+    ],
+    "absences": [],
+    "dictSpans": [],
+    "evidence": []
+   },
+   "hybrid": {
+    "contains": [
+     "wheat"
+    ],
+    "may": [],
+    "review": true,
+    "unresolved": [
+     "Ingredient with unspecified source (e.g. lecithin / natural flavour / emulsifier)"
+    ],
+    "unsupported": [],
+    "unsupportedAbsences": [],
+    "possible": [],
+    "absences": [],
+    "dictSpans": [
+     {
+      "allergen": "wheat",
+      "assertion": "intentional",
+      "evidence": "wheat",
+      "start": 69,
+      "end": 74
+     }
+    ],
+    "evidence": [
+     "dictionary:wheat:intentional:\"wheat\""
+    ]
+   }
+  },
+  {
+   "set": "v3",
+   "rep": 1,
+   "case": {
+    "id": "V10",
+    "cat": "subingredient_carrier",
+    "text": "Product: Seasoning Blend Ingredients: Spice blend [contains soy flour, silicon dioxide], salt, garlic powder.",
+    "ingredients": [
+     {
+      "term": "soy flour",
+      "allergen": "soy"
+     }
+    ],
+    "lookalikes": [],
+    "may": [],
+    "review": false,
+    "rationale": "Soy flour appears inside the bracketed sub-ingredient list for spice blend; soy is a major allergen."
+   },
+   "ms": 13533,
+   "nanoStatus": "ok",
+   "error": null,
+   "rawNano": {
+    "ingredients": [
+     {
+      "term": "soy flour",
+      "evidence": "contains soy flour",
+      "assertion": "intentional",
+      "allergen_guess": "soy"
+     }
+    ],
+    "absences": []
+   },
+   "rules": {
+    "contains": [
+     "soy"
+    ],
+    "may": [],
+    "review": false,
+    "unresolved": [],
+    "unsupported": [],
+    "unsupportedAbsences": [],
+    "possible": [],
+    "absences": [],
+    "dictSpans": [
+     {
+      "allergen": "soy",
+      "assertion": "intentional",
+      "evidence": "soy",
+      "start": 60,
+      "end": 63
+     }
+    ],
+    "evidence": [
+     "dictionary:soy:intentional:\"soy\""
+    ]
+   },
+   "nano": {
+    "contains": [],
+    "may": [],
+    "review": true,
+    "unresolved": [
+     "Possible allergen in \"soy flour\" (intentional) \u2014 allergen UNKNOWN, verify"
+    ],
+    "unsupported": [],
+    "unsupportedAbsences": [],
+    "possible": [
+     {
+      "term": "soy flour",
+      "evidence": "contains soy flour",
+      "assertion": "intentional",
+      "modelGuess": "soy",
+      "start": 51,
+      "end": 69
+     }
+    ],
+    "absences": [],
+    "dictSpans": [],
+    "evidence": []
+   },
+   "hybrid": {
+    "contains": [
+     "soy"
+    ],
+    "may": [],
+    "review": false,
+    "unresolved": [],
+    "unsupported": [],
+    "unsupportedAbsences": [],
+    "possible": [],
+    "absences": [],
+    "dictSpans": [
+     {
+      "allergen": "soy",
+      "assertion": "intentional",
+      "evidence": "soy",
+      "start": 60,
+      "end": 63
+     }
+    ],
+    "evidence": [
+     "dictionary:soy:intentional:\"soy\""
+    ]
+   }
+  },
+  {
+   "set": "v3",
+   "rep": 1,
+   "case": {
+    "id": "V11",
+    "cat": "subingredient_carrier",
+    "text": "Product: Vitamin Premix Ingredients: Vitamin premix (carrier: maltodextrin from wheat, tricalcium phosphate), ascorbic acid.",
+    "ingredients": [
+     {
+      "term": "maltodextrin from wheat",
+      "allergen": "wheat"
+     }
+    ],
+    "lookalikes": [],
+    "may": [],
+    "review": false,
+    "rationale": "Maltodextrin from wheat is explicitly called out as a carrier in the vitamin premix sub-list."
+   },
+   "ms": 65877,
+   "nanoStatus": "ok",
+   "error": null,
+   "rawNano": {
+    "ingredients": [
+     {
+      "term": "maltodextrin",
+      "evidence": "carrier: maltodextrin from wheat",
+      "assertion": "intentional",
+      "allergen_guess": "wheat"
+     },
+     {
+      "term": "ascorbic acid",
+      "evidence": "ascorbic acid",
+      "assertion": "explicit_negative",
+      "allergen_guess": "unknown"
+     }
+    ],
+    "absences": [
+     {
+      "ingredient": "milk",
+      "missing": "source",
+      "ingredient_evidence": ""
+     },
+     {
+      "ingredient": "egg",
+      "missing": "source",
+      "ingredient_evidence": ""
+     },
+     {
+      "ingredient": "fish",
+      "missing": "source",
+      "ingredient_evidence": ""
+     },
+     {
+      "ingredient": "crustacean shellfish",
+      "missing": "source",
+      "ingredient_evidence": ""
+     },
+     {
+      "ingredient": "tree nuts",
+      "missing": "source",
+      "ingredient_evidence": ""
+     },
+     {
+      "ingredient": "peanut",
+      "missing": "source",
+      "ingredient_evidence": ""
+     },
+     {
+      "ingredient": "wheat",
+      "missing": "source",
+      "ingredient_evidence": "maltodextrin from wheat"
+     },
+     {
+      "ingredient": "soy",
+      "missing": "source",
+      "ingredient_evidence": ""
+     },
+     {
+      "ingredient": "sesame",
+      "missing": "source",
+      "ingredient_evidence": ""
+     }
+    ]
+   },
+   "rules": {
+    "contains": [
+     "wheat"
+    ],
+    "may": [],
+    "review": false,
+    "unresolved": [],
+    "unsupported": [],
+    "unsupportedAbsences": [],
+    "possible": [],
+    "absences": [],
+    "dictSpans": [
+     {
+      "allergen": "wheat",
+      "assertion": "intentional",
+      "evidence": "wheat",
+      "start": 80,
+      "end": 85
+     }
+    ],
+    "evidence": [
+     "dictionary:wheat:intentional:\"wheat\""
+    ]
+   },
+   "nano": {
+    "contains": [],
+    "may": [],
+    "review": true,
+    "unresolved": [
+     "Possible allergen in \"maltodextrin\" (intentional) \u2014 allergen UNKNOWN, verify",
+     "\"maltodextrin from wheat\": source not stated \u2014 could hide an allergen"
+    ],
+    "unsupported": [],
+    "unsupportedAbsences": [
+     "\"\"",
+     "\"\"",
+     "\"\"",
+     "\"\"",
+     "\"\"",
+     "\"\"",
+     "\"\"",
+     "\"\""
+    ],
+    "possible": [
+     {
+      "term": "maltodextrin",
+      "evidence": "carrier: maltodextrin from wheat",
+      "assertion": "intentional",
+      "modelGuess": "wheat",
+      "start": 53,
+      "end": 85
+     }
+    ],
+    "absences": [
+     {
+      "ingredient": "maltodextrin from wheat",
+      "missing": "source",
+      "start": 62,
+      "end": 85
+     }
+    ],
+    "dictSpans": [],
+    "evidence": []
+   },
+   "hybrid": {
+    "contains": [
+     "wheat"
+    ],
+    "may": [],
+    "review": true,
+    "unresolved": [
+     "\"maltodextrin from wheat\": source not stated \u2014 could hide an allergen"
+    ],
+    "unsupported": [],
+    "unsupportedAbsences": [
+     "\"\"",
+     "\"\"",
+     "\"\"",
+     "\"\"",
+     "\"\"",
+     "\"\"",
+     "\"\"",
+     "\"\""
+    ],
+    "possible": [],
+    "absences": [
+     {
+      "ingredient": "maltodextrin from wheat",
+      "missing": "source",
+      "start": 62,
+      "end": 85
+     }
+    ],
+    "dictSpans": [
+     {
+      "allergen": "wheat",
+      "assertion": "intentional",
+      "evidence": "wheat",
+      "start": 80,
+      "end": 85
+     }
+    ],
+    "evidence": [
+     "dictionary:wheat:intentional:\"wheat\""
+    ]
+   }
+  },
+  {
+   "set": "v3",
+   "rep": 1,
+   "case": {
+    "id": "V12",
+    "cat": "subingredient_carrier",
+    "text": "Product: Color Preparation Ingredients: Color added (carrier: sodium caseinate, glycerin), water.",
+    "ingredients": [
+     {
+      "term": "sodium caseinate",
+      "allergen": "milk"
+     }
+    ],
+    "lookalikes": [],
+    "may": [],
+    "review": false,
+    "rationale": "Sodium caseinate is a milk-derived protein used as a carrier; it appears in the parenthetical carrier list."
+   },
+   "ms": 23641,
+   "nanoStatus": "ok",
+   "error": null,
+   "rawNano": {
+    "ingredients": [
+     {
+      "term": "sodium caseinate",
+      "evidence": "Color added (carrier: sodium caseinate, glycerin), water.",
+      "assertion": "precautionary",
+      "allergen_guess": "milk"
+     },
+     {
+      "term": "glycerin",
+      "evidence": "Color added (carrier: sodium caseinate, glycerin), water.",
+      "assertion": "precautionary",
+      "allergen_guess": "unknown"
+     }
+    ],
+    "absences": []
+   },
+   "rules": {
+    "contains": [
+     "milk"
+    ],
+    "may": [],
+    "review": false,
+    "unresolved": [],
+    "unsupported": [],
+    "unsupportedAbsences": [],
+    "possible": [],
+    "absences": [],
+    "dictSpans": [
+     {
+      "allergen": "milk",
+      "assertion": "intentional",
+      "evidence": "caseinate",
+      "start": 69,
+      "end": 78
+     }
+    ],
+    "evidence": [
+     "dictionary:milk:intentional:\"caseinate\""
+    ]
+   },
+   "nano": {
+    "contains": [],
+    "may": [],
+    "review": true,
+    "unresolved": [
+     "Possible allergen in \"sodium caseinate\" (precautionary) \u2014 allergen UNKNOWN, verify",
+     "Possible allergen in \"glycerin\" (precautionary) \u2014 allergen UNKNOWN, verify"
+    ],
+    "unsupported": [],
+    "unsupportedAbsences": [],
+    "possible": [
+     {
+      "term": "sodium caseinate",
+      "evidence": "Color added (carrier: sodium caseinate, glycerin), water",
+      "assertion": "precautionary",
+      "modelGuess": "milk",
+      "start": 40,
+      "end": 96
+     },
+     {
+      "term": "glycerin",
+      "evidence": "Color added (carrier: sodium caseinate, glycerin), water",
+      "assertion": "precautionary",
+      "modelGuess": "unknown",
+      "start": 40,
+      "end": 96
+     }
+    ],
+    "absences": [],
+    "dictSpans": [],
+    "evidence": []
+   },
+   "hybrid": {
+    "contains": [
+     "milk"
+    ],
+    "may": [],
+    "review": false,
+    "unresolved": [],
+    "unsupported": [],
+    "unsupportedAbsences": [],
+    "possible": [],
+    "absences": [],
+    "dictSpans": [
+     {
+      "allergen": "milk",
+      "assertion": "intentional",
+      "evidence": "caseinate",
+      "start": 69,
+      "end": 78
+     }
+    ],
+    "evidence": [
+     "dictionary:milk:intentional:\"caseinate\""
+    ]
+   }
+  },
+  {
+   "set": "v3",
+   "rep": 1,
+   "case": {
+    "id": "V13",
+    "cat": "ambiguous",
+    "text": "Product: Savory Base Ingredients: Natural flavor, salt, yeast extract.",
+    "ingredients": [
+     {
+      "term": "Natural flavor",
+      "allergen": "ambiguous"
+     }
+    ],
+    "lookalikes": [],
+    "may": [],
+    "review": true,
+    "rationale": "Natural flavor has no declared source; it could be derived from any major allergen or none, requiring supplier clarification."
+   },
+   "ms": 14300,
+   "nanoStatus": "ok",
+   "error": null,
+   "rawNano": {
+    "ingredients": [
+     {
+      "term": "yeast extract",
+      "evidence": "Natural flavor, salt, yeast extract.",
+      "assertion": "intentional",
+      "allergen_guess": "unknown"
+     }
+    ],
+    "absences": []
+   },
+   "rules": {
+    "contains": [],
+    "may": [],
+    "review": true,
+    "unresolved": [
+     "Ingredient with unspecified source (e.g. lecithin / natural flavour / emulsifier)"
+    ],
+    "unsupported": [],
+    "unsupportedAbsences": [],
+    "possible": [],
+    "absences": [],
+    "dictSpans": [],
+    "evidence": []
+   },
+   "nano": {
+    "contains": [],
+    "may": [],
+    "review": true,
+    "unresolved": [
+     "Possible allergen in \"yeast extract\" (intentional) \u2014 allergen UNKNOWN, verify"
+    ],
+    "unsupported": [],
+    "unsupportedAbsences": [],
+    "possible": [
+     {
+      "term": "yeast extract",
+      "evidence": "Natural flavor, salt, yeast extract",
+      "assertion": "intentional",
+      "modelGuess": "unknown",
+      "start": 34,
+      "end": 69
+     }
+    ],
+    "absences": [],
+    "dictSpans": [],
+    "evidence": []
+   },
+   "hybrid": {
+    "contains": [],
+    "may": [],
+    "review": true,
+    "unresolved": [
+     "Ingredient with unspecified source (e.g. lecithin / natural flavour / emulsifier)",
+     "Possible allergen in \"yeast extract\" (intentional) \u2014 allergen UNKNOWN, verify"
+    ],
+    "unsupported": [],
+    "unsupportedAbsences": [],
+    "possible": [
+     {
+      "term": "yeast extract",
+      "evidence": "Natural flavor, salt, yeast extract",
+      "assertion": "intentional",
+      "modelGuess": "unknown",
+      "start": 34,
+      "end": 69
+     }
+    ],
+    "absences": [],
+    "dictSpans": [],
+    "evidence": []
+   }
+  },
+  {
+   "set": "v3",
+   "rep": 1,
+   "case": {
+    "id": "V14",
+    "cat": "ambiguous",
+    "text": "Product: Protein Booster Ingredients: Vegetable protein, carrageenan.",
+    "ingredients": [
+     {
+      "term": "Vegetable protein",
+      "allergen": "ambiguous"
+     }
+    ],
+    "lookalikes": [],
+    "may": [],
+    "review": true,
+    "rationale": "Vegetable protein does not identify the botanical source; it could be soy, wheat, pea, etc., so allergen status is unknown."
+   },
+   "ms": 21495,
+   "nanoStatus": "ok",
+   "error": null,
+   "rawNano": {
+    "ingredients": [
+     {
+      "term": "Vegetable protein",
+      "evidence": "Vegetable protein",
+      "assertion": "explicit_negative",
+      "allergen_guess": "unknown"
+     },
+     {
+      "term": "carrageenan",
+      "evidence": "carrageenan",
+      "assertion": "explicit_negative",
+      "allergen_guess": "unknown"
+     }
+    ],
+    "absences": []
+   },
+   "rules": {
+    "contains": [],
+    "may": [],
+    "review": false,
+    "unresolved": [],
+    "unsupported": [],
+    "unsupportedAbsences": [],
+    "possible": [],
+    "absences": [],
+    "dictSpans": [],
+    "evidence": []
+   },
+   "nano": {
+    "contains": [],
+    "may": [],
+    "review": false,
+    "unresolved": [],
+    "unsupported": [],
+    "unsupportedAbsences": [],
+    "possible": [],
+    "absences": [],
+    "dictSpans": [],
+    "evidence": []
+   },
+   "hybrid": {
+    "contains": [],
+    "may": [],
+    "review": false,
+    "unresolved": [],
+    "unsupported": [],
+    "unsupportedAbsences": [],
+    "possible": [],
+    "absences": [],
+    "dictSpans": [],
+    "evidence": []
+   }
+  },
+  {
+   "set": "v3",
+   "rep": 1,
+   "case": {
+    "id": "V15",
+    "cat": "ambiguous",
+    "text": "Product: Hydrolyzed Protein Blend Ingredients: Hydrolyzed plant protein, disodium inosinate.",
+    "ingredients": [
+     {
+      "term": "Hydrolyzed plant protein",
+      "allergen": "ambiguous"
+     }
+    ],
+    "lookalikes": [],
+    "may": [],
+    "review": true,
+    "rationale": "Hydrolyzed plant protein lacks a source declaration; it may originate from soy, wheat, or other allergens."
+   },
+   "ms": 21775,
+   "nanoStatus": "ok",
+   "error": null,
+   "rawNano": {
+    "ingredients": [
+     {
+      "term": "Hydrolyzed plant protein",
+      "evidence": "Hydrolyzed plant protein",
+      "assertion": "intentional",
+      "allergen_guess": "soy"
+     },
+     {
+      "term": "disodium inosinate",
+      "evidence": "disodium inosinate",
+      "assertion": "intentional",
+      "allergen_guess": "unknown"
+     }
+    ],
+    "absences": []
+   },
+   "rules": {
+    "contains": [],
+    "may": [],
+    "review": false,
+    "unresolved": [],
+    "unsupported": [],
+    "unsupportedAbsences": [],
+    "possible": [],
+    "absences": [],
+    "dictSpans": [],
+    "evidence": []
+   },
+   "nano": {
+    "contains": [],
+    "may": [],
+    "review": true,
+    "unresolved": [
+     "Possible allergen in \"Hydrolyzed plant protein\" (intentional) \u2014 allergen UNKNOWN, verify",
+     "Possible allergen in \"disodium inosinate\" (intentional) \u2014 allergen UNKNOWN, verify"
+    ],
+    "unsupported": [],
+    "unsupportedAbsences": [],
+    "possible": [
+     {
+      "term": "Hydrolyzed plant protein",
+      "evidence": "Hydrolyzed plant protein",
+      "assertion": "intentional",
+      "modelGuess": "soy",
+      "start": 47,
+      "end": 71
+     },
+     {
+      "term": "disodium inosinate",
+      "evidence": "disodium inosinate",
+      "assertion": "intentional",
+      "modelGuess": "unknown",
+      "start": 73,
+      "end": 91
+     }
+    ],
+    "absences": [],
+    "dictSpans": [],
+    "evidence": []
+   },
+   "hybrid": {
+    "contains": [],
+    "may": [],
+    "review": true,
+    "unresolved": [
+     "Possible allergen in \"Hydrolyzed plant protein\" (intentional) \u2014 allergen UNKNOWN, verify",
+     "Possible allergen in \"disodium inosinate\" (intentional) \u2014 allergen UNKNOWN, verify"
+    ],
+    "unsupported": [],
+    "unsupportedAbsences": [],
+    "possible": [
+     {
+      "term": "Hydrolyzed plant protein",
+      "evidence": "Hydrolyzed plant protein",
+      "assertion": "intentional",
+      "modelGuess": "soy",
+      "start": 47,
+      "end": 71
+     },
+     {
+      "term": "disodium inosinate",
+      "evidence": "disodium inosinate",
+      "assertion": "intentional",
+      "modelGuess": "unknown",
+      "start": 73,
+      "end": 91
+     }
+    ],
+    "absences": [],
+    "dictSpans": [],
+    "evidence": []
+   }
+  },
+  {
+   "set": "v3",
+   "rep": 1,
+   "case": {
+    "id": "V16",
+    "cat": "negative_lookalike",
+    "text": "Product: Oat Beverage Base Ingredients: Oat milk (water, oats, enzymes), calcium carbonate.",
+    "ingredients": [],
+    "lookalikes": [
+     "Oat milk"
+    ],
+    "may": [],
+    "review": false,
+    "rationale": "Oat milk contains the word 'milk' but oats are not a US major allergen; no major allergen ingredients present."
+   },
+   "ms": 14597,
+   "nanoStatus": "ok",
+   "error": null,
+   "rawNano": {
+    "ingredients": [
+     {
+      "term": "oats",
+      "evidence": "Oat milk (water, oats, enzymes)",
+      "assertion": "intentional",
+      "allergen_guess": "unknown"
+     }
+    ],
+    "absences": []
+   },
+   "rules": {
+    "contains": [
+     "milk"
+    ],
+    "may": [],
+    "review": false,
+    "unresolved": [],
+    "unsupported": [],
+    "unsupportedAbsences": [],
+    "possible": [],
+    "absences": [],
+    "dictSpans": [
+     {
+      "allergen": "milk",
+      "assertion": "intentional",
+      "evidence": "milk",
+      "start": 44,
+      "end": 48
+     }
+    ],
+    "evidence": [
+     "dictionary:milk:intentional:\"milk\""
+    ]
+   },
+   "nano": {
+    "contains": [],
+    "may": [],
+    "review": true,
+    "unresolved": [
+     "Possible allergen in \"oats\" (intentional) \u2014 allergen UNKNOWN, verify"
+    ],
+    "unsupported": [],
+    "unsupportedAbsences": [],
+    "possible": [
+     {
+      "term": "oats",
+      "evidence": "Oat milk (water, oats, enzymes",
+      "assertion": "intentional",
+      "modelGuess": "unknown",
+      "start": 40,
+      "end": 70
+     }
+    ],
+    "absences": [],
+    "dictSpans": [],
+    "evidence": []
+   },
+   "hybrid": {
+    "contains": [
+     "milk"
+    ],
+    "may": [],
+    "review": false,
+    "unresolved": [],
+    "unsupported": [],
+    "unsupportedAbsences": [],
+    "possible": [],
+    "absences": [],
+    "dictSpans": [
+     {
+      "allergen": "milk",
+      "assertion": "intentional",
+      "evidence": "milk",
+      "start": 44,
+      "end": 48
+     }
+    ],
+    "evidence": [
+     "dictionary:milk:intentional:\"milk\""
+    ]
+   }
+  },
+  {
+   "set": "v3",
+   "rep": 1,
+   "case": {
+    "id": "V17",
+    "cat": "negative_lookalike",
+    "text": "Product: Chocolate Coating Ingredients: Cocoa butter, sugar, soy lecithin, vanilla.",
+    "ingredients": [
+     {
+      "term": "soy lecithin",
+      "allergen": "soy"
+     }
+    ],
+    "lookalikes": [
+     "Cocoa butter"
+    ],
+    "may": [],
+    "review": false,
+    "rationale": "Cocoa butter contains 'butter' but is a vegetable fat from cacao, not dairy; soy lecithin is the only major allergen."
+   },
+   "ms": 13178,
+   "nanoStatus": "ok",
+   "error": null,
+   "rawNano": {
+    "ingredients": [
+     {
+      "term": "soy lecithin",
+      "evidence": "soy lecithin",
+      "assertion": "intentional",
+      "allergen_guess": "soy"
+     }
+    ],
+    "absences": []
+   },
+   "rules": {
+    "contains": [
+     "soy"
+    ],
+    "may": [],
+    "review": false,
+    "unresolved": [],
+    "unsupported": [],
+    "unsupportedAbsences": [],
+    "possible": [],
+    "absences": [],
+    "dictSpans": [
+     {
+      "allergen": "soy",
+      "assertion": "intentional",
+      "evidence": "soy",
+      "start": 61,
+      "end": 64
+     }
+    ],
+    "evidence": [
+     "dictionary:soy:intentional:\"soy\""
+    ]
+   },
+   "nano": {
+    "contains": [],
+    "may": [],
+    "review": true,
+    "unresolved": [
+     "Possible allergen in \"soy lecithin\" (intentional) \u2014 allergen UNKNOWN, verify"
+    ],
+    "unsupported": [],
+    "unsupportedAbsences": [],
+    "possible": [
+     {
+      "term": "soy lecithin",
+      "evidence": "soy lecithin",
+      "assertion": "intentional",
+      "modelGuess": "soy",
+      "start": 61,
+      "end": 73
+     }
+    ],
+    "absences": [],
+    "dictSpans": [],
+    "evidence": []
+   },
+   "hybrid": {
+    "contains": [
+     "soy"
+    ],
+    "may": [],
+    "review": false,
+    "unresolved": [],
+    "unsupported": [],
+    "unsupportedAbsences": [],
+    "possible": [],
+    "absences": [],
+    "dictSpans": [
+     {
+      "allergen": "soy",
+      "assertion": "intentional",
+      "evidence": "soy",
+      "start": 61,
+      "end": 64
+     }
+    ],
+    "evidence": [
+     "dictionary:soy:intentional:\"soy\""
+    ]
+   }
+  },
+  {
+   "set": "v3",
+   "rep": 1,
+   "case": {
+    "id": "V18",
+    "cat": "negative_lookalike",
+    "text": "Product: Stir-Fry Mix Ingredients: Water chestnut, bamboo shoots, soy sauce (water, wheat, soybeans, salt).",
+    "ingredients": [
+     {
+      "term": "soy sauce (water, wheat, soybeans, salt)",
+      "allergen": "soy"
+     },
+     {
+      "term": "soy sauce (water, wheat, soybeans, salt)",
+      "allergen": "wheat"
+     }
+    ],
+    "lookalikes": [
+     "Water chestnut"
+    ],
+    "may": [],
+    "review": false,
+    "rationale": "Water chestnut includes 'nut' but is an aquatic vegetable, not a tree nut; soy sauce contributes soy and wheat allergens."
+   },
+   "ms": 83436,
+   "nanoStatus": "ok",
+   "error": null,
+   "rawNano": {
+    "ingredients": [
+     {
+      "term": "soy sauce",
+      "evidence": "soy sauce (water, wheat, soybeans, salt)",
+      "assertion": "intentional",
+      "allergen_guess": "soy"
+     },
+     {
+      "term": "wheat",
+      "evidence": "soy sauce (water, wheat, soybeans, salt)",
+      "assertion": "intentional",
+      "allergen_guess": "wheat"
+     },
+     {
+      "term": "soybeans",
+      "evidence": "soy sauce (water, wheat, soybeans, salt)",
+      "assertion": "intentional",
+      "allergen_guess": "soy"
+     }
+    ],
+    "absences": [
+     {
+      "ingredient": "milk",
+      "missing": "source",
+      "ingredient_evidence": "Water chestnut, bamboo shoots, soy sauce (water, wheat, soybeans, salt)"
+     },
+     {
+      "ingredient": "egg",
+      "missing": "source",
+      "ingredient_evidence": "Water chestnut, bamboo shoots, soy sauce (water, wheat, soybeans, salt)"
+     },
+     {
+      "ingredient": "fish",
+      "missing": "source",
+      "ingredient_evidence": "Water chestnut, bamboo shoots, soy sauce (water, wheat, soybeans, salt)"
+     },
+     {
+      "ingredient": "crustacean shellfish",
+      "missing": "source",
+      "ingredient_evidence": "Water chestnut, bamboo shoots, soy sauce (water, wheat, soybeans, salt)"
+     },
+     {
+      "ingredient": "tree nuts",
+      "missing": "source",
+      "ingredient_evidence": "Water chestnut, bamboo shoots, soy sauce (water, wheat, soybeans, salt)"
+     },
+     {
+      "ingredient": "peanut",
+      "missing": "source",
+      "ingredient_evidence": "Water chestnut, bamboo shoots, soy sauce (water, wheat, soybeans, salt)"
+     },
+     {
+      "ingredient": "sesame",
+      "missing": "source",
+      "ingredient_evidence": "Water chestnut, bamboo shoots, soy sauce (water, wheat, soybeans, salt)"
+     }
+    ]
+   },
+   "rules": {
+    "contains": [
+     "soy",
+     "wheat"
+    ],
+    "may": [],
+    "review": false,
+    "unresolved": [],
+    "unsupported": [],
+    "unsupportedAbsences": [],
+    "possible": [],
+    "absences": [],
+    "dictSpans": [
+     {
+      "allergen": "wheat",
+      "assertion": "intentional",
+      "evidence": "wheat",
+      "start": 84,
+      "end": 89
+     },
+     {
+      "allergen": "soy",
+      "assertion": "intentional",
+      "evidence": "soy",
+      "start": 66,
+      "end": 69
+     }
+    ],
+    "evidence": [
+     "dictionary:wheat:intentional:\"wheat\"",
+     "dictionary:soy:intentional:\"soy\""
+    ]
+   },
+   "nano": {
+    "contains": [],
+    "may": [],
+    "review": true,
+    "unresolved": [
+     "Possible allergen in \"soy sauce\" (intentional) \u2014 allergen UNKNOWN, verify",
+     "Possible allergen in \"wheat\" (intentional) \u2014 allergen UNKNOWN, verify",
+     "Possible allergen in \"soybeans\" (intentional) \u2014 allergen UNKNOWN, verify",
+     "\"Water chestnut, bamboo shoots, soy sauce (water, wheat, soybeans, salt\": source not stated \u2014 could hide an allergen"
+    ],
+    "unsupported": [],
+    "unsupportedAbsences": [],
+    "possible": [
+     {
+      "term": "soy sauce",
+      "evidence": "soy sauce (water, wheat, soybeans, salt",
+      "assertion": "intentional",
+      "modelGuess": "soy",
+      "start": 66,
+      "end": 105
+     },
+     {
+      "term": "wheat",
+      "evidence": "soy sauce (water, wheat, soybeans, salt",
+      "assertion": "intentional",
+      "modelGuess": "wheat",
+      "start": 66,
+      "end": 105
+     },
+     {
+      "term": "soybeans",
+      "evidence": "soy sauce (water, wheat, soybeans, salt",
+      "assertion": "intentional",
+      "modelGuess": "soy",
+      "start": 66,
+      "end": 105
+     }
+    ],
+    "absences": [
+     {
+      "ingredient": "Water chestnut, bamboo shoots, soy sauce (water, wheat, soybeans, salt",
+      "missing": "source",
+      "start": 35,
+      "end": 105
+     }
+    ],
+    "dictSpans": [],
+    "evidence": []
+   },
+   "hybrid": {
+    "contains": [
+     "soy",
+     "wheat"
+    ],
+    "may": [],
+    "review": true,
+    "unresolved": [
+     "\"Water chestnut, bamboo shoots, soy sauce (water, wheat, soybeans, salt\": source not stated \u2014 could hide an allergen"
+    ],
+    "unsupported": [],
+    "unsupportedAbsences": [],
+    "possible": [],
+    "absences": [
+     {
+      "ingredient": "Water chestnut, bamboo shoots, soy sauce (water, wheat, soybeans, salt",
+      "missing": "source",
+      "start": 35,
+      "end": 105
+     }
+    ],
+    "dictSpans": [
+     {
+      "allergen": "wheat",
+      "assertion": "intentional",
+      "evidence": "wheat",
+      "start": 84,
+      "end": 89
+     },
+     {
+      "allergen": "soy",
+      "assertion": "intentional",
+      "evidence": "soy",
+      "start": 66,
+      "end": 69
+     }
+    ],
+    "evidence": [
+     "dictionary:wheat:intentional:\"wheat\"",
+     "dictionary:soy:intentional:\"soy\""
+    ]
+   }
+  },
+  {
+   "set": "v3",
+   "rep": 1,
+   "case": {
+    "id": "V19",
+    "cat": "negative_lookalike",
+    "text": "Product: Fruit Spread Ingredients: Apple butter (apples, sugar, cinnamon), pectin.",
+    "ingredients": [],
+    "lookalikes": [
+     "Apple butter"
+    ],
+    "may": [],
+    "review": false,
+    "rationale": "Apple butter contains 'butter' but is a fruit concentrate with no dairy; no major allergen ingredients present."
+   },
+   "ms": 82117,
+   "nanoStatus": "ok",
+   "error": null,
+   "rawNano": {
+    "ingredients": [
+     {
+      "term": "apples",
+      "evidence": "Apple butter (apples, sugar, cinnamon)",
+      "assertion": "intentional",
+      "allergen_guess": "unknown"
+     },
+     {
+      "term": "sugar",
+      "evidence": "Apple butter (apples, sugar, cinnamon)",
+      "assertion": "intentional",
+      "allergen_guess": "unknown"
+     },
+     {
+      "term": "cinnamon",
+      "evidence": "Apple butter (apples, sugar, cinnamon)",
+      "assertion": "intentional",
+      "allergen_guess": "unknown"
+     },
+     {
+      "term": "pectin",
+      "evidence": "pectin.",
+      "assertion": "intentional",
+      "allergen_guess": "unknown"
+     }
+    ],
+    "absences": [
+     {
+      "ingredient": "milk",
+      "missing": "source",
+      "ingredient_evidence": ""
+     },
+     {
+      "ingredient": "egg",
+      "missing": "source",
+      "ingredient_evidence": ""
+     },
+     {
+      "ingredient": "fish",
+      "missing": "source",
+      "ingredient_evidence": ""
+     },
+     {
+      "ingredient": "crustacean shellfish",
+      "missing": "source",
+      "ingredient_evidence": ""
+     },
+     {
+      "ingredient": "tree nuts",
+      "missing": "source",
+      "ingredient_evidence": ""
+     },
+     {
+      "ingredient": "peanut",
+      "missing": "source",
+      "ingredient_evidence": ""
+     },
+     {
+      "ingredient": "wheat",
+      "missing": "source",
+      "ingredient_evidence": ""
+     },
+     {
+      "ingredient": "soy",
+      "missing": "source",
+      "ingredient_evidence": ""
+     },
+     {
+      "ingredient": "sesame",
+      "missing": "source",
+      "ingredient_evidence": ""
+     }
+    ]
+   },
+   "rules": {
+    "contains": [
+     "milk"
+    ],
+    "may": [],
+    "review": false,
+    "unresolved": [],
+    "unsupported": [],
+    "unsupportedAbsences": [],
+    "possible": [],
+    "absences": [],
+    "dictSpans": [
+     {
+      "allergen": "milk",
+      "assertion": "intentional",
+      "evidence": "butter",
+      "start": 41,
+      "end": 47
+     }
+    ],
+    "evidence": [
+     "dictionary:milk:intentional:\"butter\""
+    ]
+   },
+   "nano": {
+    "contains": [],
+    "may": [],
+    "review": true,
+    "unresolved": [
+     "Possible allergen in \"apples\" (intentional) \u2014 allergen UNKNOWN, verify",
+     "Possible allergen in \"sugar\" (intentional) \u2014 allergen UNKNOWN, verify",
+     "Possible allergen in \"cinnamon\" (intentional) \u2014 allergen UNKNOWN, verify",
+     "Possible allergen in \"pectin\" (intentional) \u2014 allergen UNKNOWN, verify"
+    ],
+    "unsupported": [],
+    "unsupportedAbsences": [
+     "\"\"",
+     "\"\"",
+     "\"\"",
+     "\"\"",
+     "\"\"",
+     "\"\"",
+     "\"\"",
+     "\"\"",
+     "\"\""
+    ],
+    "possible": [
+     {
+      "term": "apples",
+      "evidence": "Apple butter (apples, sugar, cinnamon",
+      "assertion": "intentional",
+      "modelGuess": "unknown",
+      "start": 35,
+      "end": 72
+     },
+     {
+      "term": "sugar",
+      "evidence": "Apple butter (apples, sugar, cinnamon",
+      "assertion": "intentional",
+      "modelGuess": "unknown",
+      "start": 35,
+      "end": 72
+     },
+     {
+      "term": "cinnamon",
+      "evidence": "Apple butter (apples, sugar, cinnamon",
+      "assertion": "intentional",
+      "modelGuess": "unknown",
+      "start": 35,
+      "end": 72
+     },
+     {
+      "term": "pectin",
+      "evidence": "pectin",
+      "assertion": "intentional",
+      "modelGuess": "unknown",
+      "start": 75,
+      "end": 81
+     }
+    ],
+    "absences": [],
+    "dictSpans": [],
+    "evidence": []
+   },
+   "hybrid": {
+    "contains": [
+     "milk"
+    ],
+    "may": [],
+    "review": true,
+    "unresolved": [
+     "Possible allergen in \"pectin\" (intentional) \u2014 allergen UNKNOWN, verify"
+    ],
+    "unsupported": [],
+    "unsupportedAbsences": [
+     "\"\"",
+     "\"\"",
+     "\"\"",
+     "\"\"",
+     "\"\"",
+     "\"\"",
+     "\"\"",
+     "\"\"",
+     "\"\""
+    ],
+    "possible": [
+     {
+      "term": "pectin",
+      "evidence": "pectin",
+      "assertion": "intentional",
+      "modelGuess": "unknown",
+      "start": 75,
+      "end": 81
+     }
+    ],
+    "absences": [],
+    "dictSpans": [
+     {
+      "allergen": "milk",
+      "assertion": "intentional",
+      "evidence": "butter",
+      "start": 41,
+      "end": 47
+     }
+    ],
+    "evidence": [
+     "dictionary:milk:intentional:\"butter\""
+    ]
+   }
+  },
+  {
+   "set": "v3",
+   "rep": 1,
+   "case": {
+    "id": "V20",
+    "cat": "negative_lookalike",
+    "text": "Product: Gluten-Free Flour Blend Ingredients: Tiger nut flour, rice flour, tapioca starch.",
+    "ingredients": [],
+    "lookalikes": [
+     "Tiger nut flour"
+    ],
+    "may": [],
+    "review": false,
+    "rationale": "Tiger nut is a tuber (Cyperus esculentus), not a tree nut; the term 'nut' appears but no major allergen is present."
+   },
+   "ms": 29095,
+   "nanoStatus": "ok",
+   "error": null,
+   "rawNano": {
+    "ingredients": [
+     {
+      "term": "Tiger nut flour",
+      "evidence": "Tiger nut flour,",
+      "assertion": "intentional",
+      "allergen_guess": "treenut"
+     },
+     {
+      "term": "rice flour",
+      "evidence": "rice flour,",
+      "assertion": "intentional",
+      "allergen_guess": "unknown"
+     },
+     {
+      "term": "tapioca starch",
+      "evidence": "tapioca starch.",
+      "assertion": "intentional",
+      "allergen_guess": "unknown"
+     }
+    ],
+    "absences": []
+   },
+   "rules": {
+    "contains": [],
+    "may": [],
+    "review": false,
+    "unresolved": [],
+    "unsupported": [],
+    "unsupportedAbsences": [],
+    "possible": [],
+    "absences": [],
+    "dictSpans": [],
+    "evidence": []
+   },
+   "nano": {
+    "contains": [],
+    "may": [],
+    "review": true,
+    "unresolved": [
+     "Possible allergen in \"Tiger nut flour\" (intentional) \u2014 allergen UNKNOWN, verify",
+     "Possible allergen in \"rice flour\" (intentional) \u2014 allergen UNKNOWN, verify",
+     "Possible allergen in \"tapioca starch\" (intentional) \u2014 allergen UNKNOWN, verify"
+    ],
+    "unsupported": [],
+    "unsupportedAbsences": [],
+    "possible": [
+     {
+      "term": "Tiger nut flour",
+      "evidence": "Tiger nut flour",
+      "assertion": "intentional",
+      "modelGuess": "treenut",
+      "start": 46,
+      "end": 61
+     },
+     {
+      "term": "rice flour",
+      "evidence": "rice flour",
+      "assertion": "intentional",
+      "modelGuess": "unknown",
+      "start": 63,
+      "end": 73
+     },
+     {
+      "term": "tapioca starch",
+      "evidence": "tapioca starch",
+      "assertion": "intentional",
+      "modelGuess": "unknown",
+      "start": 75,
+      "end": 89
+     }
+    ],
+    "absences": [],
+    "dictSpans": [],
+    "evidence": []
+   },
+   "hybrid": {
+    "contains": [],
+    "may": [],
+    "review": true,
+    "unresolved": [
+     "Possible allergen in \"Tiger nut flour\" (intentional) \u2014 allergen UNKNOWN, verify",
+     "Possible allergen in \"rice flour\" (intentional) \u2014 allergen UNKNOWN, verify",
+     "Possible allergen in \"tapioca starch\" (intentional) \u2014 allergen UNKNOWN, verify"
+    ],
+    "unsupported": [],
+    "unsupportedAbsences": [],
+    "possible": [
+     {
+      "term": "Tiger nut flour",
+      "evidence": "Tiger nut flour",
+      "assertion": "intentional",
+      "modelGuess": "treenut",
+      "start": 46,
+      "end": 61
+     },
+     {
+      "term": "rice flour",
+      "evidence": "rice flour",
+      "assertion": "intentional",
+      "modelGuess": "unknown",
+      "start": 63,
+      "end": 73
+     },
+     {
+      "term": "tapioca starch",
+      "evidence": "tapioca starch",
+      "assertion": "intentional",
+      "modelGuess": "unknown",
+      "start": 75,
+      "end": 89
+     }
+    ],
+    "absences": [],
+    "dictSpans": [],
+    "evidence": []
+   }
+  },
+  {
+   "set": "v3",
+   "rep": 2,
+   "case": {
+    "id": "V01",
+    "cat": "unfamiliar",
+    "text": "Product: Khoa Powder Ingredients: Khoa (concentrated milk solids), anticaking agent (silicon dioxide).",
+    "ingredients": [
+     {
+      "term": "Khoa",
+      "allergen": "milk"
+     }
+    ],
+    "lookalikes": [],
+    "may": [],
+    "review": false,
+    "rationale": "Khoa is a traditional Indian dairy ingredient (concentrated milk solids); the term appears verbatim and maps to milk."
+   },
+   "ms": 10927,
+   "nanoStatus": "ok",
+   "error": null,
+   "rawNano": {
+    "ingredients": [
+     {
+      "term": "milk solids",
+      "evidence": "Khoa (concentrated milk solids)",
+      "assertion": "intentional",
+      "allergen_guess": "milk"
+     }
+    ],
+    "absences": []
+   },
+   "rules": {
+    "contains": [
+     "milk"
+    ],
+    "may": [],
+    "review": false,
+    "unresolved": [],
+    "unsupported": [],
+    "unsupportedAbsences": [],
+    "possible": [],
+    "absences": [],
+    "dictSpans": [
+     {
+      "allergen": "milk",
+      "assertion": "intentional",
+      "evidence": "milk",
+      "start": 53,
+      "end": 57
+     }
+    ],
+    "evidence": [
+     "dictionary:milk:intentional:\"milk\""
+    ]
+   },
+   "nano": {
+    "contains": [],
+    "may": [],
+    "review": true,
+    "unresolved": [
+     "Possible allergen in \"milk solids\" (intentional) \u2014 allergen UNKNOWN, verify"
+    ],
+    "unsupported": [],
+    "unsupportedAbsences": [],
+    "possible": [
+     {
+      "term": "milk solids",
+      "evidence": "Khoa (concentrated milk solids",
+      "assertion": "intentional",
+      "modelGuess": "milk",
+      "start": 34,
+      "end": 64
+     }
+    ],
+    "absences": [],
+    "dictSpans": [],
+    "evidence": []
+   },
+   "hybrid": {
+    "contains": [
+     "milk"
+    ],
+    "may": [],
+    "review": false,
+    "unresolved": [],
+    "unsupported": [],
+    "unsupportedAbsences": [],
+    "possible": [],
+    "absences": [],
+    "dictSpans": [
+     {
+      "allergen": "milk",
+      "assertion": "intentional",
+      "evidence": "milk",
+      "start": 53,
+      "end": 57
+     }
+    ],
+    "evidence": [
+     "dictionary:milk:intentional:\"milk\""
+    ]
+   }
+  },
+  {
+   "set": "v3",
+   "rep": 2,
+   "case": {
+    "id": "V02",
+    "cat": "unfamiliar",
+    "text": "Product: Surimi Base Ingredients: Surimi (Alaska pollock, sugar, sorbitol, polyphosphates), water, starch.",
+    "ingredients": [
+     {
+      "term": "Surimi",
+      "allergen": "fish"
+     }
+    ],
+    "lookalikes": [],
+    "may": [],
+    "review": false,
+    "rationale": "Surimi is a Japanese term for minced fish paste; the snippet names Alaska pollock, confirming fish."
+   },
+   "ms": 16192,
+   "nanoStatus": "ok",
+   "error": null,
+   "rawNano": {
+    "ingredients": [
+     {
+      "term": "Alaska pollock",
+      "evidence": "Surimi (Alaska pollock, sugar, sorbitol, polyphosphates)",
+      "assertion": "intentional",
+      "allergen_guess": "fish"
+     }
+    ],
+    "absences": []
+   },
+   "rules": {
+    "contains": [
+     "fish"
+    ],
+    "may": [],
+    "review": false,
+    "unresolved": [],
+    "unsupported": [],
+    "unsupportedAbsences": [],
+    "possible": [],
+    "absences": [],
+    "dictSpans": [
+     {
+      "allergen": "fish",
+      "assertion": "intentional",
+      "evidence": "pollock",
+      "start": 49,
+      "end": 56
+     }
+    ],
+    "evidence": [
+     "dictionary:fish:intentional:\"pollock\""
+    ]
+   },
+   "nano": {
+    "contains": [],
+    "may": [],
+    "review": true,
+    "unresolved": [
+     "Possible allergen in \"Alaska pollock\" (intentional) \u2014 allergen UNKNOWN, verify"
+    ],
+    "unsupported": [],
+    "unsupportedAbsences": [],
+    "possible": [
+     {
+      "term": "Alaska pollock",
+      "evidence": "Surimi (Alaska pollock, sugar, sorbitol, polyphosphates",
+      "assertion": "intentional",
+      "modelGuess": "fish",
+      "start": 34,
+      "end": 89
+     }
+    ],
+    "absences": [],
+    "dictSpans": [],
+    "evidence": []
+   },
+   "hybrid": {
+    "contains": [
+     "fish"
+    ],
+    "may": [],
+    "review": false,
+    "unresolved": [],
+    "unsupported": [],
+    "unsupportedAbsences": [],
+    "possible": [],
+    "absences": [],
+    "dictSpans": [
+     {
+      "allergen": "fish",
+      "assertion": "intentional",
+      "evidence": "pollock",
+      "start": 49,
+      "end": 56
+     }
+    ],
+    "evidence": [
+     "dictionary:fish:intentional:\"pollock\""
+    ]
+   }
+  },
+  {
+   "set": "v3",
+   "rep": 2,
+   "case": {
+    "id": "V03",
+    "cat": "unfamiliar",
+    "text": "Product: Tahini Paste Ingredients: Tahini (100% roasted sesame seed), salt.",
+    "ingredients": [
+     {
+      "term": "Tahini",
+      "allergen": "sesame"
+     }
+    ],
+    "lookalikes": [],
+    "may": [],
+    "review": false,
+    "rationale": "Tahini is the common Middle-Eastern name for sesame seed paste; sesame is a US major allergen."
+   },
+   "ms": 66367,
+   "nanoStatus": "ok",
+   "error": null,
+   "rawNano": {
+    "ingredients": [
+     {
+      "term": "Tahini",
+      "evidence": "Tahini (100% roasted sesame seed)",
+      "assertion": "intentional",
+      "allergen_guess": "sesame"
+     },
+     {
+      "term": "salt",
+      "evidence": "salt",
+      "assertion": "intentional",
+      "allergen_guess": "unknown"
+     }
+    ],
+    "absences": [
+     {
+      "ingredient": "milk",
+      "missing": "source",
+      "ingredient_evidence": ""
+     },
+     {
+      "ingredient": "egg",
+      "missing": "source",
+      "ingredient_evidence": ""
+     },
+     {
+      "ingredient": "fish",
+      "missing": "source",
+      "ingredient_evidence": ""
+     },
+     {
+      "ingredient": "crustacean shellfish",
+      "missing": "source",
+      "ingredient_evidence": ""
+     },
+     {
+      "ingredient": "tree nuts",
+      "missing": "source",
+      "ingredient_evidence": ""
+     },
+     {
+      "ingredient": "peanut",
+      "missing": "source",
+      "ingredient_evidence": ""
+     },
+     {
+      "ingredient": "wheat",
+      "missing": "source",
+      "ingredient_evidence": ""
+     },
+     {
+      "ingredient": "soy",
+      "missing": "source",
+      "ingredient_evidence": ""
+     },
+     {
+      "ingredient": "sesame",
+      "missing": "source",
+      "ingredient_evidence": "Tahini (100% roasted sesame seed)"
+     }
+    ]
+   },
+   "rules": {
+    "contains": [
+     "sesame"
+    ],
+    "may": [],
+    "review": false,
+    "unresolved": [],
+    "unsupported": [],
+    "unsupportedAbsences": [],
+    "possible": [],
+    "absences": [],
+    "dictSpans": [
+     {
+      "allergen": "sesame",
+      "assertion": "intentional",
+      "evidence": "sesame",
+      "start": 56,
+      "end": 62
+     }
+    ],
+    "evidence": [
+     "dictionary:sesame:intentional:\"sesame\""
+    ]
+   },
+   "nano": {
+    "contains": [],
+    "may": [],
+    "review": true,
+    "unresolved": [
+     "Possible allergen in \"Tahini\" (intentional) \u2014 allergen UNKNOWN, verify",
+     "Possible allergen in \"salt\" (intentional) \u2014 allergen UNKNOWN, verify",
+     "\"Tahini (100% roasted sesame seed\": source not stated \u2014 could hide an allergen"
+    ],
+    "unsupported": [],
+    "unsupportedAbsences": [
+     "\"\"",
+     "\"\"",
+     "\"\"",
+     "\"\"",
+     "\"\"",
+     "\"\"",
+     "\"\"",
+     "\"\""
+    ],
+    "possible": [
+     {
+      "term": "Tahini",
+      "evidence": "Tahini (100% roasted sesame seed",
+      "assertion": "intentional",
+      "modelGuess": "sesame",
+      "start": 35,
+      "end": 67
+     },
+     {
+      "term": "salt",
+      "evidence": "salt",
+      "assertion": "intentional",
+      "modelGuess": "unknown",
+      "start": 70,
+      "end": 74
+     }
+    ],
+    "absences": [
+     {
+      "ingredient": "Tahini (100% roasted sesame seed",
+      "missing": "source",
+      "start": 35,
+      "end": 67
+     }
+    ],
+    "dictSpans": [],
+    "evidence": []
+   },
+   "hybrid": {
+    "contains": [
+     "sesame"
+    ],
+    "may": [],
+    "review": true,
+    "unresolved": [
+     "Possible allergen in \"salt\" (intentional) \u2014 allergen UNKNOWN, verify",
+     "\"Tahini (100% roasted sesame seed\": source not stated \u2014 could hide an allergen"
+    ],
+    "unsupported": [],
+    "unsupportedAbsences": [
+     "\"\"",
+     "\"\"",
+     "\"\"",
+     "\"\"",
+     "\"\"",
+     "\"\"",
+     "\"\"",
+     "\"\""
+    ],
+    "possible": [
+     {
+      "term": "salt",
+      "evidence": "salt",
+      "assertion": "intentional",
+      "modelGuess": "unknown",
+      "start": 70,
+      "end": 74
+     }
+    ],
+    "absences": [
+     {
+      "ingredient": "Tahini (100% roasted sesame seed",
+      "missing": "source",
+      "start": 35,
+      "end": 67
+     }
+    ],
+    "dictSpans": [
+     {
+      "allergen": "sesame",
+      "assertion": "intentional",
+      "evidence": "sesame",
+      "start": 56,
+      "end": 62
+     }
+    ],
+    "evidence": [
+     "dictionary:sesame:intentional:\"sesame\""
+    ]
+   }
+  },
+  {
+   "set": "v3",
+   "rep": 2,
+   "case": {
+    "id": "V04",
+    "cat": "unfamiliar",
+    "text": "Product: Emulsifier Blend Ingredients: Lecithin de soja (soybean lecithin), sunflower oil.",
+    "ingredients": [
+     {
+      "term": "Lecithin de soja",
+      "allergen": "soy"
+     }
+    ],
+    "lookalikes": [],
+    "may": [],
+    "review": false,
+    "rationale": "Lecithin de soja is Spanish for soy lecithin; the parenthetical confirms soybean origin."
+   },
+   "ms": 57841,
+   "nanoStatus": "ok",
+   "error": null,
+   "rawNano": {
+    "ingredients": [
+     {
+      "term": "Lecithin de soja",
+      "evidence": "Lecithin de soja (soybean lecithin)",
+      "assertion": "intentional",
+      "allergen_guess": "soy"
+     }
+    ],
+    "absences": [
+     {
+      "ingredient": "milk",
+      "missing": "source",
+      "ingredient_evidence": ""
+     },
+     {
+      "ingredient": "egg",
+      "missing": "source",
+      "ingredient_evidence": ""
+     },
+     {
+      "ingredient": "fish",
+      "missing": "source",
+      "ingredient_evidence": ""
+     },
+     {
+      "ingredient": "crustacean shellfish",
+      "missing": "source",
+      "ingredient_evidence": ""
+     },
+     {
+      "ingredient": "tree nuts",
+      "missing": "source",
+      "ingredient_evidence": ""
+     },
+     {
+      "ingredient": "peanut",
+      "missing": "source",
+      "ingredient_evidence": ""
+     },
+     {
+      "ingredient": "wheat",
+      "missing": "source",
+      "ingredient_evidence": ""
+     },
+     {
+      "ingredient": "soy",
+      "missing": "source",
+      "ingredient_evidence": ""
+     },
+     {
+      "ingredient": "sesame",
+      "missing": "source",
+      "ingredient_evidence": ""
+     }
+    ]
+   },
+   "rules": {
+    "contains": [
+     "soy"
+    ],
+    "may": [],
+    "review": true,
+    "unresolved": [
+     "Ingredient with unspecified source (e.g. lecithin / natural flavour / emulsifier)"
+    ],
+    "unsupported": [],
+    "unsupportedAbsences": [],
+    "possible": [],
+    "absences": [],
+    "dictSpans": [
+     {
+      "allergen": "soy",
+      "assertion": "intentional",
+      "evidence": "soybean",
+      "start": 57,
+      "end": 64
+     }
+    ],
+    "evidence": [
+     "dictionary:soy:intentional:\"soybean\""
+    ]
+   },
+   "nano": {
+    "contains": [],
+    "may": [],
+    "review": true,
+    "unresolved": [
+     "Possible allergen in \"Lecithin de soja\" (intentional) \u2014 allergen UNKNOWN, verify"
+    ],
+    "unsupported": [],
+    "unsupportedAbsences": [
+     "\"\"",
+     "\"\"",
+     "\"\"",
+     "\"\"",
+     "\"\"",
+     "\"\"",
+     "\"\"",
+     "\"\"",
+     "\"\""
+    ],
+    "possible": [
+     {
+      "term": "Lecithin de soja",
+      "evidence": "Lecithin de soja (soybean lecithin",
+      "assertion": "intentional",
+      "modelGuess": "soy",
+      "start": 39,
+      "end": 73
+     }
+    ],
+    "absences": [],
+    "dictSpans": [],
+    "evidence": []
+   },
+   "hybrid": {
+    "contains": [
+     "soy"
+    ],
+    "may": [],
+    "review": true,
+    "unresolved": [
+     "Ingredient with unspecified source (e.g. lecithin / natural flavour / emulsifier)"
+    ],
+    "unsupported": [],
+    "unsupportedAbsences": [
+     "\"\"",
+     "\"\"",
+     "\"\"",
+     "\"\"",
+     "\"\"",
+     "\"\"",
+     "\"\"",
+     "\"\"",
+     "\"\""
+    ],
+    "possible": [],
+    "absences": [],
+    "dictSpans": [
+     {
+      "allergen": "soy",
+      "assertion": "intentional",
+      "evidence": "soybean",
+      "start": 57,
+      "end": 64
+     }
+    ],
+    "evidence": [
+     "dictionary:soy:intentional:\"soybean\""
+    ]
+   }
+  },
+  {
+   "set": "v3",
+   "rep": 2,
+   "case": {
+    "id": "V05",
+    "cat": "scientific_derivative",
+    "text": "Product: High-Gel Protein Ingredients: Casein (Bos taurus), calcium chloride.",
+    "ingredients": [
+     {
+      "term": "Casein (Bos taurus)",
+      "allergen": "milk"
+     }
+    ],
+    "lookalikes": [],
+    "may": [],
+    "review": false,
+    "rationale": "Casein is the principal milk protein; Bos taurus is the Latin binomial for cattle, confirming milk source."
+   },
+   "ms": 14436,
+   "nanoStatus": "ok",
+   "error": null,
+   "rawNano": {
+    "ingredients": [
+     {
+      "term": "Casein (Bos taurus)",
+      "evidence": "Casein (Bos taurus)",
+      "assertion": "intentional",
+      "allergen_guess": "milk"
+     }
+    ],
+    "absences": []
+   },
+   "rules": {
+    "contains": [
+     "milk"
+    ],
+    "may": [],
+    "review": false,
+    "unresolved": [],
+    "unsupported": [],
+    "unsupportedAbsences": [],
+    "possible": [],
+    "absences": [],
+    "dictSpans": [
+     {
+      "allergen": "milk",
+      "assertion": "intentional",
+      "evidence": "Casein",
+      "start": 39,
+      "end": 45
+     }
+    ],
+    "evidence": [
+     "dictionary:milk:intentional:\"Casein\""
+    ]
+   },
+   "nano": {
+    "contains": [],
+    "may": [],
+    "review": true,
+    "unresolved": [
+     "Possible allergen in \"Casein (Bos taurus)\" (intentional) \u2014 allergen UNKNOWN, verify"
+    ],
+    "unsupported": [],
+    "unsupportedAbsences": [],
+    "possible": [
+     {
+      "term": "Casein (Bos taurus)",
+      "evidence": "Casein (Bos taurus",
+      "assertion": "intentional",
+      "modelGuess": "milk",
+      "start": 39,
+      "end": 57
+     }
+    ],
+    "absences": [],
+    "dictSpans": [],
+    "evidence": []
+   },
+   "hybrid": {
+    "contains": [
+     "milk"
+    ],
+    "may": [],
+    "review": false,
+    "unresolved": [],
+    "unsupported": [],
+    "unsupportedAbsences": [],
+    "possible": [],
+    "absences": [],
+    "dictSpans": [
+     {
+      "allergen": "milk",
+      "assertion": "intentional",
+      "evidence": "Casein",
+      "start": 39,
+      "end": 45
+     }
+    ],
+    "evidence": [
+     "dictionary:milk:intentional:\"Casein\""
+    ]
+   }
+  },
+  {
+   "set": "v3",
+   "rep": 2,
+   "case": {
+    "id": "V06",
+    "cat": "scientific_derivative",
+    "text": "Product: Foaming Agent Ingredients: Ovalbumin (Gallus gallus), sodium lauryl sulfate.",
+    "ingredients": [
+     {
+      "term": "Ovalbumin (Gallus gallus)",
+      "allergen": "egg"
+     }
+    ],
+    "lookalikes": [],
+    "may": [],
+    "review": false,
+    "rationale": "Ovalbumin is the main protein in egg white; Gallus gallus is the scientific name for chicken."
+   },
+   "ms": 14363,
+   "nanoStatus": "ok",
+   "error": null,
+   "rawNano": {
+    "ingredients": [
+     {
+      "term": "Ovalbumin",
+      "evidence": "Ovalbumin (Gallus gallus)",
+      "assertion": "intentional",
+      "allergen_guess": "egg"
+     }
+    ],
+    "absences": []
+   },
+   "rules": {
+    "contains": [
+     "egg"
+    ],
+    "may": [],
+    "review": false,
+    "unresolved": [],
+    "unsupported": [],
+    "unsupportedAbsences": [],
+    "possible": [],
+    "absences": [],
+    "dictSpans": [
+     {
+      "allergen": "egg",
+      "assertion": "intentional",
+      "evidence": "Ovalbumin",
+      "start": 36,
+      "end": 45
+     }
+    ],
+    "evidence": [
+     "dictionary:egg:intentional:\"Ovalbumin\""
+    ]
+   },
+   "nano": {
+    "contains": [],
+    "may": [],
+    "review": true,
+    "unresolved": [
+     "Possible allergen in \"Ovalbumin\" (intentional) \u2014 allergen UNKNOWN, verify"
+    ],
+    "unsupported": [],
+    "unsupportedAbsences": [],
+    "possible": [
+     {
+      "term": "Ovalbumin",
+      "evidence": "Ovalbumin (Gallus gallus",
+      "assertion": "intentional",
+      "modelGuess": "egg",
+      "start": 36,
+      "end": 60
+     }
+    ],
+    "absences": [],
+    "dictSpans": [],
+    "evidence": []
+   },
+   "hybrid": {
+    "contains": [
+     "egg"
+    ],
+    "may": [],
+    "review": false,
+    "unresolved": [],
+    "unsupported": [],
+    "unsupportedAbsences": [],
+    "possible": [],
+    "absences": [],
+    "dictSpans": [
+     {
+      "allergen": "egg",
+      "assertion": "intentional",
+      "evidence": "Ovalbumin",
+      "start": 36,
+      "end": 45
+     }
+    ],
+    "evidence": [
+     "dictionary:egg:intentional:\"Ovalbumin\""
+    ]
+   }
+  },
+  {
+   "set": "v3",
+   "rep": 2,
+   "case": {
+    "id": "V07",
+    "cat": "scientific_derivative",
+    "text": "Product: Peptide Powder Ingredients: Arachis hypogaea protein isolate, maltodextrin.",
+    "ingredients": [
+     {
+      "term": "Arachis hypogaea protein isolate",
+      "allergen": "peanut"
+     }
+    ],
+    "lookalikes": [],
+    "may": [],
+    "review": false,
+    "rationale": "Arachis hypogaea is the Latin binomial for peanut; protein isolate indicates derivative."
+   },
+   "ms": 13795,
+   "nanoStatus": "ok",
+   "error": null,
+   "rawNano": {
+    "ingredients": [
+     {
+      "term": "Arachis hypogaea protein isolate",
+      "evidence": "Arachis hypogaea protein isolate",
+      "assertion": "intentional",
+      "allergen_guess": "unknown"
+     },
+     {
+      "term": "maltodextrin",
+      "evidence": "maltodextrin",
+      "assertion": "intentional",
+      "allergen_guess": "unknown"
+     }
+    ],
+    "absences": []
+   },
+   "rules": {
+    "contains": [
+     "peanut"
+    ],
+    "may": [],
+    "review": false,
+    "unresolved": [],
+    "unsupported": [],
+    "unsupportedAbsences": [],
+    "possible": [],
+    "absences": [],
+    "dictSpans": [
+     {
+      "allergen": "peanut",
+      "assertion": "intentional",
+      "evidence": "Arachis",
+      "start": 37,
+      "end": 44
+     }
+    ],
+    "evidence": [
+     "dictionary:peanut:intentional:\"Arachis\""
+    ]
+   },
+   "nano": {
+    "contains": [],
+    "may": [],
+    "review": true,
+    "unresolved": [
+     "Possible allergen in \"Arachis hypogaea protein isolate\" (intentional) \u2014 allergen UNKNOWN, verify",
+     "Possible allergen in \"maltodextrin\" (intentional) \u2014 allergen UNKNOWN, verify"
+    ],
+    "unsupported": [],
+    "unsupportedAbsences": [],
+    "possible": [
+     {
+      "term": "Arachis hypogaea protein isolate",
+      "evidence": "Arachis hypogaea protein isolate",
+      "assertion": "intentional",
+      "modelGuess": "unknown",
+      "start": 37,
+      "end": 69
+     },
+     {
+      "term": "maltodextrin",
+      "evidence": "maltodextrin",
+      "assertion": "intentional",
+      "modelGuess": "unknown",
+      "start": 71,
+      "end": 83
+     }
+    ],
+    "absences": [],
+    "dictSpans": [],
+    "evidence": []
+   },
+   "hybrid": {
+    "contains": [
+     "peanut"
+    ],
+    "may": [],
+    "review": true,
+    "unresolved": [
+     "Possible allergen in \"maltodextrin\" (intentional) \u2014 allergen UNKNOWN, verify"
+    ],
+    "unsupported": [],
+    "unsupportedAbsences": [],
+    "possible": [
+     {
+      "term": "maltodextrin",
+      "evidence": "maltodextrin",
+      "assertion": "intentional",
+      "modelGuess": "unknown",
+      "start": 71,
+      "end": 83
+     }
+    ],
+    "absences": [],
+    "dictSpans": [
+     {
+      "allergen": "peanut",
+      "assertion": "intentional",
+      "evidence": "Arachis",
+      "start": 37,
+      "end": 44
+     }
+    ],
+    "evidence": [
+     "dictionary:peanut:intentional:\"Arachis\""
+    ]
+   }
+  },
+  {
+   "set": "v3",
+   "rep": 2,
+   "case": {
+    "id": "V08",
+    "cat": "scientific_derivative",
+    "text": "Product: Hydrolysate 90 Ingredients: Glycine max protein hydrolysate, citric acid.",
+    "ingredients": [
+     {
+      "term": "Glycine max protein hydrolysate",
+      "allergen": "soy"
+     }
+    ],
+    "lookalikes": [],
+    "may": [],
+    "review": false,
+    "rationale": "Glycine max is the Latin binomial for soybean; protein hydrolysate confirms soy derivative."
+   },
+   "ms": 21856,
+   "nanoStatus": "ok",
+   "error": null,
+   "rawNano": {
+    "ingredients": [
+     {
+      "term": "Glycine max protein hydrolysate",
+      "evidence": "Glycine max protein hydrolysate",
+      "assertion": "intentional",
+      "allergen_guess": "soy"
+     },
+     {
+      "term": "citric acid",
+      "evidence": "citric acid",
+      "assertion": "intentional",
+      "allergen_guess": "unknown"
+     }
+    ],
+    "absences": []
+   },
+   "rules": {
+    "contains": [],
+    "may": [],
+    "review": false,
+    "unresolved": [],
+    "unsupported": [],
+    "unsupportedAbsences": [],
+    "possible": [],
+    "absences": [],
+    "dictSpans": [],
+    "evidence": []
+   },
+   "nano": {
+    "contains": [],
+    "may": [],
+    "review": true,
+    "unresolved": [
+     "Possible allergen in \"Glycine max protein hydrolysate\" (intentional) \u2014 allergen UNKNOWN, verify",
+     "Possible allergen in \"citric acid\" (intentional) \u2014 allergen UNKNOWN, verify"
+    ],
+    "unsupported": [],
+    "unsupportedAbsences": [],
+    "possible": [
+     {
+      "term": "Glycine max protein hydrolysate",
+      "evidence": "Glycine max protein hydrolysate",
+      "assertion": "intentional",
+      "modelGuess": "soy",
+      "start": 37,
+      "end": 68
+     },
+     {
+      "term": "citric acid",
+      "evidence": "citric acid",
+      "assertion": "intentional",
+      "modelGuess": "unknown",
+      "start": 70,
+      "end": 81
+     }
+    ],
+    "absences": [],
+    "dictSpans": [],
+    "evidence": []
+   },
+   "hybrid": {
+    "contains": [],
+    "may": [],
+    "review": true,
+    "unresolved": [
+     "Possible allergen in \"Glycine max protein hydrolysate\" (intentional) \u2014 allergen UNKNOWN, verify",
+     "Possible allergen in \"citric acid\" (intentional) \u2014 allergen UNKNOWN, verify"
+    ],
+    "unsupported": [],
+    "unsupportedAbsences": [],
+    "possible": [
+     {
+      "term": "Glycine max protein hydrolysate",
+      "evidence": "Glycine max protein hydrolysate",
+      "assertion": "intentional",
+      "modelGuess": "soy",
+      "start": 37,
+      "end": 68
+     },
+     {
+      "term": "citric acid",
+      "evidence": "citric acid",
+      "assertion": "intentional",
+      "modelGuess": "unknown",
+      "start": 70,
+      "end": 81
+     }
+    ],
+    "absences": [],
+    "dictSpans": [],
+    "evidence": []
+   }
+  },
+  {
+   "set": "v3",
+   "rep": 2,
+   "case": {
+    "id": "V09",
+    "cat": "subingredient_carrier",
+    "text": "Product: Natural Flavor System Ingredients: Natural flavor (contains wheat starch, propylene glycol), ethanol.",
+    "ingredients": [
+     {
+      "term": "wheat starch",
+      "allergen": "wheat"
+     }
+    ],
+    "lookalikes": [],
+    "may": [],
+    "review": false,
+    "rationale": "Wheat starch is declared inside the sub-ingredient list for natural flavor; wheat is a major allergen."
+   },
+   "ms": 14703,
+   "nanoStatus": "ok",
+   "error": null,
+   "rawNano": {
+    "ingredients": [
+     {
+      "term": "wheat starch",
+      "evidence": "Natural flavor (contains wheat starch, propylene glycol)",
+      "assertion": "intentional",
+      "allergen_guess": "wheat"
+     }
+    ],
+    "absences": []
+   },
+   "rules": {
+    "contains": [
+     "wheat"
+    ],
+    "may": [],
+    "review": true,
+    "unresolved": [
+     "Ingredient with unspecified source (e.g. lecithin / natural flavour / emulsifier)"
+    ],
+    "unsupported": [],
+    "unsupportedAbsences": [],
+    "possible": [],
+    "absences": [],
+    "dictSpans": [
+     {
+      "allergen": "wheat",
+      "assertion": "intentional",
+      "evidence": "wheat",
+      "start": 69,
+      "end": 74
+     }
+    ],
+    "evidence": [
+     "dictionary:wheat:intentional:\"wheat\""
+    ]
+   },
+   "nano": {
+    "contains": [],
+    "may": [],
+    "review": true,
+    "unresolved": [
+     "Possible allergen in \"wheat starch\" (intentional) \u2014 allergen UNKNOWN, verify"
+    ],
+    "unsupported": [],
+    "unsupportedAbsences": [],
+    "possible": [
+     {
+      "term": "wheat starch",
+      "evidence": "Natural flavor (contains wheat starch, propylene glycol",
+      "assertion": "intentional",
+      "modelGuess": "wheat",
+      "start": 44,
+      "end": 99
+     }
+    ],
+    "absences": [],
+    "dictSpans": [],
+    "evidence": []
+   },
+   "hybrid": {
+    "contains": [
+     "wheat"
+    ],
+    "may": [],
+    "review": true,
+    "unresolved": [
+     "Ingredient with unspecified source (e.g. lecithin / natural flavour / emulsifier)"
+    ],
+    "unsupported": [],
+    "unsupportedAbsences": [],
+    "possible": [],
+    "absences": [],
+    "dictSpans": [
+     {
+      "allergen": "wheat",
+      "assertion": "intentional",
+      "evidence": "wheat",
+      "start": 69,
+      "end": 74
+     }
+    ],
+    "evidence": [
+     "dictionary:wheat:intentional:\"wheat\""
+    ]
+   }
+  },
+  {
+   "set": "v3",
+   "rep": 2,
+   "case": {
+    "id": "V10",
+    "cat": "subingredient_carrier",
+    "text": "Product: Seasoning Blend Ingredients: Spice blend [contains soy flour, silicon dioxide], salt, garlic powder.",
+    "ingredients": [
+     {
+      "term": "soy flour",
+      "allergen": "soy"
+     }
+    ],
+    "lookalikes": [],
+    "may": [],
+    "review": false,
+    "rationale": "Soy flour appears inside the bracketed sub-ingredient list for spice blend; soy is a major allergen."
+   },
+   "ms": 52630,
+   "nanoStatus": "ok",
+   "error": null,
+   "rawNano": {
+    "ingredients": [
+     {
+      "term": "soy flour",
+      "evidence": "Spice blend [contains soy flour, silicon dioxide]",
+      "assertion": "intentional",
+      "allergen_guess": "soy"
+     }
+    ],
+    "absences": [
+     {
+      "ingredient": "milk",
+      "missing": "source",
+      "ingredient_evidence": ""
+     },
+     {
+      "ingredient": "egg",
+      "missing": "source",
+      "ingredient_evidence": ""
+     },
+     {
+      "ingredient": "fish",
+      "missing": "source",
+      "ingredient_evidence": ""
+     },
+     {
+      "ingredient": "crustacean shellfish",
+      "missing": "source",
+      "ingredient_evidence": ""
+     },
+     {
+      "ingredient": "tree nuts",
+      "missing": "source",
+      "ingredient_evidence": ""
+     },
+     {
+      "ingredient": "peanut",
+      "missing": "source",
+      "ingredient_evidence": ""
+     },
+     {
+      "ingredient": "wheat",
+      "missing": "source",
+      "ingredient_evidence": ""
+     },
+     {
+      "ingredient": "sesame",
+      "missing": "source",
+      "ingredient_evidence": ""
+     }
+    ]
+   },
+   "rules": {
+    "contains": [
+     "soy"
+    ],
+    "may": [],
+    "review": false,
+    "unresolved": [],
+    "unsupported": [],
+    "unsupportedAbsences": [],
+    "possible": [],
+    "absences": [],
+    "dictSpans": [
+     {
+      "allergen": "soy",
+      "assertion": "intentional",
+      "evidence": "soy",
+      "start": 60,
+      "end": 63
+     }
+    ],
+    "evidence": [
+     "dictionary:soy:intentional:\"soy\""
+    ]
+   },
+   "nano": {
+    "contains": [],
+    "may": [],
+    "review": true,
+    "unresolved": [
+     "Possible allergen in \"soy flour\" (intentional) \u2014 allergen UNKNOWN, verify"
+    ],
+    "unsupported": [],
+    "unsupportedAbsences": [
+     "\"\"",
+     "\"\"",
+     "\"\"",
+     "\"\"",
+     "\"\"",
+     "\"\"",
+     "\"\"",
+     "\"\""
+    ],
+    "possible": [
+     {
+      "term": "soy flour",
+      "evidence": "Spice blend [contains soy flour, silicon dioxide",
+      "assertion": "intentional",
+      "modelGuess": "soy",
+      "start": 38,
+      "end": 86
+     }
+    ],
+    "absences": [],
+    "dictSpans": [],
+    "evidence": []
+   },
+   "hybrid": {
+    "contains": [
+     "soy"
+    ],
+    "may": [],
+    "review": false,
+    "unresolved": [],
+    "unsupported": [],
+    "unsupportedAbsences": [
+     "\"\"",
+     "\"\"",
+     "\"\"",
+     "\"\"",
+     "\"\"",
+     "\"\"",
+     "\"\"",
+     "\"\""
+    ],
+    "possible": [],
+    "absences": [],
+    "dictSpans": [
+     {
+      "allergen": "soy",
+      "assertion": "intentional",
+      "evidence": "soy",
+      "start": 60,
+      "end": 63
+     }
+    ],
+    "evidence": [
+     "dictionary:soy:intentional:\"soy\""
+    ]
+   }
+  },
+  {
+   "set": "v3",
+   "rep": 2,
+   "case": {
+    "id": "V11",
+    "cat": "subingredient_carrier",
+    "text": "Product: Vitamin Premix Ingredients: Vitamin premix (carrier: maltodextrin from wheat, tricalcium phosphate), ascorbic acid.",
+    "ingredients": [
+     {
+      "term": "maltodextrin from wheat",
+      "allergen": "wheat"
+     }
+    ],
+    "lookalikes": [],
+    "may": [],
+    "review": false,
+    "rationale": "Maltodextrin from wheat is explicitly called out as a carrier in the vitamin premix sub-list."
+   },
+   "ms": 65607,
+   "nanoStatus": "ok",
+   "error": null,
+   "rawNano": {
+    "ingredients": [
+     {
+      "term": "maltodextrin",
+      "evidence": "carrier: maltodextrin from wheat",
+      "assertion": "intentional",
+      "allergen_guess": "wheat"
+     },
+     {
+      "term": "ascorbic acid",
+      "evidence": "ascorbic acid",
+      "assertion": "explicit_negative",
+      "allergen_guess": "unknown"
+     }
+    ],
+    "absences": [
+     {
+      "ingredient": "milk",
+      "missing": "source",
+      "ingredient_evidence": ""
+     },
+     {
+      "ingredient": "egg",
+      "missing": "source",
+      "ingredient_evidence": ""
+     },
+     {
+      "ingredient": "fish",
+      "missing": "source",
+      "ingredient_evidence": ""
+     },
+     {
+      "ingredient": "crustacean shellfish",
+      "missing": "source",
+      "ingredient_evidence": ""
+     },
+     {
+      "ingredient": "tree nuts",
+      "missing": "source",
+      "ingredient_evidence": ""
+     },
+     {
+      "ingredient": "peanut",
+      "missing": "source",
+      "ingredient_evidence": ""
+     },
+     {
+      "ingredient": "wheat",
+      "missing": "source",
+      "ingredient_evidence": "carrier: maltodextrin from wheat"
+     },
+     {
+      "ingredient": "soy",
+      "missing": "source",
+      "ingredient_evidence": ""
+     },
+     {
+      "ingredient": "sesame",
+      "missing": "source",
+      "ingredient_evidence": ""
+     }
+    ]
+   },
+   "rules": {
+    "contains": [
+     "wheat"
+    ],
+    "may": [],
+    "review": false,
+    "unresolved": [],
+    "unsupported": [],
+    "unsupportedAbsences": [],
+    "possible": [],
+    "absences": [],
+    "dictSpans": [
+     {
+      "allergen": "wheat",
+      "assertion": "intentional",
+      "evidence": "wheat",
+      "start": 80,
+      "end": 85
+     }
+    ],
+    "evidence": [
+     "dictionary:wheat:intentional:\"wheat\""
+    ]
+   },
+   "nano": {
+    "contains": [],
+    "may": [],
+    "review": true,
+    "unresolved": [
+     "Possible allergen in \"maltodextrin\" (intentional) \u2014 allergen UNKNOWN, verify",
+     "\"carrier: maltodextrin from wheat\": source not stated \u2014 could hide an allergen"
+    ],
+    "unsupported": [],
+    "unsupportedAbsences": [
+     "\"\"",
+     "\"\"",
+     "\"\"",
+     "\"\"",
+     "\"\"",
+     "\"\"",
+     "\"\"",
+     "\"\""
+    ],
+    "possible": [
+     {
+      "term": "maltodextrin",
+      "evidence": "carrier: maltodextrin from wheat",
+      "assertion": "intentional",
+      "modelGuess": "wheat",
+      "start": 53,
+      "end": 85
+     }
+    ],
+    "absences": [
+     {
+      "ingredient": "carrier: maltodextrin from wheat",
+      "missing": "source",
+      "start": 53,
+      "end": 85
+     }
+    ],
+    "dictSpans": [],
+    "evidence": []
+   },
+   "hybrid": {
+    "contains": [
+     "wheat"
+    ],
+    "may": [],
+    "review": true,
+    "unresolved": [
+     "\"carrier: maltodextrin from wheat\": source not stated \u2014 could hide an allergen"
+    ],
+    "unsupported": [],
+    "unsupportedAbsences": [
+     "\"\"",
+     "\"\"",
+     "\"\"",
+     "\"\"",
+     "\"\"",
+     "\"\"",
+     "\"\"",
+     "\"\""
+    ],
+    "possible": [],
+    "absences": [
+     {
+      "ingredient": "carrier: maltodextrin from wheat",
+      "missing": "source",
+      "start": 53,
+      "end": 85
+     }
+    ],
+    "dictSpans": [
+     {
+      "allergen": "wheat",
+      "assertion": "intentional",
+      "evidence": "wheat",
+      "start": 80,
+      "end": 85
+     }
+    ],
+    "evidence": [
+     "dictionary:wheat:intentional:\"wheat\""
+    ]
+   }
+  },
+  {
+   "set": "v3",
+   "rep": 2,
+   "case": {
+    "id": "V12",
+    "cat": "subingredient_carrier",
+    "text": "Product: Color Preparation Ingredients: Color added (carrier: sodium caseinate, glycerin), water.",
+    "ingredients": [
+     {
+      "term": "sodium caseinate",
+      "allergen": "milk"
+     }
+    ],
+    "lookalikes": [],
+    "may": [],
+    "review": false,
+    "rationale": "Sodium caseinate is a milk-derived protein used as a carrier; it appears in the parenthetical carrier list."
+   },
+   "ms": 14452,
+   "nanoStatus": "ok",
+   "error": null,
+   "rawNano": {
+    "ingredients": [
+     {
+      "term": "sodium caseinate",
+      "evidence": "carrier: sodium caseinate, glycerin",
+      "assertion": "precautionary",
+      "allergen_guess": "milk"
+     }
+    ],
+    "absences": []
+   },
+   "rules": {
+    "contains": [
+     "milk"
+    ],
+    "may": [],
+    "review": false,
+    "unresolved": [],
+    "unsupported": [],
+    "unsupportedAbsences": [],
+    "possible": [],
+    "absences": [],
+    "dictSpans": [
+     {
+      "allergen": "milk",
+      "assertion": "intentional",
+      "evidence": "caseinate",
+      "start": 69,
+      "end": 78
+     }
+    ],
+    "evidence": [
+     "dictionary:milk:intentional:\"caseinate\""
+    ]
+   },
+   "nano": {
+    "contains": [],
+    "may": [],
+    "review": true,
+    "unresolved": [
+     "Possible allergen in \"sodium caseinate\" (precautionary) \u2014 allergen UNKNOWN, verify"
+    ],
+    "unsupported": [],
+    "unsupportedAbsences": [],
+    "possible": [
+     {
+      "term": "sodium caseinate",
+      "evidence": "carrier: sodium caseinate, glycerin",
+      "assertion": "precautionary",
+      "modelGuess": "milk",
+      "start": 53,
+      "end": 88
+     }
+    ],
+    "absences": [],
+    "dictSpans": [],
+    "evidence": []
+   },
+   "hybrid": {
+    "contains": [
+     "milk"
+    ],
+    "may": [],
+    "review": false,
+    "unresolved": [],
+    "unsupported": [],
+    "unsupportedAbsences": [],
+    "possible": [],
+    "absences": [],
+    "dictSpans": [
+     {
+      "allergen": "milk",
+      "assertion": "intentional",
+      "evidence": "caseinate",
+      "start": 69,
+      "end": 78
+     }
+    ],
+    "evidence": [
+     "dictionary:milk:intentional:\"caseinate\""
+    ]
+   }
+  },
+  {
+   "set": "v3",
+   "rep": 2,
+   "case": {
+    "id": "V13",
+    "cat": "ambiguous",
+    "text": "Product: Savory Base Ingredients: Natural flavor, salt, yeast extract.",
+    "ingredients": [
+     {
+      "term": "Natural flavor",
+      "allergen": "ambiguous"
+     }
+    ],
+    "lookalikes": [],
+    "may": [],
+    "review": true,
+    "rationale": "Natural flavor has no declared source; it could be derived from any major allergen or none, requiring supplier clarification."
+   },
+   "ms": 26418,
+   "nanoStatus": "ok",
+   "error": null,
+   "rawNano": {
+    "ingredients": [
+     {
+      "term": "natural flavor",
+      "evidence": "Natural flavor",
+      "assertion": "precautionary",
+      "allergen_guess": "unknown"
+     },
+     {
+      "term": "salt",
+      "evidence": "salt",
+      "assertion": "intentional",
+      "allergen_guess": "unknown"
+     },
+     {
+      "term": "yeast extract",
+      "evidence": "yeast extract",
+      "assertion": "intentional",
+      "allergen_guess": "unknown"
+     }
+    ],
+    "absences": []
+   },
+   "rules": {
+    "contains": [],
+    "may": [],
+    "review": true,
+    "unresolved": [
+     "Ingredient with unspecified source (e.g. lecithin / natural flavour / emulsifier)"
+    ],
+    "unsupported": [],
+    "unsupportedAbsences": [],
+    "possible": [],
+    "absences": [],
+    "dictSpans": [],
+    "evidence": []
+   },
+   "nano": {
+    "contains": [],
+    "may": [],
+    "review": true,
+    "unresolved": [
+     "Possible allergen in \"natural flavor\" (precautionary) \u2014 allergen UNKNOWN, verify",
+     "Possible allergen in \"salt\" (intentional) \u2014 allergen UNKNOWN, verify",
+     "Possible allergen in \"yeast extract\" (intentional) \u2014 allergen UNKNOWN, verify"
+    ],
+    "unsupported": [],
+    "unsupportedAbsences": [],
+    "possible": [
+     {
+      "term": "natural flavor",
+      "evidence": "Natural flavor",
+      "assertion": "precautionary",
+      "modelGuess": "unknown",
+      "start": 34,
+      "end": 48
+     },
+     {
+      "term": "salt",
+      "evidence": "salt",
+      "assertion": "intentional",
+      "modelGuess": "unknown",
+      "start": 50,
+      "end": 54
+     },
+     {
+      "term": "yeast extract",
+      "evidence": "yeast extract",
+      "assertion": "intentional",
+      "modelGuess": "unknown",
+      "start": 56,
+      "end": 69
+     }
+    ],
+    "absences": [],
+    "dictSpans": [],
+    "evidence": []
+   },
+   "hybrid": {
+    "contains": [],
+    "may": [],
+    "review": true,
+    "unresolved": [
+     "Ingredient with unspecified source (e.g. lecithin / natural flavour / emulsifier)",
+     "Possible allergen in \"natural flavor\" (precautionary) \u2014 allergen UNKNOWN, verify",
+     "Possible allergen in \"salt\" (intentional) \u2014 allergen UNKNOWN, verify",
+     "Possible allergen in \"yeast extract\" (intentional) \u2014 allergen UNKNOWN, verify"
+    ],
+    "unsupported": [],
+    "unsupportedAbsences": [],
+    "possible": [
+     {
+      "term": "natural flavor",
+      "evidence": "Natural flavor",
+      "assertion": "precautionary",
+      "modelGuess": "unknown",
+      "start": 34,
+      "end": 48
+     },
+     {
+      "term": "salt",
+      "evidence": "salt",
+      "assertion": "intentional",
+      "modelGuess": "unknown",
+      "start": 50,
+      "end": 54
+     },
+     {
+      "term": "yeast extract",
+      "evidence": "yeast extract",
+      "assertion": "intentional",
+      "modelGuess": "unknown",
+      "start": 56,
+      "end": 69
+     }
+    ],
+    "absences": [],
+    "dictSpans": [],
+    "evidence": []
+   }
+  },
+  {
+   "set": "v3",
+   "rep": 2,
+   "case": {
+    "id": "V14",
+    "cat": "ambiguous",
+    "text": "Product: Protein Booster Ingredients: Vegetable protein, carrageenan.",
+    "ingredients": [
+     {
+      "term": "Vegetable protein",
+      "allergen": "ambiguous"
+     }
+    ],
+    "lookalikes": [],
+    "may": [],
+    "review": true,
+    "rationale": "Vegetable protein does not identify the botanical source; it could be soy, wheat, pea, etc., so allergen status is unknown."
+   },
+   "ms": 63441,
+   "nanoStatus": "ok",
+   "error": null,
+   "rawNano": {
+    "ingredients": [
+     {
+      "term": "Vegetable protein",
+      "evidence": "Vegetable protein",
+      "assertion": "explicit_negative",
+      "allergen_guess": "unknown"
+     },
+     {
+      "term": "carrageenan",
+      "evidence": "carrageenan",
+      "assertion": "explicit_negative",
+      "allergen_guess": "unknown"
+     }
+    ],
+    "absences": [
+     {
+      "ingredient": "milk",
+      "missing": "source",
+      "ingredient_evidence": ""
+     },
+     {
+      "ingredient": "egg",
+      "missing": "source",
+      "ingredient_evidence": ""
+     },
+     {
+      "ingredient": "fish",
+      "missing": "source",
+      "ingredient_evidence": ""
+     },
+     {
+      "ingredient": "crustacean shellfish",
+      "missing": "source",
+      "ingredient_evidence": ""
+     },
+     {
+      "ingredient": "tree nuts",
+      "missing": "source",
+      "ingredient_evidence": ""
+     },
+     {
+      "ingredient": "peanut",
+      "missing": "source",
+      "ingredient_evidence": ""
+     },
+     {
+      "ingredient": "wheat",
+      "missing": "source",
+      "ingredient_evidence": ""
+     },
+     {
+      "ingredient": "soy",
+      "missing": "source",
+      "ingredient_evidence": ""
+     },
+     {
+      "ingredient": "sesame",
+      "missing": "source",
+      "ingredient_evidence": ""
+     }
+    ]
+   },
+   "rules": {
+    "contains": [],
+    "may": [],
+    "review": false,
+    "unresolved": [],
+    "unsupported": [],
+    "unsupportedAbsences": [],
+    "possible": [],
+    "absences": [],
+    "dictSpans": [],
+    "evidence": []
+   },
+   "nano": {
+    "contains": [],
+    "may": [],
+    "review": false,
+    "unresolved": [],
+    "unsupported": [],
+    "unsupportedAbsences": [
+     "\"\"",
+     "\"\"",
+     "\"\"",
+     "\"\"",
+     "\"\"",
+     "\"\"",
+     "\"\"",
+     "\"\"",
+     "\"\""
+    ],
+    "possible": [],
+    "absences": [],
+    "dictSpans": [],
+    "evidence": []
+   },
+   "hybrid": {
+    "contains": [],
+    "may": [],
+    "review": false,
+    "unresolved": [],
+    "unsupported": [],
+    "unsupportedAbsences": [
+     "\"\"",
+     "\"\"",
+     "\"\"",
+     "\"\"",
+     "\"\"",
+     "\"\"",
+     "\"\"",
+     "\"\"",
+     "\"\""
+    ],
+    "possible": [],
+    "absences": [],
+    "dictSpans": [],
+    "evidence": []
+   }
+  },
+  {
+   "set": "v3",
+   "rep": 2,
+   "case": {
+    "id": "V15",
+    "cat": "ambiguous",
+    "text": "Product: Hydrolyzed Protein Blend Ingredients: Hydrolyzed plant protein, disodium inosinate.",
+    "ingredients": [
+     {
+      "term": "Hydrolyzed plant protein",
+      "allergen": "ambiguous"
+     }
+    ],
+    "lookalikes": [],
+    "may": [],
+    "review": true,
+    "rationale": "Hydrolyzed plant protein lacks a source declaration; it may originate from soy, wheat, or other allergens."
+   },
+   "ms": 14160,
+   "nanoStatus": "ok",
+   "error": null,
+   "rawNano": {
+    "ingredients": [
+     {
+      "term": "Hydrolyzed plant protein",
+      "evidence": "Hydrolyzed plant protein",
+      "assertion": "intentional",
+      "allergen_guess": "soy"
+     }
+    ],
+    "absences": []
+   },
+   "rules": {
+    "contains": [],
+    "may": [],
+    "review": false,
+    "unresolved": [],
+    "unsupported": [],
+    "unsupportedAbsences": [],
+    "possible": [],
+    "absences": [],
+    "dictSpans": [],
+    "evidence": []
+   },
+   "nano": {
+    "contains": [],
+    "may": [],
+    "review": true,
+    "unresolved": [
+     "Possible allergen in \"Hydrolyzed plant protein\" (intentional) \u2014 allergen UNKNOWN, verify"
+    ],
+    "unsupported": [],
+    "unsupportedAbsences": [],
+    "possible": [
+     {
+      "term": "Hydrolyzed plant protein",
+      "evidence": "Hydrolyzed plant protein",
+      "assertion": "intentional",
+      "modelGuess": "soy",
+      "start": 47,
+      "end": 71
+     }
+    ],
+    "absences": [],
+    "dictSpans": [],
+    "evidence": []
+   },
+   "hybrid": {
+    "contains": [],
+    "may": [],
+    "review": true,
+    "unresolved": [
+     "Possible allergen in \"Hydrolyzed plant protein\" (intentional) \u2014 allergen UNKNOWN, verify"
+    ],
+    "unsupported": [],
+    "unsupportedAbsences": [],
+    "possible": [
+     {
+      "term": "Hydrolyzed plant protein",
+      "evidence": "Hydrolyzed plant protein",
+      "assertion": "intentional",
+      "modelGuess": "soy",
+      "start": 47,
+      "end": 71
+     }
+    ],
+    "absences": [],
+    "dictSpans": [],
+    "evidence": []
+   }
+  },
+  {
+   "set": "v3",
+   "rep": 2,
+   "case": {
+    "id": "V16",
+    "cat": "negative_lookalike",
+    "text": "Product: Oat Beverage Base Ingredients: Oat milk (water, oats, enzymes), calcium carbonate.",
+    "ingredients": [],
+    "lookalikes": [
+     "Oat milk"
+    ],
+    "may": [],
+    "review": false,
+    "rationale": "Oat milk contains the word 'milk' but oats are not a US major allergen; no major allergen ingredients present."
+   },
+   "ms": 59060,
+   "nanoStatus": "ok",
+   "error": null,
+   "rawNano": {
+    "ingredients": [
+     {
+      "term": "oats",
+      "evidence": "Oat milk (water, oats, enzymes)",
+      "assertion": "intentional",
+      "allergen_guess": "unknown"
+     },
+     {
+      "term": "milk",
+      "evidence": "Oat milk (water, oats, enzymes)",
+      "assertion": "intentional",
+      "allergen_guess": "milk"
+     }
+    ],
+    "absences": [
+     {
+      "ingredient": "egg",
+      "missing": "source",
+      "ingredient_evidence": ""
+     },
+     {
+      "ingredient": "fish",
+      "missing": "source",
+      "ingredient_evidence": ""
+     },
+     {
+      "ingredient": "crustacean shellfish",
+      "missing": "source",
+      "ingredient_evidence": ""
+     },
+     {
+      "ingredient": "tree nuts",
+      "missing": "source",
+      "ingredient_evidence": ""
+     },
+     {
+      "ingredient": "peanut",
+      "missing": "source",
+      "ingredient_evidence": ""
+     },
+     {
+      "ingredient": "wheat",
+      "missing": "source",
+      "ingredient_evidence": ""
+     },
+     {
+      "ingredient": "soy",
+      "missing": "source",
+      "ingredient_evidence": ""
+     },
+     {
+      "ingredient": "sesame",
+      "missing": "source",
+      "ingredient_evidence": ""
+     }
+    ]
+   },
+   "rules": {
+    "contains": [
+     "milk"
+    ],
+    "may": [],
+    "review": false,
+    "unresolved": [],
+    "unsupported": [],
+    "unsupportedAbsences": [],
+    "possible": [],
+    "absences": [],
+    "dictSpans": [
+     {
+      "allergen": "milk",
+      "assertion": "intentional",
+      "evidence": "milk",
+      "start": 44,
+      "end": 48
+     }
+    ],
+    "evidence": [
+     "dictionary:milk:intentional:\"milk\""
+    ]
+   },
+   "nano": {
+    "contains": [],
+    "may": [],
+    "review": true,
+    "unresolved": [
+     "Possible allergen in \"oats\" (intentional) \u2014 allergen UNKNOWN, verify",
+     "Possible allergen in \"milk\" (intentional) \u2014 allergen UNKNOWN, verify"
+    ],
+    "unsupported": [],
+    "unsupportedAbsences": [
+     "\"\"",
+     "\"\"",
+     "\"\"",
+     "\"\"",
+     "\"\"",
+     "\"\"",
+     "\"\"",
+     "\"\""
+    ],
+    "possible": [
+     {
+      "term": "oats",
+      "evidence": "Oat milk (water, oats, enzymes",
+      "assertion": "intentional",
+      "modelGuess": "unknown",
+      "start": 40,
+      "end": 70
+     },
+     {
+      "term": "milk",
+      "evidence": "Oat milk (water, oats, enzymes",
+      "assertion": "intentional",
+      "modelGuess": "milk",
+      "start": 40,
+      "end": 70
+     }
+    ],
+    "absences": [],
+    "dictSpans": [],
+    "evidence": []
+   },
+   "hybrid": {
+    "contains": [
+     "milk"
+    ],
+    "may": [],
+    "review": false,
+    "unresolved": [],
+    "unsupported": [],
+    "unsupportedAbsences": [
+     "\"\"",
+     "\"\"",
+     "\"\"",
+     "\"\"",
+     "\"\"",
+     "\"\"",
+     "\"\"",
+     "\"\""
+    ],
+    "possible": [],
+    "absences": [],
+    "dictSpans": [
+     {
+      "allergen": "milk",
+      "assertion": "intentional",
+      "evidence": "milk",
+      "start": 44,
+      "end": 48
+     }
+    ],
+    "evidence": [
+     "dictionary:milk:intentional:\"milk\""
+    ]
+   }
+  },
+  {
+   "set": "v3",
+   "rep": 2,
+   "case": {
+    "id": "V17",
+    "cat": "negative_lookalike",
+    "text": "Product: Chocolate Coating Ingredients: Cocoa butter, sugar, soy lecithin, vanilla.",
+    "ingredients": [
+     {
+      "term": "soy lecithin",
+      "allergen": "soy"
+     }
+    ],
+    "lookalikes": [
+     "Cocoa butter"
+    ],
+    "may": [],
+    "review": false,
+    "rationale": "Cocoa butter contains 'butter' but is a vegetable fat from cacao, not dairy; soy lecithin is the only major allergen."
+   },
+   "ms": 50427,
+   "nanoStatus": "ok",
+   "error": null,
+   "rawNano": {
+    "ingredients": [
+     {
+      "term": "soy lecithin",
+      "evidence": "Soy lecithin",
+      "assertion": "intentional",
+      "allergen_guess": "soy"
+     }
+    ],
+    "absences": [
+     {
+      "ingredient": "milk",
+      "missing": "source",
+      "ingredient_evidence": ""
+     },
+     {
+      "ingredient": "egg",
+      "missing": "source",
+      "ingredient_evidence": ""
+     },
+     {
+      "ingredient": "fish",
+      "missing": "source",
+      "ingredient_evidence": ""
+     },
+     {
+      "ingredient": "crustacean shellfish",
+      "missing": "source",
+      "ingredient_evidence": ""
+     },
+     {
+      "ingredient": "tree nuts",
+      "missing": "source",
+      "ingredient_evidence": ""
+     },
+     {
+      "ingredient": "peanut",
+      "missing": "source",
+      "ingredient_evidence": ""
+     },
+     {
+      "ingredient": "wheat",
+      "missing": "source",
+      "ingredient_evidence": ""
+     },
+     {
+      "ingredient": "sesame",
+      "missing": "source",
+      "ingredient_evidence": ""
+     }
+    ]
+   },
+   "rules": {
+    "contains": [
+     "soy"
+    ],
+    "may": [],
+    "review": false,
+    "unresolved": [],
+    "unsupported": [],
+    "unsupportedAbsences": [],
+    "possible": [],
+    "absences": [],
+    "dictSpans": [
+     {
+      "allergen": "soy",
+      "assertion": "intentional",
+      "evidence": "soy",
+      "start": 61,
+      "end": 64
+     }
+    ],
+    "evidence": [
+     "dictionary:soy:intentional:\"soy\""
+    ]
+   },
+   "nano": {
+    "contains": [],
+    "may": [],
+    "review": true,
+    "unresolved": [
+     "Possible allergen in \"soy lecithin\" (intentional) \u2014 allergen UNKNOWN, verify"
+    ],
+    "unsupported": [],
+    "unsupportedAbsences": [
+     "\"\"",
+     "\"\"",
+     "\"\"",
+     "\"\"",
+     "\"\"",
+     "\"\"",
+     "\"\"",
+     "\"\""
+    ],
+    "possible": [
+     {
+      "term": "soy lecithin",
+      "evidence": "soy lecithin",
+      "assertion": "intentional",
+      "modelGuess": "soy",
+      "start": 61,
+      "end": 73
+     }
+    ],
+    "absences": [],
+    "dictSpans": [],
+    "evidence": []
+   },
+   "hybrid": {
+    "contains": [
+     "soy"
+    ],
+    "may": [],
+    "review": false,
+    "unresolved": [],
+    "unsupported": [],
+    "unsupportedAbsences": [
+     "\"\"",
+     "\"\"",
+     "\"\"",
+     "\"\"",
+     "\"\"",
+     "\"\"",
+     "\"\"",
+     "\"\""
+    ],
+    "possible": [],
+    "absences": [],
+    "dictSpans": [
+     {
+      "allergen": "soy",
+      "assertion": "intentional",
+      "evidence": "soy",
+      "start": 61,
+      "end": 64
+     }
+    ],
+    "evidence": [
+     "dictionary:soy:intentional:\"soy\""
+    ]
+   }
+  },
+  {
+   "set": "v3",
+   "rep": 2,
+   "case": {
+    "id": "V18",
+    "cat": "negative_lookalike",
+    "text": "Product: Stir-Fry Mix Ingredients: Water chestnut, bamboo shoots, soy sauce (water, wheat, soybeans, salt).",
+    "ingredients": [
+     {
+      "term": "soy sauce (water, wheat, soybeans, salt)",
+      "allergen": "soy"
+     },
+     {
+      "term": "soy sauce (water, wheat, soybeans, salt)",
+      "allergen": "wheat"
+     }
+    ],
+    "lookalikes": [
+     "Water chestnut"
+    ],
+    "may": [],
+    "review": false,
+    "rationale": "Water chestnut includes 'nut' but is an aquatic vegetable, not a tree nut; soy sauce contributes soy and wheat allergens."
+   },
+   "ms": 81640,
+   "nanoStatus": "ok",
+   "error": null,
+   "rawNano": {
+    "ingredients": [
+     {
+      "term": "soy sauce",
+      "evidence": "soy sauce (water, wheat, soybeans, salt)",
+      "assertion": "intentional",
+      "allergen_guess": "soy"
+     },
+     {
+      "term": "wheat",
+      "evidence": "soy sauce (water, wheat, soybeans, salt)",
+      "assertion": "intentional",
+      "allergen_guess": "wheat"
+     },
+     {
+      "term": "soybeans",
+      "evidence": "soy sauce (water, wheat, soybeans, salt)",
+      "assertion": "intentional",
+      "allergen_guess": "soy"
+     }
+    ],
+    "absences": [
+     {
+      "ingredient": "milk",
+      "missing": "source",
+      "ingredient_evidence": "Water chestnut, bamboo shoots, soy sauce (water, wheat, soybeans, salt)."
+     },
+     {
+      "ingredient": "egg",
+      "missing": "source",
+      "ingredient_evidence": "Water chestnut, bamboo shoots, soy sauce (water, wheat, soybeans, salt)."
+     },
+     {
+      "ingredient": "fish",
+      "missing": "source",
+      "ingredient_evidence": "Water chestnut, bamboo shoots, soy sauce (water, wheat, soybeans, salt)."
+     },
+     {
+      "ingredient": "crustacean shellfish",
+      "missing": "source",
+      "ingredient_evidence": "Water chestnut, bamboo shoots, soy sauce (water, wheat, soybeans, salt)."
+     },
+     {
+      "ingredient": "tree nuts",
+      "missing": "source",
+      "ingredient_evidence": "Water chestnut, bamboo shoots, soy sauce (water, wheat, soybeans, salt)."
+     },
+     {
+      "ingredient": "peanut",
+      "missing": "source",
+      "ingredient_evidence": "Water chestnut, bamboo shoots, soy sauce (water, wheat, soybeans, salt)."
+     },
+     {
+      "ingredient": "sesame",
+      "missing": "source",
+      "ingredient_evidence": "Water chestnut, bamboo shoots, soy sauce (water, wheat, soybeans, salt)."
+     }
+    ]
+   },
+   "rules": {
+    "contains": [
+     "soy",
+     "wheat"
+    ],
+    "may": [],
+    "review": false,
+    "unresolved": [],
+    "unsupported": [],
+    "unsupportedAbsences": [],
+    "possible": [],
+    "absences": [],
+    "dictSpans": [
+     {
+      "allergen": "wheat",
+      "assertion": "intentional",
+      "evidence": "wheat",
+      "start": 84,
+      "end": 89
+     },
+     {
+      "allergen": "soy",
+      "assertion": "intentional",
+      "evidence": "soy",
+      "start": 66,
+      "end": 69
+     }
+    ],
+    "evidence": [
+     "dictionary:wheat:intentional:\"wheat\"",
+     "dictionary:soy:intentional:\"soy\""
+    ]
+   },
+   "nano": {
+    "contains": [],
+    "may": [],
+    "review": true,
+    "unresolved": [
+     "Possible allergen in \"soy sauce\" (intentional) \u2014 allergen UNKNOWN, verify",
+     "Possible allergen in \"wheat\" (intentional) \u2014 allergen UNKNOWN, verify",
+     "Possible allergen in \"soybeans\" (intentional) \u2014 allergen UNKNOWN, verify",
+     "\"Water chestnut, bamboo shoots, soy sauce (water, wheat, soybeans, salt\": source not stated \u2014 could hide an allergen"
+    ],
+    "unsupported": [],
+    "unsupportedAbsences": [],
+    "possible": [
+     {
+      "term": "soy sauce",
+      "evidence": "soy sauce (water, wheat, soybeans, salt",
+      "assertion": "intentional",
+      "modelGuess": "soy",
+      "start": 66,
+      "end": 105
+     },
+     {
+      "term": "wheat",
+      "evidence": "soy sauce (water, wheat, soybeans, salt",
+      "assertion": "intentional",
+      "modelGuess": "wheat",
+      "start": 66,
+      "end": 105
+     },
+     {
+      "term": "soybeans",
+      "evidence": "soy sauce (water, wheat, soybeans, salt",
+      "assertion": "intentional",
+      "modelGuess": "soy",
+      "start": 66,
+      "end": 105
+     }
+    ],
+    "absences": [
+     {
+      "ingredient": "Water chestnut, bamboo shoots, soy sauce (water, wheat, soybeans, salt",
+      "missing": "source",
+      "start": 35,
+      "end": 105
+     }
+    ],
+    "dictSpans": [],
+    "evidence": []
+   },
+   "hybrid": {
+    "contains": [
+     "soy",
+     "wheat"
+    ],
+    "may": [],
+    "review": true,
+    "unresolved": [
+     "\"Water chestnut, bamboo shoots, soy sauce (water, wheat, soybeans, salt\": source not stated \u2014 could hide an allergen"
+    ],
+    "unsupported": [],
+    "unsupportedAbsences": [],
+    "possible": [],
+    "absences": [
+     {
+      "ingredient": "Water chestnut, bamboo shoots, soy sauce (water, wheat, soybeans, salt",
+      "missing": "source",
+      "start": 35,
+      "end": 105
+     }
+    ],
+    "dictSpans": [
+     {
+      "allergen": "wheat",
+      "assertion": "intentional",
+      "evidence": "wheat",
+      "start": 84,
+      "end": 89
+     },
+     {
+      "allergen": "soy",
+      "assertion": "intentional",
+      "evidence": "soy",
+      "start": 66,
+      "end": 69
+     }
+    ],
+    "evidence": [
+     "dictionary:wheat:intentional:\"wheat\"",
+     "dictionary:soy:intentional:\"soy\""
+    ]
+   }
+  },
+  {
+   "set": "v3",
+   "rep": 2,
+   "case": {
+    "id": "V19",
+    "cat": "negative_lookalike",
+    "text": "Product: Fruit Spread Ingredients: Apple butter (apples, sugar, cinnamon), pectin.",
+    "ingredients": [],
+    "lookalikes": [
+     "Apple butter"
+    ],
+    "may": [],
+    "review": false,
+    "rationale": "Apple butter contains 'butter' but is a fruit concentrate with no dairy; no major allergen ingredients present."
+   },
+   "ms": 14161,
+   "nanoStatus": "ok",
+   "error": null,
+   "rawNano": {
+    "ingredients": [
+     {
+      "term": "apples",
+      "evidence": "Apple butter (apples, sugar, cinnamon)",
+      "assertion": "intentional",
+      "allergen_guess": "unknown"
+     }
+    ],
+    "absences": []
+   },
+   "rules": {
+    "contains": [
+     "milk"
+    ],
+    "may": [],
+    "review": false,
+    "unresolved": [],
+    "unsupported": [],
+    "unsupportedAbsences": [],
+    "possible": [],
+    "absences": [],
+    "dictSpans": [
+     {
+      "allergen": "milk",
+      "assertion": "intentional",
+      "evidence": "butter",
+      "start": 41,
+      "end": 47
+     }
+    ],
+    "evidence": [
+     "dictionary:milk:intentional:\"butter\""
+    ]
+   },
+   "nano": {
+    "contains": [],
+    "may": [],
+    "review": true,
+    "unresolved": [
+     "Possible allergen in \"apples\" (intentional) \u2014 allergen UNKNOWN, verify"
+    ],
+    "unsupported": [],
+    "unsupportedAbsences": [],
+    "possible": [
+     {
+      "term": "apples",
+      "evidence": "Apple butter (apples, sugar, cinnamon",
+      "assertion": "intentional",
+      "modelGuess": "unknown",
+      "start": 35,
+      "end": 72
+     }
+    ],
+    "absences": [],
+    "dictSpans": [],
+    "evidence": []
+   },
+   "hybrid": {
+    "contains": [
+     "milk"
+    ],
+    "may": [],
+    "review": false,
+    "unresolved": [],
+    "unsupported": [],
+    "unsupportedAbsences": [],
+    "possible": [],
+    "absences": [],
+    "dictSpans": [
+     {
+      "allergen": "milk",
+      "assertion": "intentional",
+      "evidence": "butter",
+      "start": 41,
+      "end": 47
+     }
+    ],
+    "evidence": [
+     "dictionary:milk:intentional:\"butter\""
+    ]
+   }
+  },
+  {
+   "set": "v3",
+   "rep": 2,
+   "case": {
+    "id": "V20",
+    "cat": "negative_lookalike",
+    "text": "Product: Gluten-Free Flour Blend Ingredients: Tiger nut flour, rice flour, tapioca starch.",
+    "ingredients": [],
+    "lookalikes": [
+     "Tiger nut flour"
+    ],
+    "may": [],
+    "review": false,
+    "rationale": "Tiger nut is a tuber (Cyperus esculentus), not a tree nut; the term 'nut' appears but no major allergen is present."
+   },
+   "ms": 71766,
+   "nanoStatus": "ok",
+   "error": null,
+   "rawNano": {
+    "ingredients": [
+     {
+      "term": "Tiger nut flour",
+      "evidence": "Tiger nut flour",
+      "assertion": "intentional",
+      "allergen_guess": "treenut"
+     },
+     {
+      "term": "rice flour",
+      "evidence": "rice flour",
+      "assertion": "intentional",
+      "allergen_guess": "unknown"
+     },
+     {
+      "term": "tapioca starch",
+      "evidence": "tapioca starch",
+      "assertion": "intentional",
+      "allergen_guess": "unknown"
+     }
+    ],
+    "absences": [
+     {
+      "ingredient": "milk",
+      "missing": "source",
+      "ingredient_evidence": ""
+     },
+     {
+      "ingredient": "egg",
+      "missing": "source",
+      "ingredient_evidence": ""
+     },
+     {
+      "ingredient": "fish",
+      "missing": "source",
+      "ingredient_evidence": ""
+     },
+     {
+      "ingredient": "crustacean shellfish",
+      "missing": "source",
+      "ingredient_evidence": ""
+     },
+     {
+      "ingredient": "tree nuts",
+      "missing": "source",
+      "ingredient_evidence": ""
+     },
+     {
+      "ingredient": "peanut",
+      "missing": "source",
+      "ingredient_evidence": ""
+     },
+     {
+      "ingredient": "wheat",
+      "missing": "source",
+      "ingredient_evidence": ""
+     },
+     {
+      "ingredient": "soy",
+      "missing": "source",
+      "ingredient_evidence": ""
+     },
+     {
+      "ingredient": "sesame",
+      "missing": "source",
+      "ingredient_evidence": ""
+     }
+    ]
+   },
+   "rules": {
+    "contains": [],
+    "may": [],
+    "review": false,
+    "unresolved": [],
+    "unsupported": [],
+    "unsupportedAbsences": [],
+    "possible": [],
+    "absences": [],
+    "dictSpans": [],
+    "evidence": []
+   },
+   "nano": {
+    "contains": [],
+    "may": [],
+    "review": true,
+    "unresolved": [
+     "Possible allergen in \"Tiger nut flour\" (intentional) \u2014 allergen UNKNOWN, verify",
+     "Possible allergen in \"rice flour\" (intentional) \u2014 allergen UNKNOWN, verify",
+     "Possible allergen in \"tapioca starch\" (intentional) \u2014 allergen UNKNOWN, verify"
+    ],
+    "unsupported": [],
+    "unsupportedAbsences": [
+     "\"\"",
+     "\"\"",
+     "\"\"",
+     "\"\"",
+     "\"\"",
+     "\"\"",
+     "\"\"",
+     "\"\"",
+     "\"\""
+    ],
+    "possible": [
+     {
+      "term": "Tiger nut flour",
+      "evidence": "Tiger nut flour",
+      "assertion": "intentional",
+      "modelGuess": "treenut",
+      "start": 46,
+      "end": 61
+     },
+     {
+      "term": "rice flour",
+      "evidence": "rice flour",
+      "assertion": "intentional",
+      "modelGuess": "unknown",
+      "start": 63,
+      "end": 73
+     },
+     {
+      "term": "tapioca starch",
+      "evidence": "tapioca starch",
+      "assertion": "intentional",
+      "modelGuess": "unknown",
+      "start": 75,
+      "end": 89
+     }
+    ],
+    "absences": [],
+    "dictSpans": [],
+    "evidence": []
+   },
+   "hybrid": {
+    "contains": [],
+    "may": [],
+    "review": true,
+    "unresolved": [
+     "Possible allergen in \"Tiger nut flour\" (intentional) \u2014 allergen UNKNOWN, verify",
+     "Possible allergen in \"rice flour\" (intentional) \u2014 allergen UNKNOWN, verify",
+     "Possible allergen in \"tapioca starch\" (intentional) \u2014 allergen UNKNOWN, verify"
+    ],
+    "unsupported": [],
+    "unsupportedAbsences": [
+     "\"\"",
+     "\"\"",
+     "\"\"",
+     "\"\"",
+     "\"\"",
+     "\"\"",
+     "\"\"",
+     "\"\"",
+     "\"\""
+    ],
+    "possible": [
+     {
+      "term": "Tiger nut flour",
+      "evidence": "Tiger nut flour",
+      "assertion": "intentional",
+      "modelGuess": "treenut",
+      "start": 46,
+      "end": 61
+     },
+     {
+      "term": "rice flour",
+      "evidence": "rice flour",
+      "assertion": "intentional",
+      "modelGuess": "unknown",
+      "start": 63,
+      "end": 73
+     },
+     {
+      "term": "tapioca starch",
+      "evidence": "tapioca starch",
+      "assertion": "intentional",
+      "modelGuess": "unknown",
+      "start": 75,
+      "end": 89
+     }
+    ],
+    "absences": [],
+    "dictSpans": [],
+    "evidence": []
+   }
+  }
+ ],
+ "summary": {
+  "v3": {
+   "name": "Held-out v3 20 (authored by Nemotron, frozen before any run)",
+   "v3": {
+    "rules": {
+     "runs": 60,
+     "identification": {
+      "precision": 0.875,
+      "recall": 0.933,
+      "found": "42/45",
+      "findings": 48
+     },
+     "classification": {
+      "accuracy": 0.933,
+      "correct": 42,
+      "wrongCategory": 0,
+      "leftUnknownForHuman": 0,
+      "notIdentified": 3,
+      "precisionOfConfirmed": 0.875,
+      "wrongDetails": []
+     },
+     "ambiguous": {
+      "total": 9,
+      "flaggedForHuman": 3,
+      "overclaimed": 0
+     },
+     "falsePositiveAllergens": 6,
+     "fpIds": [
+      "V16:milk",
+      "V19:milk",
+      "V16:milk",
+      "V19:milk",
+      "V16:milk",
+      "V19:milk"
+     ],
+     "silentMisses": 3,
+     "silentIds": [
+      "V08",
+      "V08",
+      "V08"
+     ],
+     "reviewRate": 0.15,
+     "unsupportedEvidence": 0,
+     "unsupportedAbsence": 0
+    },
+    "nano": {
+     "runs": 60,
+     "identification": {
+      "precision": 0.627,
+      "recall": 1,
+      "found": "45/45",
+      "findings": 102
+     },
+     "classification": {
+      "accuracy": 0.911,
+      "correct": 41,
+      "wrongCategory": 0,
+      "leftUnknownForHuman": 4,
+      "notIdentified": 0,
+      "precisionOfConfirmed": 0.83,
+      "wrongDetails": []
+     },
+     "ambiguous": {
+      "total": 9,
+      "flaggedForHuman": 3,
+      "overclaimed": 3
+     },
+     "falsePositiveAllergens": 8,
+     "fpIds": [
+      "V15:soy",
+      "V16:milk",
+      "V20:treenut",
+      "V15:soy",
+      "V20:treenut",
+      "V15:soy",
+      "V16:milk",
+      "V20:treenut"
+     ],
+     "silentMisses": 0,
+     "silentIds": [],
+     "reviewRate": 0.95,
+     "unsupportedEvidence": 0,
+     "unsupportedAbsence": 134
+    },
+    "hybrid": {
+     "runs": 60,
+     "identification": {
+      "precision": 0.64,
+      "recall": 1,
+      "found": "45/45",
+      "findings": 89
+     },
+     "classification": {
+      "accuracy": 0.933,
+      "correct": 42,
+      "wrongCategory": 0,
+      "leftUnknownForHuman": 3,
+      "notIdentified": 0,
+      "precisionOfConfirmed": 0.875,
+      "wrongDetails": []
+     },
+     "ambiguous": {
+      "total": 9,
+      "flaggedForHuman": 6,
+      "overclaimed": 0
+     },
+     "falsePositiveAllergens": 6,
+     "fpIds": [
+      "V16:milk",
+      "V19:milk",
+      "V16:milk",
+      "V19:milk",
+      "V16:milk",
+      "V19:milk"
+     ],
+     "silentMisses": 0,
+     "silentIds": [],
+     "reviewRate": 0.533,
+     "unsupportedEvidence": 0,
+     "unsupportedAbsence": 134
+    }
+   },
+   "stability": {
+    "nano": "9/20 cases identical across repeats",
+    "hybrid": "13/20 cases identical across repeats"
+   },
+   "latency": {
+    "n": 60,
+    "p50": 22102,
+    "p90": 66367,
+    "max": 83436,
+    "mean": 32125
+   },
+   "statuses": {
+    "ok": 60
+   }
+  }
+ }
+}

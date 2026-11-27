@@ -1,0 +1,437 @@
+{
+ "meta": {
+  "started": "2026-11-26T10:30:22.298Z",
+  "ua": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/158.0.0.0 Safari/537.36",
+  "cores": 8,
+  "sdk": {
+   "package": "firebase",
+   "version": "13.4.0",
+   "module": "firebase/ai"
+  },
+  "prompt": "specproof-prompt-1 (2026-11-26)",
+  "cases": "specproof-v1",
+  "reps": 1,
+  "only": null,
+  "finished": "2026-11-26T10:42:09.234Z"
+ },
+ "specs": [
+  {
+   "id": "S01",
+   "lang": "en",
+   "cond": "clear",
+   "ms": 36201,
+   "legibleFlag": false,
+   "recall": "1/3",
+   "fabricated": [
+    "1. Nonfat Milk",
+    "3. Vitamin D3"
+   ],
+   "goldAllergens": [
+    "milk"
+   ],
+   "predicted": [
+    "milk"
+   ],
+   "missed": [],
+   "extra": [],
+   "misses": [
+    {
+     "gold": "Nonfat Milk",
+     "hit": false,
+     "exact": false,
+     "best": 0.79
+    },
+    {
+     "gold": "Vitamin D3",
+     "hit": false,
+     "exact": false,
+     "best": 0.77
+    }
+   ]
+  },
+  {
+   "id": "S02",
+   "lang": "en",
+   "cond": "rotated",
+   "ms": 29621,
+   "legibleFlag": false,
+   "recall": "3/3",
+   "fabricated": [],
+   "goldAllergens": [
+    "egg"
+   ],
+   "predicted": [
+    "egg"
+   ],
+   "missed": [],
+   "extra": [],
+   "misses": []
+  },
+  {
+   "id": "S03",
+   "lang": "en",
+   "cond": "blurred",
+   "ms": 42303,
+   "legibleFlag": false,
+   "recall": "6/6",
+   "fabricated": [],
+   "goldAllergens": [
+    "fish",
+    "soy",
+    "egg"
+   ],
+   "predicted": [
+    "egg",
+    "fish",
+    "soy"
+   ],
+   "missed": [],
+   "extra": [],
+   "misses": []
+  },
+  {
+   "id": "S04",
+   "lang": "en",
+   "cond": "photo",
+   "ms": 47774,
+   "legibleFlag": false,
+   "recall": "7/7",
+   "fabricated": [],
+   "goldAllergens": [
+    "wheat"
+   ],
+   "predicted": [
+    "wheat"
+   ],
+   "missed": [],
+   "extra": [],
+   "misses": []
+  },
+  {
+   "id": "S05",
+   "lang": "es",
+   "cond": "clear",
+   "ms": 35604,
+   "legibleFlag": false,
+   "recall": "4/4",
+   "fabricated": [],
+   "goldAllergens": [
+    "milk",
+    "soy"
+   ],
+   "predicted": [
+    "milk",
+    "soy"
+   ],
+   "missed": [],
+   "extra": [],
+   "misses": []
+  },
+  {
+   "id": "S06",
+   "lang": "es",
+   "cond": "rotated",
+   "ms": 29608,
+   "legibleFlag": false,
+   "recall": "3/3",
+   "fabricated": [],
+   "goldAllergens": [
+    "sesame"
+   ],
+   "predicted": [
+    "sesame"
+   ],
+   "missed": [],
+   "extra": [],
+   "misses": []
+  },
+  {
+   "id": "S07",
+   "lang": "es",
+   "cond": "photo",
+   "ms": 20734,
+   "legibleFlag": false,
+   "recall": "0/1",
+   "fabricated": [
+    "1. Sémola de trigo"
+   ],
+   "goldAllergens": [
+    "wheat"
+   ],
+   "predicted": [
+    "wheat"
+   ],
+   "missed": [],
+   "extra": [],
+   "misses": [
+    {
+     "gold": "Sémola de trigo",
+     "hit": false,
+     "exact": false,
+     "best": 0.83
+    }
+   ]
+  },
+  {
+   "id": "S08",
+   "lang": "ja",
+   "cond": "clear",
+   "ms": 29532,
+   "legibleFlag": false,
+   "recall": "3/3",
+   "fabricated": [],
+   "goldAllergens": [
+    "milk"
+   ],
+   "predicted": [
+    "milk"
+   ],
+   "missed": [],
+   "extra": [],
+   "misses": []
+  },
+  {
+   "id": "S09",
+   "lang": "ja",
+   "cond": "blurred",
+   "ms": 23023,
+   "legibleFlag": false,
+   "recall": "2/2",
+   "fabricated": [],
+   "goldAllergens": [
+    "sesame"
+   ],
+   "predicted": [
+    "sesame"
+   ],
+   "missed": [],
+   "extra": [],
+   "misses": []
+  },
+  {
+   "id": "S10",
+   "lang": "ja",
+   "cond": "photo",
+   "ms": 36056,
+   "legibleFlag": false,
+   "recall": "5/5",
+   "fabricated": [
+    "該当なし"
+   ],
+   "goldAllergens": [
+    "soy"
+   ],
+   "predicted": [
+    "soy"
+   ],
+   "missed": [],
+   "extra": [],
+   "misses": []
+  }
+ ],
+ "labels": [
+  {
+   "id": "L01",
+   "cond": "clear",
+   "ms": 27120,
+   "legibleFlag": false,
+   "expected": "CLEAR",
+   "decision": "CLEAR_AWAITING_SIGNOFF",
+   "disputed": false,
+   "transcriptionSimilarity": 1,
+   "containsCorrect": true,
+   "read": {
+    "ing": "INGREDIENTS: CULTURED GRADE A NONFAT MILK, SUGAR, MODIFIED CORN STARCH, WHEY PROTEIN CONCENTRATE (MILK), NATURAL FLAVOR, PECTIN, VITAMIN D3",
+    "contains": "Contains: Milk"
+   }
+  },
+  {
+   "id": "L02",
+   "cond": "rotated",
+   "ms": 25109,
+   "legibleFlag": false,
+   "expected": "CLEAR",
+   "decision": "CLEAR_AWAITING_SIGNOFF",
+   "disputed": false,
+   "transcriptionSimilarity": 1,
+   "containsCorrect": true,
+   "read": {
+    "ing": "INGREDIENTS: SOYBEAN OIL, WATER, EGG YOLKS, DISTILLED VINEGAR, SALT, LEMON JUICE CONCENTRATE, CALCIUM DISODIUM EDTA",
+    "contains": null
+   }
+  },
+  {
+   "id": "L03",
+   "cond": "clear",
+   "ms": 38202,
+   "legibleFlag": false,
+   "expected": "CLEAR",
+   "decision": "CLEAR_AWAITING_SIGNOFF",
+   "disputed": false,
+   "transcriptionSimilarity": 1,
+   "containsCorrect": true,
+   "read": {
+    "ing": "INGREDIENTS: ENRICHED WHEAT FLOUR (WHEAT FLOUR, MALTED BARLEY FLOUR, NIACIN, REDUCED IRON, THIAMINE MONONITRATE, RIBOFLAVIN, FOLIC ACID), WATER, WHOLE WHEAT FLOUR, SUGAR, YEAST, SOYBEAN OIL, SALT, WHEAT GLUTEN, CALCIUM PROPIONATE",
+    "contains": "Contains: Wheat, Soy"
+   }
+  },
+  {
+   "id": "L04",
+   "cond": "photo",
+   "ms": 42240,
+   "legibleFlag": false,
+   "expected": "CLEAR",
+   "decision": "CLEAR_AWAITING_SIGNOFF",
+   "disputed": false,
+   "transcriptionSimilarity": 0.783,
+   "containsCorrect": true,
+   "read": {
+    "ing": "INGREDIENTS: PROTEIN BLEND (WHEY PROTEIN ISOLATE (MILK), MILK PROTEIN ISOLATE (MILK)), CHICORY ROOT FIBER, ALMONDS, DARK CHOCOLATE (CACAO BEANS, SUGAR, COCOA BUTTER, SOY LECITHIN), CHOCOLATE (CACAO BEANS, SUGAR, COCOA BUTTER, SOY LECITHIN), GLYCERIN, NATURAL FLAVORS, SEA SALT",
+    "contains": null
+   }
+  },
+  {
+   "id": "L05",
+   "cond": "blurred",
+   "ms": 31256,
+   "legibleFlag": false,
+   "expected": "CLEAR",
+   "decision": "CLEAR_AWAITING_SIGNOFF",
+   "disputed": false,
+   "transcriptionSimilarity": 0.973,
+   "containsCorrect": true,
+   "read": {
+    "ing": "INGREDIENTS: CANOLA OIL, WATER, SEASME SEEDS, SOY SAUCE (WATER, WHEAT, SOYBEANS, SALT), RICE VINEGAR, SUGAR, GINGER, GARLIC, SEASME OIL, XANTHAN GUM",
+    "contains": "Contains: Wheat, Soy, Sesame"
+   }
+  },
+  {
+   "id": "L06",
+   "cond": "clear",
+   "ms": 31885,
+   "legibleFlag": false,
+   "expected": "BLOCK",
+   "decision": "BLOCK",
+   "disputed": false,
+   "transcriptionSimilarity": 1,
+   "containsCorrect": true,
+   "read": {
+    "ing": "INGREDIENTS: ENRICHED FLOUR (WHEAT FLOUR, NIACIN, REDUCED IRON, THIAMINE MONONITRATE, RIBOFLAVIN, FOLIC ACID), SUNFLOWER OIL, HONEY, MUSTARD SEED, VINEGAR, SALT, SPICES, NATURAL FLAVOR",
+    "contains": null
+   }
+  },
+  {
+   "id": "L07",
+   "cond": "photo",
+   "ms": 27498,
+   "legibleFlag": false,
+   "expected": "BLOCK",
+   "decision": "CLEAR_AWAITING_SIGNOFF",
+   "disputed": false,
+   "transcriptionSimilarity": 0.885,
+   "containsCorrect": false,
+   "read": {
+    "ing": "INGREDIENTS: ENRICHED WHEAT FLOUR, CHEDDAR CHEESE (MILK, CHEESE CULTURES, SALT, ENZYMES), SOYBEAN OIL, SALT, YEAST, PAPRIKA\nContains: Wheat",
+    "contains": null
+   }
+  },
+  {
+   "id": "L08",
+   "cond": "rotated",
+   "ms": 22712,
+   "legibleFlag": false,
+   "expected": "BLOCK",
+   "decision": "CLEAR_AWAITING_SIGNOFF",
+   "disputed": true,
+   "transcriptionSimilarity": 0.918,
+   "containsCorrect": true,
+   "read": {
+    "ing": "INGREDIENTS: POPCORN, SUNFLOWER OIL, WHEY, CHEEDAR POWDER, BUTTERMILK, SALT, NATURAL FLAVOR",
+    "contains": null
+   }
+  },
+  {
+   "id": "L09",
+   "cond": "clear",
+   "ms": 22435,
+   "legibleFlag": false,
+   "expected": "BLOCK",
+   "decision": "BLOCK",
+   "disputed": false,
+   "transcriptionSimilarity": 1,
+   "containsCorrect": true,
+   "read": {
+    "ing": "INGREDIENTS: ALMONDS, CASHEWS, PEANUTS, RAISINS, SUNFLOWER SEEDS, NATURAL FLAVOR, SALT",
+    "contains": null
+   }
+  },
+  {
+   "id": "L10",
+   "cond": "blurred",
+   "ms": 31240,
+   "legibleFlag": false,
+   "expected": "BLOCK",
+   "decision": "BLOCK",
+   "disputed": false,
+   "transcriptionSimilarity": 0.951,
+   "containsCorrect": true,
+   "read": {
+    "ing": "INGREDIENTS: WHEAT FLOUR, PALM OIL, SALT, SOY SAUCE POWER (SOY SAUCE (WATER, WHEAT, SOYBEANS, SALT), MALTOДЕКТРИН), DEHYDRATED VEGETABLES, SPICES, NATURAL FLAVOR",
+    "contains": "Contains: Wheat, Soy"
+   }
+  }
+ ],
+ "stress": [
+  {
+   "id": "U01",
+   "kind": "spec",
+   "outcome": "OK",
+   "expected": "NEEDS_REVIEW",
+   "parsed": {
+    "legible": false,
+    "language": "es",
+    "ingredients": [
+     {
+      "printed": "Semola de trigo",
+      "english": "Wheat flour"
+     }
+    ],
+    "allergen_statement_printed": null
+   }
+  },
+  {
+   "id": "U02",
+   "kind": "label",
+   "outcome": "BLOCK",
+   "expected": "NEEDS_REVIEW",
+   "parsed": {
+    "legible": false,
+    "ingredient_list_printed": "INGREDIENTS: ALMONDS, CASHEWS, PEANUTS, RAISIN, SUNFLOWER SEEDS, NATURAL FLAVOR, SALT",
+    "contains_printed": null
+   }
+  }
+ ],
+ "summary": {
+  "runs": 22,
+  "onDevice": 22,
+  "errors": [],
+  "externalRequestsDuringInference": 0,
+  "specIngredientRecall": "34/37 = 91.9%",
+  "specExactQuote": "33/37 = 89.2%",
+  "fabricatedIngredients": "4 of 38 extracted",
+  "specAllergenSetsExact": "10/10",
+  "specAllergensMissed": 0,
+  "specAllergensExtra": 0,
+  "labelDecisionsCorrectExclL08": "8/9",
+  "falseBlocksOnCompliant": 0,
+  "deliberateErrorsFlaggedExclL08": "3/4",
+  "labelTranscriptionSimilarityMean": 0.951,
+  "containsLineCorrect": "9/10",
+  "latencyMs": {
+   "p50": 29621,
+   "p90": 42240,
+   "max": 47774
+  },
+  "legibleFlagFalse": 22
+ }
+}

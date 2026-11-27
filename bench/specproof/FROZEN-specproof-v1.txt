@@ -1,0 +1,17 @@
+af8f1737a1ed0a07eecbb63cbe6b6e81c7ba39fc12238c0246c8667559c79f37  specproof-v1.json
+4623fde47be5c1dcfc45eb9b3f3fec056e490f386299b2f251db26b8ba732152  render.py
+# frozen 2026-11-26T10:25:02Z before any model run
+# PRE-RUN GOLD AUDIT (deterministic rule applied to Nemotron's GOLD text, no model involved), recorded before any model run:
+#  19/20 agree. DISPUTED: L08 gold=BLOCK (error type c) but the label prints "BUTTERMILK", which contains the allergen name
+#  "milk" -> disclosed under the stated rule (and FDA practice). Gold is NOT edited; L08 is reported separately as disputed.
+#  Spec allergen mapping from gold English translations: 10/10 correct.
+bf830f67a5eac5b4005cf683463acc9673a9cd7c55acf0525c88bcee8a58507b  src/specproof/prompts.js
+cdf064d6b81a6ff161463169f7621443f72059216e2fbdcfff9fa23b416e25f4  src/specproof/decide.js
+# DEV SMOKE TEST (D01 es spec, D02 label; dev-cases.json, NOT evaluation data) 2026-11-26 ~10:50Z: both transcribed perfectly,
+#  on_device, 0 external requests, 71 s / 29 s. Model returned legible=false on BOTH despite perfect reads.
+# CHANGE before any evaluation run: decide.js no longer uses the model's self-reported "legible" flag; NEEDS_REVIEW is
+#  triggered by an empty/near-empty transcription. The flag is still recorded and reported as a metric.
+cb04c34d1847da7eab97790188d3d22c0ab2e1e233860649770bb679939479ee  src/specproof/decide.js
+cfb6002ad0203068b292e550f2024785f50d1392c7d5b0f3c7138a489784cf57  src/specproof/run.js
+dba57edd96afdd4ba0513f4293f1bb5044d6b6062312c5ecd361b8a95a878bc0  bench/specproof/score.mjs
+# score.mjs frozen 10:30Z while the evaluation run was in progress, before reading any evaluation output

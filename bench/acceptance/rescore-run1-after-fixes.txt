@@ -1,0 +1,10 @@
+A1 expect PRINT_BLOCKED | rules PRINT_BLOCKED | app PRINT_BLOCKED | milk:missing,wheat:disclosed | 
+A2 expect CHECKS_CLEAR_AWAITING_SIGNOFF | rules PRINT_BLOCKED | app NEEDS_REVIEW | milk:missing,wheat:missing | empty_reading
+A3 expect PRINT_BLOCKED | rules PRINT_BLOCKED | app PRINT_BLOCKED | milk:missing,wheat:disclosed | 
+A4 expect CHECKS_CLEAR_AWAITING_SIGNOFF | rules CHECKS_CLEAR_AWAITING_SIGNOFF | app CHECKS_CLEAR_AWAITING_SIGNOFF | milk:disclosed,wheat:disclosed | 
+A5 expect CHECKS_CLEAR_AWAITING_SIGNOFF | rules CHECKS_CLEAR_AWAITING_SIGNOFF | app CHECKS_CLEAR_AWAITING_SIGNOFF | milk:disclosed,wheat:disclosed | 
+A6 expect PRINT_BLOCKED | rules PRINT_BLOCKED | app PRINT_BLOCKED | milk:missing,wheat:disclosed | 
+A7 expect CHECKS_CLEAR_AWAITING_SIGNOFF | rules CHECKS_CLEAR_AWAITING_SIGNOFF | app CHECKS_CLEAR_AWAITING_SIGNOFF | milk:disclosed,wheat:disclosed | 
+A8 expect NOT_SILENT_CLEAR | rules PRINT_BLOCKED | app NEEDS_REVIEW | milk:missing,wheat:missing | empty_reading
+A9 expect CHECKS_CLEAR_AWAITING_SIGNOFF | rules PRINT_BLOCKED | app NEEDS_REVIEW | milk:missing,wheat:missing | placeholder,empty_reading
+A10 expect CHECKS_CLEAR_AWAITING_SIGNOFF | rules CHECKS_CLEAR_AWAITING_SIGNOFF | app CHECKS_CLEAR_AWAITING_SIGNOFF | milk:disclosed,wheat:disclosed | 

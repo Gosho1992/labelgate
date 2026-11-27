@@ -1,0 +1,24 @@
+{
+  "name": "labelgate",
+  "version": "0.1.0",
+  "private": true,
+  "description": "LabelGate: local-first supplier-change impact and allergen label release gate (Firebase AI Logic hybrid inference).",
+  "type": "module",
+  "license": "Apache-2.0",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview",
+    "test": "vitest run",
+    "bench:build": "node bench/build-bench.mjs",
+    "bench:rules": "node bench/rules-node.mjs"
+  },
+  "dependencies": {
+    "firebase": "^13.4.0"
+  },
+  "devDependencies": {
+    "happy-dom": "^21.0.4",
+    "vite": "^8.3.8",
+    "vitest": "*"
+  }
+}

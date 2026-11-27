@@ -1,0 +1,925 @@
+{
+ "versions": {
+  "pipeline": "detect-1",
+  "dictionary": "2026.11.25-1",
+  "prompt": "extract-v1-2026.11.25",
+  "schema": "claims-v1"
+ },
+ "sets": {
+  "legacy20": {
+   "name": "Legacy tuning 20 (dictionary/prompt were tuned on these)",
+   "rules": {
+    "n": 20,
+    "precision": 1,
+    "recall": 1,
+    "missed": 0,
+    "silentMisses": 0,
+    "silentIds": [],
+    "falsePositives": 0,
+    "fpIds": [],
+    "reviewRate": 0.25,
+    "reviewFlags": 5,
+    "reviewRecall": "4/6",
+    "unsupportedClaims": 0,
+    "precautionaryCorrect": "20/20",
+    "containsExact": "20/20"
+   },
+   "perCase": [
+    {
+     "id": "S1",
+     "gold": {
+      "contains": [
+       "wheat",
+       "milk",
+       "egg"
+      ],
+      "may": [],
+      "review": false
+     },
+     "rules": {
+      "c": [
+       "egg",
+       "milk",
+       "wheat"
+      ],
+      "m": [],
+      "review": false
+     }
+    },
+    {
+     "id": "S2",
+     "gold": {
+      "contains": [
+       "peanut"
+      ],
+      "may": [],
+      "review": false
+     },
+     "rules": {
+      "c": [
+       "peanut"
+      ],
+      "m": [],
+      "review": false
+     }
+    },
+    {
+     "id": "S3",
+     "gold": {
+      "contains": [
+       "egg",
+       "soy"
+      ],
+      "may": [],
+      "review": false
+     },
+     "rules": {
+      "c": [
+       "egg",
+       "soy"
+      ],
+      "m": [],
+      "review": false
+     }
+    },
+    {
+     "id": "S4",
+     "gold": {
+      "contains": [
+       "sesame"
+      ],
+      "may": [],
+      "review": false
+     },
+     "rules": {
+      "c": [
+       "sesame"
+      ],
+      "m": [],
+      "review": false
+     }
+    },
+    {
+     "id": "S5",
+     "gold": {
+      "contains": [
+       "fish",
+       "wheat"
+      ],
+      "may": [],
+      "review": false
+     },
+     "rules": {
+      "c": [
+       "fish",
+       "wheat"
+      ],
+      "m": [],
+      "review": false
+     }
+    },
+    {
+     "id": "M1",
+     "gold": {
+      "contains": [
+       "milk"
+      ],
+      "may": [
+       "soy"
+      ],
+      "review": false
+     },
+     "rules": {
+      "c": [
+       "milk"
+      ],
+      "m": [
+       "soy"
+      ],
+      "review": true
+     }
+    },
+    {
+     "id": "M2",
+     "gold": {
+      "contains": [
+       "soy",
+       "milk"
+      ],
+      "may": [
+       "sesame"
+      ],
+      "review": false
+     },
+     "rules": {
+      "c": [
+       "milk",
+       "soy"
+      ],
+      "m": [
+       "sesame"
+      ],
+      "review": false
+     }
+    },
+    {
+     "id": "M3",
+     "gold": {
+      "contains": [
+       "egg"
+      ],
+      "may": [],
+      "review": false
+     },
+     "rules": {
+      "c": [
+       "egg"
+      ],
+      "m": [],
+      "review": false
+     }
+    },
+    {
+     "id": "M4",
+     "gold": {
+      "contains": [
+       "treenut"
+      ],
+      "may": [],
+      "review": false
+     },
+     "rules": {
+      "c": [
+       "treenut"
+      ],
+      "m": [],
+      "review": false
+     }
+    },
+    {
+     "id": "M5",
+     "gold": {
+      "contains": [
+       "fish"
+      ],
+      "may": [],
+      "review": false
+     },
+     "rules": {
+      "c": [
+       "fish"
+      ],
+      "m": [],
+      "review": false
+     }
+    },
+    {
+     "id": "N1",
+     "gold": {
+      "contains": [],
+      "may": [],
+      "review": true
+     },
+     "rules": {
+      "c": [],
+      "m": [],
+      "review": true
+     }
+    },
+    {
+     "id": "N2",
+     "gold": {
+      "contains": [
+       "wheat",
+       "milk"
+      ],
+      "may": [],
+      "review": false
+     },
+     "rules": {
+      "c": [
+       "milk",
+       "wheat"
+      ],
+      "m": [],
+      "review": false
+     }
+    },
+    {
+     "id": "N3",
+     "gold": {
+      "contains": [
+       "shellfish"
+      ],
+      "may": [],
+      "review": false
+     },
+     "rules": {
+      "c": [
+       "shellfish"
+      ],
+      "m": [],
+      "review": false
+     }
+    },
+    {
+     "id": "N4",
+     "gold": {
+      "contains": [
+       "milk",
+       "egg",
+       "treenut"
+      ],
+      "may": [],
+      "review": false
+     },
+     "rules": {
+      "c": [
+       "egg",
+       "milk",
+       "treenut"
+      ],
+      "m": [],
+      "review": false
+     }
+    },
+    {
+     "id": "N5",
+     "gold": {
+      "contains": [
+       "milk"
+      ],
+      "may": [],
+      "review": false
+     },
+     "rules": {
+      "c": [
+       "milk"
+      ],
+      "m": [],
+      "review": false
+     }
+    },
+    {
+     "id": "C1",
+     "gold": {
+      "contains": [
+       "wheat"
+      ],
+      "may": [],
+      "review": true
+     },
+     "rules": {
+      "c": [
+       "wheat"
+      ],
+      "m": [],
+      "review": true
+     }
+    },
+    {
+     "id": "C2",
+     "gold": {
+      "contains": [],
+      "may": [],
+      "review": true
+     },
+     "rules": {
+      "c": [],
+      "m": [],
+      "review": true
+     }
+    },
+    {
+     "id": "C3",
+     "gold": {
+      "contains": [
+       "milk"
+      ],
+      "may": [],
+      "review": true
+     },
+     "rules": {
+      "c": [
+       "milk"
+      ],
+      "m": [],
+      "review": false
+     }
+    },
+    {
+     "id": "C4",
+     "gold": {
+      "contains": [],
+      "may": [],
+      "review": true
+     },
+     "rules": {
+      "c": [],
+      "m": [],
+      "review": true
+     }
+    },
+    {
+     "id": "C5",
+     "gold": {
+      "contains": [
+       "milk"
+      ],
+      "may": [],
+      "review": true
+     },
+     "rules": {
+      "c": [
+       "milk"
+      ],
+      "m": [],
+      "review": false
+     }
+    }
+   ]
+  },
+  "legacy10": {
+   "name": "Legacy held-out 10 (CONTAMINATED for app: words later added to dictionary+prompt)",
+   "rules": {
+    "n": 10,
+    "precision": 0.9,
+    "recall": 1,
+    "missed": 0,
+    "silentMisses": 0,
+    "silentIds": [],
+    "falsePositives": 1,
+    "fpIds": [
+     "H8"
+    ],
+    "reviewRate": 0,
+    "reviewFlags": 0,
+    "reviewRecall": "0/1",
+    "unsupportedClaims": 0,
+    "precautionaryCorrect": "10/10",
+    "containsExact": "9/10"
+   },
+   "perCase": [
+    {
+     "id": "H1",
+     "gold": {
+      "contains": [
+       "milk"
+      ],
+      "may": [],
+      "review": false
+     },
+     "rules": {
+      "c": [
+       "milk"
+      ],
+      "m": [],
+      "review": false
+     }
+    },
+    {
+     "id": "H2",
+     "gold": {
+      "contains": [
+       "shellfish"
+      ],
+      "may": [],
+      "review": false
+     },
+     "rules": {
+      "c": [
+       "shellfish"
+      ],
+      "m": [],
+      "review": false
+     }
+    },
+    {
+     "id": "H3",
+     "gold": {
+      "contains": [
+       "wheat"
+      ],
+      "may": [],
+      "review": false
+     },
+     "rules": {
+      "c": [
+       "wheat"
+      ],
+      "m": [],
+      "review": false
+     }
+    },
+    {
+     "id": "H4",
+     "gold": {
+      "contains": [
+       "egg"
+      ],
+      "may": [],
+      "review": false
+     },
+     "rules": {
+      "c": [
+       "egg"
+      ],
+      "m": [],
+      "review": false
+     }
+    },
+    {
+     "id": "H5",
+     "gold": {
+      "contains": [
+       "treenut"
+      ],
+      "may": [],
+      "review": false
+     },
+     "rules": {
+      "c": [
+       "treenut"
+      ],
+      "m": [],
+      "review": false
+     }
+    },
+    {
+     "id": "H6",
+     "gold": {
+      "contains": [
+       "fish"
+      ],
+      "may": [],
+      "review": false
+     },
+     "rules": {
+      "c": [
+       "fish"
+      ],
+      "m": [],
+      "review": false
+     }
+    },
+    {
+     "id": "H7",
+     "gold": {
+      "contains": [],
+      "may": [
+       "peanut"
+      ],
+      "review": false
+     },
+     "rules": {
+      "c": [],
+      "m": [
+       "peanut"
+      ],
+      "review": false
+     }
+    },
+    {
+     "id": "H8",
+     "gold": {
+      "contains": [
+       "treenut"
+      ],
+      "may": [],
+      "review": true
+     },
+     "rules": {
+      "c": [
+       "milk",
+       "treenut"
+      ],
+      "m": [],
+      "review": false
+     }
+    },
+    {
+     "id": "H9",
+     "gold": {
+      "contains": [
+       "treenut"
+      ],
+      "may": [],
+      "review": false
+     },
+     "rules": {
+      "c": [
+       "treenut"
+      ],
+      "m": [],
+      "review": false
+     }
+    },
+    {
+     "id": "H10",
+     "gold": {
+      "contains": [
+       "wheat"
+      ],
+      "may": [],
+      "review": false
+     },
+     "rules": {
+      "c": [
+       "wheat"
+      ],
+      "m": [],
+      "review": false
+     }
+    }
+   ]
+  },
+  "v2": {
+   "name": "Held-out v2 20 (clean, never tuned on)",
+   "rules": {
+    "n": 20,
+    "precision": 0.333,
+    "recall": 0.188,
+    "missed": 13,
+    "silentMisses": 13,
+    "silentIds": [
+     "H11",
+     "H12",
+     "H13",
+     "H14",
+     "H15",
+     "H20",
+     "H29",
+     "H16",
+     "H17",
+     "H18",
+     "H19",
+     "H30",
+     "H27"
+    ],
+    "falsePositives": 6,
+    "fpIds": [
+     "H21",
+     "H22",
+     "H23",
+     "H27",
+     "H28"
+    ],
+    "reviewRate": 0.05,
+    "reviewFlags": 1,
+    "reviewRecall": "1/3",
+    "unsupportedClaims": 0,
+    "precautionaryCorrect": "19/20",
+    "containsExact": "3/20"
+   },
+   "perCase": [
+    {
+     "id": "H11",
+     "gold": {
+      "contains": [
+       "soy"
+      ],
+      "may": [],
+      "review": false
+     },
+     "rules": {
+      "c": [],
+      "m": [],
+      "review": false
+     }
+    },
+    {
+     "id": "H12",
+     "gold": {
+      "contains": [
+       "treenut"
+      ],
+      "may": [],
+      "review": false
+     },
+     "rules": {
+      "c": [],
+      "m": [],
+      "review": false
+     }
+    },
+    {
+     "id": "H13",
+     "gold": {
+      "contains": [
+       "sesame"
+      ],
+      "may": [],
+      "review": false
+     },
+     "rules": {
+      "c": [],
+      "m": [],
+      "review": false
+     }
+    },
+    {
+     "id": "H14",
+     "gold": {
+      "contains": [
+       "egg"
+      ],
+      "may": [],
+      "review": false
+     },
+     "rules": {
+      "c": [],
+      "m": [],
+      "review": false
+     }
+    },
+    {
+     "id": "H15",
+     "gold": {
+      "contains": [
+       "fish"
+      ],
+      "may": [],
+      "review": false
+     },
+     "rules": {
+      "c": [],
+      "m": [],
+      "review": false
+     }
+    },
+    {
+     "id": "H20",
+     "gold": {
+      "contains": [
+       "wheat"
+      ],
+      "may": [],
+      "review": false
+     },
+     "rules": {
+      "c": [],
+      "m": [],
+      "review": false
+     }
+    },
+    {
+     "id": "H29",
+     "gold": {
+      "contains": [
+       "wheat"
+      ],
+      "may": [],
+      "review": false
+     },
+     "rules": {
+      "c": [],
+      "m": [],
+      "review": false
+     }
+    },
+    {
+     "id": "H16",
+     "gold": {
+      "contains": [
+       "fish"
+      ],
+      "may": [],
+      "review": false
+     },
+     "rules": {
+      "c": [],
+      "m": [],
+      "review": false
+     }
+    },
+    {
+     "id": "H17",
+     "gold": {
+      "contains": [
+       "milk"
+      ],
+      "may": [],
+      "review": false
+     },
+     "rules": {
+      "c": [],
+      "m": [],
+      "review": false
+     }
+    },
+    {
+     "id": "H18",
+     "gold": {
+      "contains": [
+       "peanut"
+      ],
+      "may": [],
+      "review": false
+     },
+     "rules": {
+      "c": [],
+      "m": [],
+      "review": false
+     }
+    },
+    {
+     "id": "H19",
+     "gold": {
+      "contains": [
+       "shellfish"
+      ],
+      "may": [],
+      "review": false
+     },
+     "rules": {
+      "c": [],
+      "m": [],
+      "review": false
+     }
+    },
+    {
+     "id": "H30",
+     "gold": {
+      "contains": [
+       "wheat",
+       "milk",
+       "egg",
+       "treenut"
+      ],
+      "may": [],
+      "review": false
+     },
+     "rules": {
+      "c": [
+       "egg",
+       "milk",
+       "wheat"
+      ],
+      "m": [],
+      "review": false
+     }
+    },
+    {
+     "id": "H21",
+     "gold": {
+      "contains": [],
+      "may": [],
+      "review": false
+     },
+     "rules": {
+      "c": [
+       "milk"
+      ],
+      "m": [],
+      "review": false
+     }
+    },
+    {
+     "id": "H22",
+     "gold": {
+      "contains": [],
+      "may": [],
+      "review": false
+     },
+     "rules": {
+      "c": [
+       "milk"
+      ],
+      "m": [],
+      "review": false
+     }
+    },
+    {
+     "id": "H23",
+     "gold": {
+      "contains": [],
+      "may": [],
+      "review": false
+     },
+     "rules": {
+      "c": [
+       "milk"
+      ],
+      "m": [],
+      "review": false
+     }
+    },
+    {
+     "id": "H24",
+     "gold": {
+      "contains": [],
+      "may": [],
+      "review": false
+     },
+     "rules": {
+      "c": [],
+      "m": [],
+      "review": false
+     }
+    },
+    {
+     "id": "H25",
+     "gold": {
+      "contains": [],
+      "may": [],
+      "review": true
+     },
+     "rules": {
+      "c": [],
+      "m": [],
+      "review": true
+     }
+    },
+    {
+     "id": "H26",
+     "gold": {
+      "contains": [],
+      "may": [],
+      "review": true
+     },
+     "rules": {
+      "c": [],
+      "m": [],
+      "review": false
+     }
+    },
+    {
+     "id": "H27",
+     "gold": {
+      "contains": [
+       "fish"
+      ],
+      "may": [],
+      "review": true
+     },
+     "rules": {
+      "c": [
+       "soy"
+      ],
+      "m": [],
+      "review": false
+     }
+    },
+    {
+     "id": "H28",
+     "gold": {
+      "contains": [],
+      "may": [
+       "treenut",
+       "sesame"
+      ],
+      "review": false
+     },
+     "rules": {
+      "c": [
+       "sesame",
+       "treenut"
+      ],
+      "m": [],
+      "review": false
+     }
+    }
+   ]
+  }
+ }
+}

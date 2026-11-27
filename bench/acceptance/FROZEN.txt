@@ -1,0 +1,8 @@
+821b8e9681bc26f8796340ad81e8f77ce130148f17d6c214bf7c6689a829122a  bench/acceptance/EXPECTED-2026-11-26.json
+1850ab11bc338113f05cc8e37f019639fbce6d5971ef63274fb1195c85afed6d  public/acceptance/A4-contains-inline.png
+0d96d7d6dcdf463002fbd901d8da3a0e735b9f25f00ddce47d1bc19c20dbbd83  public/acceptance/A5-contains-split.png
+862194977820ccc7ad594197fc66dba87465b7ea81759118d27c44bbe9781f3c  public/acceptance/A6-maycontain-only.png
+1f2bf8e9c7ca67ee790ec95b9060ba0e19c782278d54de2ddc3118ba1b704457  public/acceptance/A7-parenthetical-only.png
+3c3a32da2256e3b298991beaba0de6fb9f543303a288c844d8ac6b1fd90d5a8c  public/acceptance/A8-spec-unreadable.png
+0128c93de97fe3f10c75f5f32757f2d288a670ba4f727c13152c397fd8467bbc  public/acceptance/A9-spec-ja-placeholder.png
+# frozen 2026-11-26T12:57:57Z before any model run

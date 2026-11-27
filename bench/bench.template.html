@@ -1,0 +1,12 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8"><title>LabelGate v3 benchmark — app detect() pipeline</title>
+<style>body{font-family:system-ui,Segoe UI,sans-serif;margin:20px;color:#1a1a1a}button,select{font-size:15px;padding:7px 14px;margin-right:8px}
+table{border-collapse:collapse;width:100%;margin:8px 0;font-size:12px}td,th{border:1px solid #ccc;padding:4px 6px;text-align:left;vertical-align:top}th{background:#f3f3f3}
+.bad{background:#ffe1e1}.ok{background:#e4f7e4}#status{font-weight:600;margin:10px 0}h3{font-size:15px;margin:16px 0 4px}#out{display:none;width:100%;height:80px}</style></head>
+<body><h1 style="font-size:19px">LabelGate v3 — rules vs Nano vs hybrid on the APP's detect() pipeline</h1>
+<p>Same dictionary, prompt, schema, span validation and profile code as the app. One model call per case. Synthetic data. <code id="versions"></code></p>
+<button id="btn-model">1. Load / download on-device model</button>
+<label>Repeats <select id="repeats"><option>1</option><option>2</option><option selected>3</option></select></label>
+<button id="btn-run" disabled>2. Run</button><button id="btn-copy" disabled>3. Copy results JSON</button><button id="btn-dl" disabled>Download JSON</button>
+<div id="status">Checking model…</div><textarea id="out"></textarea><div id="summary"></div><div id="detail"></div>
+<script>/*BUNDLE*/</script></body></html>

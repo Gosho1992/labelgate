@@ -1,0 +1,14 @@
+{"note":"Pre-registered expected outcomes for the Spec-to-Proof integration acceptance check (written before any model run on these images). Integration check, NOT a benchmark: no accuracy claims from these cases. Decision = deterministic rules on the reading as returned and cleaned by the checks, i.e. a reviewer who confirms without editing (worst case).",
+ "spec_readings":{"S-es":"/demo/SEAS-01-rev2-es.jpg","S-unreadable":"/acceptance/A8-spec-unreadable.png","S-ja":"/acceptance/A9-spec-ja-placeholder.png"},
+ "cases":[
+  {"id":"A1","spec":"S-es","label":"/demo/LBL-1001-v3.png","sku":"SKU-1001","expect":"PRINT_BLOCKED","why":"milk from spec, label Contains lists only wheat"},
+  {"id":"A2","spec":"S-es","label":"/demo/LBL-1002-v2.png","sku":"SKU-1002","expect":"CHECKS_CLEAR_AWAITING_SIGNOFF","why":"natural flavor (milk) and wheat flour named; no Contains line needed"},
+  {"id":"A3","spec":"S-es","label":"/demo/LBL-1003-v1.png","sku":"SKU-1003","expect":"PRINT_BLOCKED","why":"milk not named anywhere"},
+  {"id":"A4","spec":"S-es","label":"/acceptance/A4-contains-inline.png","sku":"SKU-1001","expect":"CHECKS_CLEAR_AWAITING_SIGNOFF","why":"Contains printed inline right after the ingredient list; must be found"},
+  {"id":"A5","spec":"S-es","label":"/acceptance/A5-contains-split.png","sku":"SKU-1001","expect":"CHECKS_CLEAR_AWAITING_SIGNOFF","why":"Contains split over two lines (WHEAT, / MILK.)"},
+  {"id":"A6","spec":"S-es","label":"/acceptance/A6-maycontain-only.png","sku":"SKU-1001","expect":"PRINT_BLOCKED","why":"milk only in 'May contain' - advisory, not a declaration"},
+  {"id":"A7","spec":"S-es","label":"/acceptance/A7-parenthetical-only.png","sku":"SKU-1001","expect":"CHECKS_CLEAR_AWAITING_SIGNOFF","why":"milk declared in parentheses, no Contains line"},
+  {"id":"A8","spec":"S-unreadable","label":"/demo/LBL-1002-v2.png","sku":"SKU-1002","expect":"NOT_SILENT_CLEAR","why":"unreadable spec: must raise a reading problem or not clear"},
+  {"id":"A9","spec":"S-ja","label":"/demo/LBL-1002-v2.png","sku":"SKU-1002","expect":"CHECKS_CLEAR_AWAITING_SIGNOFF","why":"Japanese spec; '該当なし' must not become an ingredient; milk must be found"},
+  {"id":"A10","spec":"S-es","label":"/demo/LBL-1001-v3.png","sku":"SKU-1001","correction":{"contains_printed":"CONTAINS: WHEAT, MILK."},"expect":"CHECKS_CLEAR_AWAITING_SIGNOFF","why":"reviewer corrects the label reading; engine must use the correction"}
+ ]}
